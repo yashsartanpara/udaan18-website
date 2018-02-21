@@ -3,9 +3,7 @@
 *=========================================================================================
 */
 
-var JQDoc = $(document)
-
-JQDoc.ready(function () {
+$(document).ready(function () {
   console.info('[main.js] : Ready')
   setupCartridgeEvents()
   setupInteractionEvents()
@@ -16,7 +14,7 @@ JQDoc.ready(function () {
 *=========================================================================================
 */
 
-function setupInteractionEvents () {
+function setupInteractionEvents() {
   //begin: scrolling
   $('.main').onepage_scroll({
     animationTime: 600,
@@ -25,7 +23,9 @@ function setupInteractionEvents () {
     loop: false,
     pagination: false,
     direction: 'horizontal',
-    beforeMove: clearCartridgeSelection
+    beforeMove: function () {
+      clearCartridgeSelection(getActiveSection())
+    }
   })
   $(document).keydown(function (e) {
     if (e.keyCode == 37) {
@@ -55,7 +55,7 @@ function setupInteractionEvents () {
   })
 }
 
-function setupCartridgeEvents () {
+function setupCartridgeEvents() {
   var cartridges = document.querySelectorAll('.cartridge');
   [].forEach.call(cartridges, function (cartridge) {
     cartridge.addEventListener('click', selectCartridge)
@@ -77,9 +77,10 @@ var CARTRIDGE_TRANSITION_IN_TIME = 1,
   CARTRIDGE_TRANSITION_OUT_TIME = 0.5,
   CARTRIDGE_TRANSITION_EASE = Elastic.easeOut.config(1.5, 0.5)
 
-function selectCartridge (mouseEvent) {
+function selectCartridge(mouseEvent) {
   var selectedCartridge = mouseEvent.currentTarget
   var centerPoint = getAbsoluteCenter(selectedCartridge)
+  var section = getActiveSection()
 
   resetAllCartridges(selectedCartridge)
 
@@ -93,11 +94,11 @@ function selectCartridge (mouseEvent) {
     onStart: changeConsoleState.bind(null, 'visible')
   })
 
-  blackout()
+  blackout(section)
 }
 
-function resetAllCartridges (excluded) {
-  var cartridges = document.querySelectorAll('.cartridge')
+function resetAllCartridges(section, excluded) {
+  var cartridges = section.querySelectorAll('.cartridge')
   cartridges = [].filter.call(cartridges, function (cartridge) {
     return cartridge !== excluded
   })
@@ -114,28 +115,32 @@ function resetAllCartridges (excluded) {
   })
 }
 
-function blackout() {
-  var blackout = document.querySelector('.blackout')
+function blackout(section) {
+  var blackout = section.querySelector('.blackout')
   blackout.style.zIndex = 2
 
   TweenLite.to(blackout, CARTRIDGE_TRANSITION_IN_TIME, {
     opacity: 0.4
   })
 
-  blackout.addEventListener('click', function onBlackout (mouseEvent) {
-    clearCartridgeSelection();
+  blackout.addEventListener('click', function onBlackout(mouseEvent) {
+    clearCartridgeSelection(section)
     blackout.removeEventListener('click', onBlackout)
   })
 }
 
-function clearCartridgeSelection() {
-  resetAllCartridges()
-  var blackout = document.querySelector('.blackout')
+function clearCartridgeSelection(section) {
+  resetAllCartridges(section)
+  var blackout = section.querySelector('.blackout')
   blackout.style.zIndex = 0
   TweenLite.to(blackout, CARTRIDGE_TRANSITION_IN_TIME, {
     opacity: 0,
     onStart: changeConsoleState.bind(null, 'hidden')
   })
+}
+
+function getActiveSection() {
+  return document.querySelector('.section.active') || document
 }
 
 /*==========================================
@@ -147,7 +152,7 @@ var CONSOLE_TRANSITION_IN_TIME = 0.5,
   CONSOLE_TRANSITION_OUT_TIME = CARTRIDGE_TRANSITION_OUT_TIME,
   CONSOLE_TRANSITION_EASE = CARTRIDGE_TRANSITION_EASE
 
-function changeConsoleState (state) {
+function changeConsoleState(state) {
   var consoleContainerTopView = document.querySelector(
     '.console-container--top-view')
   switch (state) {
@@ -168,13 +173,13 @@ function changeConsoleState (state) {
   }
 }
 
-function getConsoleState () {
+function getConsoleState() {
   var consoleContainerTopView = document.querySelector(
     '.console-container--top-view')
   return consoleContainerTopView.getAttribute('data-state')
 }
 
-function setConsoleState (state) {
+function setConsoleState(state) {
   var consoleContainerTopView = document.querySelector(
     '.console-container--top-view')
   return consoleContainerTopView.setAttribute('data-state', state)
@@ -191,7 +196,7 @@ function setConsoleState (state) {
 */
 
 // TODO: Complete back button handle for mobile devices
-function backButton () {
+function backButton() {
   if (typeof history.pushState === 'function') {
     history.pushState('jibberish', null, null)
     window.onpopstate = function () {
@@ -218,7 +223,7 @@ function backButton () {
   }
 }
 
-function displayMessage (message) {
+function displayMessage(message) {
   var userMessageBar = document.querySelector('#user-message-bar')
   userMessageBar.innerHTML = message
   TweenLite.to(userMessageBar, 1, {
@@ -230,18 +235,18 @@ function displayMessage (message) {
   })
 }
 
-function slowDown () {
+function slowDown() {
   displayMessage(getRandomInt() & 1 ? 'Hold your horses!' : 'Slow Down!')
 }
 
-function interactiveHit (callback) {
+function interactiveHit(callback) {
   if (!window._interativeHit) {
     window._interactiveHit = 0
   }
   window.addEventListener('click', hitEvent)
   window.addEventListener('touchstart', hitEvent)
 
-  function hitEvent () {
+  function hitEvent() {
     if (window._interactiveHit > 4) {
       callback()
     }
@@ -250,7 +255,7 @@ function interactiveHit (callback) {
 
   setInterval(resetHits, 1000)
 
-  function resetHits () {
+  function resetHits() {
     window._interactiveHit = 0
   }
 }
@@ -260,7 +265,7 @@ function interactiveHit (callback) {
 *===========================================
 */
 
-function getRandomInt () {
+function getRandomInt() {
   return Math.round(Math.random() * 100)
 }
 
@@ -269,14 +274,14 @@ function getRandomInt () {
 *===========================================
 */
 
-function getWindowCenter () {
+function getWindowCenter() {
   return {
     x: window.innerWidth / 2,
     y: window.innerHeight / 2
   }
 }
 
-function getCenter (object, relativeTo) {
+function getCenter(object, relativeTo) {
   if (relativeTo === 'document') {
     return {
       x: object.offsetLeft + object.clientWidth / 2,
@@ -289,7 +294,7 @@ function getCenter (object, relativeTo) {
   }
 }
 
-function getAbsoluteCenter (object) {
+function getAbsoluteCenter(object) {
   var screenCenter = getWindowCenter()
   var objectCenter = getCenter(object, 'document')
 
