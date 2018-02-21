@@ -1,9 +1,203 @@
-body {
-    overflow-x: hidden;
-    background-color: black;
+/*========================================================================================
+*   General CSS
+*=========================================================================================
+*/
+
+@font-face {
+    font-family: 'PressStart2P';
+    src: url('../fonts/PressStart2P.ttf') format('truetype');
+}
+
+html, body {
+    width: 100vw;
+    height: 100vh;
+    background-color: #111;
+    margin: 0;
+    font-size: 0.875rem; /* 14px */
+    overflow: hidden;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     height: 100vh;
     width: 100vw;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.font-family--press-start-2p {
+    font-family: 'PressStart2P', sans-serif;
+}
+
+/*========================================================================================
+*   Object specific CSS
+*=========================================================================================
+*/
+
+/*==========================================
+*   ---- Cartridge CSS
+*===========================================
+*/
+:root {
+    --catridge-lg-unit: 30vh;
+    --catridge-md-unit: 30vh;
+    --catridge-sm-unit: 30vh;
+    --catridge-xs-unit: 18vh;
+}
+
+.cartridge-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    user-select: none;
+}
+
+.cartridge {
+    font-size: 1rem;
+    cursor: pointer;
+    z-index: 1;
+    overflow: hidden;
+
+    /* Because stupid flexbox grid adds 7rem padding in col-lg */
+    padding: 0 !important;
+
+    width: calc(var(--catridge-lg-unit) * 2);
+    height: var(--catridge-lg-unit);
+}
+
+.cartridge-content {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    /*background-color: red;*/
+}
+
+.cartridge-content img {
+    height: 100%;
+    width: auto;
+}
+
+@media only screen and (max-width: 75em) {
+    .cartridge {
+        width: calc(var(--catridge-md-unit) * 2);
+        height: var(--catridge-md-unit);
+    }
+}
+
+@media only screen and (max-width: 64em) {
+    .cartridge {
+        width: calc(var(--catridge-sm-unit) * 2);
+        height: var(--catridge-sm-unit);
+    }
+}
+
+@media only screen and (max-width: 48em) {
+    .cartridge {
+        width: calc(var(--catridge-xs-unit) * 2);
+        height: var(--catridge-xs-unit);
+    }
+}
+
+/*==========================================
+*   ---- Blackout CSS
+*===========================================
+*/
+
+.blackout {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+    opacity: 0.0;
+    z-index: 0;
+}
+
+/*==========================================
+*   ---- Console CSS
+*===========================================
+*/
+:root {
+    --console-lg-unit: 33vh;
+    --console-md-unit: 30vh;
+    --console-sm-unit: 30vh;
+    --console-xs-unit: 20vh;
+}
+
+.console-container--top-view {
+    display: flex;
+    position: fixed;
+    left: 0;
+    justify-content: center;
+    background-color: red;
+    width: 100%;
+    z-index: 2;
+}
+
+.console-container--top-view {
+    bottom: calc(var(--console-lg-unit) * -1);
+}
+
+#console-top-view {
+    background-color: gainsboro;
+    width: calc(var(--console-lg-unit) * 4);
+    height: var(--console-lg-unit);
+}
+
+@media only screen and (max-width: 75em) {
+    .console-container--top-view {
+        bottom: calc(var(--console-md-unit) * -1);
+    }
+    #console-top-view {
+        width: calc(var(--console-md-unit) * 4);
+        height: var(--console-md-unit);
+    }
+}
+
+@media only screen and (max-width: 64em) {
+    .console-container--top-view {
+        bottom: calc(var(--console-sm-unit) * -1);
+    }
+    #console-top-view {
+        width: calc(var(--console-sm-unit) * 4);
+        height: var(--console-sm-unit);
+    }
+}
+
+@media only screen and (max-width: 48em) {
+    .console-container--top-view {
+        bottom: calc(var(--console-xs-unit) * -1);
+    }
+    #console-top-view {
+        width: calc(var(--console-xs-unit) * 4);
+        height: var(--console-xs-unit);
+    }
+}
+
+/*==========================================
+*   ---- User message bar
+*===========================================
+*/
+
+#user-message-bar {
+    display: table-row;
+    position: fixed;
+    left: 0;
+    width: 100%;
+    top: 10vh;
+    color: white;
+    z-index: 100;
+    text-align: center;
+    pointer-events: none;
+    opacity: 0;
+    text-transform: uppercase;
 }
