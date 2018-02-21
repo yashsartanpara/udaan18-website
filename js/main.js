@@ -24,7 +24,8 @@ function setupInteractionEvents () {
     updateURL: true,
     loop: false,
     pagination: false,
-    direction: 'horizontal'
+    direction: 'horizontal',
+    beforeMove: clearCartridgeSelection
   })
   $(document).keydown(function (e) {
     if (e.keyCode == 37) {
@@ -113,7 +114,7 @@ function resetAllCartridges (excluded) {
   })
 }
 
-function blackout () {
+function blackout() {
   var blackout = document.querySelector('.blackout')
   blackout.style.zIndex = 2
 
@@ -122,13 +123,18 @@ function blackout () {
   })
 
   blackout.addEventListener('click', function onBlackout (mouseEvent) {
-    resetAllCartridges()
-    blackout.style.zIndex = 0
-    TweenLite.to(blackout, CARTRIDGE_TRANSITION_IN_TIME, {
-      opacity: 0,
-      onStart: changeConsoleState.bind(null, 'hidden')
-    })
+    clearCartridgeSelection();
     blackout.removeEventListener('click', onBlackout)
+  })
+}
+
+function clearCartridgeSelection() {
+  resetAllCartridges()
+  var blackout = document.querySelector('.blackout')
+  blackout.style.zIndex = 0
+  TweenLite.to(blackout, CARTRIDGE_TRANSITION_IN_TIME, {
+    opacity: 0,
+    onStart: changeConsoleState.bind(null, 'hidden')
   })
 }
 
