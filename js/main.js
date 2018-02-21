@@ -117,6 +117,8 @@ function resetAllCartridges(section, excluded) {
 
 function blackout(section) {
   var blackout = section.querySelector('.blackout')
+  if(!blackout)
+    return
   blackout.style.zIndex = 2
 
   TweenLite.to(blackout, CARTRIDGE_TRANSITION_IN_TIME, {
@@ -132,6 +134,8 @@ function blackout(section) {
 function clearCartridgeSelection(section) {
   resetAllCartridges(section)
   var blackout = section.querySelector('.blackout')
+  if(!blackout)
+    return
   blackout.style.zIndex = 0
   TweenLite.to(blackout, CARTRIDGE_TRANSITION_IN_TIME, {
     opacity: 0,
