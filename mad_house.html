@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Mad House</title>
+    <link rel="stylesheet" href="css/flexboxgrid.min.css">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/non-tech.css">
+    <script src="js/vendor/jquery-3.1.1.min.js"></script>
+    <script src="js/vendor/handlebars.runtime.min.js"></script>
+    <script src="js/templates/event.min.js"></script>
+    <script src="data.js"></script>
+    <script>
+        var events = data.nonTech;
+    </script>
+    <style>
+        body {
+            background: #002D4A;
+        }
+    </style>
+
+</head>
+
+<body>
+<div class="nontech-events">
+    <div id="nontechEvents" class="row"></div>
+</div>
+<div id="event-modal"></div>
+<script src="js/events.js"></script>
+</body>
+</html>
