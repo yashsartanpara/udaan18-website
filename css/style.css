@@ -197,6 +197,9 @@ section {
   .console-top-view-content {
     width: calc(var(--console-xs-unit) * 2);
   }
+  .console-top-view-content img {
+    width: 150%;
+  }
 }
 
 /*==========================================
