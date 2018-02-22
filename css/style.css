@@ -122,6 +122,14 @@ section {
   }
 }
 
+@media (orientation: landscape) {
+  .cartridge {
+    flex-basis: 33.33333333%;
+    max-width: 33.33333333%;
+    height: var(--cartridge-lg-unit);
+  }
+}
+
 /*==========================================
 *   ---- Blackout CSS
 *===========================================
@@ -197,6 +205,9 @@ section {
   .console-top-view-content {
     width: calc(var(--console-xs-unit) * 2);
   }
+  .console-top-view-content img {
+    width: 150%;
+  }
 }
 
 /*==========================================
@@ -240,8 +251,14 @@ section {
   }
 }
 
-@media only screen and (max-width: 48em) {
+@media only screen and (max-width: 48em) and (orientation: portrait) {
   .media-query {
-    content: "xs";
+    content: "xs portrait";
   }
 }
+@media only screen and (max-width: 48em) and (orientation: landscape) {
+  .media-query {
+    content: "xs landscape";
+  }
+}
+
