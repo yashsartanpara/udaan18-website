@@ -91,6 +91,7 @@ section {
 .cartridge-content {
   display: flex;
   justify-content: center;
+  align-items: center;
   height: 100%;
   /*background-color: red;*/
 }
@@ -215,4 +216,32 @@ section {
   pointer-events: none;
   opacity: 0;
   text-transform: uppercase;
+}
+
+/*==========================================
+*   ---- Media Query
+*===========================================
+*/
+
+.media-query {
+  display: none;
+  content: "lg";
+}
+
+@media only screen and (max-width: 75em) {
+  .media-query {
+    content: "md";
+  }
+}
+
+@media only screen and (max-width: 64em) {
+  .media-query {
+    content: "sm";
+  }
+}
+
+@media only screen and (max-width: 48em) {
+  .media-query {
+    content: "xs";
+  }
 }

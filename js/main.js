@@ -97,8 +97,6 @@ function selectCartridge(mouseEvent) {
 
   resetAllCartridges(selectedCartridge)
 
-  selectedCartridge.classList.add('cartridge--selected')
-
   selectedCartridge.style.zIndex = CARTRIDGE_SELECTED_Z_INDEX
 
   TweenLite.to(selectedCartridge, CARTRIDGE_TRANSITION_IN_TIME, {
@@ -108,19 +106,28 @@ function selectCartridge(mouseEvent) {
     ease: EASE_ELASTIC,
     onStart: changeConsoleState.bind(null, 'visible', getActiveSection())
   })
-
-  selectedCartridge.addEventListener('click', insertCartridge)
-
+  TweenLite.to(selectedCartridge, CARTRIDGE_TRANSITION_IN_TIME / 2, {
+    onComplete: function () {
+      selectedCartridge.classList.add('cartridge--selected')
+      selectedCartridge.addEventListener('click', insertCartridge)
+    }
+  })
   blackout(section)
 }
 
 function insertCartridge(mouseEvent) {
-  var section = getActiveSection()
   var cartridge = mouseEvent.currentTarget
+  if (!cartridge.classList.contains('cartridge--selected'))
+    return
+  var section = getActiveSection()
   var consoleTopView = section.querySelector('.console-top-view--top-half')
-  var cartridgeClippingPercent = 0.5
-  var cartridgeClippingHeight = cartridge.offsetHeight * (cartridgeClippingPercent)
+  var cartridgeClippingPercent = 0.35
+  if (getMedia().indexOf('xs') > -1) {
+    cartridgeClippingPercent *= 1.45
+  }
+  var cartridgeClippingHeight = (cartridge.clientHeight) * (1 - cartridgeClippingPercent)
   var point = consoleTopView.offsetTop - cartridge.offsetTop - cartridgeClippingHeight
+
   TweenLite.to(cartridge, 0.5, {
     y: point
   })
@@ -303,6 +310,14 @@ function interactiveHit(callback) {
   function resetHits() {
     window._interactiveHit = 0
   }
+}
+
+/*==========================================
+*   ---- Miscellaneous
+*===========================================
+*/
+function getMedia() {
+  return getComputedStyle(document.querySelector('.media-query')).content
 }
 
 /*==========================================
