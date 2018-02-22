@@ -122,7 +122,7 @@ function insertCartridge(mouseEvent) {
   var section = getActiveSection()
   var consoleTopView = section.querySelector('.console-top-view--top-half')
   var cartridgeClippingPercent = 0.35
-  if (getMedia().indexOf('xs') > -1) {
+  if (getMedia().indexOf('xs portrait') > -1) {
     cartridgeClippingPercent *= 1.45
   }
   var cartridgeClippingHeight = (cartridge.clientHeight) * (1 - cartridgeClippingPercent)

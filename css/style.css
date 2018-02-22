@@ -251,8 +251,14 @@ section {
   }
 }
 
-@media only screen and (max-width: 48em) {
+@media only screen and (max-width: 48em) and (orientation: portrait) {
   .media-query {
-    content: "xs";
+    content: "xs portrait";
   }
 }
+@media only screen and (max-width: 48em) and (orientation: landscape) {
+  .media-query {
+    content: "xs landscape";
+  }
+}
+
