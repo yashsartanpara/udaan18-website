@@ -69,57 +69,89 @@ function setupCartridgeEvents() {
 */
 
 /*==========================================
+*   ---- Constants
+*===========================================
+*/
+
+var CARTRIDGE_NORMAL_Z_INDEX = 1,
+  CARTRIDGE_SELECTED_Z_INDEX = 4,
+  BLACKOUT_ON_Z_INDEX = 2,
+  BLACKOUT_OFF_Z_INDEX = 0
+
+/*==========================================
 *   ---- Cartridge Animation
 *===========================================
 */
 
 var CARTRIDGE_TRANSITION_IN_TIME = 1,
   CARTRIDGE_TRANSITION_OUT_TIME = 0.5,
-  CARTRIDGE_TRANSITION_EASE = Elastic.easeOut.config(1.5, 0.5)
+  EASE_ELASTIC = Elastic.easeOut.config(1.5, 0.5)
 
 function selectCartridge(mouseEvent) {
   var selectedCartridge = mouseEvent.currentTarget
+  if (selectedCartridge.classList.contains('cartridge--selected')) {
+    return
+  }
   var centerPoint = getAbsoluteCenter(selectedCartridge)
   var section = getActiveSection()
 
   resetAllCartridges(selectedCartridge)
 
-  selectedCartridge.style.zIndex = 3
+  selectedCartridge.classList.add('cartridge--selected')
+
+  selectedCartridge.style.zIndex = CARTRIDGE_SELECTED_Z_INDEX
 
   TweenLite.to(selectedCartridge, CARTRIDGE_TRANSITION_IN_TIME, {
     x: centerPoint.x,
     y: centerPoint.y,
     scale: 1.2,
-    ease: CARTRIDGE_TRANSITION_EASE,
-    onStart: changeConsoleState.bind(null, 'visible')
+    ease: EASE_ELASTIC,
+    onStart: changeConsoleState.bind(null, 'visible', getActiveSection())
   })
 
+  selectedCartridge.addEventListener('click', insertCartridge)
+
   blackout(section)
+}
+
+function insertCartridge(mouseEvent) {
+  var section = getActiveSection()
+  var cartridge = mouseEvent.currentTarget
+  var consoleTopView = section.querySelector('.console-top-view--top-half')
+  var cartridgeClippingPercent = 0.5
+  var cartridgeClippingHeight = cartridge.offsetHeight * (cartridgeClippingPercent)
+  var point = consoleTopView.offsetTop - cartridge.offsetTop - cartridgeClippingHeight
+  TweenLite.to(cartridge, 0.5, {
+    y: point
+  })
+
+  cartridge.removeEventListener('click', insertCartridge)
 }
 
 function resetAllCartridges(section, excluded) {
   var cartridges = section.querySelectorAll('.cartridge')
   cartridges = [].filter.call(cartridges, function (cartridge) {
+    cartridge.classList.remove('cartridge--selected')
     return cartridge !== excluded
   })
 
-  TweenLite.to(cartridges, CARTRIDGE_TRANSITION_OUT_TIME, {
+  TweenLite.to(cartridges, CARTRIDGE_TRANSITION_IN_TIME, {
     x: 0,
     y: 0,
     scale: 1,
-    ease: CARTRIDGE_TRANSITION_EASE
+    ease: EASE_ELASTIC
   });
 
   [].forEach.call(cartridges, function (c) {
-    c.style.zIndex = 1
+    c.style.zIndex = CARTRIDGE_NORMAL_Z_INDEX
   })
 }
 
 function blackout(section) {
   var blackout = section.querySelector('.blackout')
-  if(!blackout)
+  if (!blackout)
     return
-  blackout.style.zIndex = 2
+  blackout.style.zIndex = BLACKOUT_ON_Z_INDEX
 
   TweenLite.to(blackout, CARTRIDGE_TRANSITION_IN_TIME, {
     opacity: 0.4
@@ -134,12 +166,12 @@ function blackout(section) {
 function clearCartridgeSelection(section) {
   resetAllCartridges(section)
   var blackout = section.querySelector('.blackout')
-  if(!blackout)
+  if (!blackout)
     return
-  blackout.style.zIndex = 0
+  blackout.style.zIndex = BLACKOUT_OFF_Z_INDEX
   TweenLite.to(blackout, CARTRIDGE_TRANSITION_IN_TIME, {
     opacity: 0,
-    onStart: changeConsoleState.bind(null, 'hidden')
+    onStart: changeConsoleState.bind(null, 'hidden', getActiveSection())
   })
 }
 
@@ -153,40 +185,48 @@ function getActiveSection() {
 */
 
 var CONSOLE_TRANSITION_IN_TIME = 0.5,
-  CONSOLE_TRANSITION_OUT_TIME = CARTRIDGE_TRANSITION_OUT_TIME,
-  CONSOLE_TRANSITION_EASE = CARTRIDGE_TRANSITION_EASE
+  CONSOLE_TRANSITION_OUT_TIME = CARTRIDGE_TRANSITION_OUT_TIME
 
-function changeConsoleState(state) {
-  var consoleContainerTopView = document.querySelector(
-    '.console-container--top-view')
+function changeConsoleState(state, section) {
+  var consoleTopViewTopHalf = section.querySelector('.console-top-view--top-half')
+  var consoleTopViewBottomHalf = section.querySelector('.console-top-view--bottom-half')
+
   switch (state) {
     case 'visible':
-      TweenLite.to(consoleContainerTopView, CONSOLE_TRANSITION_IN_TIME, {
-        bottom: 0,
+      TweenLite.to(consoleTopViewTopHalf, CONSOLE_TRANSITION_IN_TIME, {
+        bottom: (consoleTopViewTopHalf.clientHeight),
         onStart: setConsoleState.bind(null, 'animating'),
         onComplete: setConsoleState.bind(null, 'visible')
       })
+      TweenLite.to(consoleTopViewBottomHalf, CONSOLE_TRANSITION_IN_TIME, {
+        bottom: 0
+      })
       break
     case 'hidden':
-      TweenLite.to(consoleContainerTopView, CONSOLE_TRANSITION_OUT_TIME, {
-        bottom: (consoleContainerTopView.clientHeight * -1),
+      TweenLite.to(consoleTopViewTopHalf, CONSOLE_TRANSITION_OUT_TIME, {
+        bottom: (consoleTopViewTopHalf.clientHeight * -1),
         onStart: setConsoleState.bind(null, 'animating'),
         onComplete: setConsoleState.bind(null, 'hidden')
+      })
+      TweenLite.to(consoleTopViewBottomHalf, CONSOLE_TRANSITION_OUT_TIME, {
+        bottom: (consoleTopViewBottomHalf.clientHeight * -1 * 2)
       })
       break
   }
 }
 
 function getConsoleState() {
-  var consoleContainerTopView = document.querySelector(
-    '.console-container--top-view')
-  return consoleContainerTopView.getAttribute('data-state')
+  var section = getActiveSection()
+  var consoleTopViewTopHalf = section.querySelector(
+    '.console-top-view--top-half')
+  return consoleTopViewTopHalf.getAttribute('data-state')
 }
 
 function setConsoleState(state) {
-  var consoleContainerTopView = document.querySelector(
-    '.console-container--top-view')
-  return consoleContainerTopView.setAttribute('data-state', state)
+  var section = getActiveSection()
+  var consoleTopViewTopHalf = section.querySelector(
+    '.console-top-view--top-half')
+  return consoleTopViewTopHalf.setAttribute('data-state', state)
 }
 
 /*========================================================================================
@@ -230,9 +270,10 @@ function backButton() {
 function displayMessage(message) {
   var userMessageBar = document.querySelector('#user-message-bar')
   userMessageBar.innerHTML = message
+  userMessageBar.style.left = getActiveSection().style.left
   TweenLite.to(userMessageBar, 1, {
     opacity: 1,
-    ease: CARTRIDGE_TRANSITION_EASE,
+    ease: EASE_ELASTIC,
     onComplete: function () {
       TweenLite.to(userMessageBar, 0.3, {opacity: 0})
     }
@@ -307,4 +348,3 @@ function getAbsoluteCenter(object) {
 
   return {x: x, y: y}
 }
-
