@@ -45,14 +45,25 @@ section {
 */
 
 /*==========================================
+*   ---- Z-Indexes
+*===========================================
+*/
+:root {
+  --blackout--z-index: 0; /* when-selected: 2 */
+  --cartridge--z-index: 1; /* when-selected: 4 */
+  --console-top-view-top-half--z-index: 3;
+  --console-top-view-bottom-half--z-index: 5;
+}
+
+/*==========================================
 *   ---- Cartridge CSS
 *===========================================
 */
 :root {
-  --catridge-lg-unit: 30vh;
-  --catridge-md-unit: 30vh;
-  --catridge-sm-unit: 30vh;
-  --catridge-xs-unit: 18vh;
+  --cartridge-lg-unit: 30vh;
+  --cartridge-md-unit: 30vh;
+  --cartridge-sm-unit: 30vh;
+  --cartridge-xs-unit: 18vh;
 }
 
 .cartridge-container {
@@ -67,46 +78,47 @@ section {
 .cartridge {
   font-size: 1rem;
   cursor: pointer;
-  z-index: 1;
+  z-index: var(--cartridge--z-index);
   overflow: hidden;
 
   /* Because stupid flexbox grid adds 7rem padding in col-lg */
   padding: 0 !important;
 
-  width: calc(var(--catridge-lg-unit) * 2);
-  height: var(--catridge-lg-unit);
+  width: calc(var(--cartridge-lg-unit) * 2);
+  height: var(--cartridge-lg-unit);
 }
 
 .cartridge-content {
   display: flex;
   justify-content: center;
+  align-items: center;
   height: 100%;
   /*background-color: red;*/
 }
 
 .cartridge-content img {
-  height: 100%;
+  height: 80%;
   width: auto;
 }
 
 @media only screen and (max-width: 75em) {
   .cartridge {
-    width: calc(var(--catridge-md-unit) * 2);
-    height: var(--catridge-md-unit);
+    width: calc(var(--cartridge-md-unit) * 2);
+    height: var(--cartridge-md-unit);
   }
 }
 
 @media only screen and (max-width: 64em) {
   .cartridge {
-    width: calc(var(--catridge-sm-unit) * 2);
-    height: var(--catridge-sm-unit);
+    width: calc(var(--cartridge-sm-unit) * 2);
+    height: var(--cartridge-sm-unit);
   }
 }
 
 @media only screen and (max-width: 48em) {
   .cartridge {
-    width: calc(var(--catridge-xs-unit) * 2);
-    height: var(--catridge-xs-unit);
+    width: calc(var(--cartridge-xs-unit) * 2);
+    height: var(--cartridge-xs-unit);
   }
 }
 
@@ -131,62 +143,59 @@ section {
 *===========================================
 */
 :root {
-  --console-lg-unit: 16vh;
-  --console-md-unit: 15vh;
-  --console-sm-unit: 15vh;
-  --console-xs-unit: 10vh;
+  --console-zoom-correction: 1.0;
+  --console-lg-unit: calc(var(--cartridge-lg-unit) * 2 * var(--console-zoom-correction));
+  --console-md-unit: calc(var(--cartridge-md-unit) * 2 * var(--console-zoom-correction));
+  --console-sm-unit: calc(var(--cartridge-sm-unit) * 2 * var(--console-zoom-correction));
+  --console-xs-unit: calc(var(--cartridge-xs-unit) * 2 * var(--console-zoom-correction));
+  --console-lg-height: 7.5vh;
 }
 
-.console-container--top-view {
+.console-top-view {
   display: flex;
-  position: fixed;
-  left: 0;
   justify-content: center;
-  background-color: red;
+  position: absolute;
+  height: var(--console-lg-height);
   width: 100%;
-  z-index: 2;
+  background-color: #7164a5;
 }
 
-.console-container--top-view {
-  bottom: calc(var(--console-lg-unit) * -1);
+.console-top-view--top-half {
+  z-index: var(--console-top-view-top-half--z-index);
+  bottom: calc(var(--console-lg-height) * -1);
 }
 
-#console-top-view {
-  background-color: gainsboro;
-  width: calc(var(--console-lg-unit) * 4);
-  height: var(--console-lg-unit);
+.console-top-view--bottom-half {
+  z-index: var(--console-top-view-bottom-half--z-index);
+  bottom: calc(var(--console-lg-height) * -1 * 2);
+}
+
+.console-top-view-content {
+  display: flex;
+  justify-content: center;
+  width: calc(var(--console-lg-unit) * 2);
+}
+
+.console-top-view-content img {
+  height: auto;
+  width: 100%;
 }
 
 @media only screen and (max-width: 75em) {
-  .console-container--top-view {
-    bottom: calc(var(--console-md-unit) * -1);
-  }
-
-  #console-top-view {
-    width: calc(var(--console-md-unit) * 4);
-    height: var(--console-md-unit);
+  .console-top-view-content {
+    width: calc(var(--console-md-unit) * 2);
   }
 }
 
 @media only screen and (max-width: 64em) {
-  .console-container--top-view {
-    bottom: calc(var(--console-sm-unit) * -1);
-  }
-
-  #console-top-view {
-    width: calc(var(--console-sm-unit) * 4);
-    height: var(--console-sm-unit);
+  .console-top-view-content {
+    width: calc(var(--console-sm-unit) * 2);
   }
 }
 
 @media only screen and (max-width: 48em) {
-  .console-container--top-view {
-    bottom: calc(var(--console-xs-unit) * -1);
-  }
-
-  #console-top-view {
-    width: calc(var(--console-xs-unit) * 4);
-    height: var(--console-xs-unit);
+  .console-top-view-content {
+    width: calc(var(--console-xs-unit) * 2);
   }
 }
 
@@ -207,4 +216,32 @@ section {
   pointer-events: none;
   opacity: 0;
   text-transform: uppercase;
+}
+
+/*==========================================
+*   ---- Media Query
+*===========================================
+*/
+
+.media-query {
+  display: none;
+  content: "lg";
+}
+
+@media only screen and (max-width: 75em) {
+  .media-query {
+    content: "md";
+  }
+}
+
+@media only screen and (max-width: 64em) {
+  .media-query {
+    content: "sm";
+  }
+}
+
+@media only screen and (max-width: 48em) {
+  .media-query {
+    content: "xs";
+  }
 }
