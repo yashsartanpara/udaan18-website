@@ -128,15 +128,22 @@ function insertCartridge(mouseEvent) {
   var cartridgeClippingHeight = (cartridge.clientHeight) * (1 - cartridgeClippingPercent)
   var point = consoleTopView.offsetTop - cartridge.offsetTop - cartridgeClippingHeight
 
-  TweenLite.to(cartridge, 0.5, {
-    y: point
-  })
+  var url = ''
+  url = cartridge.getAttribute('data-href')
 
-  cartridge.removeEventListener('click', insertCartridge)
+  TweenLite.to(cartridge, 0.5, {
+    y: point,
+    onComplete: navigateTo.bind(null, url)
+  })
 }
 
 function resetAllCartridges(section, excluded) {
-  var cartridges = section.querySelectorAll('.cartridge')
+  var cartridges = section.querySelectorAll('.cartridge');
+
+  [].forEach.call(cartridges, function (cartridge) {
+    cartridge.removeEventListener('click', insertCartridge)
+  })
+
   cartridges = [].filter.call(cartridges, function (cartridge) {
     cartridge.classList.remove('cartridge--selected')
     return cartridge !== excluded
@@ -318,6 +325,14 @@ function interactiveHit(callback) {
 */
 function getMedia() {
   return getComputedStyle(document.querySelector('.media-query')).content
+}
+
+function navigateTo(url) {
+  if (url.length < 3) {
+    displayMessage('GAME UNDER DEVELOPMENT!')
+    return
+  }
+  window.location.href = url
 }
 
 /*==========================================
