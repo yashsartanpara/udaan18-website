@@ -18,6 +18,7 @@ body {
     -ms-user-select: none;
     user-select: none;
     margin: 0;
+    width: 100%;
 }
 
 
@@ -81,7 +82,7 @@ body {
     line-height: 1.5rem;
     background: black; !important;
     /*color: #263238;*/
-    color: white;
+    color: olivedrab;
     font-weight: lighter !important;
 
 }
@@ -146,11 +147,11 @@ body {
 
 .manager-name {
     /*color: #222;*/
-    color: white;
+    color: olivedrab;
 }
 
 .white-text {
-    color: #fff;
+    color: olivedrab;
 }
 
 .no-margin {
