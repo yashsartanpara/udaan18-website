@@ -1,6 +1,7 @@
 body {
     /*overflow: hidden;*/
 }
+
 @font-face {
   font-family: 'start2p';
   src: url('../fonts/PressStart2P.ttf');
@@ -36,7 +37,7 @@ body {
 .events {
     position: absolute;
     width: 60vw;
-    z-index: 2;
+    z-index: 10;
 }
 
 .right-facing {
@@ -131,12 +132,6 @@ body {
         height: 85vh;
     }
 
-    .stage{
-        z-index: -1;
-        position: absolute;
-        height: 100vh;
-        width: auto;
-    }
 
     .right-facing {
         left: -40vh;

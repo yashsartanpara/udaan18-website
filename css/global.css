@@ -66,11 +66,12 @@ body {
 
 /* Modal CSS */
 #event-modal {
-    /*height: 100%;*/
+  top: 0%;
+    height: 100% !important;
     /*opacity: 0.9;*/
     display: none;
-    position: relative;
-    z-index: 7;
+    position: absolute;
+    z-index: 1000;
     font-family: 'start2p', 'Roboto', sans-serif;
 }
 
@@ -95,6 +96,7 @@ body {
 }
 
 .levels {
+    background: black;
     padding-top: 30px;
 }
 
@@ -137,10 +139,12 @@ body {
 }
 
 .managers-row {
-    margin: 10px 0;
+    background-color: black;
+    padding: 10px 0;
 }
 
 .event-managers {
+    background: black;
     /*font-weight: bold;*/
     text-align: center;
 }
