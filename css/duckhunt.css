@@ -441,9 +441,6 @@
   overflow:hidden;
 }
 
-
-
-
 #shootingArea > div > div {
   position:relative;
   width:100%;
@@ -466,7 +463,6 @@
   width:70px;
   position:relative;
   background-position:0px -220px;
-
 }
 
 #shootingArea > div > div > div > span {
@@ -483,8 +479,6 @@
   overflow:hidden;
 }
 
-
-
 #dogIntro {
   position:absolute;
   bottom: 10%;
@@ -493,8 +487,6 @@
   width: 120px;
   height: 100px;
 }
-
-
 
 #dogLaugh {
   width:100%;
@@ -587,12 +579,6 @@
   background-position: -25px -557px;
 }
 
-
-
-
-
-
-
 /*The timers*/
 
 /*Intro dog*/
@@ -603,17 +589,6 @@
   -o-animation: dogMove 3.5s linear forwards, dogWalk 4s step-start 1 forwards;
 }
 
-/*!*Lvl1*!*/
-/*#shootingArea > div:nth-child(1),*/
-/*#bullets > div > div:nth-child(1) {*/
-/*!*Start at the end of the last lvl, keep for 9s*!*/
-/*animation: lvlStart 1ms steps(1) 5s forwards, lvlEnd 1ms steps(1) 14s forwards;*/
-/*-moz-animation: lvlStart 1ms steps(1) 5s forwards, lvlEnd 1ms steps(1) 14s forwards;*/
-/*-webkit-animation: lvlStart 1ms steps(1) 5s forwards, lvlEnd 1ms steps(1) 14s forwards;*/
-/*-o-animation: lvlStart 1ms steps(1) 5s forwards, lvlEnd 1ms steps(1) 14s forwards;*/
-/*}*/
-
-
 #dogLaugh > div:nth-child(1) {
   /*The lvlEnd - 4 seconds*/
 
@@ -622,7 +597,6 @@
   -webkit-animation: dogShow 4s 6s;
   -o-animation: dogShow 4s 6s;
 }
-
 
 /*Lvl10*/
 #shootingArea > div:nth-child(10),
@@ -634,8 +608,6 @@
   -webkit-animation: lvlStart 1ms steps(1) 86s forwards, lvlEnd 1ms steps(1) 95s forwards;
   -o-animation: lvlStart 1ms steps(1) 86s forwards, lvlEnd 1ms steps(1) 95s forwards;
 }
-
-
 
 @media (max-width: 780px) {
   #dogIntro {
@@ -771,6 +743,7 @@ and (max-device-width : 1024px) {
     top:560px;
     left:45%;
   }
+
   #stage {
     display: flex;
     position: absolute;
@@ -780,6 +753,7 @@ and (max-device-width : 1024px) {
     height:100%;
     overflow:hidden;
   }
+
   #dogIntro {
     animation: dogMove 2.8s linear forwards, dogWalk 4s step-start 1 forwards;
     -moz-animation: dogMove 2.8s linear forwards, dogWalk 4s step-start 1 forwards;
@@ -829,6 +803,7 @@ and (orientation : landscape) {
     top:560px;
     left:45%;
   }
+
   #stage {
     display: flex;
     position: absolute;
@@ -838,6 +813,7 @@ and (orientation : landscape) {
     height:100%;
     overflow:hidden;
   }
+
   #dogIntro {
     animation: dogMove 2.8s linear forwards, dogWalk 4s step-start 1 forwards;
     -moz-animation: dogMove 2.8s linear forwards, dogWalk 4s step-start 1 forwards;
@@ -887,6 +863,7 @@ and (orientation : portrait) {
     top:560px;
     left:45%;
   }
+
   #stage {
     display: flex;
     position: absolute;
@@ -896,6 +873,7 @@ and (orientation : portrait) {
     height:100%;
     overflow:hidden;
   }
+
   #dogIntro {
     animation: dogMove 2.8s linear forwards, dogWalk 4s step-start 1 forwards;
     -moz-animation: dogMove 2.8s linear forwards, dogWalk 4s step-start 1 forwards;
@@ -943,6 +921,7 @@ and (min-width : 1224px) {
     top:560px;
     left:45%;
   }
+
   #stage {
     display: flex;
     position: absolute;
@@ -952,6 +931,7 @@ and (min-width : 1224px) {
     height:100vh;
     overflow:hidden;
   }
+
   #dogIntro {
     animation: dogMove 3.5s linear forwards, dogWalk 4s step-start 1 forwards;
     -moz-animation: dogMove 3.5s linear forwards, dogWalk 4s step-start 1 forwards;
@@ -988,6 +968,7 @@ and (min-width : 1824px) {
     top:560px;
     left:45%;
   }
+
   #stage {
     display: flex;
     position: absolute;
@@ -997,6 +978,7 @@ and (min-width : 1824px) {
     height:100vh;
     overflow:hidden;
   }
+
   #dogIntro {
     animation: dogMove 3.5s linear forwards, dogWalk 4s step-start 1 forwards;
     -moz-animation: dogMove 3.5s linear forwards, dogWalk 4s step-start 1 forwards;

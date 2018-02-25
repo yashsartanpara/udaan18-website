@@ -1,0 +1,25 @@
+.hadouken {
+  position: absolute;
+  bottom: 25%;
+  z-index: 5;
+  left: 15%;
+}
+.ryu {
+  position: absolute;
+  bottom: 10%;
+  left:10%;
+  z-index: 5;
+}
+.guile {
+  position: absolute;
+  bottom: 10%;
+  left: 90%;
+  z-index: 5;
+  transform: scale(-1,1);
+}
+.kosign {
+  position: absolute;
+  bottom: 40%;
+  left: 40%;
+  z-index: 5;
+}

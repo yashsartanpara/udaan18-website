@@ -7,33 +7,39 @@
     <title>Pandora Box</title>
     <link rel="stylesheet" href="css/flexboxgrid.min.css">
     <link rel="stylesheet" href="css/global.css">
-    <link rel="stylesheet" href="css/tech.css">
-    <script src="js/vendor/handlebars.runtime.min.js"></script>
+    <link rel="stylesheet" href="css/non-tech.css">
+    <link rel="stylesheet" href="css/sf.css">
     <script src="js/vendor/jquery-3.1.1.min.js"></script>
+    <script src="js/vendor/handlebars.runtime.min.js"></script>
     <script src="js/templates/event.min.js"></script>
-    <script src="js/templates/heads.min.js"></script>
     <script src="data.js"></script>
     <script>
-        var machinists = data.tech.find(function (department) {
-            return department.alias == 'Machinists';
-        });
-        var events = machinists.events;
-        var heads = {'heads': machinists.heads, 'coHeads': machinists.coHeads};
+        var events = data.nonTech;
     </script>
     <style>
         body {
-            background-color: #1b242d;
+            background: black;
         }
     </style>
+
 </head>
+
 <body>
-<div class="events center-font">
-    <div id="events"></div>
-    <div class="head-title">Heads</div>
+<div class="ryu">
 </div>
-<div class="left-dept-name">Pandora Box</div>
+<div class="guile">
+</div>
+<div class="hudo">
+</div>
+<div class="kosign">
+</div>
+
+<!--<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>-->
+<script  src="js/sf.js"></script>
+<div class="nontech-events">
+    <div id="nontechEvents" class="row"></div>
+</div>
 <div id="event-modal"></div>
-<div id="heads-modal"></div>
 <script src="js/events.js"></script>
 </body>
 </html>
