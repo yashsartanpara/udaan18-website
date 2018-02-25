@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/flexboxgrid.min.css">
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/tech.css">
+    <link rel="stylesheet" href="css/pacman.css">
     <script src="js/vendor/handlebars.runtime.min.js"></script>
     <script src="js/vendor/jquery-3.1.1.min.js"></script>
     <script src="js/templates/event.min.js"></script>
@@ -22,7 +23,7 @@
     </script>
     <style>
         body {
-            background-color: #944579;
+            background-color: black;
         }
     </style>
 </head>
@@ -31,9 +32,59 @@
     <div id="events"></div>
     <div class="head-title">Heads</div>
 </div>
-<div class="left-dept-name">INFRA-MANIACS</div>
+<div class="dept-name">INFRA-MANIACS</div>
 <div id="event-modal"></div>
 <div id="heads-modal"></div>
+<div class="pacman-bg">
+  <div class="fixed">
+    <div class="maze">
+
+      <div class="wall_1"></div>
+      <div class="pacman">
+        <div class="pacman_head"></div>
+        <div class="pacman_mouth"></div>
+      </div>
+
+      <div class="ghost">
+        <div class="ghost_head"></div>
+        <div class="ghost_body"></div>
+        <div class="ghost_eye_1">
+          <div class="ghost_eye_inside_1"></div>
+        </div>
+        <div class="ghost_eye_2">
+          <div class="ghost_eye_inside_2"></div>
+        </div>
+      </div>
+
+      <div class="ghost_red">
+        <div class="ghost_head_red"></div>
+        <div class="ghost_body_red"></div>
+        <div class="ghost_eye_1">
+          <div class="ghost_eye_inside_1"></div>
+        </div>
+        <div class="ghost_eye_2">
+          <div class="ghost_eye_inside_2"></div>
+        </div>
+      </div>
+
+      <div class="ghost_orange">
+        <div class="ghost_head_orange"></div>
+        <div class="ghost_body_orange"></div>
+        <div class="ghost_eye_1">
+          <div class="ghost_eye_inside_1"></div>
+        </div>
+        <div class="ghost_eye_2">
+          <div class="ghost_eye_inside_2"></div>
+        </div>
+      </div>
+
+      <div class="coin_container">
+        <div class="coin"></div>
+      </div>
+    </div>
+  </div>
+</div>
 <script src="js/events.js"></script>
+<script src="js/pacman.js"></script>
 </body>
 </html>
