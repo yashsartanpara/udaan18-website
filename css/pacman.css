@@ -2,14 +2,18 @@ body {
   background: black;
   padding: 0;
   margin: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
 }
 
 .fixed {
   position: fixed;
   height: 100%;
   width: 100%;
-
+  top: 5% !important;
 }
+
 .dept-name {
   padding-top: 15px;
 }
@@ -17,7 +21,7 @@ body {
   position: relative;
   top: 40%;
   left: 50%;
-  height: 40rem;
+  height: 70%;
   max-width: 40rem;
   border: 0.2rem solid #1311BC;
   border-radius: 25px;
@@ -214,6 +218,14 @@ body {
     width: 16rem;
     left: 21%;
   }
+
+  .fixed {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 5% !important;
+  }
+
 }
 
 @media screen and (min-width: 320px) and (max-width: 430px){
@@ -258,6 +270,13 @@ body {
   .coin-container, .coin{
     display: none;
   }
+  .fixed {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 5% !important;
+  }
+
 }
 
 
