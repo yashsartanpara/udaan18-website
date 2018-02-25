@@ -66,13 +66,14 @@ body {
 
 /* Modal CSS */
 #event-modal {
-  top: 0%;
-  height: 100% !important;
+  top: 0;
+  left: 0;
   /*opacity: 0.9;*/
   display: none;
   position: absolute;
   z-index: 1000;
   font-family: 'start2p', 'Roboto', sans-serif;
+
 }
 
 .event-row {

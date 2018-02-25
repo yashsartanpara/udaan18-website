@@ -37,7 +37,7 @@ body {
 .events {
   position: absolute;
   width: 60vw;
-  z-index: 10;
+  z-index: 99;
 }
 
 .right-facing {
@@ -51,7 +51,8 @@ body {
 .center-font {
   text-align: center;
   padding-top: 10vh;
-  /*right: 0;*/
+  right: 0;
+  left: 0;
   width: 100vw;
   font-family: 'start2p', sans-serif;
 }
@@ -71,6 +72,7 @@ body {
   font-family: "start2p", sans-serif;
   font-size: 1.25rem;
   cursor: pointer;
+
 }
 
 .modal-open-animation {

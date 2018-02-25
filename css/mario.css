@@ -2,11 +2,13 @@
 		** The images used were downloaded from: http://www.videogamesprites.net/SuperMarioBros1/ **
 */
 
-html, body{
+
+
+html,body{
   font-family: 'Press Start 2P', cursive;
   height: 100%;
   width: 100%;
-  overflow:hidden;
+  overflow: hidden;
   margin: 0;
   padding: 0;
 }
