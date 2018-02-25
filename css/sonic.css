@@ -6,10 +6,12 @@ html {
 
 body {
   background-color: #00207f;
+  background-size: cover;
 }
 
 #container{
   overflow: hidden !important;
+  height: 100% !important;
 }
 ::-moz-selection {
   background: #b3d4fc;
@@ -48,11 +50,14 @@ body {
 [id='container'] {
   padding-top: 200px;
   width: 9999em;
+  height: 100% !important;
   margin-left: -2060em;
 }
 
 @media (max-height: 600px) {
   [id='container'] {
+    height: 100% !important;
+
     padding-top: 40px;
   }
 

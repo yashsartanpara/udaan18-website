@@ -64,6 +64,12 @@ body {
   bottom: 0;
 }
 
+/*Hide Scrollbar*/
+::-webkit-scrollbar {
+  width: 0px;  /* remove scrollbar space */
+  background: transparent;  /* optional: just make scrollbar invisible */
+}
+
 /* Modal CSS */
 #event-modal {
   top: 0;

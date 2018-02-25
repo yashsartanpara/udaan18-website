@@ -3,16 +3,16 @@
   width:100%;
   height: 100%;
   background: url('../img/megamanstage.jpg') bottom repeat-x;
-  background-size: 100%;
-  animation-duration: 7500ms;
-  animation-iteration-count: infinite;
-  animation-name: stage-move-2;
-  animation-timing-function: linear;
+  background-size: cover;
+  /*animation-duration: 7500ms;*/
+  /*animation-iteration-count: infinite;*/
+  /*animation-name: stage-move-2;*/
+  /*animation-timing-function: linear;*/
 
-  -webkit-animation-duration: 7500ms;
-  -webkit-animation-iteration-count: infinite;
-  -webkit-animation-name: stage-move-2;
-  -webkit-animation-timing-function: linear;
+  /*-webkit-animation-duration: 7500ms;*/
+  /*-webkit-animation-iteration-count: infinite;*/
+  /*-webkit-animation-name: stage-move-2;*/
+  /*-webkit-animation-timing-function: linear;*/
 
 }
 
@@ -103,16 +103,16 @@ and (max-device-width : 1024px) {
     width:100%;
     height: 350px;
     background: url('../img/megamanstage.jpg') bottom repeat-x;
-    background-size: 100%;
-    animation-duration: 7500ms;
-    animation-iteration-count: infinite;
-    animation-name: stage-move-2;
-    animation-timing-function: linear;
+    background-size: cover;
+    /*animation-duration: 7500ms;*/
+    /*animation-iteration-count: infinite;*/
+    /*animation-name: stage-move-2;*/
+    /*animation-timing-function: linear;*/
 
-    -webkit-animation-duration: 7500ms;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-name: stage-move-2;
-    -webkit-animation-timing-function: linear;
+    /*-webkit-animation-duration: 7500ms;*/
+    /*-webkit-animation-iteration-count: infinite;*/
+    /*-webkit-animation-name: stage-move-2;*/
+    /*-webkit-animation-timing-function: linear;*/
 
   }
 
@@ -167,16 +167,16 @@ and (orientation : landscape) {
     width:100%;
     height: 350px;
     background: url('../img/megamanstage.jpg') bottom repeat-x;
-    background-size: 100%;
-    animation-duration: 7500ms;
-    animation-iteration-count: infinite;
-    animation-name: stage-move-2;
-    animation-timing-function: linear;
+    background-size: cover;
+    /*animation-duration: 7500ms;*/
+    /*animation-iteration-count: infinite;*/
+    /*animation-name: stage-move-2;*/
+    /*animation-timing-function: linear;*/
 
-    -webkit-animation-duration: 7500ms;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-name: stage-move-2;
-    -webkit-animation-timing-function: linear;
+    /*-webkit-animation-duration: 7500ms;*/
+    /*-webkit-animation-iteration-count: infinite;*/
+    /*-webkit-animation-name: stage-move-2;*/
+    /*-webkit-animation-timing-function: linear;*/
 
   }
 
@@ -231,16 +231,16 @@ and (orientation : portrait) {
     width:100%;
     height: 350px;
     background: url('../img/megamanstage.jpg') bottom repeat-x;
-    background-size: 100%;
-    animation-duration: 7500ms;
-    animation-iteration-count: infinite;
-    animation-name: stage-move-2;
-    animation-timing-function: linear;
+    /*background-size: cover;*/
+    /*animation-duration: 7500ms;*/
+    /*animation-iteration-count: infinite;*/
+    /*animation-name: stage-move-2;*/
+    /*animation-timing-function: linear;*/
 
-    -webkit-animation-duration: 7500ms;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-name: stage-move-2;
-    -webkit-animation-timing-function: linear;
+    /*-webkit-animation-duration: 7500ms;*/
+    /*-webkit-animation-iteration-count: infinite;*/
+    /*-webkit-animation-name: stage-move-2;*/
+    /*-webkit-animation-timing-function: linear;*/
 
   }
 
@@ -290,18 +290,18 @@ and (max-device-width : 1080px){
   .stage-2 {z-index:-15; position: absolute;
     bottom: 0;
     width:100%;
-    height: 350px;
+    height: 100%;
     background: url('../img/megamanstage.jpg') bottom repeat-x;
-    background-size: 100%;
-    animation-duration: 7500ms;
-    animation-iteration-count: infinite;
-    animation-name: stage-move-2;
-    animation-timing-function: linear;
+    /*background-size: cover;*/
+    /*animation-duration: 7500ms;*/
+    /*animation-iteration-count: infinite;*/
+    /*animation-name: stage-move-2;*/
+    /*animation-timing-function: linear;*/
 
-    -webkit-animation-duration: 7500ms;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-name: stage-move-2;
-    -webkit-animation-timing-function: linear;
+    /*-webkit-animation-duration: 7500ms;*/
+    /*-webkit-animation-iteration-count: infinite;*/
+    /*-webkit-animation-name: stage-move-2;*/
+    /*-webkit-animation-timing-function: linear;*/
 
   }
 
@@ -351,18 +351,18 @@ and (max-device-width : 780px){
     bottom: 0;
     width:100%;
     height: 100%;
-    background: url('../img/megamanstage.jpg') bottom repeat-x;
+    background: url('../img/megamanstage.jpg') bottom ;
     background-size: cover;
 
-    animation-duration: 7500ms;
-    animation-iteration-count: infinite;
-    animation-name: stage-move-2;
-    animation-timing-function: linear;
+    /*animation-duration: 7500ms;*/
+    /*animation-iteration-count: infinite;*/
+    /*animation-name: stage-move-2;*/
+    /*animation-timing-function: linear;*/
 
-    -webkit-animation-duration: 7500ms;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-name: stage-move-2;
-    -webkit-animation-timing-function: linear;
+    /*-webkit-animation-duration: 7500ms;*/
+    /*-webkit-animation-iteration-count: infinite;*/
+    /*-webkit-animation-name: stage-move-2;*/
+    /*-webkit-animation-timing-function: linear;*/
 
   }
 }

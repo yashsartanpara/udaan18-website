@@ -8,7 +8,7 @@ Handlebars.registerHelper('urlencode', function (str) {
 
 $(function () {
     $('#nontechEvents').html(events.map(function (event, index) {
-        return '<span class="col-sm-4 col-xs-12 center-xs event-name" data-index="' + index + '">' + event.name + '</span>'
+        return '<div class="col-sm-4 col-xs-12 center-xs"> <span style="padding: 0 10px;"\' +\n'+'\'" class="event-name" data-index="' + index + '">' + event.name + '</span></div>'
     }));
     $('#events').html(events.map(function (event, index) {
         return '<div><span style="padding: 0 10px;"' +
@@ -18,6 +18,7 @@ $(function () {
         openEventModal(this);
         $('html').css("overflow-y","scroll");
         $('body').css("overflow-y","scroll");
+
     });
     $('.head-title').click(function () {
         openHeadsModal();
