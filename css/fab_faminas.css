@@ -1,0 +1,24 @@
+html {
+  font: 1em/24px Arial, "Helvetica Neue", Helvetica, sans-serif;
+  min-height: 100%;
+  overflow: hidden;
+}
+body{
+  overflow: hidden !important;
+
+}
+
+.background-wrapper{
+  background-image: url("../img/Princess-Zelda.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right top;
+  display: flex;
+  position: relative;
+  z-index: -2;
+  top: 90%;
+  height: 100vh !important;
+  background-color: #C84C0C;
+
+}
+
