@@ -1,0 +1,41 @@
+.bomber{
+  position:absolute;
+  bottom:1%;
+  width: 42px; /*293*/
+  height: 61px; /*1358*/
+  background: url('../img/bomberman.png') ;
+  background-position: 0px center !important;
+  animation: play 1s steps(3) infinite,
+  run1 10s linear forwards infinite;
+  z-index: 3;
+}
+
+.bulb{
+  position:absolute;
+  bottom:1%;
+  left: -50px;
+  width: 52px; /*293*/
+  height: 60px; /*1358*/
+  background: url('../img/bulbs.png') ;
+  background-position: 7px center !important;
+  animation: bulbplay 1s steps(6) infinite,
+  bulbrun 10s 0.5s linear forwards infinite;
+  z-index: 2;
+}
+
+@keyframes play {
+  100% { background-position: -126px; }
+}
+
+@keyframes run1 {
+  from {left:0px;}
+  to {left:100%;}
+}
+@keyframes bulbplay {
+  100% { background-position: -313px; }
+}
+
+@keyframes bulbrun {
+  from {left:0px;}
+  to {left:100%;}
+}

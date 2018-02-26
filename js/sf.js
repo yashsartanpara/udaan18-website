@@ -8,17 +8,17 @@ $('html').mouseup(function() {
   $('.kosign').remove();
   $('.ryu img').attr('src','./img/ryu_bounce.gif');
 })
-// $('html').mousedown(function() {
-//   $('.hudo').append(
-//     '<img class="hadouken" src="./img/hadouken.gif">'
-//   );
-// })
-// $('html').mousedown(function() {
-//   $('.hadouken').animate({
-//     "margin-left": "450px"
-//   }, 0900, 'swing', function() {
-//     this.remove();
-//     $('.kosign').append('<img src="http://www.slateman.net/images/gaming/gifs/mvc-ko.gif" />');
-//   })
-//   })
+$('html').mousedown(function() {
+  $('.hudo').append(
+    '<img class="hadouken" src="./img/hadouken.gif">'
+  );
+})
+$('html').mousedown(function() {
+  $('.hadouken').animate({
+    "margin-left": "45px"
+  }, 0900, 'swing', function() {
+    this.remove();
+    $('.kosign').append('<img src="http://www.slateman.net/images/gaming/gifs/mvc-ko.gif" />');
+  })
+  })
 
