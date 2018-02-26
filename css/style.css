@@ -156,25 +156,26 @@ section {
   --console-md-unit: calc(var(--cartridge-md-unit) * 2 * var(--console-zoom-correction));
   --console-sm-unit: calc(var(--cartridge-sm-unit) * 2 * var(--console-zoom-correction));
   --console-xs-unit: calc(var(--cartridge-xs-unit) * 2 * var(--console-zoom-correction));
-  --console-lg-height: 7.5vh;
+  --console-lg-height: 15vh;
 }
 
 .console-top-view {
   display: flex;
   justify-content: center;
   position: absolute;
-  height: var(--console-lg-height);
   width: 100%;
-  background-color: #7164a5;
+  /*background-color: black;*/
 }
 
 .console-top-view--top-half {
   z-index: var(--console-top-view-top-half--z-index);
+  height: calc(var(--console-lg-height)*0.5);
   bottom: calc(var(--console-lg-height) * -1);
 }
 
 .console-top-view--bottom-half {
   z-index: var(--console-top-view-bottom-half--z-index);
+  height: var(--console-lg-height);
   bottom: calc(var(--console-lg-height) * -1 * 2);
 }
 
