@@ -15,44 +15,40 @@ $(document).ready(function () {
 */
 
 function setupInteractionEvents() {
-  //begin: scrolling
-  $('.main').onepage_scroll({
-    animationTime: 600,
-    easing: 'ease-in-out',
-    updateURL: true,
-    loop: false,
-    pagination: false,
-    direction: 'horizontal',
-    beforeMove: function () {
-      clearCartridgeSelection(getActiveSection())
+  var pager = document.querySelector('.pager');
+  var pages = document.querySelectorAll('.page');
+  [].forEach.call(pages, function(page) {
+    page.addEventListener('touchstart', setActivePage);
+    page.addEventListener('click', setActivePage);
+    function setActivePage(event) {
+      window.activePage = event.currentTarget
+      console.log('activePage', window.activePage)
     }
   })
-  $(document).keydown(function (e) {
-    if (e.keyCode == 37) {
-      $('.main').moveUp()
-      return false
-    }
-    if (e.keyCode == 39) {
-      $('.main').moveDown()
-      return false
-    }
-  })
-  //end : scrolling
 
-  //begin: hammer swipe events
-  var hammer = new Hammer.Manager(document.getElementById('swipe-window'))
-  var swipe = new Hammer.Swipe()
-  hammer.add(swipe)
-  hammer.on('swipeleft', function () {
-    $('.main').moveDown()
-  })
-  hammer.on('swiperight', function () {
-    $('.main').moveUp()
-  })
-  //end: hammer swipe events
-  $('.next-page').click(function () {
-    $('.main').moveDown()
-  })
+  var yafpsPager = yafps(pager, {});
+  yafpsPager.setAnimationFunction(function (intent) {
+    TweenLite.to(intent.target, 0.5,
+      Object.assign(intent.toPercent, {onComplete: intent.callback}));
+  });
+  yafpsPager.move('right');
+  yafpsPager.setBeforeMoveFunction(function () {
+    clearCartridgeSelection(getActiveSection())
+  });
+
+  var swipeListener = SwipeListener(pager, {lockAxis: true});
+  pager.addEventListener('swipe', function (e) {
+    var directions = e.detail.directions;
+    if(directions.left) {
+      yafpsPager.animate('right');
+    } else if (directions.right) {
+      yafpsPager.animate('left');
+    } else if (directions.top) {
+      yafpsPager.animate('down');
+    } else if (directions.bottom) {
+      yafpsPager.animate('up');
+    }
+  });
 }
 
 function setupCartridgeEvents() {
@@ -94,6 +90,7 @@ function selectCartridge(mouseEvent) {
   }
   var centerPoint = getAbsoluteCenter(selectedCartridge)
   var section = getActiveSection()
+  console.log('active-section', section)
 
   resetAllCartridges(selectedCartridge)
 
@@ -190,7 +187,7 @@ function clearCartridgeSelection(section) {
 }
 
 function getActiveSection() {
-  return document.querySelector('.section.active') || document
+  return window.activePage || document
 }
 
 /*==========================================

@@ -17,14 +17,16 @@ html, body {
   overflow: hidden;
   user-select: none;
   -webkit-tap-highlight-color: transparent;
+  color: white;
 }
 
 section {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 100%;
-  width: 100%;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
 }
 
 * {

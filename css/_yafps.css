@@ -1,0 +1,15 @@
+.pager {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.pages-container {
+  display: flex;
+  position: absolute;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+}
