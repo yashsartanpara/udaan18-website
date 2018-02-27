@@ -21,7 +21,6 @@ body {
   width: 100%;
 }
 
-
 .cultural-nights {
   font-family: 'start2p', 'sans-serif';
   color: white;
@@ -66,8 +65,8 @@ body {
 
 /*Hide Scrollbar*/
 ::-webkit-scrollbar {
-  width: 0px;  /* remove scrollbar space */
-  background: transparent;  /* optional: just make scrollbar invisible */
+  width: 0px; /* remove scrollbar space */
+  background: transparent; /* optional: just make scrollbar invisible */
 }
 
 /* Modal CSS */
@@ -88,7 +87,8 @@ body {
   margin: 0;
   font-size: 15px;
   line-height: 1.5rem;
-  background: black; !important;
+  background: black;
+!important;
   /*color: #263238;*/
   color: olivedrab;
   font-weight: lighter !important;
@@ -118,7 +118,6 @@ body {
 }
 
 .dark-col {
-
   padding-bottom: 10px !important;
   /*background-color: rgba(255, 255, 255, 0.95);*/
 }
@@ -132,11 +131,6 @@ body {
 }
 
 .chip {
-  /*    font-weight: bold;
-      padding: 10px 0;
-      flex: 1;
-      border: 1px solid rgb(236, 239, 241);
-      background-color: white;*/
   display: inline-block; /* this has been added */
   border-radius: 5px;
   background-color: lightblue;
@@ -152,12 +146,10 @@ body {
 
 .event-managers {
   background: black;
-  /*font-weight: bold;*/
   text-align: center;
 }
 
 .manager-name {
-  /*color: #222;*/
   color: olivedrab;
 }
 

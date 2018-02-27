@@ -1,102 +1,101 @@
 #nontechEvents {
-    background: rgba(0, 0, 0, 0.3) center;
-    position: absolute;
-    height: 100vh;
-    overflow: auto;
-    margin: 0;
-    z-index: 99;
+  background: rgba(0, 0, 0, 0.3) center;
+  position: absolute;
+  height: 100vh;
+  overflow: auto;
+  margin: 0;
+  z-index: 99;
 }
-
 
 .events {
-    position: absolute;
-    width: 60vw;
-    height: 90vh;
+  position: absolute;
+  width: 60vw;
+  height: 90vh;
 }
 
-
 .right-facing {
-    left: 0;
+  left: 0;
 }
 
 .right-facing-font {
-    padding-top: 10vh;
-    left: 0;
-    font-family: 'start2p', sans-serif;
+  padding-top: 10vh;
+  left: 0;
+  font-family: 'start2p', sans-serif;
 }
 
 .nontech-events, .nights {
-    position: absolute;
-    width: 100vw;
-    height: 80vh;
+  position: absolute;
+  width: 100vw;
+  height: 80vh;
 }
 
 .left-facing-font {
-    right: 0;
-    text-align: right;
-    padding-top: 10vh;
-    font-family: 'start2p', sans-serif;
+  right: 0;
+  text-align: right;
+  padding-top: 10vh;
+  font-family: 'start2p', sans-serif;
 }
 
-
 .right-category-name, .left-category-name {
-    position: absolute;
-    bottom: 10px;
-    z-index: 5;
-    height: 10vh;
-    transform-origin: 0 0;
-    color: black;
-    font-family: 'start2p', 'sans-serif';
-    font-size: 2rem;
-    right: 20px;
+  position: absolute;
+  bottom: 10px;
+  z-index: 5;
+  height: 10vh;
+  transform-origin: 0 0;
+  color: black;
+  font-family: 'start2p', 'sans-serif';
+  font-size: 2rem;
+  right: 20px;
 }
 
 .left-category-name {
-    left: 20px;
+  left: 20px;
 }
 
 .left-facing {
-    right: 0;
+  right: 0;
 }
 
 .event-name {
-    line-height: 2.5rem;
-    list-style: none;
-    color: white;
-    font-family: "start2p", sans-serif;
-    font-size: 1.25rem;
-    cursor: pointer;
+  line-height: 2.5rem;
+  list-style: none;
+  color: white;
+  font-family: "start2p", sans-serif;
+  font-size: 1.25rem;
+  cursor: pointer;
 }
 
 .modal-open-animation {
-    animation: zoomIn 0.5s
+  animation: zoomIn 0.5s
 }
 
 .modal-close-animation {
-    animation: zoomOut 0.5s
+  animation: zoomOut 0.5s
 }
 
 /* Media queries */
 
 @media (max-width: 780px) {
-    body{
-        overflow-x: hidden;
-    }
-    .udaan-pop-heads {
-        z-index: -1;
-        position: absolute;
-        height: 100vh;
-        width: auto;
-    }
+  body {
+    overflow-x: hidden;
+  }
 
-    .right-facing {
-        left: -50vh;
-    }
+  .udaan-pop-heads {
+    z-index: -1;
+    position: absolute;
+    height: 100vh;
+    width: auto;
+  }
 
-    .left-facing {
-        right: -100vw;
-    }
-    #nights{
-        display: none;
-    }
+  .right-facing {
+    left: -50vh;
+  }
+
+  .left-facing {
+    right: -100vw;
+  }
+
+  #nights {
+    display: none;
+  }
 }

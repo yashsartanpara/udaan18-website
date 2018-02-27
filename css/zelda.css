@@ -1,15 +1,17 @@
+body {
+  background: #D6DFED url("../img/zelda.jpg") no-repeat fixed center;
+  overflow: hidden;
+}
 
 .zelda{
-  /*display:block;*/
   position:absolute;
-  left:50%;
   bottom:0;
-  width: 75px; /*293*/
-  height: 147px; /*1358*/
+  width: 75px;
+  height: 147px;
   background: url('../img/princess.gif') no-repeat;
   background-position: -8px center !important;
   animation: play 1.5s steps(10) infinite,
-  run1 40s linear forwards infinite;
+  run1 30s linear forwards infinite;
   z-index: 5;
 }
 
@@ -33,6 +35,7 @@
   top: 40%;
   right: 10%;
 }
+
 .fairy {
   width: 300px;
   height: 300px;
@@ -54,6 +57,7 @@
   height: 114px;
   margin: -87px 0 0 -72px;
 }
+
 .wings:before, .wings:after {
   content: "";
   width: 64px;
@@ -68,6 +72,7 @@
   animation: flapping-left 0.2s ease-in-out infinite;
   background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/85486/wing-left.svg") no-repeat;
 }
+
 .wings:after {
   left: auto;
   right: 50%;
@@ -90,6 +95,7 @@
     transform: rotateX(-10deg) rotateY(-20deg);
   }
 }
+
 @keyframes flapping-left {
   0%,
   100% {
@@ -101,6 +107,7 @@
     transform: rotateX(-10deg) rotateY(-20deg);
   }
 }
+
 @-webkit-keyframes flapping-right {
   0%,
   100% {
@@ -112,6 +119,7 @@
     transform: rotateX(-10deg) rotateY(20deg);
   }
 }
+
 @keyframes flapping-right {
   0%,
   100% {
@@ -123,6 +131,7 @@
     transform: rotateX(-10deg) rotateY(20deg);
   }
 }
+
 @-webkit-keyframes flying {
   0% {
     -webkit-transform: rotate(50deg) translateX(0px) rotate(-50deg) scale(0.85);
@@ -137,6 +146,7 @@
     transform: rotate(360deg) translateX(0px) rotate(-360deg) scale(0.85);
   }
 }
+
 @keyframes flying {
   0% {
     -webkit-transform: rotate(50deg) translateX(0px) rotate(-50deg) scale(0.85);
@@ -150,9 +160,6 @@
     -webkit-transform: rotate(360deg) translateX(0px) rotate(-360deg) scale(0.85);
     transform: rotate(360deg) translateX(0px) rotate(-360deg) scale(0.85);
   }
-}
-body {
-  background: #1E2328;
 }
 
 .fairy {
@@ -189,6 +196,7 @@ body {
   height: 114px;
   margin: -87px 0 0 -72px;
 }
+
 .wings:before, .wings:after {
   content: "";
   width: 64px;
@@ -203,6 +211,7 @@ body {
   animation: flapping-left 0.2s ease-in-out infinite;
   background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/85486/wing-left.svg") no-repeat;
 }
+
 .wings:after {
   left: auto;
   right: 50%;

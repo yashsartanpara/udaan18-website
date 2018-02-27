@@ -1,31 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <title>Diagon Alley</title>
-    <link rel="stylesheet" href="css/flexboxgrid.min.css">
-    <link rel="stylesheet" href="css/global.css">
-    <link rel="stylesheet" href="css/tech.css">
-    <link rel="stylesheet" href="css/duckhunt.css">
-    <script src="js/vendor/handlebars.runtime.min.js"></script>
-    <script src="js/vendor/jquery-3.1.1.min.js"></script>
-    <script src="js/templates/event.min.js"></script>
-    <script src="js/templates/heads.min.js"></script>
-    <script src="data.js"></script>
-    <script>
-        var rezonizers = data.tech.find(function (department) {
-            return department.alias == 'Rezonizers';
-        });
-        var events = rezonizers.events;
-        var heads = {'heads': rezonizers.heads, 'coHeads': rezonizers.coHeads};
-    </script>
-    <style>
-        body {
-            background-color: #303a2e;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Diagon Alley</title>
+  <link rel="stylesheet" href="css/flexboxgrid.min.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/tech.css">
+  <link rel="stylesheet" href="css/duckhunt.css">
+  <script src="js/vendor/handlebars.runtime.min.js"></script>
+  <script src="js/vendor/jquery-3.1.1.min.js"></script>
+  <script src="js/templates/event.min.js"></script>
+  <script src="js/templates/heads.min.js"></script>
+  <script src="data.js"></script>
+  <script>
+    var rezonizers = data.tech.find(function (department) {
+      return department.alias == 'Rezonizers';
+    });
+    var events = rezonizers.events;
+    var heads = {'heads': rezonizers.heads, 'coHeads': rezonizers.coHeads};
+  </script>
 </head>
 <body>
 
@@ -33,56 +28,55 @@
   <div id="dogIntro"></div>
 
 
+  <input type="checkbox" id="d1"/>
+  <input type="checkbox" id="bc1-1"/>
+  <input type="checkbox" id="bc1-2"/>
+  <input type="checkbox" id="bc1-3"/>
 
-  <input type="checkbox" id="d1" />
-  <input type="checkbox" id="bc1-1" />
-  <input type="checkbox" id="bc1-2" />
-  <input type="checkbox" id="bc1-3" />
+  <input type="checkbox" id="d2"/>
+  <input type="checkbox" id="bc2-1"/>
+  <input type="checkbox" id="bc2-2"/>
+  <input type="checkbox" id="bc2-3"/>
 
-  <input type="checkbox" id="d2" />
-  <input type="checkbox" id="bc2-1" />
-  <input type="checkbox" id="bc2-2" />
-  <input type="checkbox" id="bc2-3" />
+  <input type="checkbox" id="d3"/>
+  <input type="checkbox" id="bc3-1"/>
+  <input type="checkbox" id="bc3-2"/>
+  <input type="checkbox" id="bc3-3"/>
 
-  <input type="checkbox" id="d3" />
-  <input type="checkbox" id="bc3-1" />
-  <input type="checkbox" id="bc3-2" />
-  <input type="checkbox" id="bc3-3" />
+  <input type="checkbox" id="d4"/>
+  <input type="checkbox" id="bc4-1"/>
+  <input type="checkbox" id="bc4-2"/>
+  <input type="checkbox" id="bc4-3"/>
 
-  <input type="checkbox" id="d4" />
-  <input type="checkbox" id="bc4-1" />
-  <input type="checkbox" id="bc4-2" />
-  <input type="checkbox" id="bc4-3" />
+  <input type="checkbox" id="d5"/>
+  <input type="checkbox" id="bc5-1"/>
+  <input type="checkbox" id="bc5-2"/>
+  <input type="checkbox" id="bc5-3"/>
 
-  <input type="checkbox" id="d5" />
-  <input type="checkbox" id="bc5-1" />
-  <input type="checkbox" id="bc5-2" />
-  <input type="checkbox" id="bc5-3" />
+  <input type="checkbox" id="d6"/>
+  <input type="checkbox" id="bc6-1"/>
+  <input type="checkbox" id="bc6-2"/>
+  <input type="checkbox" id="bc6-3"/>
 
-  <input type="checkbox" id="d6" />
-  <input type="checkbox" id="bc6-1" />
-  <input type="checkbox" id="bc6-2" />
-  <input type="checkbox" id="bc6-3" />
+  <input type="checkbox" id="d7"/>
+  <input type="checkbox" id="bc7-1"/>
+  <input type="checkbox" id="bc7-2"/>
+  <input type="checkbox" id="bc7-3"/>
 
-  <input type="checkbox" id="d7" />
-  <input type="checkbox" id="bc7-1" />
-  <input type="checkbox" id="bc7-2" />
-  <input type="checkbox" id="bc7-3" />
+  <input type="checkbox" id="d8"/>
+  <input type="checkbox" id="bc8-1"/>
+  <input type="checkbox" id="bc8-2"/>
+  <input type="checkbox" id="bc8-3"/>
 
-  <input type="checkbox" id="d8" />
-  <input type="checkbox" id="bc8-1" />
-  <input type="checkbox" id="bc8-2" />
-  <input type="checkbox" id="bc8-3" />
+  <input type="checkbox" id="d9"/>
+  <input type="checkbox" id="bc9-1"/>
+  <input type="checkbox" id="bc9-2"/>
+  <input type="checkbox" id="bc9-3"/>
 
-  <input type="checkbox" id="d9" />
-  <input type="checkbox" id="bc9-1" />
-  <input type="checkbox" id="bc9-2" />
-  <input type="checkbox" id="bc9-3" />
-
-  <input type="checkbox" id="d10" />
-  <input type="checkbox" id="bc10-1" />
-  <input type="checkbox" id="bc10-2" />
-  <input type="checkbox" id="bc10-3" />
+  <input type="checkbox" id="d10"/>
+  <input type="checkbox" id="bc10-1"/>
+  <input type="checkbox" id="bc10-2"/>
+  <input type="checkbox" id="bc10-3"/>
 
   <div id="dogLaugh">
     <div><span></span><span></span></div>
@@ -227,8 +221,8 @@
 
 
 <div class="events center-font">
-    <div id="events"></div>
-    <div><span class="head-title">Heads</span></div>
+  <div id="events"></div>
+  <div><span class="head-title">Heads</span></div>
 </div>
 <div class="dept-name">Diagon Alley</div>
 <div id="event-modal"></div>

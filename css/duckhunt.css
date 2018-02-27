@@ -1,21 +1,29 @@
 @keyframes dogMove {
   from {left:0px;}
-  to {left:99%;}
+  to {
+    left: 105%;
+  }
 }
 
 @-moz-keyframes dogMove {
   from {left:0px;}
-  to {left:99%;}
+  to {
+    left: 100%;
+  }
 }
 
 @-webkit-keyframes dogMove {
   from {left:0px;}
-  to {left:99%;}
+  to {
+    left: 100%;
+  }
 }
 
 @-o-keyframes dogMove {
   from {left:0px;}
-  to {left:99%;}
+  to {
+    left: 105%;
+  }
 }
 
 @keyframes dogWalk {
@@ -53,6 +61,12 @@
   93% { background-position:-360px 0px; }
   96% { background-position:0px 0px; }
   99% { background-position:-120px 0px; }
+  102% {
+    background-position: -240px 0px;
+  }
+  105% {
+    background-position: -360px 0px;
+  }
 }
 
 @-moz-keyframes dogWalk {
@@ -370,7 +384,6 @@
   100% { top:560px; }
 }
 
-
 #stage {
   display: block;
   position: absolute;
@@ -474,7 +487,6 @@
 }
 
 /*The timers*/
-
 /*Intro dog*/
 #dogIntro {
   animation: dogMove 7s linear forwards, dogWalk 6s step-start 1 forwards ;
@@ -484,11 +496,8 @@
 }
 
 #dogLaugh > div:nth-child(1) {
-  /*The lvlEnd - 4 seconds*/
-
   animation: dogShow 8s 8s;
   -moz-animation: dogShow 8s 8s;
   -webkit-animation: dogShow 8s 8s;
   -o-animation: dogShow 8s 8s;
 }
-

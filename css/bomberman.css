@@ -1,8 +1,8 @@
 .bomber{
   position:absolute;
   bottom:1%;
-  width: 42px; /*293*/
-  height: 61px; /*1358*/
+  width: 42px;
+  height: 61px;
   background: url('../img/bomberman.png') ;
   background-position: 0px center !important;
   animation: play 1s steps(3) infinite,
@@ -14,8 +14,8 @@
   position:absolute;
   bottom:1%;
   left: -50px;
-  width: 52px; /*293*/
-  height: 60px; /*1358*/
+  width: 52px;
+  height: 60px;
   background: url('../img/bulbs.png') ;
   background-position: 7px center !important;
   animation: bulbplay 1s steps(6) infinite,

@@ -1,18 +1,19 @@
-.ai-bg{
-  position:absolute;
-  bottom:0;
+.ai-bg {
+  position: absolute;
+  bottom: 0;
   height: 100%;
   width: 100%;
   background: url('../img/ai.jpg') no-repeat bottom;
   background-size: cover;
   z-index: 5;
 }
-.ai{
-  position:absolute;
-  bottom:1%;
-  width: 62px; /*293*/
-  height: 72px; /*1358*/
-  background: url('../img/aisprite.gif') ;
+
+.ai {
+  position: absolute;
+  bottom: 1%;
+  width: 62px;
+  height: 72px;
+  background: url('../img/aisprite.gif');
   background-position: 0px center !important;
   animation: play 1.5s steps(5) infinite,
   run1 10s linear forwards infinite;
@@ -20,12 +21,18 @@
 }
 
 @keyframes play {
-  100% { background-position: -308px; }
+  100% {
+    background-position: -308px;
+  }
 }
 
 @keyframes run1 {
-  from {left:0px;}
-  to {left:100%;}
+  from {
+    left: 0px;
+  }
+  to {
+    left: 100%;
+  }
 }
 
 

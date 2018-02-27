@@ -1,37 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <title>Pandora Box</title>
-    <link rel="stylesheet" href="css/flexboxgrid.min.css">
-    <link rel="stylesheet" href="css/global.css">
-    <link rel="stylesheet" href="css/tech.css">
-    <script src="js/vendor/handlebars.runtime.min.js"></script>
-    <script src="js/vendor/jquery-3.1.1.min.js"></script>
-    <script src="js/templates/event.min.js"></script>
-    <script src="js/templates/heads.min.js"></script>
-    <script src="data.js"></script>
-    <script>
-        var machinists = data.tech.find(function (department) {
-            return department.alias == 'Machinists';
-        });
-        var events = machinists.events;
-        var heads = {'heads': machinists.heads, 'coHeads': machinists.coHeads};
-    </script>
-    <style>
-        body {
-            background-color: #1b242d;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Mad House</title>
+  <link rel="stylesheet" href="css/flexboxgrid.min.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/tech.css">
+  <script src="js/vendor/handlebars.runtime.min.js"></script>
+  <script src="js/vendor/jquery-3.1.1.min.js"></script>
+  <script src="js/templates/event.min.js"></script>
+  <script src="js/templates/heads.min.js"></script>
+  <script src="data.js"></script>
+  <script>
+    var machinists = data.tech.find(function (department) {
+      return department.alias == 'Machinists';
+    });
+    var events = machinists.events;
+    var heads = {'heads': machinists.heads, 'coHeads': machinists.coHeads};
+  </script>
 </head>
 <body>
 <div class="events center-font">
-    <div id="events"></div>
-    <div class="head-title">Heads</div>
+  <div id="events"></div>
+  <div class="head-title">Heads</div>
 </div>
-<div class="left-dept-name">Pandora Box</div>
+<div class="left-dept-name">Mad House</div>
 <div id="event-modal"></div>
 <div id="heads-modal"></div>
 <script src="js/events.js"></script>

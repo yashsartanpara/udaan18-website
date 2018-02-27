@@ -1,11 +1,5 @@
-/*
-		** The images used were downloaded from: http://www.videogamesprites.net/SuperMarioBros1/ **
-*/
-
-
-
-html,body{
-  font-family: 'Press Start 2P', cursive;
+html, body {
+  background-color: #548CFF;
   height: 100%;
   width: 100%;
   overflow: hidden;
@@ -13,67 +7,60 @@ html,body{
   padding: 0;
 }
 
-/*.sky, .ground{*/
-/*position: absolute; !*Because we want to position items on and in them!*!*/
-/*}*/
-
-.sky{
-  display: flex;
-  position: relative;
-  z-index: -1;
-  height: 90vh !important;
-  /*background-color: #548CFF;*/
-}
 .ground {
   display: flex;
   position: relative;
-  z-index: -2;
+  z-index: 2;
   top: 90%;
   height: 10vh !important;
   background-color: #C84C0C;
   background-image: url('../img/groundblock.png') !important;
-
 }
-.cloud{
+
+.cloud {
   z-index: 1;
   position: absolute;
   height: 100px;
 
 }
-.cloud:nth-child(2){
+
+.cloud:nth-child(2) {
   top: 300px;
   -webkit-animation: wind 60s both infinite linear reverse;
   animation: wind 60s both infinite linear reverse;
 }
-.cloud:nth-child(3){
+
+.cloud:nth-child(3) {
   top: 280px;
   -webkit-animation: wind 50s both infinite linear reverse;
   animation: wind 50s both infinite linear reverse;
 }
 
-
-.bush{
+.bush {
   position: absolute;
-  top:-70px;
+  top: -70px;
 }
-.bush:nth-child(1){
+
+.bush:nth-child(1) {
   left: 10%;
 }
-.bush:nth-child(2){
+
+.bush:nth-child(2) {
   left: 50%;
 }
-.bush:nth-child(3){
+
+.bush:nth-child(3) {
   left: 90%;
 }
 
-.mario{
+.mario {
   z-index: 1;
   position: absolute;
   width: 71px;
   height: 72px;
   background: url('../img/mariosprite.png') left center;
-  top:-70px;
-  left:0px;
+  top: -70px;
+  left: 0px;
 
   -webkit-animation: play 0.8s steps(4) infinite,
   run 7s both infinite linear;
@@ -81,40 +68,70 @@ html,body{
   animation: play 0.8s steps(4) infinite,
   run 7s both infinite linear;
 }
-@-webkit-keyframes play{
-  100%{background-position: -284px;}
-}
-@keyframes play{
-  100%{background-position: -284px;}
-}
-@-webkit-keyframes run{
-  from{left: -200px;}
-  to{left: 100%;}
-}
-@keyframes run{
-  from{left: -200px;}
-  to{left: 100%;}
-}
-@-webkit-keyframes wind{
-  from{left: -300px;}
-  to{left: 100%;}
-}
-@keyframes wind{
-  from{left: -300px;}
-  to{left: 100%;}
-}
-@media (max-width: 780px) {
-  .bush{
-    position: absolute;
-    top:-70px;
+
+@-webkit-keyframes play {
+  100% {
+    background-position: -284px;
   }
-  .bush:nth-child(1){
+}
+
+@keyframes play {
+  100% {
+    background-position: -284px;
+  }
+}
+
+@-webkit-keyframes run {
+  from {
+    left: -200px;
+  }
+  to {
+    left: 100%;
+  }
+}
+
+@keyframes run {
+  from {
+    left: -200px;
+  }
+  to {
+    left: 100%;
+  }
+}
+
+@-webkit-keyframes wind {
+  from {
+    left: -300px;
+  }
+  to {
+    left: 100%;
+  }
+}
+
+@keyframes wind {
+  from {
+    left: -300px;
+  }
+  to {
+    left: 100%;
+  }
+}
+
+@media (max-width: 780px) {
+  .bush {
+    position: absolute;
+    top: -70px;
+  }
+
+  .bush:nth-child(1) {
     left: 1%;
   }
-  .bush:nth-child(2){
+
+  .bush:nth-child(2) {
     left: 80%;
   }
-  .bush:nth-child(3){
+
+  .bush:nth-child(3) {
     left: 100%;
   }
 }

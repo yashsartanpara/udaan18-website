@@ -1,5 +1,5 @@
 body {
-  /*overflow: hidden;*/
+  overflow: hidden;
 }
 
 @font-face {
@@ -57,14 +57,6 @@ body {
   font-family: 'start2p', sans-serif;
 }
 
-/*.right-facing-font {*/
-/*padding-top: 10vh;*/
-/*!*left: 0;*!*/
-/*text-align: center;*/
-/*width: 100vw;*/
-/*font-family: 'start2p', sans-serif;*/
-/*}*/
-
 .event-name {
   line-height: 2.5rem;
   list-style: none;
@@ -82,7 +74,6 @@ body {
 .modal-close-animation {
   animation: zoomOut 0.5s
 }
-
 
 /*begin : heads modal*/
 
@@ -134,7 +125,6 @@ body {
   #event {
     height: 85vh;
   }
-
 
   .right-facing {
     left: -40vh;

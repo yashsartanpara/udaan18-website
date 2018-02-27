@@ -1,35 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <title>Infra Maniacs</title>
-    <link rel="stylesheet" href="css/flexboxgrid.min.css">
-    <link rel="stylesheet" href="css/global.css">
-    <link rel="stylesheet" href="css/tech.css">
-    <link rel="stylesheet" href="css/pacman.css">
-    <script src="js/vendor/handlebars.runtime.min.js"></script>
-    <script src="js/vendor/jquery-3.1.1.min.js"></script>
-    <script src="js/templates/event.min.js"></script>
-    <script src="js/templates/heads.min.js"></script>
-    <script src="data.js"></script>
-    <script>
-        var skyScrapers = data.tech.find(function (department) {
-            return department.alias == 'SkyScrapers';
-        });
-        var events = skyScrapers.events;
-        var heads = {'heads': skyScrapers.heads, 'coHeads': skyScrapers.coHeads};
-    </script>
-    <style>
-        body {
-            background-color: black;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Infra Maniacs</title>
+  <link rel="stylesheet" href="css/flexboxgrid.min.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/tech.css">
+  <link rel="stylesheet" href="css/pacman.css">
+  <script src="js/vendor/handlebars.runtime.min.js"></script>
+  <script src="js/vendor/jquery-3.1.1.min.js"></script>
+  <script src="js/templates/event.min.js"></script>
+  <script src="js/templates/heads.min.js"></script>
+  <script src="data.js"></script>
+  <script>
+    var skyScrapers = data.tech.find(function (department) {
+      return department.alias == 'SkyScrapers';
+    });
+    var events = skyScrapers.events;
+    var heads = {'heads': skyScrapers.heads, 'coHeads': skyScrapers.coHeads};
+  </script>
 </head>
 <body>
 <div class="events center-font">
-    <div id="events"></div>
+  <div id="events"></div>
   <div><span class="head-title">Heads</span></div>
 </div>
 <div class="dept-name">INFRA-MANIACS</div>

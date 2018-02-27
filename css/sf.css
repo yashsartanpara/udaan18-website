@@ -4,26 +4,30 @@
   z-index: 5;
   left: 35%;
 }
+
 .ryu {
   position: absolute;
   bottom: 10%;
-  left:25%;
+  left: 25%;
   z-index: 5;
 }
+
 .guile {
   position: absolute;
   bottom: 10%;
   left: 70%;
   z-index: 5;
-  transform: scale(-1,1);
+  transform: scale(-1, 1);
 }
+
 .kosign {
   position: absolute;
   bottom: 40%;
   left: 50%;
   z-index: 5;
 }
-.street{
+
+.street {
   position: absolute;
   bottom: 0;
   width: 100%;

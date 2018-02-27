@@ -1,23 +1,20 @@
-.stage-2 {z-index:-15; position: absolute;
+.stage-2 {
+  z-index: -15;
+  position: absolute;
   bottom: 0;
-  width:100%;
+  width: 100%;
   height: 100%;
   background: url('../img/megamanstage.jpg') bottom repeat-x;
   background-size: cover;
-  /*animation-duration: 7500ms;*/
-  /*animation-iteration-count: infinite;*/
-  /*animation-name: stage-move-2;*/
-  /*animation-timing-function: linear;*/
-
-  /*-webkit-animation-duration: 7500ms;*/
-  /*-webkit-animation-iteration-count: infinite;*/
-  /*-webkit-animation-name: stage-move-2;*/
-  /*-webkit-animation-timing-function: linear;*/
-
 }
 
-.stage-floor {z-index:-1; position:absolute;
-  bottom:0px; width:100%; height:331px; background: url('../img/megamanroad.jpg') bottom repeat-x;
+.stage-floor {
+  z-index: -1;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  height: 331px;
+  background: url('../img/megamanroad.jpg') bottom repeat-x;
 
   animation-duration: 5000ms;
   animation-iteration-count: infinite;
@@ -28,15 +25,13 @@
   -webkit-animation-iteration-count: infinite;
   -webkit-animation-name: stage-move;
   -webkit-animation-timing-function: linear;
-
 }
 
-
 .megaman {
-  z-index:5;
+  z-index: 5;
   position: absolute;
   bottom: 10%;
-  left:25%;
+  left: 25%;
   width: 90px;
   height: 88px;
   background: url('../img/megaman.png') 0 0;
@@ -50,319 +45,81 @@
   -webkit-animation-iteration-count: infinite;
   -webkit-animation-timing-function: step-start;
   -webkit-animation-name: run;
-
 }
+
 @-webkit-keyframes run {
 
-  0%			{ background-position:0px 0; }
-  10%		{ background-position:98px 0; }
-  20%		{ background-position:196px 0; }
-  30%		{ background-position:293px 0; }
-  40%		{ background-position:390px 0; }
-  50%		{ background-position:488px 0; }
-  60%		{ background-position:584px 0; }
-  70%		{ background-position:861px 0; }
-  80%		{ background-position:778px 0; }
-  90%		{ background-position:876px 0; }
-  100%		{ background-position: 0px 0; }
+  0% {
+    background-position: 0px 0;
+  }
+  10% {
+    background-position: 98px 0;
+  }
+  20% {
+    background-position: 196px 0;
+  }
+  30% {
+    background-position: 293px 0;
+  }
+  40% {
+    background-position: 390px 0;
+  }
+  50% {
+    background-position: 488px 0;
+  }
+  60% {
+    background-position: 584px 0;
+  }
+  70% {
+    background-position: 861px 0;
+  }
+  80% {
+    background-position: 778px 0;
+  }
+  90% {
+    background-position: 876px 0;
+  }
+  100% {
+    background-position: 0px 0;
+  }
 }
 
 @-webkit-keyframes stage-move {
 
-  0%		    { background-position:1596px 0; }
-  100%			{ background-position:0px 0; }
-
+  0% {
+    background-position: 1596px 0;
+  }
+  100% {
+    background-position: 0px 0;
+  }
 }
 
 @-webkit-keyframes stage-move-2 {
 
-  0%		    { background-position:368px 0; }
-  100%			{ background-position:0px 0; }
-
+  0% {
+    background-position: 368px 0;
+  }
+  100% {
+    background-position: 0px 0;
+  }
 }
 
 @-webkit-keyframes floor-move {
 
-  0%		    { background-position:1596px 0; }
-  100%			{ background-position:0px 0; }
-
-}
-
-@-webkit-keyframes fade-logo { from { opacity:1; } to { opacity:0; } }
-
-
-
-/* iPads (portrait and landscape) ----------- */
-@media only screen
-and (min-device-width : 768px)
-and (max-device-width : 1024px) {
-  /* Styles */
-
-  .stage-2 {z-index:-15; position: absolute;
-    bottom: 0;
-    width:100%;
-    height: 350px;
-    background: url('../img/megamanstage.jpg') bottom repeat-x;
-    background-size: cover;
-    /*animation-duration: 7500ms;*/
-    /*animation-iteration-count: infinite;*/
-    /*animation-name: stage-move-2;*/
-    /*animation-timing-function: linear;*/
-
-    /*-webkit-animation-duration: 7500ms;*/
-    /*-webkit-animation-iteration-count: infinite;*/
-    /*-webkit-animation-name: stage-move-2;*/
-    /*-webkit-animation-timing-function: linear;*/
-
+  0% {
+    background-position: 1596px 0;
   }
-
-  .stage-floor {z-index:-1; position:absolute;
-    bottom:0px; width:100%; height:331px; background: url('../img/megamanroad.jpg') bottom repeat-x;
-
-    animation-duration: 5000ms;
-    animation-iteration-count: infinite;
-    animation-name: floor-move;
-    animation-timing-function: linear;
-
-    -webkit-animation-duration: 5000ms;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-name: stage-move;
-    -webkit-animation-timing-function: linear;
-
-  }
-
-
-  .megaman {
-    z-index:5;
-    position: absolute;
-    bottom: 8%;
-    left:25%;
-    width: 90px;
-    height: 88px;
-    background: url('../img/megaman.png') 0 0;
-
-    animation-duration: 700ms;
-    animation-iteration-count: infinite;
-    animation-timing-function: step-start;
-    animation-name: run;
-
-    -webkit-animation-duration: 700ms;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-timing-function: step-start;
-    -webkit-animation-name: run;
-
-  }
-
-}
-
-/* iPads (landscape) ----------- */
-@media only screen
-and (min-device-width : 768px)
-and (max-device-width : 1024px)
-and (orientation : landscape) {
-  /* Styles */
-
-  .stage-2 {z-index:-15; position: absolute;
-    bottom: 0;
-    width:100%;
-    height: 350px;
-    background: url('../img/megamanstage.jpg') bottom repeat-x;
-    background-size: cover;
-    /*animation-duration: 7500ms;*/
-    /*animation-iteration-count: infinite;*/
-    /*animation-name: stage-move-2;*/
-    /*animation-timing-function: linear;*/
-
-    /*-webkit-animation-duration: 7500ms;*/
-    /*-webkit-animation-iteration-count: infinite;*/
-    /*-webkit-animation-name: stage-move-2;*/
-    /*-webkit-animation-timing-function: linear;*/
-
-  }
-
-  .stage-floor {z-index:-1; position:absolute;
-    bottom:0px; width:100%; height:331px; background: url('../img/megamanroad.jpg') bottom repeat-x;
-
-    animation-duration: 5000ms;
-    animation-iteration-count: infinite;
-    animation-name: floor-move;
-    animation-timing-function: linear;
-
-    -webkit-animation-duration: 5000ms;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-name: stage-move;
-    -webkit-animation-timing-function: linear;
-
-  }
-
-
-  .megaman {
-    z-index:5;
-    position: absolute;
-    bottom: 8%;
-    left:25%;
-    width: 90px;
-    height: 88px;
-    background: url('../img/megaman.png') 0 0;
-
-    animation-duration: 700ms;
-    animation-iteration-count: infinite;
-    animation-timing-function: step-start;
-    animation-name: run;
-
-    -webkit-animation-duration: 700ms;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-timing-function: step-start;
-    -webkit-animation-name: run;
-
-  }
-
-}
-
-/* iPads (portrait) ----------- */
-@media only screen
-and (min-device-width : 768px)
-and (max-device-width : 1024px)
-and (orientation : portrait) {
-  /* Styles */
-
-  .stage-2 {z-index:-15; position: absolute;
-    bottom: 0;
-    width:100%;
-    height: 350px;
-    background: url('../img/megamanstage.jpg') bottom repeat-x;
-    /*background-size: cover;*/
-    /*animation-duration: 7500ms;*/
-    /*animation-iteration-count: infinite;*/
-    /*animation-name: stage-move-2;*/
-    /*animation-timing-function: linear;*/
-
-    /*-webkit-animation-duration: 7500ms;*/
-    /*-webkit-animation-iteration-count: infinite;*/
-    /*-webkit-animation-name: stage-move-2;*/
-    /*-webkit-animation-timing-function: linear;*/
-
-  }
-
-  .stage-floor {z-index:-1; position:absolute;
-    bottom:0px; width:100%; height:331px; background: url('../img/megamanroad.jpg') bottom repeat-x;
-
-    animation-duration: 5000ms;
-    animation-iteration-count: infinite;
-    animation-name: floor-move;
-    animation-timing-function: linear;
-
-    -webkit-animation-duration: 5000ms;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-name: stage-move;
-    -webkit-animation-timing-function: linear;
-
-  }
-
-
-  .megaman {
-    z-index:5;
-    position: absolute;
-    bottom: 8%;
-    left:25%;
-    width: 90px;
-    height: 88px;
-    background: url('../img/megaman.png') 0 0;
-
-    animation-duration: 700ms;
-    animation-iteration-count: infinite;
-    animation-timing-function: step-start;
-    animation-name: run;
-
-    -webkit-animation-duration: 700ms;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-timing-function: step-start;
-    -webkit-animation-name: run;
-
-  }
-
-}
-@media only screen
-and (min-device-width : 1024px)
-and (max-device-width : 1080px){
-  /* Styles */
-
-  .stage-2 {z-index:-15; position: absolute;
-    bottom: 0;
-    width:100%;
-    height: 100%;
-    background: url('../img/megamanstage.jpg') bottom repeat-x;
-    /*background-size: cover;*/
-    /*animation-duration: 7500ms;*/
-    /*animation-iteration-count: infinite;*/
-    /*animation-name: stage-move-2;*/
-    /*animation-timing-function: linear;*/
-
-    /*-webkit-animation-duration: 7500ms;*/
-    /*-webkit-animation-iteration-count: infinite;*/
-    /*-webkit-animation-name: stage-move-2;*/
-    /*-webkit-animation-timing-function: linear;*/
-
-  }
-
-  .stage-floor {z-index:-1; position:absolute;
-    bottom:0px; width:100%; height:331px; background: url('../img/megamanroad.jpg') bottom repeat-x;
-
-    animation-duration: 5000ms;
-    animation-iteration-count: infinite;
-    animation-name: floor-move;
-    animation-timing-function: linear;
-
-    -webkit-animation-duration: 5000ms;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-name: stage-move;
-    -webkit-animation-timing-function: linear;
-
-  }
-
-
-  .megaman {
-    z-index:5;
-    position: absolute;
-    bottom: 5%;
-    left:25%;
-    width: 90px;
-    height: 88px;
-    background: url('../img/megaman.png') 0 0;
-
-    animation-duration: 700ms;
-    animation-iteration-count: infinite;
-    animation-timing-function: step-start;
-    animation-name: run;
-
-    -webkit-animation-duration: 700ms;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-timing-function: step-start;
-    -webkit-animation-name: run;
-
-  }
-
-}
-@media only screen
-and (max-device-width : 780px){
-
-
-  .stage-2 {z-index:-15; position: absolute;
-    bottom: 0;
-    width:100%;
-    height: 100%;
-    background: url('../img/megamanstage.jpg') bottom ;
-    background-size: cover;
-
-    /*animation-duration: 7500ms;*/
-    /*animation-iteration-count: infinite;*/
-    /*animation-name: stage-move-2;*/
-    /*animation-timing-function: linear;*/
-
-    /*-webkit-animation-duration: 7500ms;*/
-    /*-webkit-animation-iteration-count: infinite;*/
-    /*-webkit-animation-name: stage-move-2;*/
-    /*-webkit-animation-timing-function: linear;*/
-
+  100% {
+    background-position: 0px 0;
   }
 }
+
+@-webkit-keyframes fade-logo {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
