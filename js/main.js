@@ -5,9 +5,16 @@
 
 window.onload = function () {
   console.info('[main.js] : Ready');
+  // introStart();
   introComplete();
-  return; // This is intentional. (the intro animation is not complete).
+};
 
+/*========================================================================================
+*   Setup events
+*=========================================================================================
+*/
+
+function introStart() {
   var arcadeSVG = placeSvgIntoDocument('#arcadeSVG');
   console.log(arcadeSVG);
   var arcadeScreenPlaceholder = arcadeSVG.querySelector('#arcadeScreenPlaceholder');
@@ -27,16 +34,9 @@ window.onload = function () {
   coinZoomTimeline.from(coin, 1, { top: '-=5%', ease: Power0.easeNone, scale: 1.1});
   coinFlashTimeline.from(coin, 1, { backgroundColor: 'rgba(255, 249, 15, 0.1)', ease: Power0.easeNone});
   coin.addEventListener('click', function () {
-
   });
-
   console.log(arcadeScreen);
-};
-
-/*========================================================================================
-*   Setup events
-*=========================================================================================
-*/
+}
 
 function introComplete() {
   setupCartridgeEvents();
@@ -59,7 +59,7 @@ function setupInteractionEvents() {
     }
   });
 
-  var swipeListener = SwipeListener(pager, {lockAxis: true});
+  SwipeListener(pager, {lockAxis: true});
   pager.addEventListener('swipe', function (e) {
     var directions = e.detail.directions;
     if (directions.left) {
@@ -190,7 +190,7 @@ function blackout(section) {
     opacity: 0.4
   });
 
-  blackout.addEventListener('click', function onBlackout(mouseEvent) {
+  blackout.addEventListener('click', function onBlackout() {
     clearCartridgeSelection(section);
     blackout.removeEventListener('click', onBlackout);
   });
@@ -248,13 +248,6 @@ function changeConsoleState(state, section) {
   }
 }
 
-function getConsoleState() {
-  var section = getActiveSection();
-  var consoleTopViewTopHalf = section.querySelector(
-    '.console-top-view--top-half');
-  return consoleTopViewTopHalf.getAttribute('data-state');
-}
-
 function setConsoleState(state) {
   var section = getActiveSection();
   var consoleTopViewTopHalf = section.querySelector(
@@ -273,32 +266,7 @@ function setConsoleState(state) {
 */
 
 // TODO: Complete back button handle for mobile devices
-function backButton() {
-  if (typeof history.pushState === 'function') {
-    history.pushState('jibberish', null, null);
-    window.onpopstate = function () {
-      history.pushState('newjibberish', null, null);
-      // Handle the back (or forward) buttons here
-      // Will NOT handle refresh, use onbeforeunload for this.
-    };
-  }
-  else {
-    var ignoreHashChange = true;
-    window.onhashchange = function () {
-      if (!ignoreHashChange) {
-        ignoreHashChange = true;
-        window.location.hash = Math.random();
-        // Detect and redirect change here
-        // Works in older FF and IE9
-        // * it does mess with your hash symbol (anchor?) pound sign
-        // delimiter on the end of the URL
-      }
-      else {
-        ignoreHashChange = false;
-      }
-    };
-  }
-}
+// function backButton() {}
 
 function displayMessage(message) {
   var userMessageBar = document.querySelector('#user-message-bar');
