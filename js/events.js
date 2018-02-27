@@ -8,14 +8,17 @@ Handlebars.registerHelper('urlencode', function (str) {
 
 $(function () {
     $('#nontechEvents').html(events.map(function (event, index) {
-        return '<div class="col-sm-4 col-xs-12 center-xs event-name" data-index="' + index + '">' + event.name + '</div>'
+        return '<div class="col-sm-4 col-xs-12 center-xs"> <span style="padding: 0 10px;"\' +\n'+'\'" class="event-name" data-index="' + index + '">' + event.name + '</span></div>'
     }));
     $('#events').html(events.map(function (event, index) {
-        return '<li style="padding: 0 10px;"' +
-            '" class="event-name" data-index="' + index + '">' + event.name + '</li>'
+        return '<div><span style="padding: 0 10px;"' +
+            '" class="event-name" data-index="' + index + '">' + event.name + '</span></div>'
     }));
     $('.event-name').click(function () {
         openEventModal(this);
+        $('html').css("overflow-y","scroll");
+        $('body').css("overflow-y","scroll");
+
     });
     $('.head-title').click(function () {
         openHeadsModal();
@@ -39,6 +42,8 @@ function closeEventModal() {
     setTimeout(function () {
         modal.css('display', 'none');
     }, 500)
+    $('html').css("overflow","hidden");
+    $('body').css("overflow","hidden");
 }
 
 function populateModal(index) {

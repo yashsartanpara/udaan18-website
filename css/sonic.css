@@ -1,0 +1,260 @@
+
+.background-wrapper {
+  height:100vh;
+  width: 100%;
+  display: block;
+  position: relative;
+  overflow: hidden;
+  background: url("../img/sonic.png") fixed bottom;
+  background-size: cover;
+  z-index: -1;
+
+}
+
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+
+.browsehappy {
+  margin: 0.2em 0;
+  /*background: rgba(255, 255, 255, 0.75);*/
+  color: #000;
+  padding: 0.2em 0;
+  position: absolute;
+  top: 20%;
+  z-index: 1;
+}
+
+
+/*@media (max-height: 600px) {*/
+  /*[id='container'] {*/
+    /*height: 100% !important;*/
+
+    /*padding-top: 40px;*/
+  /*}*/
+
+  /*[id='container'] .sonic-wrapper {*/
+    /*top: 280px;*/
+  /*}*/
+/*}*/
+/*@media (max-height: 500px) {*/
+  /*[id='container'] {*/
+    /*padding-top: 0;*/
+    /*margin-top: -40px;*/
+  /*}*/
+
+  /*[id='container'] .sonic-wrapper {*/
+    /*top: 200px;*/
+  /*}*/
+/*}*/
+/*@media (min-height: 800px) {*/
+  /*[id='container'] {*/
+    /*padding-top: 270px;*/
+  /*}*/
+
+  /*[id='container'] .sonic-wrapper {*/
+    /*top: 514px;*/
+  /*}*/
+/*}*/
+
+.sonic-wrapper {
+  position: absolute;
+  bottom: 25%;
+  left: 20%;
+  margin-left: -45px;
+  z-index: 2;
+}
+
+.sonic-wrapper.going-up {
+  transition: -webkit-transform 0.5s cubic-bezier(0.105, 0.51, 0.485, 1.1);
+  -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.105, 0.51, 0.485, 1.1);
+  transition: transform 0.5s cubic-bezier(0.105, 0.51, 0.485, 1.1);
+  transition: transform 0.5s cubic-bezier(0.105, 0.51, 0.485, 1.1), -webkit-transform 0.5s cubic-bezier(0.105, 0.51, 0.485, 1.1);
+  -webkit-transform: translateY(-240px);
+  transform: translateY(-240px);
+}
+
+.sonic-wrapper.going-down {
+  transition: -webkit-transform 0.48s cubic-bezier(0.47, 0, 0.745, 0.715);
+  -webkit-transition: -webkit-transform 0.48s cubic-bezier(0.47, 0, 0.745, 0.715);
+  transition: transform 0.48s cubic-bezier(0.47, 0, 0.745, 0.715);
+  transition: transform 0.48s cubic-bezier(0.47, 0, 0.745, 0.715), -webkit-transform 0.48s cubic-bezier(0.47, 0, 0.745, 0.715);
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+}
+
+.sonic {
+  background-image: url('../img/sonic-sprites.png');
+  background-position: -1440px 0px !important;
+  width: 90px;
+  height: 80px;
+}
+
+[data-direction='left'] .sonic {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  -ms-filter: fliph;
+  /*IE*/
+  -webkit-filter: fliph;
+  filter: fliph;
+  /*IE*/
+}
+
+.slow .sonic {
+  -webkit-animation: slow 1.2s steps(8, end) infinite;
+  animation: slow 1.2s steps(8, end) infinite;
+}
+
+.medium .sonic {
+  -webkit-animation: medium 0.8s steps(8, end) infinite;
+  animation: medium 0.8s steps(8, end) infinite;
+}
+
+.fast .sonic {
+  -webkit-animation: fast 0.5s steps(8, end) infinite;
+  animation: fast 0.5s steps(8, end) infinite;
+}
+
+.run .sonic {
+  -webkit-animation: run 0.35s steps(4, end) infinite;
+  animation: run 0.35s steps(4, end) infinite;
+}
+
+.jumping .sonic {
+  -webkit-animation: jumping 0.5s steps(4, end) infinite;
+  animation: jumping 0.5s steps(4, end) infinite;
+}
+
+[data-bored=true] .sonic {
+  -webkit-animation: boredtwo 0.6s steps(2, end) infinite, boredone 2.1s steps(6, end);
+  animation: boredtwo 0.6s steps(2, end) infinite, boredone 2.1s steps(6, end);
+}
+
+@-webkit-keyframes boredone {
+  0% {
+    background-position: 0px 0px;
+  }
+  100% {
+    background-position: -540px 0px;
+  }
+}
+@keyframes boredone {
+  0% {
+    background-position: 0px 0px;
+  }
+  100% {
+    background-position: -540px 0px;
+  }
+}
+@-webkit-keyframes boredtwo {
+  0% {
+    background-position: -540px 0px;
+  }
+  100% {
+    background-position: -720px 0px;
+  }
+}
+@keyframes boredtwo {
+  0% {
+    background-position: -540px 0px;
+  }
+  100% {
+    background-position: -720px 0px;
+  }
+}
+@-webkit-keyframes jumping {
+  from {
+    background-position: -720px 0px;
+  }
+  to {
+    background-position: -1080px 0px;
+  }
+}
+@keyframes jumping {
+  from {
+    background-position: -720px 0px;
+  }
+  to {
+    background-position: -1080px 0px;
+  }
+}
+@-webkit-keyframes slow {
+  from {
+    background-position: -1530px 0px;
+  }
+  to {
+    background-position: -2250px 0px;
+  }
+}
+@keyframes slow {
+  from {
+    background-position: -1530px 0px;
+  }
+  to {
+    background-position: -2250px 0px;
+  }
+}
+@-webkit-keyframes medium {
+  from {
+    background-position: -1530px 0px;
+  }
+  to {
+    background-position: -2250px 0px;
+  }
+}
+@keyframes medium {
+  from {
+    background-position: -1530px 0px;
+  }
+  to {
+    background-position: -2250px 0px;
+  }
+}
+@-webkit-keyframes fast {
+  from {
+    background-position: -1530px 0px;
+  }
+  to {
+    background-position: -2250px 0px;
+  }
+}
+@keyframes fast {
+  from {
+    background-position: -1530px 0px;
+  }
+  to {
+    background-position: -2250px 0px;
+  }
+}
+@-webkit-keyframes run {
+  from {
+    background-position: -1080px 0px;
+  }
+  to {
+    background-position: -1080px -320px 0px;
+  }
+}
+@keyframes run {
+  from {
+    background-position: -1080px 0px;
+  }
+  to {
+    background-position: -1080px -320px 0px;
+  }
+}
+.platform-wrapper {
+  position: relative;
+  margin-top: -695px;
+}
