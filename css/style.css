@@ -47,6 +47,71 @@ section {
 */
 
 /*==========================================
+*   ---- Intro
+*===========================================
+*/
+
+#intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: #111;
+  position: fixed;
+  z-index: 10;
+}
+
+#arcadeSVG {
+  position: absolute;
+  height: 100%;
+  width: auto;
+  z-index: 5;
+}
+
+#arcadeScreen {
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 4;
+  background-color: rgba(100, 100, 100, 0.2);
+}
+
+#coin {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 58%;
+  width: 6vh;
+  height: 6vh;
+  cursor: pointer;
+  border-radius: 50%;
+  background-color: rgba(255, 249, 15, 0.5);
+}
+
+#coin img {
+  height: 60%;
+  width: 60%;
+}
+
+#arcadeScreen .screenText {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 100%;
+  width: 100%;
+  height: 50%;
+  text-align: center;
+  line-height: 150%;
+}
+
+/*==========================================
 *   ---- Z-Indexes
 *===========================================
 */

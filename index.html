@@ -11,7 +11,7 @@
 
   <!-- yafps -->
   <link rel="stylesheet" href="css/_yafps.css">
-  <script src="js/vendor/yafps.min.js"></script>
+  <script src="js/vendor/yafps.js"></script>
 
   <!-- Swipe Listener -->
   <script src="js/vendor/swipe-listener.min.js"></script>
@@ -20,12 +20,22 @@
   <script src="js/vendor/greensock/TweenLite.min.js"></script>
   <script src="js/vendor/greensock/CSSPlugin.min.js"></script>
   <script src="js/vendor/greensock/EasePack.min.js"></script>
+  <script src="js/vendor/greensock/TimelineMax.min.js"></script>
 
   <!-- Main -->
   <script src="js/main.js"></script>
 </head>
 
 <body class="font-family--press-start-2p">
+<div id="intro">
+  <object id="arcadeSVG" data="img/arcade.svg"></object>
+  <div id="arcadeScreen">
+    <span class="screenText">INSERT<br/>COIN</span>
+  </div>
+  <div id="coin">
+    <img src="img/coin.png">
+  </div>
+</div>
 <div class="pager">
   <div class="main pages-container">
     <section id="udaan-title-page" class="page" data-order="1-2">
