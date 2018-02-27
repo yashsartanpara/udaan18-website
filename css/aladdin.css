@@ -1,0 +1,90 @@
+.aladdinBg {
+  background: #1b242d url("../img/aladdin.png") no-repeat fixed bottom;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  display: block;
+  position: absolute;
+  background-size: cover;
+}
+
+.aladdin {
+  position: absolute;
+  bottom: 1%;
+  height: 146px;
+  width: 103px;
+  background: url("../img/AladdinSprite.png") no-repeat left;
+  background-position: -18px;
+  animation: walkAladdin 1.5s steps(12) infinite,
+  moveAladdin 25s linear forwards infinite;
+  z-index: 5;
+}
+
+.abbu {
+  position: absolute;
+  bottom: 1%;
+  height: 75px;
+  width: 72px;
+  background: url("../img/AbbuSprite.gif") no-repeat left;
+  background-position: 27px;
+  animation: walkAbbu 1.5s steps(6) infinite,
+  moveAbbu 25s linear forwards infinite;
+  z-index: 6;
+}
+
+.jasmine {
+  position: absolute;
+  bottom: 10%;
+  height: 116px;
+  width: 135px;
+  background: url("../img/jasmineSprite.png") no-repeat left;
+  background-position: 20px;
+  animation: walkJasmine 1.5s steps(3) infinite,
+  moveJasmine 25s linear forwards infinite;
+  z-index: 7;
+}
+
+@keyframes walkAladdin {
+  100% {
+    background-position: -1244px;
+  }
+}
+
+@keyframes walkAbbu {
+  100% {
+    background-position: -431px;
+  }
+}
+
+@keyframes walkJasmine {
+  100% {
+    background-position: -380px;
+  }
+}
+
+@keyframes moveAladdin {
+  from {
+    left: 100%;
+  }
+  to {
+    left: -10%;
+  }
+}
+
+@keyframes moveAbbu {
+  from {
+    left: 110%;
+  }
+  to {
+    left: 0%;
+  }
+}
+
+@keyframes moveJasmine {
+  from {
+    left: 110%;
+  }
+  to {
+    left: 0%;
+  }
+}
