@@ -11,10 +11,10 @@
   s.color = '#fff';
   s.zIndex = 65536;
   s.fontSize = '4vh';
-  s.fontFamily = '"PressStart2P",sans-serif';
+  s.fontFamily = 'PressStart2P, sans-serif';
   document.body.appendChild(o);
   window.addEventListener('load', function el() {
-    o.parentNode.removeChild(o);
+    // o.parentNode.removeChild(o);
     window.removeEventListener('load', el);
   });
 })();
