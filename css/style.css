@@ -68,6 +68,7 @@ section {
   height: 100%;
   width: auto;
   z-index: 5;
+  bottom: 0;
 }
 
 #arcadeScreen {
