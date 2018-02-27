@@ -329,61 +329,6 @@
   99% { background-position:-12px 0px; }
 }
 
-/*To Do-(To- Megharth) Responsive Dogshow*/
-
-@keyframes dogLaugh {
-  0% { background-position:-360px -110px; }
-  50% { background-position:-480px -110px; }
-  100% { background-position:-360px -110px; }
-}
-
-@-moz-keyframes dogLaugh {
-  0% { background-position:-360px -110px; }
-  50% { background-position:-480px -110px; }
-  100% { background-position:-360px -110px; }
-}
-
-
-@-webkit-keyframes dogLaugh {
-  0% { background-position:-360px -110px; }
-  50% { background-position:-480px -110px; }
-  100% { background-position:-360px -110px; }
-}
-
-
-@-o-keyframes dogLaugh {
-  0% { background-position:-360px -110px; }
-  50% { background-position:-480px -110px; }
-  100% { background-position:-360px -110px; }
-}
-@keyframes dogShow {
-  0% { top:560px; }
-  25% { top: 480px; }
-  75% { top: 480px; }
-  100% { top:560px; }
-}
-
-@-moz-keyframes dogShow {
-  0% { top:560px; }
-  25% { top: 480px; }
-  75% { top: 480px; }
-  100% { top:560px; }
-}
-
-@-webkit-keyframes dogShow {
-  0% { top:560px; }
-  25% { top: 480px; }
-  75% { top: 480px; }
-  100% { top:560px; }
-}
-
-@-o-keyframes dogShow {
-  0% { top:560px; }
-  25% { top: 480px; }
-  75% { top: 480px; }
-  100% { top:560px; }
-}
-
 #stage {
   display: block;
   position: absolute;
@@ -449,55 +394,11 @@
   width: 120px;
   height: 100px;
 }
-
-#dogLaugh {
-  width:100%;
-  height:570px;
-  overflow:hidden;
-  position:absolute;
-  top:0;
-  left:0;
-}
-
-#dogLaugh > div {
-  position:absolute;
-  top:560px;
-  left:45%;
-}
-
-#dogLaugh > div > span {
-  width: 150px;
-  height: 100px;
-}
-
-#dogLaugh > div > span:nth-child(1) {
-  display:block;
-  background: url('../img/duckhuntDog.png') no-repeat;
-
-  animation: dogLaugh 200ms infinite steps(1) alternate;
-  -moz-animation: dogLaugh 200ms infinite steps(1) alternate;
-  -webkit-animation: dogLaugh 200ms infinite steps(1) alternate;
-  -o-animation: dogLaugh 200ms infinite steps(1) alternate;
-}
-
-#dogLaugh > div > span:nth-child(2) {
-  display:none;
-  background: url('../img/duckhuntDog.png') no-repeat;
-  background-position:-600px -0px;
-}
-
 /*The timers*/
 /*Intro dog*/
 #dogIntro {
-  animation: dogMove 7s linear forwards, dogWalk 6s step-start 1 forwards ;
-  -moz-animation: dogMove 7s linear forwards, dogWalk 6s step-start 1 forwards;
-  -webkit-animation: dogMove 7s linear forwards, dogWalk 6s step-start 1 forwards;
-  -o-animation: dogMove 7s linear forwards, dogWalk 6s step-start 1 forwards;
-}
-
-#dogLaugh > div:nth-child(1) {
-  animation: dogShow 8s 8s;
-  -moz-animation: dogShow 8s 8s;
-  -webkit-animation: dogShow 8s 8s;
-  -o-animation: dogShow 8s 8s;
+  animation: dogMove 7s linear forwards infinite, dogWalk 6s step-start infinite;
+  -moz-animation: dogMove 7s linear forwards infinite, dogWalk 6s step-start infinite;
+  -webkit-animation: dogMove 7s linear forwards infinite, dogWalk 6s step-start infinite;
+  -o-animation: dogMove 7s linear forwards infinite, dogWalk 6s step-start infinite;
 }
