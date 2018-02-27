@@ -4,7 +4,7 @@
   display: block;
   position: relative;
   overflow: hidden;
-  background: url("../img/sonic.png") fixed bottom;
+  background: url("../img/sonic.jpg") fixed bottom;
   background-size: cover;
   z-index: -1;
 
@@ -98,6 +98,7 @@
 }
 
 .jumping .sonic {
+  -moz-animation: jumping 0.5s steps(4, end) infinite;
   -webkit-animation: jumping 0.5s steps(4, end) infinite;
   animation: jumping 0.5s steps(4, end) infinite;
 }
@@ -144,6 +145,15 @@
 }
 
 @-webkit-keyframes jumping {
+  from {
+    background-position: -720px 0px;
+  }
+  to {
+    background-position: -1080px 0px;
+  }
+}
+
+@-moz-keyframes jumping {
   from {
     background-position: -720px 0px;
   }

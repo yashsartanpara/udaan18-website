@@ -429,7 +429,7 @@
 }
 
 #shootingArea > div > div > div > label, #shootingArea > div > div > div > span {
-  background: url('../img/sprite.png') no-repeat;
+  background: url('../img/duckhuntDog.png') no-repeat;
   height:76px;
   display:flex;
   width:70px;
@@ -445,7 +445,7 @@
   position:absolute;
   bottom: 10%;
   z-index:10;
-  background: url('../img/sprite.png') no-repeat;
+  background: url('../img/duckhuntDog.png') no-repeat;
   width: 120px;
   height: 100px;
 }
@@ -472,7 +472,7 @@
 
 #dogLaugh > div > span:nth-child(1) {
   display:block;
-  background: url('../img/sprite.png') no-repeat;
+  background: url('../img/duckhuntDog.png') no-repeat;
 
   animation: dogLaugh 200ms infinite steps(1) alternate;
   -moz-animation: dogLaugh 200ms infinite steps(1) alternate;
@@ -482,7 +482,7 @@
 
 #dogLaugh > div > span:nth-child(2) {
   display:none;
-  background: url('../img/sprite.png') no-repeat;
+  background: url('../img/duckhuntDog.png') no-repeat;
   background-position:-600px -0px;
 }
 
