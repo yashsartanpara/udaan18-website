@@ -1,5 +1,5 @@
 .aladdinBg {
-  background: #1b242d url("../img/aladdin.png") no-repeat fixed bottom;
+  background: #1b242d url("../img/aladdin.jpg") no-repeat fixed bottom;
   bottom: 0;
   height: 100%;
   width: 100%;
@@ -11,10 +11,10 @@
 .aladdin {
   position: absolute;
   bottom: 1%;
-  height: 146px;
+  height: 125px;
   width: 103px;
-  background: url("../img/AladdinSprite.png") no-repeat left;
-  background-position: -18px;
+  background: url("../img/AladdinSprite.gif") no-repeat left;
+  background-position: -25px;
   animation: walkAladdin 1.5s steps(12) infinite,
   moveAladdin 25s linear forwards infinite;
   z-index: 5;
@@ -23,10 +23,10 @@
 .abbu {
   position: absolute;
   bottom: 1%;
-  height: 75px;
-  width: 72px;
+  height: 81px;
+  width: 99px;
   background: url("../img/AbbuSprite.gif") no-repeat left;
-  background-position: 27px;
+  background-position: 1px;
   animation: walkAbbu 1.5s steps(6) infinite,
   moveAbbu 25s linear forwards infinite;
   z-index: 6;
@@ -35,10 +35,10 @@
 .jasmine {
   position: absolute;
   bottom: 10%;
-  height: 116px;
-  width: 135px;
-  background: url("../img/jasmineSprite.png") no-repeat left;
-  background-position: 20px;
+  height: 121px;
+  width: 158px;
+  background: url("../img/jasmineSprite.gif") no-repeat left;
+  background-position: 1px;
   animation: walkJasmine 1.5s steps(3) infinite,
   moveJasmine 25s linear forwards infinite;
   z-index: 7;
@@ -52,13 +52,13 @@
 
 @keyframes walkAbbu {
   100% {
-    background-position: -431px;
+    background-position: -597px;
   }
 }
 
 @keyframes walkJasmine {
   100% {
-    background-position: -380px;
+    background-position: -473px;
   }
 }
 
