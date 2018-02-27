@@ -5,8 +5,12 @@
 
 window.onload = function () {
   console.info('[main.js] : Ready');
-  // introStart();
-  introComplete();
+  if(location.hash.length > 0) {
+    introComplete();
+    invalidateIntroScreen();
+  } else {
+    introStart();
+  }
 };
 
 /*========================================================================================
@@ -16,32 +20,132 @@ window.onload = function () {
 
 function introStart() {
   var arcadeSVG = placeSvgIntoDocument('#arcadeSVG');
-  console.log(arcadeSVG);
   var arcadeScreenPlaceholder = arcadeSVG.querySelector('#arcadeScreenPlaceholder');
   window.arcadeScreenPlaceholder = arcadeScreenPlaceholder;
   arcadeScreenPlaceholder.setAttribute('opacity', 0);
   var arcadeScreen = document.querySelector('#arcadeScreen');
   fitRectBounds(arcadeScreen, arcadeScreenPlaceholder);
+  var arcadeScreenBounds = arcadeScreen.getBoundingClientRect();
+  var arcadeSVGBounds = arcadeSVG.getBoundingClientRect();
+  var screenCenter = getWindowCenter();
   var screenTextElements = arcadeScreen.querySelectorAll('.screenText');
   [].forEach.call(screenTextElements, function (element) {
     fitFontToContainer(element, 40);
   });
   var coin = document.querySelector('#coin');
-  console.log(coin);
-  var introTimeline = new TimelineMax({ repeat:-1, yoyo: true});
-  var coinZoomTimeline = new TimelineMax({ repeat:3, yoyo: true });
-  var coinFlashTimeline = new TimelineMax({ repeat:-1, yoyo: true });
-  coinZoomTimeline.from(coin, 1, { top: '-=5%', ease: Power0.easeNone, scale: 1.1});
-  coinFlashTimeline.from(coin, 1, { backgroundColor: 'rgba(255, 249, 15, 0.1)', ease: Power0.easeNone});
-  coin.addEventListener('click', function () {
-  });
-  console.log(arcadeScreen);
+  arcadeScreen.style.opacity = 0;
+  var coinSlot = document.querySelector('#coin-slot');
+  var coinBounds = coinSlot.getBoundingClientRect();
+  var coinSlotBounds = coinSlot.getBoundingClientRect();
+  var introElement = document.querySelector('#intro');
+
+  var pointer1 = document.querySelector('#pointer1');
+  var pointer2 = document.querySelector('#pointer2');
+  var pointer3 = document.querySelector('#pointer3');
+
+  var coinZoomTimeline = new TimelineMax({repeat: 3, yoyo: true, ease: Power0.easeNone});
+  coinZoomTimeline.add(TweenMax.to(coin, 1, {top: '-=5%', scale: 1.1}));
+
+  var coinFlashTimeline = new TimelineMax({repeat: -1, yoyo: true, ease: Power0.easeNone});
+  coinFlashTimeline.add(TweenMax.to(coin, 1,
+    {backgroundColor: 'rgba(255, 249, 15, 0.1)'}));
+  coin.addEventListener('click', animationStep1);
+
+  var arcadeTimeline = new TimelineMax({});
+  arcadeTimeline.add(TweenMax.fromTo(arcadeSVG, 0.5,
+    {y: "10%", opacity: 0, attr: {opacity: 0}},
+    {y: "0%", opacity: 1, attr: {opacity: 1}}));
+  arcadeTimeline.add(TweenMax.fromTo(coin, 1,
+    {y: "10%", opacity: 0, attr: {opacity: 0}},
+    {y: "0%", opacity: 1, attr: {opacity: 1}}), 0.5);
+  arcadeTimeline.add(TweenMax.fromTo(arcadeScreen, 0.5,
+    {opacity: 0, ease: Power0.easeNone},
+    {opacity: 1, ease: Power0.easeNone}), 1);
+
+  var textTimeline = new TimelineMax({repeat: -1, yoyo: true});
+  textTimeline.add(TweenMax.fromTo(arcadeScreen, 0.5,
+    {opacity: 0.7, ease: Power0.easeNone},
+    {opacity: 1, ease: Power0.easeNone}), 0.5);
+
+  var coinTimeline = new TimelineMax({ease: Power0.easeNone});
+  var durationStep1 = 2;
+  var durationCoinDisplay = 1;
+
+  // yoyo coin to left and zoom in
+  function animationStep1() {
+    coinTimeline.add(TweenMax.to(coin, durationStep1 / 2, {left: '-=20%', yoyo: true, repeat: 1}),
+      0);
+    coinTimeline.add(TweenMax.to(coin, durationStep1, {
+      scale: 7,
+      rotationY: '360deg'
+    }), 0);
+    coinTimeline.add(TweenMax.to(coin, 0.2, {
+      top: '+=5%',
+      yoyo: true,
+      repeat: 1
+    }), durationStep1);
+    coinTimeline.add(TweenMax.to(coin, durationCoinDisplay, {}), durationStep1);
+    coinTimeline.add(TweenMax.to(coin, 1, {
+      scale: 1,
+      top: coinSlotBounds.top + 'px',
+      left: coinSlotBounds.left - coinSlot.width / 2 + 'px'
+    }), durationStep1 + durationCoinDisplay);
+    coinTimeline.add(TweenMax.to(coin, 1, {
+      rotationY: '+=80deg'
+    }), durationStep1 + durationCoinDisplay);
+    coinTimeline.add(TweenMax.to(coin, 0.1, {
+      opacity: 0,
+      onComplete: animationStep2
+    }), durationStep1 + durationCoinDisplay + 0.9);
+    coin.removeEventListener('click', animationStep1);
+  }
+
+  function animationStep2() {
+    var arcadeSVGCenter = {
+      top: arcadeSVGBounds.top + arcadeSVGBounds.height / 2,
+      left: arcadeSVGBounds.left + arcadeSVGBounds.width / 2
+    };
+
+    var arcadeScreenCenter = {
+      top: arcadeScreenBounds.top + arcadeScreenBounds.height / 2,
+      left: arcadeScreenBounds.left + arcadeScreenBounds.width / 2
+    };
+
+    var diffTop = arcadeSVGCenter.top - arcadeScreenCenter.top;
+    arcadeSVG.style.position = 'absolute';
+
+    var tl = new TimelineMax();
+    var h = arcadeSVGBounds.height / 2 - diffTop + 'px';
+
+    tl.add(TweenMax.to(arcadeSVG, 1, {
+      top: '+=' + diffTop + 'px'
+    }));
+    tl.add(TweenMax.to(arcadeScreen, 1, {
+      top: '+=' + diffTop + 'px'
+    }), 0);
+    tl.add(TweenMax.to(arcadeSVG, 2, {
+      scale: 4.5,
+      transformOrigin: '50% ' + h,
+      opacity: 0
+    }), 0.5);
+    tl.add(TweenMax.to(arcadeScreen, 2, {
+      scale: 4.5
+    }), 0.5);
+    tl.add(TweenMax.to(introElement, 2, {
+      opacity: 0,
+      onComplete: invalidateIntroScreen
+    }), 0.5);
+    introComplete();
+  }
+}
+
+function invalidateIntroScreen() {
+  document.querySelector('#intro').style.display = 'none';
 }
 
 function introComplete() {
   setupCartridgeEvents();
   setupInteractionEvents();
-  document.querySelector('#intro').style.display = 'none';
 }
 
 function setupInteractionEvents() {
@@ -54,7 +158,7 @@ function setupInteractionEvents() {
       clearCartridgeSelection(getActiveSection());
     },
     animationFunction: function (intent) {
-      TweenLite.to(intent.target, 0.5,
+      TweenMax.to(intent.target, 0.5,
         Object.assign(intent.toPercent, {onComplete: intent.callback}));
     }
   });
@@ -118,14 +222,14 @@ function selectCartridge(mouseEvent) {
 
   selectedCartridge.style.zIndex = CARTRIDGE_SELECTED_Z_INDEX;
 
-  TweenLite.to(selectedCartridge, CARTRIDGE_TRANSITION_IN_TIME, {
+  TweenMax.to(selectedCartridge, CARTRIDGE_TRANSITION_IN_TIME, {
     x: centerPoint.x,
     y: centerPoint.y,
     scale: 1.2,
     ease: EASE_ELASTIC,
     onStart: changeConsoleState.bind(null, 'visible', getActiveSection())
   });
-  TweenLite.to(selectedCartridge, CARTRIDGE_TRANSITION_IN_TIME / 2, {
+  TweenMax.to(selectedCartridge, CARTRIDGE_TRANSITION_IN_TIME / 2, {
     onComplete: function () {
       selectedCartridge.classList.add('cartridge--selected');
       selectedCartridge.addEventListener('click', insertCartridge);
@@ -135,7 +239,7 @@ function selectCartridge(mouseEvent) {
 }
 
 function insertCartridge(mouseEvent) {
-  if(getConsoleState() !== 'visible') {
+  if (getConsoleState() !== 'visible') {
     return;
   }
   var cartridge = mouseEvent.currentTarget;
@@ -152,7 +256,7 @@ function insertCartridge(mouseEvent) {
 
   var url = cartridge.getAttribute('data-href');
 
-  TweenLite.to(cartridge, 0.5, {
+  TweenMax.to(cartridge, 0.5, {
     y: point,
     onComplete: navigateTo.bind(null, url)
   });
@@ -170,7 +274,7 @@ function resetAllCartridges(section, excluded) {
     return cartridge !== excluded;
   });
 
-  TweenLite.to(cartridges, CARTRIDGE_TRANSITION_IN_TIME, {
+  TweenMax.to(cartridges, CARTRIDGE_TRANSITION_IN_TIME, {
     x: 0,
     y: 0,
     scale: 1,
@@ -188,7 +292,7 @@ function blackout(section) {
     return;
   blackout.style.zIndex = BLACKOUT_ON_Z_INDEX;
 
-  TweenLite.to(blackout, CARTRIDGE_TRANSITION_IN_TIME, {
+  TweenMax.to(blackout, CARTRIDGE_TRANSITION_IN_TIME, {
     opacity: 0.4
   });
 
@@ -204,7 +308,7 @@ function clearCartridgeSelection(section) {
   if (!blackout)
     return;
   blackout.style.zIndex = BLACKOUT_OFF_Z_INDEX;
-  TweenLite.to(blackout, CARTRIDGE_TRANSITION_IN_TIME, {
+  TweenMax.to(blackout, CARTRIDGE_TRANSITION_IN_TIME, {
     opacity: 0,
     onStart: changeConsoleState.bind(null, 'hidden', getActiveSection())
   });
@@ -228,22 +332,22 @@ function changeConsoleState(state, section) {
 
   switch (state) {
     case 'visible':
-      TweenLite.to(consoleTopViewTopHalf, CONSOLE_TRANSITION_IN_TIME, {
+      TweenMax.to(consoleTopViewTopHalf, CONSOLE_TRANSITION_IN_TIME, {
         bottom: (consoleTopViewTopHalf.clientHeight),
         onStart: setConsoleState.bind(null, 'animating'),
         onComplete: setConsoleState.bind(null, 'visible')
       });
-      TweenLite.to(consoleTopViewBottomHalf, CONSOLE_TRANSITION_IN_TIME, {
+      TweenMax.to(consoleTopViewBottomHalf, CONSOLE_TRANSITION_IN_TIME, {
         bottom: 0
       });
       break;
     case 'hidden':
-      TweenLite.to(consoleTopViewTopHalf, CONSOLE_TRANSITION_OUT_TIME, {
+      TweenMax.to(consoleTopViewTopHalf, CONSOLE_TRANSITION_OUT_TIME, {
         bottom: (consoleTopViewTopHalf.clientHeight * -1),
         onStart: setConsoleState.bind(null, 'animating'),
         onComplete: setConsoleState.bind(null, 'hidden')
       });
-      TweenLite.to(consoleTopViewBottomHalf, CONSOLE_TRANSITION_OUT_TIME, {
+      TweenMax.to(consoleTopViewBottomHalf, CONSOLE_TRANSITION_OUT_TIME, {
         bottom: (consoleTopViewBottomHalf.clientHeight * -1 * 2)
       });
       break;
@@ -254,7 +358,7 @@ function setConsoleState(state) {
   var section = getActiveSection();
   var consoleTopViewTopHalf = section.querySelector(
     '.console-top-view--top-half');
-  if(state === 'hidden') {
+  if (state === 'hidden') {
     resetAllCartridges(section);
   }
   return consoleTopViewTopHalf.setAttribute('data-state', state);
@@ -284,11 +388,11 @@ function displayMessage(message) {
   var userMessageBar = document.querySelector('#user-message-bar');
   userMessageBar.innerHTML = message;
   userMessageBar.style.left = getActiveSection().style.left;
-  TweenLite.to(userMessageBar, 1, {
+  TweenMax.to(userMessageBar, 1, {
     opacity: 1,
     ease: EASE_ELASTIC,
     onComplete: function () {
-      TweenLite.to(userMessageBar, 0.3, {opacity: 0});
+      TweenMax.to(userMessageBar, 0.3, {opacity: 0});
     }
   });
 }
@@ -379,7 +483,9 @@ function getRandomInt() {
 function getWindowCenter() {
   return {
     x: window.innerWidth / 2,
-    y: window.innerHeight / 2
+    y: window.innerHeight / 2,
+    top: window.innerHeight / 2,
+    left: window.innerWidth / 2
   };
 }
 
