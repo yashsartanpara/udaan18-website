@@ -2,7 +2,7 @@ $('.guile').append('<img src="./img/Guile-oldstance.gif" height="192" width="106
 $('.ryu').append('<img src="./img/ryu_bounce.gif" height="192"/>');
 
 $('html').mousedown(function () {
-  $('.ryu img').attr('src', './img/ryuhad.png');
+  $('.ryu img').attr('src', './img/ryuhad.gif');
 })
 
 $('html').mouseup(function () {
