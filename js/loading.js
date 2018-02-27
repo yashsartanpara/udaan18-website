@@ -1,7 +1,6 @@
 (function() {
-  var o = document.createElement('div');
+  var o = document.createElement('div'), s = o.style;
   o.innerHTML = 'Loading...';
-  var s = o.style;
   s.position = 'fixed';
   s.width = s.height = '100%';
   s.top = s.left = '0';
@@ -13,7 +12,8 @@
   s.zIndex = 65536;
   s.fontSize = '4vh';
   document.body.appendChild(o);
-  window.addEventListener('load', function () {
+  window.addEventListener('load', function el() {
     o.parentNode.removeChild(o);
+    window.removeEventListener('load', el);
   });
 })();
