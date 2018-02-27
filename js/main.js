@@ -113,7 +113,6 @@ function selectCartridge(mouseEvent) {
   }
   var centerPoint = getAbsoluteCenter(selectedCartridge);
   var section = getActiveSection();
-  console.log('active-section', section);
 
   resetAllCartridges(selectedCartridge);
 
@@ -136,14 +135,17 @@ function selectCartridge(mouseEvent) {
 }
 
 function insertCartridge(mouseEvent) {
+  if(getConsoleState() !== 'visible') {
+    return;
+  }
   var cartridge = mouseEvent.currentTarget;
   if (!cartridge.classList.contains('cartridge--selected'))
     return;
   var section = getActiveSection();
   var consoleTopView = section.querySelector('.console-top-view--top-half');
-  var cartridgeClippingPercent = 0.35;
+  var cartridgeClippingPercent = 0.15;
   if (getMedia().indexOf('xs portrait') > -1) {
-    cartridgeClippingPercent *= 1.45;
+    cartridgeClippingPercent *= 0.95;
   }
   var cartridgeClippingHeight = (cartridge.clientHeight) * (1 - cartridgeClippingPercent);
   var point = consoleTopView.offsetTop - cartridge.offsetTop - cartridgeClippingHeight;
@@ -252,7 +254,17 @@ function setConsoleState(state) {
   var section = getActiveSection();
   var consoleTopViewTopHalf = section.querySelector(
     '.console-top-view--top-half');
+  if(state === 'hidden') {
+    resetAllCartridges(section);
+  }
   return consoleTopViewTopHalf.setAttribute('data-state', state);
+}
+
+function getConsoleState() {
+  var section = getActiveSection();
+  var consoleTopViewTopHalf = section.querySelector(
+    '.console-top-view--top-half');
+  return consoleTopViewTopHalf.getAttribute('data-state');
 }
 
 /*========================================================================================
