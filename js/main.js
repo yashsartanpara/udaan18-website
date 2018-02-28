@@ -5,7 +5,7 @@
 
 window.onload = function () {
   console.info('[main.js] : Ready');
-  if(location.hash.length > 0) {
+  if (location.hash.length > 0) {
     introComplete();
     invalidateIntroScreen();
   } else {
@@ -53,11 +53,11 @@ function introStart() {
 
   var arcadeTimeline = new TimelineMax({});
   arcadeTimeline.add(TweenMax.fromTo(arcadeSVG, 0.5,
-    {y: "10%", opacity: 0, attr: {opacity: 0}},
-    {y: "0%", opacity: 1, attr: {opacity: 1}}));
+    {y: '10%', opacity: 0, attr: {opacity: 0}},
+    {y: '0%', opacity: 1, attr: {opacity: 1}}));
   arcadeTimeline.add(TweenMax.fromTo(coin, 1,
-    {y: "10%", opacity: 0, attr: {opacity: 0}},
-    {y: "0%", opacity: 1, attr: {opacity: 1}}), 0.5);
+    {y: '10%', opacity: 0, attr: {opacity: 0}},
+    {y: '0%', opacity: 1, attr: {opacity: 1}}), 0.5);
   arcadeTimeline.add(TweenMax.fromTo(arcadeScreen, 0.5,
     {opacity: 0, ease: Power0.easeNone},
     {opacity: 1, ease: Power0.easeNone}), 1);
@@ -184,8 +184,8 @@ function setupInteractionEvents() {
       var target = mouseEvent.currentTarget;
       var action = target.getAttribute('data-action');
       yafpsPager.animate(action);
-    })
-  })
+    });
+  });
 }
 
 function setupCartridgeEvents() {
@@ -245,6 +245,12 @@ function selectCartridge(mouseEvent) {
       selectedCartridge.addEventListener('click', insertCartridge);
     }
   });
+
+  if(selectedCartridge.hasAttribute('data-info')) {
+    information = selectedCartridge.getAttribute('data-info');
+    displayInformation(information);
+  }
+
   blackout(section);
 }
 
@@ -308,6 +314,7 @@ function blackout(section) {
 
   blackout.addEventListener('click', function onBlackout() {
     clearCartridgeSelection(section);
+    hideInformation();
     blackout.removeEventListener('click', onBlackout);
   });
 }
@@ -393,6 +400,26 @@ function getConsoleState() {
 
 // TODO: Complete back button handle for mobile devices
 // function backButton() {}
+
+function displayInformation(message) {
+  var informationBar = document.querySelector('#information-bar');
+  informationBar.innerHTML = message;
+  informationBar.style.left = getActiveSection().style.left;
+  TweenMax.fromTo(informationBar, 0.3, {
+    opacity: 0
+  }, {
+    opacity: 1,
+    top: "+=1vh"
+  });
+}
+
+function hideInformation() {
+  var informationBar = document.querySelector('#information-bar');
+  TweenMax.to(informationBar, 0.1, {
+    opacity: 0,
+    top: "-=1vh"
+  });
+}
 
 function displayMessage(message) {
   var userMessageBar = document.querySelector('#user-message-bar');

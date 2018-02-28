@@ -359,6 +359,26 @@ section {
 }
 
 /*==========================================
+*   ---- Information bar
+*===========================================
+*/
+
+#information-bar {
+  display: table-row;
+  position: fixed;
+  left: 0;
+  width: 100%;
+  top: 14vh;
+  color: white;
+  z-index: 100;
+  text-align: center;
+  pointer-events: none;
+  opacity: 0;
+  text-transform: uppercase;
+  font-size: 3vh;
+}
+
+/*==========================================
 *   ---- User message bar
 *===========================================
 */
@@ -375,7 +395,7 @@ section {
   pointer-events: none;
   opacity: 0;
   text-transform: uppercase;
-  font-size: 3vh;
+  font-size: 2vh;
 }
 
 /*==========================================
