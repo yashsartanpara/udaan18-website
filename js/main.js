@@ -176,6 +176,16 @@ function setupInteractionEvents() {
       yafpsPager.animate('up');
     }
   });
+  // Navigation on title page
+  var titlePage = document.querySelector('#udaan-title-page');
+  var buttons = titlePage.querySelectorAll('.navigation-button');
+  [].forEach.call(buttons, function (button) {
+    button.addEventListener('click', function (mouseEvent) {
+      var target = mouseEvent.currentTarget;
+      var action = target.getAttribute('data-action');
+      yafpsPager.animate(action);
+    })
+  })
 }
 
 function setupCartridgeEvents() {

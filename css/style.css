@@ -113,6 +113,84 @@ section {
 }
 
 /*==========================================
+*   ---- Udaan Title Page
+*===========================================
+*/
+
+:root {
+  --navigation-button-size--lg : 12vmin;
+  --navigation-button-size--sm : 16vmin;
+}
+
+#udaan-title-page {
+
+}
+
+#udaan-logo-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  height: 65%;
+}
+
+#udaan-logo-container .logo {
+  width: 50%;
+  height: 90%;
+  background: url("../img/udaan_logo_2018.png") no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+#udaan-title-page .navigation-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-top: 4vmin;
+  height: 20%;
+  width: 100%;
+}
+
+#udaan-title-page .navigation-container .navigation-button {
+  width: var(--navigation-button-size--lg);
+  height: var(--navigation-button-size--lg);
+  padding: 2vmin;
+  cursor: pointer;
+}
+
+#udaan-title-page .navigation-container .down {
+  margin-top: 8vmin;
+}
+
+@media only screen and (max-width: 75em) {
+
+}
+
+@media only screen and (max-width: 64em) {
+  #udaan-logo-container .logo {
+    width: 90%;
+    height: 100%;
+  }
+  #udaan-title-page .navigation-container .navigation-button {
+    width: var(--navigation-button-size--sm);
+    height: var(--navigation-button-size--sm);
+    padding: 0;
+  }
+  #udaan-title-page .navigation-container .down {
+    margin-top: 16vmin;
+  }
+}
+
+@media only screen and (max-width: 48em) {
+
+}
+
+@media (orientation: landscape) {
+
+}
+
+/*==========================================
 *   ---- Z-Indexes
 *===========================================
 */
