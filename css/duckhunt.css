@@ -5,13 +5,6 @@
   }
 }
 
-@-moz-keyframes dogMove {
-  from {left:0px;}
-  to {
-    left: 100%;
-  }
-}
-
 @-webkit-keyframes dogMove {
   from {left:0px;}
   to {
@@ -68,45 +61,6 @@
     background-position: -360px 0px;
   }
 }
-
-@-moz-keyframes dogWalk {
-  0% { background-position:0px 0px; }
-  3% { background-position:-120px 0px; }
-  6% { background-position:-240px 0px; }
-  9% { background-position:-360px 0px; }
-  12% { background-position:0px 0px; }
-  15% { background-position:-120px 0px; }
-  18% { background-position:-240px 0px; }
-  21% { background-position:-360px 0px; }
-  24% { background-position:0px 0px; }
-  27% { background-position:-120px 0px; }
-  30% { background-position:-240px 0px; }
-  33% { background-position:-360px 0px; }
-  36% { background-position:0px 0px; }
-  39% { background-position:-120px 0px; }
-  42% { background-position:-240px 0px; }
-  45% { background-position:-360px 0px; }
-  48% { background-position:0px 0px; }
-  51% { background-position:-120px 0px; }
-  54% { background-position:-240px 0px; }
-  57% { background-position:-360px 0px; }
-  60% { background-position:0px 0px; }
-  63% { background-position:-120px 0px; }
-  66% { background-position:-240px 0px; }
-  69% { background-position:-360px 0px;  } /* Walk */
-  72% { background-position:0px 0px; }
-  75% { background-position:-120px 0px; }
-  78% { background-position:-240px 0px; }
-  81% { background-position:-360px 0px;  } /* Walk */
-  84% { background-position:0px 0px; }
-  87% { background-position:-120px 0px; }
-  90% { background-position:-240px 0px; }
-  93% { background-position:-360px 0px; }
-  96% { background-position:0px 0px; }
-  99% { background-position:-120px 0px; }
-}
-
-
 @-webkit-keyframes dogWalk {
   0% { background-position:0px 0px; }
   3% { background-position:-120px 0px; }
@@ -182,43 +136,6 @@
 }
 
 @keyframes dogWalk {
-  0% { background-position:0px 0px; }
-  3% { background-position:-120px 0px; }
-  6% { background-position:-240px 0px; }
-  9% { background-position:-360px 0px; }
-  12% { background-position:0px 0px; }
-  15% { background-position:-120px 0px; }
-  18% { background-position:-240px 0px; }
-  21% { background-position:-360px 0px; }
-  24% { background-position:0px 0px; }
-  27% { background-position:-120px 0px; }
-  30% { background-position:-240px 0px; }
-  33% { background-position:-360px 0px; }
-  36% { background-position:0px 0px; }
-  39% { background-position:-120px 0px; }
-  42% { background-position:-240px 0px; }
-  45% { background-position:-360px 0px; }
-  48% { background-position:0px 0px; }
-  51% { background-position:-120px 0px; }
-  54% { background-position:-240px 0px; }
-  57% { background-position:-360px 0px; }
-  60% { background-position:0px 0px; }
-  63% { background-position:-120px 0px; }
-  66% { background-position:-240px 0px; }
-  69% { background-position:-360px 0px;  } /* Walk */
-  72% { background-position:0px 0px; }
-  75% { background-position:-120px 0px; }
-  78% { background-position:-240px 0px; }
-  81% { background-position:-360px 0px;  } /* Walk */
-  84% { background-position:0px 0px; }
-  87% { background-position:-120px 0px; }
-  90% { background-position:-240px 0px; }
-  93% { background-position:-360px 0px; }
-  96% { background-position:0px 0px; }
-  99% { background-position:-120px 0px; }
-}
-
-@-moz-keyframes dogWalk {
   0% { background-position:0px 0px; }
   3% { background-position:-120px 0px; }
   6% { background-position:-240px 0px; }
@@ -398,7 +315,6 @@
 /*Intro dog*/
 #dogIntro {
   animation: dogMove 7s linear forwards infinite, dogWalk 6s step-start infinite;
-  -moz-animation: dogMove 7s linear forwards infinite, dogWalk 6s step-start infinite;
   -webkit-animation: dogMove 7s linear forwards infinite, dogWalk 6s step-start infinite;
   -o-animation: dogMove 7s linear forwards infinite, dogWalk 6s step-start infinite;
 }
