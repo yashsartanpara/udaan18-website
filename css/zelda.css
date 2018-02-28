@@ -8,9 +8,9 @@ body {
   bottom:0;
   width: 75px;
   height: 147px;
-  background: url('../img/princess.gif') no-repeat;
-  background-position: -8px center !important;
-  animation: play 1.5s steps(10) infinite,
+  background: url('../img/princess.gif') no-repeat left;
+  background-position: -5px;
+  animation: play 1.2s steps(10) infinite,
   run1 30s linear forwards infinite;
   z-index: 5;
 }
@@ -276,6 +276,18 @@ body {
   .fairy2 {
     display: none;
   }
+
+  .zelda {
+    position: absolute;
+    bottom: 0;
+    width: 75px;
+    height: 147px;
+    background: url('../img/princess.gif') no-repeat left;
+    background-position: -5px;
+    animation: play 1.2s steps(10) infinite,
+    run1 10s linear forwards infinite;
+    z-index: 5;
+  }
 }
 
 @media screen and (min-height: 320px) and (max-height: 720px){
@@ -284,5 +296,17 @@ body {
   }
   .fairy2{
     display: none;
+  }
+
+  .zelda {
+    position: absolute;
+    bottom: 0;
+    width: 75px;
+    height: 147px;
+    background: url('../img/princess.gif') no-repeat left;
+    background-position: -5px;
+    animation: play 1.2s steps(10) infinite,
+    run1 10s linear forwards infinite;
+    z-index: 5;
   }
 }

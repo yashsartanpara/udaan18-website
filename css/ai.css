@@ -1,3 +1,6 @@
+body {
+  -moz-user-select: none;
+}
 .ai-bg {
   position: absolute;
   bottom: 0;
@@ -14,7 +17,7 @@
   width: 62px;
   height: 72px;
   background: url('../img/aisprite.gif');
-  background-position: 0px center !important;
+  background-position: 0px center;
   animation: play 1.5s steps(5) infinite,
   run1 10s linear forwards infinite;
   z-index: 5;

@@ -166,3 +166,16 @@ body {
     width: 90%;
   }
 }
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  /* IE10+ CSS styles go here */
+  html, body::before {
+    display: block;
+    content: "Please Upgrade man, Dont use IE.";
+    align-content: center;
+  }
+
+  body > * {
+    visibility: hidden;
+  }
+}
