@@ -247,8 +247,8 @@ function selectCartridge(mouseEvent) {
   });
 
   if(selectedCartridge.hasAttribute('data-info')) {
-    information = selectedCartridge.getAttribute('data-info');
-    displayInformation(information);
+    // information = selectedCartridge.getAttribute('data-info');
+    displayInformation("PRESS TO START");
   }
 
   blackout(section);
@@ -300,6 +300,7 @@ function resetAllCartridges(section, excluded) {
   [].forEach.call(cartridges, function (c) {
     c.style.zIndex = CARTRIDGE_NORMAL_Z_INDEX;
   });
+  hideInformation();
 }
 
 function blackout(section) {
@@ -314,7 +315,6 @@ function blackout(section) {
 
   blackout.addEventListener('click', function onBlackout() {
     clearCartridgeSelection(section);
-    hideInformation();
     blackout.removeEventListener('click', onBlackout);
   });
 }
@@ -409,7 +409,7 @@ function displayInformation(message) {
     opacity: 0
   }, {
     opacity: 1,
-    top: "+=1vh"
+    top: "14vh"
   });
 }
 
@@ -417,7 +417,7 @@ function hideInformation() {
   var informationBar = document.querySelector('#information-bar');
   TweenMax.to(informationBar, 0.1, {
     opacity: 0,
-    top: "-=1vh"
+    top: "13vh"
   });
 }
 
