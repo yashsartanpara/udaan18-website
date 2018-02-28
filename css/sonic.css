@@ -10,21 +10,6 @@
 
 }
 
-::-moz-selection {
-  background: #b3d4fc;
-  text-shadow: none;
-}
-
-::-moz-selection {
-  background: #b3d4fc;
-  text-shadow: none;
-}
-
-::selection {
-  background: #b3d4fc;
-  text-shadow: none;
-}
-
 .browsehappy {
   margin: 0.2em 0;
   color: #000;
@@ -43,26 +28,18 @@
 }
 
 .sonic-wrapper.going-up {
-  transition: -webkit-transform 0.5s cubic-bezier(0.105, 0.51, 0.485, 1.1);
-  -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.105, 0.51, 0.485, 1.1);
   transition: transform 0.5s cubic-bezier(0.105, 0.51, 0.485, 1.1);
-  transition: transform 0.5s cubic-bezier(0.105, 0.51, 0.485, 1.1), -webkit-transform 0.5s cubic-bezier(0.105, 0.51, 0.485, 1.1);
-  -webkit-transform: translateY(-240px);
   transform: translateY(-240px);
 }
 
 .sonic-wrapper.going-down {
-  transition: -webkit-transform 0.48s cubic-bezier(0.47, 0, 0.745, 0.715);
-  -webkit-transition: -webkit-transform 0.48s cubic-bezier(0.47, 0, 0.745, 0.715);
   transition: transform 0.48s cubic-bezier(0.47, 0, 0.745, 0.715);
-  transition: transform 0.48s cubic-bezier(0.47, 0, 0.745, 0.715), -webkit-transform 0.48s cubic-bezier(0.47, 0, 0.745, 0.715);
-  -webkit-transform: translateY(0);
   transform: translateY(0);
 }
 
 .sonic {
   background-image: url('../img/sonic-sprites.png');
-  background-position: -1440px 0px !important;
+  background-position: -1440px 0px;
   width: 90px;
   height: 80px;
 }
@@ -98,8 +75,7 @@
 }
 
 .jumping .sonic {
-  -moz-animation: jumping 0.5s steps(4, end) infinite;
-  -webkit-animation: jumping 0.5s steps(4, end) infinite;
+  /*-webkit-animation: jumping 0.5s steps(4, end) infinite;*/
   animation: jumping 0.5s steps(4, end) infinite;
 }
 
@@ -145,15 +121,6 @@
 }
 
 @-webkit-keyframes jumping {
-  from {
-    background-position: -720px 0px;
-  }
-  to {
-    background-position: -1080px 0px;
-  }
-}
-
-@-moz-keyframes jumping {
   from {
     background-position: -720px 0px;
   }

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport"
@@ -20,6 +21,13 @@
     });
     var events = rezonizers.events;
     var heads = {'heads': rezonizers.heads, 'coHeads': rezonizers.coHeads};
+
+    function force() {
+      window.scrollTo(0, 1);
+    }
+
+    window.onload = force();
+
   </script>
 </head>
 <body>
