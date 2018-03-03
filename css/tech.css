@@ -97,7 +97,7 @@ body {
 }
 
 #heads-modal {
-  background: black !important;
+
   z-index: 900;
   top: 0;
   display: none;

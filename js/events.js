@@ -16,8 +16,10 @@ $(function () {
     }));
     $('.event-name').click(function () {
         openEventModal(this);
-        $('html').css("overflow-y","scroll");
-        $('body').css("overflow-y","scroll");
+      $('#event-modal').css("overflow-y", "scroll");
+      $('#event-modal').css("overflow-x", "hidden");
+      $('.events').css("display", "none");
+      $('.nontech-events').css("display", "none");
 
     });
     $('.head-title').click(function () {
@@ -44,6 +46,9 @@ function closeEventModal() {
     }, 500)
     $('html').css("overflow","hidden");
     $('body').css("overflow","hidden");
+  $('.events').css("display", "block");
+  $('.nontech-events').css("display", "block");
+
 }
 
 function populateModal(index) {
@@ -53,7 +58,7 @@ function populateModal(index) {
         .css('display', 'block')
         .addClass('modal-open-animation');
     $('.close').on('click', function () {
-        history.back()
+      history.back();
     });
 }
 

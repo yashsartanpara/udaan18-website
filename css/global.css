@@ -19,6 +19,7 @@ body {
   user-select: none;
   margin: 0;
   width: 100%;
+  overflow: hidden;
 }
 
 .cultural-nights {
@@ -65,20 +66,20 @@ body {
 
 /*Hide Scrollbar*/
 ::-webkit-scrollbar {
-  width: 0px; /* remove scrollbar space */
-  background: transparent; /* optional: just make scrollbar invisible */
+  width: 0px !important; /* remove scrollbar space */
+  background: transparent !important; /* optional: just make scrollbar invisible */
 }
 
 /* Modal CSS */
 #event-modal {
   top: 0;
   left: 0;
-  /*opacity: 0.9;*/
+  /*opacity: 0.5;*/
   display: none;
   position: absolute;
-  z-index: 1000;
+  z-index: 800;
   font-family: 'start2p', 'Roboto', sans-serif;
-
+  width: 110%;
 }
 
 .event-row {
@@ -87,23 +88,21 @@ body {
   margin: 0;
   font-size: 15px;
   line-height: 1.5rem;
-  background: black;
-!important;
+  /*background: black;*/
   /*color: #263238;*/
-  color: olivedrab;
+  /*color: black;*/
   font-weight: lighter !important;
 
 }
 
 .close {
-  background: white !important;
   width: 35px;
   padding: 1vw 0.5vw 2vw;
   cursor: pointer;
 }
 
 .levels {
-  background: black;
+  /*background: black;*/
   padding-top: 30px;
 }
 
@@ -133,28 +132,28 @@ body {
 .chip {
   display: inline-block; /* this has been added */
   border-radius: 5px;
-  background-color: lightblue;
-  color: black;
+  /*background-color: lightblue;*/
+  /*color: black;*/
   border: 3px solid black;
 
 }
 
 .managers-row {
-  background-color: black;
+  /*background-color: black;*/
   padding: 10px 0;
 }
 
 .event-managers {
-  background: black;
+  /*background: black;*/
   text-align: center;
 }
 
-.manager-name {
-  color: olivedrab;
-}
+/*.manager-name {*/
+/*color: black;*/
+/*}*/
 
 .white-text {
-  color: olivedrab;
+  color: black;
 }
 
 .no-margin {
@@ -171,7 +170,7 @@ body {
   /* IE10+ CSS styles go here */
   html, body::before {
     display: block;
-    content: "Please Upgrade man, Dont use IE.";
+    content: "Please Upgrade, Dont use IE.";
     align-content: center;
   }
 
