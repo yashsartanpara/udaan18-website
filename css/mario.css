@@ -1,18 +1,13 @@
 html, body {
   background-color: #548CFF;
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
-  margin: 0;
-  padding: 0;
 }
 
 .ground {
-  display: flex;
-  position: relative;
-  z-index: 2;
-  top: 90%;
-  height: 10vh !important;
+  position: absolute;
+  z-index: -15;
+  bottom: 0;
+  width: 100%;
+  height: 10vh;
   background-color: #C84C0C;
   background-image: url('../img/groundblock.png') !important;
 }

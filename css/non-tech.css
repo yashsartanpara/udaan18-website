@@ -1,7 +1,6 @@
 #nontechEvents {
-  background: rgba(0, 0, 0, 0.3) center;
   position: absolute;
-  height: 100vh;
+  height: 100%;
   overflow: auto;
   margin: 0;
   z-index: 50;
@@ -9,8 +8,8 @@
 
 .events {
   position: absolute;
-  width: 60vw;
-  height: 90vh;
+  /*width: 60vw;*/
+  /*height: 90vh;*/
 }
 
 .right-facing {
@@ -23,7 +22,9 @@
   font-family: 'start2p', sans-serif;
 }
 
-.nontech-events, .nights {
+.nontech-events{
+  display: flex;
+  flex-direction: row;
   position: absolute;
   width: 100vw;
   height: 80vh;
