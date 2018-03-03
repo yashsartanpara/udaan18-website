@@ -22,6 +22,12 @@ body {
   overflow: hidden;
 }
 
+.logo{
+  display: flex;
+  align-content: center;
+  flex-direction: column;
+}
+
 .cultural-nights {
   font-family: 'start2p', 'sans-serif';
   color: white;
@@ -122,6 +128,7 @@ body {
 }
 
 .light-col {
+  padding-left: 2rem ;
   /*background-color: rgba(255, 255, 255, 0.95);*/
 }
 
@@ -163,6 +170,9 @@ body {
 @media (max-width: 780px) {
   .garba {
     width: 90%;
+  }
+  .light-col{
+    padding: 0;
   }
 }
 

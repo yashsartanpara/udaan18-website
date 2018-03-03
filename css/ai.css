@@ -2,13 +2,14 @@ body {
   -moz-user-select: none;
 }
 .ai-bg {
+  display: flex;
   position: absolute;
   bottom: 0;
   height: 100%;
   width: 100%;
   background: url('../img/ai.jpg') no-repeat bottom;
   background-size: cover;
-  z-index: 5;
+  z-index: -1;
 }
 
 .ai {

@@ -14,6 +14,9 @@ $(function () {
         return '<div><span style="padding: 0 10px;"' +
             '" class="event-name" data-index="' + index + '">' + event.name + '</span></div>'
     }));
+    $('#events').append(
+            '<div ><span class=\"head-title\">Heads</span></div>\n'
+    );
     $('.event-name').click(function () {
         openEventModal(this);
       $('#event-modal').css("overflow-y", "scroll");
@@ -46,8 +49,8 @@ function closeEventModal() {
     }, 500)
     $('html').css("overflow","hidden");
     $('body').css("overflow","hidden");
-  $('.events').css("display", "block");
-  $('.nontech-events').css("display", "block");
+  $('.events').css("display", "flex");
+  $('.nontech-events').css("display", "flex");
 
 }
 
