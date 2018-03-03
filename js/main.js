@@ -10,6 +10,7 @@ window.onload = function () {
     invalidateIntroScreen();
   } else {
     introStart();
+    detectFirstStart();
   }
 };
 
@@ -27,27 +28,21 @@ function introStart() {
   fitRectBounds(arcadeScreen, arcadeScreenPlaceholder);
   var arcadeScreenBounds = arcadeScreen.getBoundingClientRect();
   var arcadeSVGBounds = arcadeSVG.getBoundingClientRect();
-  var screenTextElements = arcadeScreen.querySelectorAll('.screenText');
-  [].forEach.call(screenTextElements, function (element) {
-    fitFontToContainer(element, 40);
-  });
+  var screenTextElement = arcadeScreen.querySelector('.screenText');
+  fitFontToContainer(screenTextElement, 40);
   var coin = document.querySelector('#coin');
-  arcadeScreen.style.opacity = 0;
+  screenTextElement.style.opacity = 0;
   var coinSlot = document.querySelector('#coin-slot');
-  var coinBounds = coinSlot.getBoundingClientRect();
   var coinSlotBounds = coinSlot.getBoundingClientRect();
   var introElement = document.querySelector('#intro');
 
-  var pointer1 = document.querySelector('#pointer1');
-  var pointer2 = document.querySelector('#pointer2');
-  var pointer3 = document.querySelector('#pointer3');
+  var coinBounceTimeline = new TimelineMax({repeat: 3, yoyo: true, ease: Power0.easeNone});
+  coinBounceTimeline.add(TweenMax.to(coin, 1, {top: '-=5%', scale: 1.1}));
 
-  var coinZoomTimeline = new TimelineMax({repeat: 3, yoyo: true, ease: Power0.easeNone});
-  coinZoomTimeline.add(TweenMax.to(coin, 1, {top: '-=5%', scale: 1.1}));
-
-  var coinFlashTimeline = new TimelineMax({repeat: -1, yoyo: true, ease: Power0.easeNone});
+  var coinFlashTimeline = new TimelineMax({repeat: 10, yoyo: true, ease: Power0.easeNone});
   coinFlashTimeline.add(TweenMax.to(coin, 1,
     {backgroundColor: 'rgba(255, 249, 15, 0.1)'}));
+
   coin.addEventListener('click', animationStep1);
 
   var arcadeTimeline = new TimelineMax({});
@@ -58,35 +53,28 @@ function introStart() {
     {y: '10%', opacity: 0, attr: {opacity: 0}},
     {y: '0%', opacity: 1, attr: {opacity: 1}}), 0.5);
   arcadeTimeline.add(TweenMax.fromTo(arcadeScreen, 0.5,
-    {opacity: 0, ease: Power0.easeNone},
-    {opacity: 1, ease: Power0.easeNone}), 1);
+    {y: '30%', opacity: 0},
+    {y: '0%', opacity: 1}), 0);
 
   var textTimeline = new TimelineMax({repeat: -1, yoyo: true});
-  textTimeline.add(TweenMax.fromTo(arcadeScreen, 0.5,
+  textTimeline.add(TweenMax.fromTo(screenTextElement, 0.5,
     {opacity: 0.7, ease: Power0.easeNone},
     {opacity: 1, ease: Power0.easeNone}), 0.5);
 
-  var coinTimeline = new TimelineMax({ease: Power0.easeNone});
+  var coinTimeline = new TimelineMax();
   var time_step1 = 2;
   var time_coinShow = 1;
 
   // yoyo coin to left and zoom in
   function animationStep1() {
-    var keyFrames = [
-      [0, coin, animCoin_SlideLeft, time_step1 / 2],
-      [0, coin, animCoin_ZoomAndFlip, time_step1],
-      [time_step1, coin, animCoin_SlideTop, time_step1],
-      [time_coinShow, coin, {}, time_step1],
-      [time_coinShow, coin, animCoin_InsertIntoSlot, time_step1],
-    ];
+    coinBounceTimeline.kill();
     var animCoin_SlideLeft = {left: '-=20%', yoyo: true, repeat: 1};
-    var animCoin_ZoomAndFlip = {scale: 7, rotationY: '360deg'};
-    var animCoin_SlideTop = {top: '+=0%', yoyo: true, repeat: 1};
+    var animCoin_ZoomAndFlip = {scale: 7, rotationY: '360deg', ease: Back.easeOut.config(1.7)};
+    var animCoin_SlideTop = {top: '+=0%', yoyo: true, repeat: 1, ease: Back.easeOut.config(1.7)};
     var animCoin_InsertIntoSlot = {
       scale: 1,
       top: coinSlotBounds.top + 'px',
-      left: coinSlotBounds.left - coinSlot.width / 2 + 'px',
-      // delay: time_step1
+      left: coinSlotBounds.left - coinSlot.width / 2 + 'px'
     };
     var animCoin_HalfFlip = {rotationY: '+=80deg'};
     var animCoin_Fade = {opacity: 0, onComplete: animationStep2};
@@ -94,8 +82,8 @@ function introStart() {
     coinTimeline.add(TweenMax.to(coin, time_step1 / 2, animCoin_SlideLeft), 0);
     coinTimeline.add(TweenMax.to(coin, time_step1, animCoin_ZoomAndFlip), 0);
     coinTimeline.add(TweenMax.to(coin, 0.2, animCoin_SlideTop), time_step1);
-    // coinTimeline.add(TweenMax.to(coin, time_coinShow, {}), time_step1);
-    coinTimeline.add(TweenMax.to(coin, 1, animCoin_InsertIntoSlot).delay(time_step1), time_step1 + time_coinShow);
+    coinTimeline.add(TweenMax.to(coin, time_coinShow, {}), time_step1);
+    coinTimeline.add(TweenMax.to(coin, 1, animCoin_InsertIntoSlot), time_step1 + time_coinShow);
     coinTimeline.add(TweenMax.to(coin, 1, animCoin_HalfFlip), time_step1 + time_coinShow);
     coinTimeline.add(TweenMax.to(coin, 0.01, animCoin_Fade), time_step1 + time_coinShow + 0.9);
 
@@ -138,6 +126,22 @@ function introStart() {
       onComplete: invalidateIntroScreen
     }), 0.5);
     introComplete();
+  }
+}
+
+function detectFirstStart() {
+  if(Cookies.get('udaan18-existing-user') === 'yes') {
+    var skipIntroButton = document.querySelector('#skip-intro');
+    skipIntroButton.style.display = 'block';
+    skipIntroButton.style.opacity = '0';
+    TweenMax.to(skipIntroButton, 1.0, {delay: 2, opacity: 1});
+    skipIntroButton.addEventListener('click', function skipIntroAction() {
+      introComplete();
+      invalidateIntroScreen();
+      location.hash = 'udaan-title-page';
+    });
+  } else {
+    Cookies.set('udaan18-existing-user', 'yes', 7);
   }
 }
 
@@ -478,7 +482,7 @@ function placeSvgIntoDocument(selector) {
   }
   var svg = object.contentDocument.firstElementChild;
   object.parentElement.replaceChild(svg, object);
-  svg.setAttribute('id', selector);
+  svg.setAttribute('id', selector.slice(1));
   return svg;
 }
 
