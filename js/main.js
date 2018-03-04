@@ -19,6 +19,11 @@ window.onload = function () {
 *=========================================================================================
 */
 
+/*==========================================
+*   ---- Intro
+*===========================================
+*/
+
 function introStart() {
   var arcadeSVG = placeSvgIntoDocument('#arcadeSVG');
   var arcadeScreenPlaceholder = arcadeSVG.querySelector('#arcadeScreenPlaceholder');
@@ -182,9 +187,8 @@ function setupInteractionEvents() {
       yafpsPager.animate('up');
     }
   });
-  // Navigation on title page
-  var titlePage = document.querySelector('#udaan-title-page');
-  var buttons = titlePage.querySelectorAll('.navigation-button');
+  // Navigation buttons
+  var buttons = document.querySelectorAll('.navigation-button');
   [].forEach.call(buttons, function (button) {
     button.addEventListener('click', function (mouseEvent) {
       var target = mouseEvent.currentTarget;

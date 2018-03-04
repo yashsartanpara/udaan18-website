@@ -44,6 +44,7 @@
     <div class="grid"></div>
   </div>
 </div>
+<canvas id="tv-static-bg"></canvas>
 <div class="pager">
   <div class="main pages-container">
     <section id="udaan-title-page" class="page" data-order="1-2">
@@ -99,6 +100,11 @@
       <div class="blackout">
         <!-- Overlay element that dims other cartridges when one of them is selected -->
       </div>
+      <div class="navigation-container">
+        <div class="navigation-button" data-action="right">
+          <img src="img/arrow_button.svg"/>
+        </div>
+      </div>
       <div class="console-top-view console-top-view--top-half">
         <div class="console-top-view-content">
           <img src="img/console-top-view_top-half.png">
@@ -145,6 +151,11 @@
       <div class="blackout">
         <!-- Overlay element that dims other cartridges when one of them is selected -->
       </div>
+      <div class="navigation-container">
+        <div class="navigation-button" data-action="left">
+          <img src="img/arrow_button.svg" style="transform: rotate(180deg)"/>
+        </div>
+      </div>
       <div class="console-top-view console-top-view--top-half">
         <div class="console-top-view-content">
           <img src="img/console-top-view_top-half.png">
@@ -158,8 +169,12 @@
     </section>
     <section id="udaan-other" class="page" data-order="2-2">
       OTHERS
+      <div class="navigation-container">
+        <div class="navigation-button" data-action="up">
+          <img src="img/arrow_button.svg" style="transform: rotate(-90deg)"/>
+        </div>
+      </div>
     </section>
-
     <div id="information-bar">
       INFORMATION
     </div>
