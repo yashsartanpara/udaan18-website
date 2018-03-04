@@ -260,7 +260,7 @@ section {
 *   ---- Title page background
 *===========================================
 */
-#udaan-title-page .wrapper {
+#intro .wrapper {
   background: radial-gradient(ellipse at center, rgba(127, 0, 173, 0.6) 0%, rgba(0, 0, 0, 0.8) 60%, #000000 90%), url('../img/stars.jpg');
   background-size: cover;
   height: 100%;
@@ -271,7 +271,7 @@ section {
   z-index: -1;
   width: 100%;
 }
-#udaan-title-page .grid {
+#intro .grid {
   background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0px, rgba(54, 226, 248, 0.5) 0%, rgba(54, 226, 248, 0.5) 3px, rgba(0, 0, 0, 0) 0px), linear-gradient(90deg, rgba(0, 0, 0, 0) 0px, rgba(54, 226, 248, 0.5) 0%, rgba(54, 226, 248, 0.5) 3px, rgba(0, 0, 0, 0) 0px);
   background-size: 4em 4em, 4em 4em;
   background-color: black;
@@ -284,7 +284,7 @@ section {
   position: absolute;
   width: 200%;
 }
-#udaan-title-page .grid:after {
+#intro .grid:after {
   background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, rgba(0, 0, 0, 0)), color-stop(95%, #000000));
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, #000000 95%);
   content: '';
@@ -292,7 +292,7 @@ section {
   position: absolute;
   width: 100%;
 }
-#udaan-title-page .grid:before {
+#intro .grid:before {
   background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0) 30%, rgba(209, 0, 177, 0.5) 90%);
   content: '';
   height: 100%;

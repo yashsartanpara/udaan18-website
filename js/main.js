@@ -257,7 +257,6 @@ function selectCartridge(mouseEvent) {
   });
 
   if (selectedCartridge.hasAttribute('data-info')) {
-    // information = selectedCartridge.getAttribute('data-info');
     displayInformation('PRESS TO START');
   }
 
@@ -319,9 +318,7 @@ function blackout(section) {
     return;
   blackout.style.zIndex = BLACKOUT_ON_Z_INDEX;
 
-  TweenMax.to(blackout, CARTRIDGE_TRANSITION_IN_TIME, {
-    opacity: 0.4
-  });
+  TweenMax.to(blackout, CARTRIDGE_TRANSITION_IN_TIME, { opacity: 0.4 });
 
   blackout.addEventListener('click', function onBlackout() {
     clearCartridgeSelection(section);
@@ -383,8 +380,7 @@ function changeConsoleState(state, section) {
 
 function setConsoleState(state) {
   var section = getActiveSection();
-  var consoleTopViewTopHalf = section.querySelector(
-    '.console-top-view--top-half');
+  var consoleTopViewTopHalf = section.querySelector('.console-top-view--top-half');
   if (state === 'hidden') {
     resetAllCartridges(section);
   }
@@ -393,8 +389,7 @@ function setConsoleState(state) {
 
 function getConsoleState() {
   var section = getActiveSection();
-  var consoleTopViewTopHalf = section.querySelector(
-    '.console-top-view--top-half');
+  var consoleTopViewTopHalf = section.querySelector('.console-top-view--top-half');
   return consoleTopViewTopHalf.getAttribute('data-state');
 }
 
