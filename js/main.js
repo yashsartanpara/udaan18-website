@@ -44,9 +44,9 @@ function introStart() {
   var coinBounceTimeline = new TimelineMax({repeat: 3, yoyo: true, ease: Power0.easeNone});
   coinBounceTimeline.add(TweenMax.to(coin, 1, {top: '-=5%', scale: 1.1}));
 
-  var coinFlashTimeline = new TimelineMax({repeat: 10, yoyo: true, ease: Power0.easeNone});
-  coinFlashTimeline.add(TweenMax.to(coin, 1,
-    {backgroundColor: 'rgba(255, 249, 15, 0.1)'}));
+  var coinFlashTimeline = new TimelineMax({repeat: 10, yoyo: true, ease: Power0.easeNone})
+    .add(TweenMax.to(coin, 1,
+      {backgroundColor: 'rgba(255, 249, 15, 0.1)'}));
 
   coin.addEventListener('click', animationStep1);
 
@@ -135,7 +135,7 @@ function introStart() {
 }
 
 function detectFirstStart() {
-  if(Cookies.get('udaan18-existing-user') === 'yes') {
+  if (Cookies.get('udaan18-existing-user') === 'yes') {
     var skipIntroButton = document.querySelector('#skip-intro');
     skipIntroButton.style.display = 'block';
     skipIntroButton.style.opacity = '0';
@@ -157,6 +157,7 @@ function invalidateIntroScreen() {
 function introComplete() {
   setupCartridgeEvents();
   setupInteractionEvents();
+  setupTetrisAnimation();
 }
 
 function setupInteractionEvents() {
@@ -188,7 +189,7 @@ function setupInteractionEvents() {
     }
   });
   // Navigation buttons
-  var buttons = document.querySelectorAll('.navigation-button');
+  var buttons = document.querySelectorAll('.arrow-key');
   [].forEach.call(buttons, function (button) {
     button.addEventListener('click', function (mouseEvent) {
       var target = mouseEvent.currentTarget;
@@ -318,7 +319,7 @@ function blackout(section) {
     return;
   blackout.style.zIndex = BLACKOUT_ON_Z_INDEX;
 
-  TweenMax.to(blackout, CARTRIDGE_TRANSITION_IN_TIME, { opacity: 0.4 });
+  TweenMax.to(blackout, CARTRIDGE_TRANSITION_IN_TIME, {opacity: 0.4});
 
   blackout.addEventListener('click', function onBlackout() {
     clearCartridgeSelection(section);
@@ -391,6 +392,29 @@ function getConsoleState() {
   var section = getActiveSection();
   var consoleTopViewTopHalf = section.querySelector('.console-top-view--top-half');
   return consoleTopViewTopHalf.getAttribute('data-state');
+}
+
+/*==========================================
+*   ---- Tetris Animation
+*===========================================
+*/
+function setupTetrisAnimation() {
+
+  var $cover2 = $('#cover-tetris-2').blockrain({
+    autoplay: true,
+    autoplayRestart: true,
+    showFieldOnStart: true,
+    speed: 50,
+    autoBlockWidth: true,
+    autoBlockSize: 25,
+    theme: 'candy'
+  });
+  // console.log($cover2);
+
+  var $demo = $('#tetris-demo').blockrain({
+    speed: 200,
+    theme: 'vim'
+  });
 }
 
 /*========================================================================================
