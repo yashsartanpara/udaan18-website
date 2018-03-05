@@ -1,6 +1,7 @@
 body {
   background: #D6DFED url("../img/zelda.jpg") no-repeat fixed center;
   overflow: hidden;
+  background-size: contain;
 }
 
 .zelda{
