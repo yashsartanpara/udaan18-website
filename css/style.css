@@ -278,7 +278,7 @@ section {
   border-top: 5px solid #d100b1;
   -webkit-box-shadow: 0 -25px 45px #d100b1;
   box-shadow: 0 -25px 45px #d100b1;
-  height: 80em;
+  height: 135vh;
   -webkit-transform: scale(1.26) rotateX(80deg);
   transform: scale(1.26) rotateX(80deg);
   position: absolute;
