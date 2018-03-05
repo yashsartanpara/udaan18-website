@@ -23,7 +23,7 @@ body {
 }
 
 .logoImg {
-  width: 40%;
+  max-width: 40%;
   display: block;
   margin-left: auto !important;
   margin-right: auto !important;
@@ -33,7 +33,7 @@ body {
   display: flex;
   flex-direction: column;
   align-content: center;
-  margin: 2em;
+  margin: 2vh;
 }
 
 /*.cultural-nights {*/
@@ -197,6 +197,10 @@ body {
   }
   .light-col{
     padding: 0;
+  }
+
+  .logoImg {
+    max-width: 80%;
   }
 }
 
