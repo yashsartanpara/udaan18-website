@@ -1,11 +1,12 @@
 .aladdinBg {
-  background: #1b242d url("../img/aladdin.jpg") no-repeat fixed bottom;
+  background:url("../img/aladdin.jpg") no-repeat bottom;
   bottom: 0;
   height: 100%;
   width: 100%;
-  display: block;
+  display: flex;
   position: absolute;
   background-size: cover;
+  z-index: -1;
 }
 
 /*.aladdin {*/

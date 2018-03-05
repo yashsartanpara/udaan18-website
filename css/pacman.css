@@ -13,8 +13,9 @@ body {
 }
 
 .maze {
+  display: flex;
   position: relative;
-  top: 40%;
+  top: 50%;
   left: 50%;
   height: 70%;
   max-width: 40rem;
@@ -231,7 +232,15 @@ body {
     height: 2rem;
     width: 2rem;
   }
+  .ghost_eye_1, .ghost_eye_2 {
+    height: 0.8rem;
+    width: 0.8rem;
+  }
 
+  .ghost_eye_inside_1, .ghost_eye_inside_2 {
+    height: 0.4rem;
+    width: 0.4rem;
+  }
   .pacman_mouth {
     height: 1rem;
     width: 1rem;
@@ -247,7 +256,7 @@ body {
     width: 2rem;
   }
 
-  ghost_eye_1, .ghost_eye_2 {
+  .ghost_eye_1, .ghost_eye_2 {
     height: 0.6rem;
     width: 0.6rem;
   }
