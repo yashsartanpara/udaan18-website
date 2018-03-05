@@ -23,6 +23,14 @@
   <script src="js/vendor/greensock/EasePack.min.js"></script>
   <script src="js/vendor/greensock/TweenMax.min.js"></script>
 
+  <!-- jQuery -->
+  <script src="js/vendor/jquery-3.1.1.min.js"></script>
+
+  <!-- Tetris JS -->
+  <script src="js/vendor/blockrain.jquery.libs.js"></script>
+  <script src="js/vendor/blockrain.jquery.src.js"></script>
+  <script src="js/vendor/blockrain.jquery.themes.js"></script>
+
   <!-- Main -->
   <script src="js/main.js"></script>
 </head>
@@ -35,12 +43,12 @@
     <span class="screenText">INSERT<br/>COIN</span>
   </div>
   <div id="coin">
-    <img src="img/coin.svg">
+    <img src="img/coin.png">
   </div>
   <div id="skip-intro">
     SKIP INTRO >>
   </div>
-  <div class="wrapper">
+  <div class="wrapper" style="">
     <div class="grid"></div>
   </div>
 </div>
@@ -48,19 +56,20 @@
 <div class="pager">
   <div class="main pages-container">
     <section id="udaan-title-page" class="page" data-order="1-2">
+      <div class="game" id="cover-tetris-2"></div>
       <div id="udaan-logo-container">
         <div class="logo">
         </div>
       </div>
       <div class="navigation-container">
-        <div class="navigation-button" data-action="left">
-          <img src="img/arrow_button.svg" style="transform: rotate(180deg)"/>
+        <div class="arrow-key left" data-action="left">
+
         </div>
-        <div class="navigation-button down" data-action="down">
-          <img src="img/arrow_button.svg" style="transform: rotate(90deg);"/>
+        <div class="arrow-key down" data-action="down">
+
         </div>
-        <div class="navigation-button" data-action="right">
-          <img src="img/arrow_button.svg"/>
+        <div class="arrow-key right" data-action="right">
+
         </div>
       </div>
     </section>
@@ -101,8 +110,7 @@
         <!-- Overlay element that dims other cartridges when one of them is selected -->
       </div>
       <div class="navigation-container">
-        <div class="navigation-button" data-action="right">
-          <img src="img/arrow_button.svg"/>
+        <div class="arrow-key right" data-action="right">
         </div>
       </div>
       <div class="console-top-view console-top-view--top-half">
@@ -152,8 +160,7 @@
         <!-- Overlay element that dims other cartridges when one of them is selected -->
       </div>
       <div class="navigation-container">
-        <div class="navigation-button" data-action="left">
-          <img src="img/arrow_button.svg" style="transform: rotate(180deg)"/>
+        <div class="arrow-key left" data-action="left">
         </div>
       </div>
       <div class="console-top-view console-top-view--top-half">
@@ -169,9 +176,9 @@
     </section>
     <section id="udaan-other" class="page" data-order="2-2">
       OTHERS
+      <div class="game" id="cover-tetris"></div>
       <div class="navigation-container">
-        <div class="navigation-button" data-action="up">
-          <img src="img/arrow_button.svg" style="transform: rotate(-90deg)"/>
+        <div class="arrow-key up" data-action="up">
         </div>
       </div>
     </section>
