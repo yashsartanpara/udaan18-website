@@ -22,52 +22,76 @@ body {
   overflow: hidden;
 }
 
+.logoImg {
+  width: 40%;
+  display: block;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
 .logo{
   display: flex;
-  align-content: center;
   flex-direction: column;
+  align-content: center;
+  margin: 2em;
 }
 
-.cultural-nights {
+/*.cultural-nights {*/
+/*font-family: 'start2p', 'sans-serif';*/
+/*color: white;*/
+/*font-size: 1.25rem;*/
+/*padding-top: 30px;*/
+/*}*/
+
+/*.nights-content {*/
+/*font-family: 'description', 'Roboto', sans-serif;*/
+/*font-size: 1.25rem;*/
+/*color: white;*/
+/*}*/
+
+/*.nights-content span:nth-child(2) {*/
+/*!*font-weight: bolder;*!*/
+/*font-size: 1.5rem;*/
+/*color: Red;*/
+/*}*/
+
+/*.nights-content span:nth-child(3) {*/
+/*!*font-weight: bolder;*!*/
+/*font-size: 1.5rem;*/
+/*color: yellow;*/
+/*}*/
+
+/*.garba {*/
+/*display: block;*/
+/*margin: 0 auto;*/
+/*}*/
+
+/*.kalrav {*/
+/*color: cornflowerblue !important;*/
+/*}*/
+
+/*.city {*/
+/*filter: grayscale(50%);*/
+/*position: absolute;*/
+/*z-index: -3;*/
+/*max-height: 90vh;*/
+/*bottom: 0;*/
+/*}*/
+
+/*Exit button*/
+#exit_page {
   font-family: 'start2p', 'sans-serif';
   color: white;
-  font-size: 1.25rem;
-  padding-top: 30px;
-}
-
-.nights-content {
-  font-family: 'description', 'Roboto', sans-serif;
-  font-size: 1.25rem;
-  color: white;
-}
-
-.nights-content span:nth-child(2) {
-  /*font-weight: bolder;*/
-  font-size: 1.5rem;
-  color: Red;
-}
-
-.nights-content span:nth-child(3) {
-  /*font-weight: bolder;*/
-  font-size: 1.5rem;
-  color: yellow;
-}
-
-.garba {
-  display: block;
-  margin: 0 auto;
-}
-
-.kalrav {
-  color: cornflowerblue !important;
-}
-
-.city {
-  filter: grayscale(50%);
-  position: absolute;
-  z-index: -3;
-  max-height: 90vh;
-  bottom: 0;
+  display: flex;
+  position: fixed;
+  bottom: 3vh;
+  right: 5vw;
+  cursor: pointer;
+  border-radius: 10% 10%;
+  border: #FFF solid 3px;
+  padding: 16px;
+  background-color: rgba(17, 17, 17, 0.5);
+  z-index: 1000;
 }
 
 /*Hide Scrollbar*/
@@ -180,6 +204,8 @@ body {
   /* IE10+ CSS styles go here */
   html, body::before {
     display: block;
+    justify-content: center;
+    font-size: xx-large;
     content: "Please Upgrade, Dont use IE.";
     align-content: center;
   }

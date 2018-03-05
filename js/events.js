@@ -7,6 +7,9 @@ Handlebars.registerHelper('urlencode', function (str) {
 });
 
 $(function () {
+  $('#exit_page').on('click', function () {
+    history.back();
+  });
     $('#nontechEvents').html(events.map(function (event, index) {
         return '<div class="col-sm-4 col-xs-12 center-xs"> <span style="padding: 0 10px;"\' +\n'+'\'" class="event-name" data-index="' + index + '">' + event.name + '</span></div>'
     }));
@@ -87,6 +90,6 @@ function closeHeadsModal() {
 
 $(document).keyup(function (e) {
     if (e.keyCode == 27) {
-        closeEventModal()
+      closeEventModal()
     }
 });
