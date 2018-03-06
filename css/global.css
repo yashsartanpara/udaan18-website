@@ -22,6 +22,7 @@ body {
   overflow: hidden;
 }
 
+/*Department logo*/
 .logoImg {
   max-width: 40%;
   display: block;
@@ -81,17 +82,16 @@ body {
 /*Exit button*/
 #exit_page {
   font-family: 'start2p', 'sans-serif';
-  color: white;
+  color: black;
   display: flex;
   position: fixed;
   bottom: 3vh;
   right: 5vw;
   cursor: pointer;
   border-radius: 10% 10%;
-  border: #FFF solid 3px;
+  border: #000 solid 3px;
   padding: 16px;
-  background-color: rgba(17, 17, 17, 0.5);
-  z-index: 1000;
+  z-index: 500;
 }
 
 /*Hide Scrollbar*/
@@ -116,12 +116,12 @@ body {
   height: 100vh;
   width: 100vw;
   margin: 0;
-  font-size: 15px;
+  font-size: .775rem;
   line-height: 1.5rem;
   /*background: black;*/
   /*color: #263238;*/
   /*color: black;*/
-  font-weight: lighter !important;
+  /*font-weight: lighter !important;*/
 
 }
 
@@ -142,8 +142,8 @@ body {
 
 .title {
   font-family: "start2p", sans-serif;
-  font-size: 20px;
-  line-height: 3rem;
+  font-size: 1rem;
+  line-height: 2.5rem;
 }
 
 .dark-col {
@@ -166,7 +166,6 @@ body {
   /*background-color: lightblue;*/
   /*color: black;*/
   border: 3px solid black;
-
 }
 
 .managers-row {
@@ -195,6 +194,7 @@ body {
   .garba {
     width: 90%;
   }
+
   .light-col{
     padding: 0;
   }
