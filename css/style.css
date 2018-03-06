@@ -197,8 +197,8 @@ section {
 */
 
 :root {
-  --navigation-button-size--lg: 10vmin;
-  --navigation-button-size--sm: 16vmin;
+  --navigation-button-size--lg: 8vmin;
+  --navigation-button-size--sm: 14vmin;
 }
 
 .page {
@@ -332,12 +332,12 @@ background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAIAAAAlC
 
 .arrow-key {
   align-items: center;
-  background: #ccc;
+  background: #aaa;
   border-radius: 6px;
   box-shadow: -1px 1px 0 #999, -2px 2px 0 #999, -3px 3px 0 #999, -4px 4px 0 #999;
   color: #fff;
   display: inline-flex;
-  font-size: 30px;
+  font-size: 4vh;
   font-weight: bold;
   justify-content: center;
   margin: 5px;
@@ -840,6 +840,21 @@ background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAIAAAAlC
   left: 0;
   width: 100%;
   top: 14vh;
+  color: white;
+  z-index: 100;
+  text-align: center;
+  pointer-events: none;
+  opacity: 0;
+  text-transform: uppercase;
+  font-size: 3vh;
+}
+
+#information-bar-2 {
+  display: table-row;
+  position: fixed;
+  left: 0;
+  width: 100%;
+  top: 80vh;
   color: white;
   z-index: 100;
   text-align: center;

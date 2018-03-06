@@ -9,6 +9,14 @@ window.onload = function () {
     introComplete();
     invalidateIntroScreen();
   } else {
+    if(isSafari()) {
+      var wrapper = document.querySelector('#intro .wrapper');
+      if(!wrapper) {
+        // TODO : Remove this when testing is complete.
+        console.error('Grid not found.');
+      }
+      wrapper.parentNode.removeChild(wrapper);
+    }
     introStart();
     detectFirstStart();
   }
@@ -152,12 +160,12 @@ function detectFirstStart() {
 
 function invalidateIntroScreen() {
   document.querySelector('#intro').style.display = 'none';
+  setupTetrisAnimation();
 }
 
 function introComplete() {
   setupCartridgeEvents();
   setupInteractionEvents();
-  setupTetrisAnimation();
 }
 
 function setupInteractionEvents() {
@@ -258,7 +266,9 @@ function selectCartridge(mouseEvent) {
   });
 
   if (selectedCartridge.hasAttribute('data-info')) {
-    displayInformation('PRESS TO START');
+    var departmentInfo = selectedCartridge.getAttribute('data-info');
+    displayInformation(departmentInfo, false);
+    displayInformation('PRESS TO START', true);
   }
 
   blackout(section);
@@ -286,6 +296,8 @@ function insertCartridge(mouseEvent) {
     y: point,
     onComplete: navigateTo.bind(null, url)
   });
+
+  hideInformation(false, true);
 }
 
 function resetAllCartridges(section, excluded) {
@@ -310,6 +322,7 @@ function resetAllCartridges(section, excluded) {
   [].forEach.call(cartridges, function (c) {
     c.style.zIndex = CARTRIDGE_NORMAL_Z_INDEX;
   });
+
   hideInformation();
 }
 
@@ -399,14 +412,13 @@ function getConsoleState() {
 *===========================================
 */
 function setupTetrisAnimation() {
-
   var $cover2 = $('#cover-tetris-2').blockrain({
     autoplay: true,
     autoplayRestart: true,
     showFieldOnStart: true,
     speed: 50,
     autoBlockWidth: true,
-    autoBlockSize: 25,
+    //autoBlockSize: 25,
     theme: 'candy'
   });
   // console.log($cover2);
@@ -430,7 +442,19 @@ function setupTetrisAnimation() {
 // TODO: Complete back button handle for mobile devices
 // function backButton() {}
 
-function displayInformation(message) {
+function displayInformation(message, bottom) {
+  if(bottom) {
+    var informationBar2 = document.querySelector('#information-bar-2');
+    informationBar2.innerHTML = message;
+    informationBar2.style.left = getActiveSection().style.left;
+    TweenMax.fromTo(informationBar2, 0.3, {
+      opacity: 0
+    }, {
+      opacity: 1,
+      top: '70vh'
+    });
+    return;
+  }
   var informationBar = document.querySelector('#information-bar');
   informationBar.innerHTML = message;
   informationBar.style.left = getActiveSection().style.left;
@@ -442,12 +466,35 @@ function displayInformation(message) {
   });
 }
 
-function hideInformation() {
+function hideInformation(top, bottom) {
   var informationBar = document.querySelector('#information-bar');
-  TweenMax.to(informationBar, 0.1, {
-    opacity: 0,
-    top: '13vh'
-  });
+  var informationBar2 = document.querySelector('#information-bar-2');
+
+  if(!top && !bottom) {
+    TweenMax.to(informationBar, 0.1, {
+      opacity: 0,
+      top: '13vh'
+    });
+
+    TweenMax.to(informationBar2, 0.1, {
+      opacity: 0,
+      top: '69vh'
+    });
+  }
+
+  if(top) {
+    TweenMax.to(informationBar, 0.1, {
+      opacity: 0,
+      top: '13vh'
+    });
+  }
+
+  if(bottom) {
+    TweenMax.to(informationBar2, 0.1, {
+      opacity: 0,
+      top: '69vh'
+    });
+  }
 }
 
 function displayMessage(message) {
@@ -492,6 +539,10 @@ function interactiveHit(callback) {
 *   ---- Miscellaneous
 *===========================================
 */
+function isSafari() {
+  return navigator.vendor.indexOf('Apple') > -1;
+}
+
 function fitFontToContainer(container, percent) {
   var containerHeight = container.clientHeight * (percent / 100);
   container.style.fontSize = containerHeight + 'px';
