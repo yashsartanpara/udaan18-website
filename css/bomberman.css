@@ -15,13 +15,48 @@ body {
 
 .bomberBg {
   display: flex;
+  flex-direction: column;
   position: absolute;
-  height: 90%;
+  height: 85%;
   width: 100%;
-  background: url("../img/bomberman.svg") no-repeat bottom;
-  background-size: contain;
-  bottom: 10%;
+  bottom: 15%;
+}
 
+.bombertop {
+  background: url("../img/bombermanblock.svg");
+  background-repeat: repeat-x;
+  /*background-size: contain;*/
+  background-position-y: top;
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: inherit;
+  z-index: -1;
+
+}
+
+.bomberside1 {
+  background: url("../img/bombermanblock.svg");
+  display: block;
+  background-repeat: repeat-y;
+  background-position-x: right;
+  height: 100%;
+  width: inherit;
+  position: absolute;
+  z-index: -1;
+}
+
+.bomberside2 {
+  background: url("../img/bombermanblock.svg");
+  display: block;
+  background-repeat: repeat-y;
+  background-position-x: left;
+  /*top: 80%;*/
+  height: 100%;
+  width: inherit;
+  position: absolute;
+  /*background-size: contain;*/
+  z-index: -1;
 }
 
 .bomberman {
