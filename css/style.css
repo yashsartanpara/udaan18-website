@@ -13,7 +13,7 @@ html, body {
   height: 100%;
   background-color: #111;
   margin: 0;
-  font-size: 0.875rem; /* 14px */
+  font-size: 2vh;
   overflow: hidden;
   user-select: none;
   -webkit-tap-highlight-color: transparent;
@@ -258,6 +258,20 @@ background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAIAAAAlC
 *   ---- Title page background
 *===========================================
 */
+
+#intro .wrapper-safari {
+  background: radial-gradient(ellipse at center, rgba(127, 0, 173, 0.6) 0%, rgba(0, 0, 0, 0.8) 60%, #000000 90%), url('../img/stars.jpg');
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#intro .wrapper-safari img {
+  height: 100%;
+}
+
 #intro .wrapper {
   background: radial-gradient(ellipse at center, rgba(127, 0, 173, 0.6) 0%, rgba(0, 0, 0, 0.8) 60%, #000000 90%), url('../img/stars.jpg');
   background-size: cover;

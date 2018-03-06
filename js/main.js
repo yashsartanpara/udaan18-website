@@ -5,32 +5,32 @@
 
 window.onload = function () {
   console.info('[main.js] : Ready');
+  showCompatibilityStatus();
+
   if (location.hash.length > 0) {
     introComplete();
     invalidateIntroScreen();
   } else {
-    if(isSafari()) {
-      var wrapper = document.querySelector('#intro .wrapper');
-      if(!wrapper) {
-        // TODO : Remove log when testing is complete.
-        console.error('Wrapper not found.');
-      }
-      wrapper.parentNode.removeChild(wrapper);
-    }
+    handleFallbacks();
     introStart();
     detectFirstStart();
   }
 };
 
-window.onpageshow = function(event) {
+window.onpageshow = function (event) {
   var backPages = ['#udaan-department', '#udaan-nontech'];
-  for(var i = 0; i < backPages.length; i++) {
+  for (var i = 0; i < backPages.length; i++) {
     var page = backPages[i];
-    if(location.hash.indexOf(page) > -1) {
+    if (location.hash.indexOf(page) > -1) {
       resetAllCartridges();
       return;
     }
   }
+};
+
+window.unload = window.beforeunload = function () {
+  // Prevent caching on some browsers
+  resetAllCartridges();
 };
 
 /*========================================================================================
@@ -172,6 +172,9 @@ function detectFirstStart() {
 function invalidateIntroScreen() {
   document.querySelector('#intro').style.display = 'none';
   setupTetrisAnimation();
+  if(location.hash.length === 0) {
+    location.hash = 'udaan-title-page';
+  }
 }
 
 function introComplete() {
@@ -312,6 +315,9 @@ function insertCartridge(mouseEvent) {
 }
 
 function resetAllCartridges(section, excluded) {
+  if(!section)
+    return;
+
   var cartridges = section.querySelectorAll('.cartridge');
 
   [].forEach.call(cartridges, function (cartridge) {
@@ -429,7 +435,6 @@ function setupTetrisAnimation() {
     showFieldOnStart: true,
     speed: 50,
     autoBlockWidth: true,
-    //autoBlockSize: 25,
     theme: 'candy'
   });
   // console.log($cover2);
@@ -454,7 +459,7 @@ function setupTetrisAnimation() {
 // function backButton() {}
 
 function displayInformation(message, bottom) {
-  if(bottom) {
+  if (bottom) {
     var informationBar2 = document.querySelector('#information-bar-2');
     informationBar2.innerHTML = message;
     informationBar2.style.left = getActiveSection().style.left;
@@ -481,7 +486,7 @@ function hideInformation(top, bottom) {
   var informationBar = document.querySelector('#information-bar');
   var informationBar2 = document.querySelector('#information-bar-2');
 
-  if(!top && !bottom) {
+  if (!top && !bottom) {
     TweenMax.to(informationBar, 0.1, {
       opacity: 0,
       top: '13vh'
@@ -493,14 +498,14 @@ function hideInformation(top, bottom) {
     });
   }
 
-  if(top) {
+  if (top) {
     TweenMax.to(informationBar, 0.1, {
       opacity: 0,
       top: '13vh'
     });
   }
 
-  if(bottom) {
+  if (bottom) {
     TweenMax.to(informationBar2, 0.1, {
       opacity: 0,
       top: '69vh'
@@ -550,8 +555,55 @@ function interactiveHit(callback) {
 *   ---- Miscellaneous
 *===========================================
 */
+
 function isSafari() {
   return navigator.vendor.indexOf('Apple') > -1;
+}
+
+function isFirefox() {
+  return navigator.userAgent.indexOf('firefox') > -1;
+}
+
+function isChrome() {
+  return navigator.vendor.indexOf('Google') > -1;
+}
+
+function isMobile() {
+  return (getMedia().indexOf('xs') > -1 || getMedia().indexOf('sm') > -1);
+}
+
+function handleFallbacks() {
+  var isGoodBrowser = (isFirefox() || isChrome());
+  var shouldUpgrade = !(isSafari() || isMobile() || !isGoodBrowser);
+  if (shouldUpgrade) {
+    var wrapper = document.querySelector('#intro .wrapper');
+    wrapper.style.display = 'block';
+  }
+}
+
+
+function showCompatibilityStatus() {
+  // Only for testing
+  if(isSafari()) {
+    console.info('[TEST] Browser is safari.');
+  }
+  if(isChrome()) {
+    console.info('[TEST] Browser is chrome.');
+  }
+  if(isFirefox()) {
+    console.info('[TEST] Browser is firefox.');
+  }
+  if(isMobile()) {
+    console.info('[TEST] Browser is on mobile device.');
+  }
+  var isGoodBrowser = (isFirefox() || isChrome());
+  var shouldUpgrade = !(isSafari() || isMobile() || !isGoodBrowser);
+  if (shouldUpgrade) {
+    console.info('[TEST] Features are available.');
+  }
+  else {
+    console.info('[TEST] Features are NOT available.');
+  }
 }
 
 function fitFontToContainer(container, percent) {
