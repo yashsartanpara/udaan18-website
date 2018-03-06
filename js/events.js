@@ -21,7 +21,8 @@ $(function () {
     $('#events').append(
             '<div ><span class=\"head-title\">Heads</span></div>\n'
     );
-    $('.event-name').click(function () {
+
+  $('.event-name').click(function () {
         openEventModal(this);
       $('#event-modal').css("overflow-y", "scroll");
       $('#event-modal').css("overflow-x", "hidden");
