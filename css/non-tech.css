@@ -56,7 +56,7 @@
 
 @media (max-width: 780px) {
   body {
-    overflow-x: hidden;
+    overflow: visible;
   }
 
   .events {
