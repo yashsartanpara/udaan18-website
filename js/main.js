@@ -12,13 +12,24 @@ window.onload = function () {
     if(isSafari()) {
       var wrapper = document.querySelector('#intro .wrapper');
       if(!wrapper) {
-        // TODO : Remove this when testing is complete.
-        console.error('Grid not found.');
+        // TODO : Remove log when testing is complete.
+        console.error('Wrapper not found.');
       }
       wrapper.parentNode.removeChild(wrapper);
     }
     introStart();
     detectFirstStart();
+  }
+};
+
+window.onpageshow = function(event) {
+  var backPages = ['#udaan-department', '#udaan-nontech'];
+  for(var i = 0; i < backPages.length; i++) {
+    var page = backPages[i];
+    if(location.hash.indexOf(page) > -1) {
+      resetAllCartridges();
+      return;
+    }
   }
 };
 
