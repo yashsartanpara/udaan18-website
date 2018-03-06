@@ -10,8 +10,9 @@ $(function () {
   $('#exit_page').on('click', function () {
     history.back();
   });
+  //col-sm-4 col-xs-12 center-xs
     $('#nontechEvents').html(events.map(function (event, index) {
-        return '<div class="col-sm-4 col-xs-12 center-xs"> <span style="padding: 0 10px;"\' +\n'+'\'" class="event-name" data-index="' + index + '">' + event.name + '</span></div>'
+      return '<div class="events"> <span \' +\n' + '\'" class="event-name" data-index="' + index + '">' + event.name + '</span></div>'
     }));
     $('#events').html(events.map(function (event, index) {
         return '<div><span style="padding: 0 10px;"' +

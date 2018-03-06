@@ -17,8 +17,17 @@
     var events = data.nonTech;
   </script>
   <style>
+    body {
+      overflow: hidden;
+    }
+
     :root {
       --background-color: rgba(0, 51, 0, 0.9);
+      --background-color1: rgba(0, 51, 0, 0.9);
+    }
+
+    #exit_page, #events {
+      background: var(--background-color1) !important;
     }
 
     #event-modal, #heads-modal {
