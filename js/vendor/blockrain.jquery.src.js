@@ -727,16 +727,16 @@
             game._board.render();
           }
 
-          this.showStartMessage();
+          // this.showStartMessage();
           game.start();
         },
 
         showStartMessage: function () {
-          game._$start.show();
+          // game._$start.show();
         },
 
         showGameOverMessage: function () {
-          game._$gameover.show();
+          // game._$gameover.show();
         },
 
         nextShape: function (_set_next_only) {
