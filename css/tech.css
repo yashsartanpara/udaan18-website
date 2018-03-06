@@ -12,7 +12,7 @@ body {
   src: url('../fonts/PressStart2P.ttf');
 }
 
-.events{
+.events {
   font-size: 1rem;
   padding: 1em;
   display: flex;
@@ -29,14 +29,6 @@ body {
   border-radius: 2%;
   background-color: rgba(17, 17, 17, 0.5);
   z-index: 99;
-}
-
-.right-facing {
-  left: 0;
-}
-
-.left-facing {
-  right: 0;
 }
 
 .center-font {

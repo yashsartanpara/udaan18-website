@@ -4,6 +4,11 @@
 }
 
 @font-face {
+  font-family: 'levelsfont';
+  src: url('../fonts/PressStart2P1.ttf');
+}
+
+@font-face {
   font-family: 'description';
   src: url('../fonts/PressStart2P.ttf');
 }
@@ -20,6 +25,11 @@ body {
   margin: 0;
   width: 100%;
   overflow: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: black;
 }
 
 /*Department logo*/
@@ -71,14 +81,6 @@ body {
 /*color: cornflowerblue !important;*/
 /*}*/
 
-/*.city {*/
-/*filter: grayscale(50%);*/
-/*position: absolute;*/
-/*z-index: -3;*/
-/*max-height: 90vh;*/
-/*bottom: 0;*/
-/*}*/
-
 /*Exit button*/
 #exit_page {
   font-family: 'start2p', 'sans-serif';
@@ -117,7 +119,8 @@ body {
   width: 100vw;
   margin: 0;
   font-size: .775rem;
-  line-height: 1.5rem;
+  line-height: 1.75rem;
+  /*font-weight: bold;*/
   /*background: black;*/
   /*color: #263238;*/
   /*color: black;*/
@@ -134,6 +137,7 @@ body {
 .levels {
   /*background: black;*/
   padding-top: 30px;
+  font-family: 'levelsfont', 'start2p', sans-serif;
 }
 
 .event-description {
@@ -157,7 +161,7 @@ body {
 }
 
 .participant-data {
-  margin-bottom: 10px;
+  margin: 5px;
 }
 
 .chip {
