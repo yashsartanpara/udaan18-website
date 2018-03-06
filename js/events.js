@@ -56,7 +56,6 @@ function closeEventModal() {
     $('body').css("overflow","hidden");
   $('.events').css("display", "flex");
   $('.nontech-events').css("display", "flex");
-
 }
 
 function populateModal(index) {
@@ -80,6 +79,7 @@ function openHeadsModal() {
         closeHeadsModal()
     });
 }
+
 function closeHeadsModal() {
     var modal = $('#heads-modal')
         .removeClass('modal-open-animation')

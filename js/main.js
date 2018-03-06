@@ -5,13 +5,32 @@
 
 window.onload = function () {
   console.info('[main.js] : Ready');
+  showCompatibilityStatus();
+
   if (location.hash.length > 0) {
     introComplete();
     invalidateIntroScreen();
   } else {
+    handleFallbacks();
     introStart();
     detectFirstStart();
   }
+};
+
+window.onpageshow = function (event) {
+  var backPages = ['#udaan-department', '#udaan-nontech'];
+  for (var i = 0; i < backPages.length; i++) {
+    var page = backPages[i];
+    if (location.hash.indexOf(page) > -1) {
+      resetAllCartridges();
+      return;
+    }
+  }
+};
+
+window.unload = window.beforeunload = function () {
+  // Prevent caching on some browsers
+  resetAllCartridges();
 };
 
 /*========================================================================================
@@ -152,12 +171,15 @@ function detectFirstStart() {
 
 function invalidateIntroScreen() {
   document.querySelector('#intro').style.display = 'none';
+  setupTetrisAnimation();
+  if(location.hash.length === 0) {
+    location.hash = 'udaan-title-page';
+  }
 }
 
 function introComplete() {
   setupCartridgeEvents();
   setupInteractionEvents();
-  setupTetrisAnimation();
 }
 
 function setupInteractionEvents() {
@@ -258,7 +280,9 @@ function selectCartridge(mouseEvent) {
   });
 
   if (selectedCartridge.hasAttribute('data-info')) {
-    displayInformation('PRESS TO START');
+    var departmentInfo = selectedCartridge.getAttribute('data-info');
+    displayInformation(departmentInfo, false);
+    displayInformation('PRESS TO START', true);
   }
 
   blackout(section);
@@ -286,9 +310,14 @@ function insertCartridge(mouseEvent) {
     y: point,
     onComplete: navigateTo.bind(null, url)
   });
+
+  hideInformation(false, true);
 }
 
 function resetAllCartridges(section, excluded) {
+  if(!section)
+    return;
+
   var cartridges = section.querySelectorAll('.cartridge');
 
   [].forEach.call(cartridges, function (cartridge) {
@@ -310,6 +339,7 @@ function resetAllCartridges(section, excluded) {
   [].forEach.call(cartridges, function (c) {
     c.style.zIndex = CARTRIDGE_NORMAL_Z_INDEX;
   });
+
   hideInformation();
 }
 
@@ -399,14 +429,12 @@ function getConsoleState() {
 *===========================================
 */
 function setupTetrisAnimation() {
-
   var $cover2 = $('#cover-tetris-2').blockrain({
     autoplay: true,
     autoplayRestart: true,
     showFieldOnStart: true,
     speed: 50,
     autoBlockWidth: true,
-    autoBlockSize: 25,
     theme: 'candy'
   });
   // console.log($cover2);
@@ -430,7 +458,19 @@ function setupTetrisAnimation() {
 // TODO: Complete back button handle for mobile devices
 // function backButton() {}
 
-function displayInformation(message) {
+function displayInformation(message, bottom) {
+  if (bottom) {
+    var informationBar2 = document.querySelector('#information-bar-2');
+    informationBar2.innerHTML = message;
+    informationBar2.style.left = getActiveSection().style.left;
+    TweenMax.fromTo(informationBar2, 0.3, {
+      opacity: 0
+    }, {
+      opacity: 1,
+      top: '70vh'
+    });
+    return;
+  }
   var informationBar = document.querySelector('#information-bar');
   informationBar.innerHTML = message;
   informationBar.style.left = getActiveSection().style.left;
@@ -442,12 +482,35 @@ function displayInformation(message) {
   });
 }
 
-function hideInformation() {
+function hideInformation(top, bottom) {
   var informationBar = document.querySelector('#information-bar');
-  TweenMax.to(informationBar, 0.1, {
-    opacity: 0,
-    top: '13vh'
-  });
+  var informationBar2 = document.querySelector('#information-bar-2');
+
+  if (!top && !bottom) {
+    TweenMax.to(informationBar, 0.1, {
+      opacity: 0,
+      top: '13vh'
+    });
+
+    TweenMax.to(informationBar2, 0.1, {
+      opacity: 0,
+      top: '69vh'
+    });
+  }
+
+  if (top) {
+    TweenMax.to(informationBar, 0.1, {
+      opacity: 0,
+      top: '13vh'
+    });
+  }
+
+  if (bottom) {
+    TweenMax.to(informationBar2, 0.1, {
+      opacity: 0,
+      top: '69vh'
+    });
+  }
 }
 
 function displayMessage(message) {
@@ -492,6 +555,59 @@ function interactiveHit(callback) {
 *   ---- Miscellaneous
 *===========================================
 */
+
+function isSafari() {
+  return navigator.vendor.indexOf('Apple') > -1;
+}
+
+function isFirefox() {
+  return navigator.userAgent.indexOf('firefox') > -1;
+}
+
+function isChrome() {
+  return navigator.vendor.indexOf('Google') > -1;
+}
+
+function isMobile() {
+  return (getMedia().indexOf('xs') > -1 || getMedia().indexOf('sm') > -1);
+}
+
+function handleFallbacks() {
+  var isGoodBrowser = (isFirefox() || isChrome());
+  var shouldUpgrade = !(isSafari() || isMobile() || !isGoodBrowser);
+  if (shouldUpgrade) {
+    var wrapper = document.querySelector('#intro .wrapper');
+    wrapper.style.display = 'block';
+    var wrapperSafari = document.querySelector('#intro .wrapper-safari');
+    wrapperSafari.style.display = 'none';
+  }
+}
+
+
+function showCompatibilityStatus() {
+  // Only for testing
+  if(isSafari()) {
+    console.info('[TEST] Browser is safari.');
+  }
+  if(isChrome()) {
+    console.info('[TEST] Browser is chrome.');
+  }
+  if(isFirefox()) {
+    console.info('[TEST] Browser is firefox.');
+  }
+  if(isMobile()) {
+    console.info('[TEST] Browser is on mobile device.');
+  }
+  var isGoodBrowser = (isFirefox() || isChrome());
+  var shouldUpgrade = !(isSafari() || isMobile() || !isGoodBrowser);
+  if (shouldUpgrade) {
+    console.info('[TEST] Features are available.');
+  }
+  else {
+    console.info('[TEST] Features are NOT available.');
+  }
+}
+
 function fitFontToContainer(container, percent) {
   var containerHeight = container.clientHeight * (percent / 100);
   container.style.fontSize = containerHeight + 'px';
