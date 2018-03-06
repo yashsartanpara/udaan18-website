@@ -1,5 +1,5 @@
 .aladdinBg {
-  background:url("../img/aladdin.jpg") no-repeat bottom;
+  background: url("../img/aladdin.jpg") no-repeat bottom;
   bottom: 0;
   height: 100%;
   width: 100%;
@@ -103,7 +103,6 @@
   /*moveAladdin 5s linear forwards infinite;*/
   /*z-index: 5;*/
   /*}*/
-
   .abbu {
     position: absolute;
     bottom: 1%;
@@ -142,7 +141,6 @@
   /*moveAladdin 10s linear forwards infinite;*/
   /*z-index: 5;*/
   /*}*/
-
   .abbu {
     position: absolute;
     bottom: 1%;

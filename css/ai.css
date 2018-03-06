@@ -1,6 +1,7 @@
 body {
   -moz-user-select: none;
 }
+
 .ai-bg {
   display: flex;
   position: absolute;

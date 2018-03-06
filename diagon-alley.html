@@ -16,8 +16,8 @@
   <script src="js/templates/heads.min.js"></script>
   <script src="data.js"></script>
   <script>
-    var rezonizers = data.tech.find(function (department) {
-      return department.alias == 'Rezonizers';
+    var diagonalley = data.tech.find(function (department) {
+      return department.name == 'Rezonizers';
     });
     var events = rezonizers.events;
     var heads = {'heads': rezonizers.heads, 'coHeads': rezonizers.coHeads};
@@ -239,8 +239,6 @@
         </div>
       </div>
     </div>
-
-
   </div>
 </div>
 
@@ -248,7 +246,6 @@
 <div class="events center-font">
   <div id="events"></div>
 </div>
-<div class="dept-name">Diagon Alley</div>
 <div id="event-modal"></div>
 <div id="heads-modal"></div>
 <div id="exit_page">

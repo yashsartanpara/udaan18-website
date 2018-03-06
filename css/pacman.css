@@ -232,6 +232,7 @@ body {
     height: 2rem;
     width: 2rem;
   }
+
   .ghost_eye_1, .ghost_eye_2 {
     height: 0.8rem;
     width: 0.8rem;
@@ -241,6 +242,7 @@ body {
     height: 0.4rem;
     width: 0.4rem;
   }
+
   .pacman_mouth {
     height: 1rem;
     width: 1rem;
