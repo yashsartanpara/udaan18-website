@@ -578,6 +578,8 @@ function handleFallbacks() {
   if (shouldUpgrade) {
     var wrapper = document.querySelector('#intro .wrapper');
     wrapper.style.display = 'block';
+    var wrapperSafari = document.querySelector('#intro .wrapper-safari');
+    wrapperSafari.style.display = 'none';
   }
 }
 
