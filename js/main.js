@@ -7,7 +7,7 @@ window.onload = function () {
   console.info('[main.js] : Ready');
   showCompatibilityStatus();
 
-  if (location.hash.length > 0) {
+  if (location.hash.length > 0 || isEdge()) {
     introComplete();
     invalidateIntroScreen();
   } else {
@@ -59,6 +59,7 @@ function introStart() {
   var coinSlot = document.querySelector('#coin-slot');
   var coinSlotBounds = coinSlot.getBoundingClientRect();
   var introElement = document.querySelector('#intro');
+  var skipIntroButton = document.querySelector('#skip-intro');
 
   var coinBounceTimeline = new TimelineMax({repeat: 3, yoyo: true, ease: Power0.easeNone});
   coinBounceTimeline.add(TweenMax.to(coin, 1, {top: '-=5%', scale: 1.1}));
@@ -67,7 +68,18 @@ function introStart() {
     .add(TweenMax.to(coin, 1,
       {backgroundColor: 'rgba(255, 249, 15, 0.1)'}));
 
-  coin.addEventListener('click', animationStep1);
+
+  if(isSafari() || isIOS()) {
+    screenTextElement.innerHTML = 'PRESS<br/>START';
+    if(skipIntroButton) {
+      skipIntroButton.style.display = 'none';
+    }
+    coin.style.display = 'none';
+    arcadeScreen.addEventListener('click', animationStep2);
+    arcadeSVG.addEventListener('click', animationStep2);
+  } else {
+    coin.addEventListener('click', animationStep1);
+  }
 
   var arcadeTimeline = new TimelineMax({});
   arcadeTimeline.add(TweenMax.fromTo(arcadeSVG, 0.5,
@@ -91,9 +103,10 @@ function introStart() {
 
   // yoyo coin to left and zoom in
   function animationStep1() {
-    coinBounceTimeline.kill();
+    //coinBounceTimeline.kill();
     var animCoin_SlideLeft = {left: '-=20%', yoyo: true, repeat: 1};
     var animCoin_ZoomAndFlip = {scale: 7, rotationY: '360deg', ease: Back.easeOut.config(1.7)};
+
     var animCoin_SlideTop = {top: '+=0%', yoyo: true, repeat: 1, ease: Back.easeOut.config(1.7)};
     var animCoin_InsertIntoSlot = {
       scale: 1,
@@ -219,6 +232,8 @@ function setupInteractionEvents() {
       yafpsPager.animate(action);
     });
   });
+
+  setupSocialMedia();
 }
 
 function setupCartridgeEvents() {
@@ -227,6 +242,21 @@ function setupCartridgeEvents() {
     cartridge.addEventListener('click', selectCartridge);
   });
   interactiveHit(slowDown);
+}
+
+function setupSocialMedia() {
+  var shareIcon = document.querySelector('#share-icon');
+  var socialMediaIconsBar = document.querySelector('#social-icons');
+  shareIcon.addEventListener('click', function () {
+    if (shareIcon.getAttribute('data-status') !== 'active') {
+      shareIcon.setAttribute('data-status', 'active');
+      socialMediaIconsBar.classList.add('social-icons--active');
+    } else {
+      shareIcon.setAttribute('data-status', 'hidden');
+      socialMediaIconsBar.classList.remove('social-icons--active');
+    }
+  });
+
 }
 
 /*========================================================================================
@@ -556,6 +586,10 @@ function interactiveHit(callback) {
 *===========================================
 */
 
+function isEdge() {
+  return navigator.userAgent.indexOf('Edge/') > -1;
+}
+
 function isSafari() {
   return navigator.vendor.indexOf('Apple') > -1;
 }
@@ -570,6 +604,10 @@ function isChrome() {
 
 function isMobile() {
   return (getMedia().indexOf('xs') > -1 || getMedia().indexOf('sm') > -1);
+}
+
+function isIOS() {
+  return /(iPad|iPhone|iPod)/g.test(navigator.userAgent);
 }
 
 function handleFallbacks() {
@@ -587,16 +625,22 @@ function handleFallbacks() {
 function showCompatibilityStatus() {
   // Only for testing
   if(isSafari()) {
-    console.info('[TEST] Browser is safari.');
+    console.info('[TEST] Browser is Safari.');
   }
   if(isChrome()) {
-    console.info('[TEST] Browser is chrome.');
+    console.info('[TEST] Browser is Google Chrome.');
   }
   if(isFirefox()) {
-    console.info('[TEST] Browser is firefox.');
+    console.info('[TEST] Browser is Mozilla Firefox.');
   }
   if(isMobile()) {
     console.info('[TEST] Browser is on mobile device.');
+  }
+  if(isEdge()) {
+    console.info('[TEST] Browser is Microsoft Edge');
+  }
+  if(isIOS()) {
+    console.info('[TEST] Platform is iOS.');
   }
   var isGoodBrowser = (isFirefox() || isChrome());
   var shouldUpgrade = !(isSafari() || isMobile() || !isGoodBrowser);
