@@ -133,7 +133,7 @@ a {
   font-family: 'start2p', sans-serif;
   font-size: large;
   line-height: 3rem;
-  margin: 1px !important;
+  margin: 2px !important;
   border: 2px solid black;
   border-radius: 50%;
   width: 35px;
@@ -154,7 +154,7 @@ a {
 
 .title {
   font-family: "start2p", sans-serif;
-  font-size: 1rem;
+  font-size: 1.25rem;
   line-height: 2.5rem;
 }
 
