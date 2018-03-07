@@ -1,12 +1,13 @@
 body {
   /*position: absolute;*/
-  overflow-y: scroll !important;
+  overflow-x: hidden;
   background-size: cover;
   background-position: center;
 }
 
 html {
   overflow-y: scroll !important;
+  overflow-x: hidden !important;
 }
 
 .hadouken {
