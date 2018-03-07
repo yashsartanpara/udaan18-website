@@ -4,7 +4,10 @@
   /*height: 100%;*/
   /*overflow: auto;*/
   margin: 0px;
-  z-index: 5;
+  z-index: 99;
+  display: flex;
+  flex-direction: row;
+
 
 }
 
@@ -25,9 +28,8 @@
 .nontech-events {
   display: flex;
   justify-content: center;
-  flex-direction: column;
+  flex-direction: row;
   border-radius: 2%;
-
   /*position: absolute;*/
   /*width: 100%;*/
   /*height: 100%;*/

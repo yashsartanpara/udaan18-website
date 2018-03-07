@@ -35,9 +35,10 @@ a {
 /*Department logo*/
 .logoImg {
   max-width: 40%;
-  display: block;
+  display: flex;
   margin-left: auto !important;
   margin-right: auto !important;
+  z-index: 5;
 }
 
 .logo {

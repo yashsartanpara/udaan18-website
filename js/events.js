@@ -54,7 +54,7 @@ function closeEventModal() {
     modal.css('display', 'none');
   }, 500)
   $('html').css("overflow", "hidden");
-  $('body').css("overflow", "hidden");
+  $('body').css("overflow-x", "hidden");
   $('.events').css("display", "flex");
   $('.nontech-events').css("display", "flex");
 }
