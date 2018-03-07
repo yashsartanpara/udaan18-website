@@ -1,4 +1,36 @@
 var data = {
+  "adventure": [
+    {
+      "name": "Paint ball",
+      "participants": 1,
+      "fees": 120,
+      "notes": "-",
+      "prizes": [
+        0,
+        0
+      ],
+      "rounds": [
+        "For each participant 20 bullets will be given. Proper Uniform and Helmet will be provided. Safety of participants will be taken care. Extra bullets will available but will be charged extra."
+      ],
+      "managers": [],
+      "tagline": "If You didn't get Dirty, You didn't Play"
+    },
+    {
+      "name": "Zorb Fighting",
+      "participants": 1,
+      "fees": 50,
+      "notes": "-",
+      "prizes": [
+        0,
+        0
+      ],
+      "rounds": [
+        "There will be one on one fight between 2 participants. proper safety will be taken care. Each participant will be given a zorb ball"
+      ],
+      "managers": [],
+      "tagline": "when things are tough , you must be tougher"
+    }
+  ],
   "technical": [
     {
       "events": [
@@ -14,7 +46,7 @@ var data = {
           "rounds": [
             "Pen-Paper based quiz on Geotechnical Engineering.",
             "You have to present your ideal composition of soil and other material before the jury. ",
-            " Preparing a soil sample of diameter 15 cm and height 17.5 cm according to your composition of soil which will be tested on CBR testing machine. Based on the maximum load for CBR penetration and score of second round winner will be decided."
+            "You have to prepare soil sample according to your presented composition and then Unconfined Compression test will be performed by us to check the strength of the prepared sample."
           ],
           "managers": [
             {
@@ -29,7 +61,8 @@ var data = {
               "name": "Denish Hadiya",
               "phone": "9033753929"
             }
-          ]
+          ],
+          "tagline": "Be terzaghi to nail this."
         },
         {
           "name": "Green Canvas",
@@ -58,7 +91,8 @@ var data = {
               "name": "Yug Trivedi ",
               "phone": "9408898157"
             }
-          ]
+          ],
+          "tagline": "Be a part of Solution not part of the Pollution!"
         },
         {
           "name": "Hydro-de-Bridge",
@@ -85,7 +119,8 @@ var data = {
               "name": "Fatema Barodawala",
               "phone": "7359846724"
             }
-          ]
+          ],
+          "tagline": "Assistant navigator. "
         },
         {
           "name": "Shake It Up!!!",
@@ -108,8 +143,13 @@ var data = {
             {
               "name": "Soham Bhatt ",
               "phone": "9426382171"
+            },
+            {
+              "name": "Shaaqib Mansuri",
+              "phone": "7698939425"
             }
-          ]
+          ],
+          "tagline": "Where tradition meets innovation."
         },
         {
           "name": "Total Surveyor",
@@ -138,7 +178,8 @@ var data = {
               "name": "Payal Gore  ",
               "phone": "8347797454"
             }
-          ]
+          ],
+          "tagline": "Fast is fine, but Accuracy is everything!"
         }
       ],
       "name": "civil",
@@ -192,7 +233,8 @@ var data = {
               "name": "Darshil Gondaliya",
               "phone": "9913235338"
             }
-          ]
+          ],
+          "tagline": "Ignite the Henry Ford in you."
         },
         {
           "name": "Mind’s Eye",
@@ -221,13 +263,14 @@ var data = {
               "name": "Yash Sankhala",
               "phone": "8160210363"
             }
-          ]
+          ],
+          "tagline": "Imagination Creates Reality."
         },
         {
           "name": "Hydrobounze",
           "participants": 2,
           "fees": 50,
-          "notes": "Note : Boat made by Participants will given to them",
+          "notes": "Note : Boat made by Participants will be given to them.",
           "prizes": [
             500,
             250
@@ -250,13 +293,14 @@ var data = {
               "name": "Neel Patel",
               "phone": "9033834521"
             }
-          ]
+          ],
+          "tagline": "Sail With Your Brain!"
         },
         {
           "name": "Contraption",
           "participants": 4,
           "fees": 50,
-          "notes": "Note : System has to be made by participants from home. Make system as complicated as possible.",
+          "notes": "Note : System has to be made by participants from home. Required set up time for the system will be given.",
           "prizes": [
             2000,
             1000
@@ -277,7 +321,8 @@ var data = {
               "name": "Vatsal Patel",
               "phone": "8401554220"
             }
-          ]
+          ],
+          "tagline": "Do the simple complexly!"
         },
         {
           "name": "Bid the best!",
@@ -306,7 +351,8 @@ var data = {
               "name": "Raj Dhameliya",
               "phone": "9512144767"
             }
-          ]
+          ],
+          "tagline": "Bid less, choose well!"
         },
         {
           "name": "Bottle Rocketry",
@@ -333,7 +379,8 @@ var data = {
               "name": "Harsh Sukhadiya",
               "phone": "9428648050"
             }
-          ]
+          ],
+          "tagline": "It`s not Falcon 9 but it will make you feel like one."
         }
       ],
       "name": "mechanical/production",
@@ -380,7 +427,6 @@ var data = {
           "name": "Automatico",
           "participants": 1,
           "fees": 30,
-          "notes": "77777",
           "prizes": [
             0,
             0
@@ -398,16 +444,16 @@ var data = {
               "name": "Keval Chauhan",
               "phone": "8141428406"
             }
-          ]
+          ],
+          "tagline": "It's fast, it's furious, it's PLC!"
         },
         {
           "name": "Bomb Diggy Diggy BOOM!",
           "participants": 2,
           "fees": 30,
-          "notes": "77777",
           "prizes": [
             1000,
-            750
+            500
           ],
           "rounds": [
             "Solve 4*4 matrix  based upon Digital and Analog Electronics.",
@@ -427,32 +473,38 @@ var data = {
               "name": "mohit gadhiya",
               "phone": "8156032234"
             }
-          ]
+          ],
+          "tagline": "3..2..1.. BOOM!!!!"
         },
         {
-          "name": "Cricket Fantasy",
+          "name": "Source d’energie",
           "participants": 2,
           "fees": 30,
           "notes": "-",
           "prizes": [
-            0,
-            0
+            500,
+            250
           ],
           "rounds": [
-            "Quiz on Cricket.",
-            "Surprise Round.",
-            "Mock BPL Auction; Participants will be given virtual money with which they will have to form an appropriate team. "
+            "Make (MCQS) questions and answers on renewable energy sources.",
+            "Debate on Renewable vs Non-Renewable Energy.",
+            "Surprise Round!"
           ],
           "managers": [
             {
-              "name": "Yash Patel",
-              "phone": "7874439967"
+              "name": "Vishal Katira",
+              "phone": "9725845568"
             },
             {
-              "name": "Pruthviraj Jadeja",
-              "phone": "9033232829"
+              "name": "Bhavna Vadher",
+              "phone": "7405392927"
+            },
+            {
+              "name": "Gopi Borkhatariya",
+              "phone": "9909406427"
             }
-          ]
+          ],
+          "tagline": "Come one, Come All, Say Hi! to Useful nature "
         },
         {
           "name": "Circuit Mania",
@@ -481,7 +533,8 @@ var data = {
               "name": "Rupesh Gelani",
               "phone": "9638370324"
             }
-          ]
+          ],
+          "tagline": "The Spirit Of Circuit"
         }
       ],
       "name": "electrical",
@@ -514,17 +567,17 @@ var data = {
           "fees": 30,
           "notes": "-",
           "prizes": [
-            0,
-            0
+            500,
+            250
           ],
           "rounds": [
             "Pen-paper based quiz on Hardware technology.",
-            "Participants have to find clues and solve puzzle using augmented reality.",
+            "Participants have to find clues and solve puzzle using augmented reality application which is provided by us.",
             "Participants have to find error in hardware and reassemble them."
           ],
           "managers": [
             {
-              "name": "Ritesh Kaul",
+              "name": "Ritesh Koul",
               "phone": "8871436343"
             },
             {
@@ -535,19 +588,20 @@ var data = {
               "name": "Nidhi Patadiya",
               "phone": "9067715513"
             }
-          ]
+          ],
+          "tagline": "Inquisitive, Hare & Hound !"
         },
         {
           "name": "Designifico",
           "participants": 1,
-          "fees": 20,
+          "fees": 30,
           "notes": "Note: Participant from any Branch can take part in this event",
           "prizes": [
             0,
             0
           ],
           "rounds": [
-            "Question based on critical reasoning and logical thinking will be asked on pen-paper.",
+            "Questions based on critical reasoning and logical thinking will be asked on pen-paper.",
             "Participants will be given a design problem. They have to solve it as a group and reach to common solution.",
             "Participants will be given mock newspapers and they will make notes of important topics. Then, they proceed to discussion. "
           ],
@@ -564,7 +618,8 @@ var data = {
               "name": "Adarsh Sutariya",
               "phone": "7874784260"
             }
-          ]
+          ],
+          "tagline": "Clandestine for future !"
         },
         {
           "name": "CodePanther",
@@ -593,7 +648,8 @@ var data = {
               "name": "Bhairavi Vaidya",
               "phone": "9924276987 "
             }
-          ]
+          ],
+          "tagline": "It's not a bug, it’s undocumented feature !"
         },
         {
           "name": "GeekWebber",
@@ -622,7 +678,8 @@ var data = {
               "name": "Patel Dhruvkumar",
               "phone": "9925089183"
             }
-          ]
+          ],
+          "tagline": "Do close the open tags !"
         },
         {
           "name": "Auct-O-Pus",
@@ -635,8 +692,8 @@ var data = {
           ],
           "rounds": [
             "One question paper will be provided to each team, and participants have to submit the test paper in given time. Participants can use Google for finding answers.",
-            "Surprise Round",
-            "Each team will face every other team in a one-one bidding competition. Each team have to bid with other team to complete given task in selected bidding. value.] (Task will be based on coding)"
+            "Surprise Round.",
+            "Each team will face every other team in a one-one bidding competition. Each team have to bid with other team to complete given task in selected bidding value (Task will be based on coding)."
           ],
           "managers": [
             {
@@ -646,8 +703,13 @@ var data = {
             {
               "name": "Jaladhi Pathak",
               "phone": "7229011997"
+            },
+            {
+              "name": "Aneri Sopariya",
+              "phone": "8734912424"
             }
-          ]
+          ],
+          "tagline": "Love coding? Right place! Hate bidding? Wrong turn!"
         },
         {
           "name": "HackerEarth",
@@ -674,7 +736,8 @@ var data = {
               "name": "Tirth Patel",
               "phone": "9714447262 "
             }
-          ]
+          ],
+          "tagline": "No civilians beyond this point !"
         }
       ],
       "name": "computer/it",
@@ -748,7 +811,8 @@ var data = {
               "name": "Bhavik Prajapati",
               "phone": "7567572396"
             }
-          ]
+          ],
+          "tagline": "Clipping Negatives,Clamping positives"
         },
         {
           "name": "Dots & Dash ",
@@ -760,8 +824,8 @@ var data = {
             0
           ],
           "rounds": [
-            "Treasure hunt, using clues given in form of audio or written Morse code.",
             "General quiz based on basic electronics.",
+            "Treasure hunt, using clues given in form of audio or written Morse code.",
             "Surprise"
           ],
           "managers": [
@@ -777,7 +841,8 @@ var data = {
               "name": "Sanjay Tiwari",
               "phone": "9429915527"
             }
-          ]
+          ],
+          "tagline": "Decipher the SOS"
         },
         {
           "name": "Electro-Picaso",
@@ -785,18 +850,19 @@ var data = {
           "fees": 20,
           "notes": "-",
           "prizes": [
-            0,
+            250,
             0
           ],
           "rounds": [
-            "Participants will be given a topic to recent trends in electronics. They have to make a humorous and innovative poster and submit before udaan. The best one will win.    Email: - electropicasoudaan2k18@gmail.com   "
+            "Participants have to make a humorous and innovative poster on recent trends in electronics and have to submit it before 1 April. The best one will win.    Email: - electropicasoudaan2k18@gmail.com   "
           ],
           "managers": [
             {
               "name": "Rahul Rai",
               "phone": "8511204632"
             }
-          ]
+          ],
+          "tagline": "Painting done right!!!"
         },
         {
           "name": "Techno Manager",
@@ -825,7 +891,8 @@ var data = {
               "name": "Niyut Shah",
               "phone": "7405512710"
             }
-          ]
+          ],
+          "tagline": "Connecting the possibilities"
         },
         {
           "name": "Codestorm",
@@ -854,7 +921,8 @@ var data = {
               "name": "Alphamary Kuriachan",
               "phone": "9408734099"
             }
-          ]
+          ],
+          "tagline": "Do you know ardi-uno?"
         },
         {
           "name": "Roborash",
@@ -887,13 +955,13 @@ var data = {
               "name": "Darshan Rathod",
               "phone": "9714413435"
             }
-          ]
+          ],
+          "tagline": "This time it ain't just about being fast"
         },
         {
           "name": "Botball",
           "participants": 2,
           "fees": 80,
-          "notes": "-",
           "prizes": [
             1500,
             1000
@@ -920,7 +988,8 @@ var data = {
               "name": "Kishan Karangiya",
               "phone": "9016256665"
             }
-          ]
+          ],
+          "tagline": "Soccer is simple, but it is difficult to play simple"
         }
       ],
       "name": "ec/el",
@@ -962,7 +1031,7 @@ var data = {
       ]
     }
   ],
-  "treasure_hunt": [
+  "treasureHunt": [
     {
       "name": "Treasure Hunt",
       "participants": 2,
@@ -979,13 +1048,40 @@ var data = {
       ],
       "managers": [
         {
-          "name": "Umang Patel",
-          "phone": "8460666218"
+          "name": "Avinash Somjani",
+          "phone": "9426810901"
         }
-      ]
+      ],
+      "tagline": "Not all Treasure's sliver and gold, Mate"
     }
   ],
-  "non_technical": [
+  "nonTechnical": [
+    {
+      "name": "Cricket Fantasy",
+      "participants": 2,
+      "fees": 30,
+      "notes": "-",
+      "prizes": [
+        0,
+        0
+      ],
+      "rounds": [
+        "Quiz on Cricket.",
+        "Surprise Round.",
+        "Mock BPL Auction; Participants will be given virtual money with which they will have to form an appropriate team. "
+      ],
+      "managers": [
+        {
+          "name": "Yash Patel",
+          "phone": "7874439967"
+        },
+        {
+          "name": "Pruthviraj Jadeja",
+          "phone": "9033232829"
+        }
+      ],
+      "tagline": "Going Once.. Going Twice.. And.. SOLD!!"
+    },
     {
       "name": "Socioholic",
       "participants": 1,
@@ -1009,7 +1105,8 @@ var data = {
           "name": "Parth Chhodavadia ",
           "phone": "8238220574"
         }
-      ]
+      ],
+      "tagline": "Add taste to life !"
     },
     {
       "name": "Idiot Box",
@@ -1038,7 +1135,8 @@ var data = {
           "name": "Deep Vaghasiya",
           "phone": "7048172326"
         }
-      ]
+      ],
+      "tagline": "It pays to be a Couch Potato!"
     },
     {
       "name": "Maphorlfe",
@@ -1066,7 +1164,8 @@ var data = {
           "name": "Sanket Patel ",
           "phone": "8866425398 "
         }
-      ]
+      ],
+      "tagline": "Know your longitude !"
     },
     {
       "name": "F-R-I-E-N-D-S",
@@ -1091,7 +1190,8 @@ var data = {
           "name": "Richa Mishra ",
           "phone": "9374477227"
         }
-      ]
+      ],
+      "tagline": "Be a joey to your chandler !"
     },
     {
       "name": "Takeshi’s Castle",
@@ -1120,7 +1220,8 @@ var data = {
           "name": "Viraj Khunt",
           "phone": "9723837360"
         }
-      ]
+      ],
+      "tagline": "Don’t Leave Your Guts At Home!"
     },
     {
       "name": "Guru",
@@ -1149,7 +1250,8 @@ var data = {
           "name": "Abhishek Rawat",
           "phone": "7600032683"
         }
-      ]
+      ],
+      "tagline": "Your are your own Guru"
     },
     {
       "name": "MockStock",
@@ -1176,36 +1278,8 @@ var data = {
           "name": "Niraj",
           "phone": "7567425292"
         }
-      ]
-    },
-    {
-      "name": "Source d’energie",
-      "participants": 2,
-      "fees": 30,
-      "notes": "-",
-      "prizes": [
-        500,
-        250
       ],
-      "rounds": [
-        "Make (MCQS) questions and answers on renewable energy sources.",
-        "Debate on Renewable vs Non-Renewable Energy.",
-        "Surprise Round!"
-      ],
-      "managers": [
-        {
-          "name": "vishal katira",
-          "phone": "9725845568"
-        },
-        {
-          "name": "Bhavna Vadher",
-          "phone": "7405392927"
-        },
-        {
-          "name": "Gopi Borkhatariya",
-          "phone": "9909406427"
-        }
-      ]
+      "tagline": "Earn, Spend, Party !"
     },
     {
       "name": "NFS MW",
@@ -1236,7 +1310,8 @@ var data = {
           "name": "Rahul Morya ",
           "phone": "81403 97093"
         }
-      ]
+      ],
+      "tagline": "Back to ESL!"
     },
     {
       "name": "Sherlock in the city",
@@ -1265,7 +1340,8 @@ var data = {
           "name": "Shraddha Acharya ",
           "phone": "7600063296"
         }
-      ]
+      ],
+      "tagline": "every fairy tale needs a good old-fashioned villain"
     },
     {
       "name": "Valar Morghulis",
@@ -1293,13 +1369,14 @@ var data = {
           "name": "Badal Panchal ",
           "phone": "9033149281"
         }
-      ]
+      ],
+      "tagline": "In game of thrones, either you win or you die!"
     },
     {
       "name": "Meme-O-Mania",
       "participants": 2,
       "fees": 20,
-      "notes": "Note: Your Memes will be posted on BVM Facebook page",
+      "notes": "Note: Your Memes will be posted with #udaan2018 on Instagram.",
       "prizes": [
         0,
         0
@@ -1307,7 +1384,7 @@ var data = {
       "rounds": [
         "Create dialogues for the given memes.",
         "Participants have to make memes.",
-        "Participants have to make musically or Dubsmash."
+        "Participants have to make musical.ly or Dubsmash."
       ],
       "managers": [
         {
@@ -1318,7 +1395,8 @@ var data = {
           "name": "Raj Vankawala",
           "phone": "9727291912"
         }
-      ]
+      ],
+      "tagline": "How amusing can you be?"
     },
     {
       "name": "Are you a Binge-Watcher?",
@@ -1347,7 +1425,8 @@ var data = {
           "name": "Rushabh Mehta",
           "phone": " 9638571788"
         }
-      ]
+      ],
+      "tagline": "Where everyone knows everyone and nothing is as it seems"
     },
     {
       "name": "Mysterious Island",
@@ -1372,10 +1451,11 @@ var data = {
           "phone": "8469418078"
         },
         {
-          "name": "Saiffuddin Dalal",
+          "name": "Saifuddin Dalal",
           "phone": "9574520618"
         }
-      ]
+      ],
+      "tagline": "The unknown has an address!"
     },
     {
       "name": "kSetrin",
@@ -1400,7 +1480,8 @@ var data = {
           "name": "Nishi Thacker",
           "phone": "9714076958"
         }
-      ]
+      ],
+      "tagline": "Come live the unlived know the unknown & experience versatility!"
     },
     {
       "name": "BVM MUN",
@@ -1424,7 +1505,8 @@ var data = {
           "name": "Kavan Amin",
           "phone": "9265074493"
         }
-      ]
+      ],
+      "tagline": "Let the Diplomacy Prevail!"
     },
     {
       "name": "Roadies",
@@ -1458,7 +1540,8 @@ var data = {
           "name": "Harsh Thesiya",
           "phone": "9408233266"
         }
-      ]
+      ],
+      "tagline": "Pain is temporary Victory is forever"
     },
     {
       "name": "Nonstop Nonsense",
@@ -1487,7 +1570,8 @@ var data = {
           "name": "Rohan Shiyani ",
           "phone": "7874554489"
         }
-      ]
+      ],
+      "tagline": "Words are funny, are you?"
     },
     {
       "name": "Never Settle",
@@ -1516,7 +1600,8 @@ var data = {
           "name": "Sarita Chaudhary",
           "phone": "7096315197"
         }
-      ]
+      ],
+      "tagline": "Think out of the box"
     },
     {
       "name": "Student of the year ",
@@ -1549,7 +1634,8 @@ var data = {
           "name": "Bhargav Rathod ",
           "phone": "9879485971"
         }
-      ]
+      ],
+      "tagline": "The Fittest of The Fittest Shall Survive!"
     },
     {
       "name": "Service Before Self (SSB)",
@@ -1561,7 +1647,7 @@ var data = {
         0
       ],
       "rounds": [
-        "screening (logical quiz)",
+        "Word association test",
         "physical tasks",
         "Group planning exercise",
         "Personal interview"
@@ -1579,7 +1665,8 @@ var data = {
           "name": " Abhijit Dabhi",
           "phone": "9737492293"
         }
-      ]
+      ],
+      "tagline": "Extend yourself beyond the limits."
     },
     {
       "name": "Mind Play",
@@ -1608,7 +1695,8 @@ var data = {
           "name": "Prince Doshi",
           "phone": "8460172318"
         }
-      ]
+      ],
+      "tagline": "Got a sharp mind? Let’s Play."
     },
     {
       "name": "The Final Detection",
@@ -1637,7 +1725,8 @@ var data = {
           "name": "Arpita Parmar",
           "phone": " 7574956824"
         }
-      ]
+      ],
+      "tagline": "Insight the perception."
     },
     {
       "name": "CS : GO",
@@ -1668,13 +1757,14 @@ var data = {
           "name": "Adhunik Rajput",
           "phone": "9924015695"
         }
-      ]
+      ],
+      "tagline": "Back to ESL !"
     },
     {
       "name": "FIFA18",
       "participants": 1,
       "fees": 50,
-      "notes": "Note: Play the fifa 18 on PS4",
+      "notes": "Exclusive Sony PS4 for Fifa 18.",
       "prizes": [
         0,
         0
@@ -1699,7 +1789,8 @@ var data = {
           "name": "Adhunik Rajput",
           "phone": "9924015695"
         }
-      ]
+      ],
+      "tagline": "Back to ESL!"
     }
   ],
   "girls": [
@@ -1726,7 +1817,8 @@ var data = {
           "name": "Hima Khimani",
           "phone": "9409328046"
         }
-      ]
+      ],
+      "tagline": "Make it look pretty, but train it to kill."
     }
   ],
   "cultural": [
@@ -1752,7 +1844,8 @@ var data = {
           "name": "Kalyani Bhatt",
           "phone": "8141764147"
         }
-      ]
+      ],
+      "tagline": "Bollywood express : Black and white se colour tak!!"
     },
     {
       "name": "Antakshari",
@@ -1769,18 +1862,15 @@ var data = {
       ],
       "managers": [
         {
-          "name": "Harsh Vaidya",
-          "phone": "9737249040"
-        },
-        {
-          "name": "Pragnesh Kasundra",
+          "name": "Pragnesh Kasundara",
           "phone": "7405648365"
         },
         {
           "name": "Nirav Jadav",
           "phone": "9723130377"
         }
-      ]
+      ],
+      "tagline": "Naye purane gaane, back to back."
     },
     {
       "name": "Q-riosity",
@@ -1801,10 +1891,11 @@ var data = {
           "phone": "9426382171"
         },
         {
-          "name": "Mrudang Oza",
-          "phone": "8469990274"
+          "name": "Bhavdik Limbasia",
+          "phone": "8530864982"
         }
-      ]
+      ],
+      "tagline": "The battle of brains."
     },
     {
       "name": "Da Vinci",
@@ -1812,8 +1903,8 @@ var data = {
       "fees": 40,
       "notes": "-",
       "prizes": [
-        1000,
-        500
+        500,
+        250
       ],
       "rounds": [
         "Doodling art (participants to bring their own basic stationary requirements; 5 teams will be qualified for next round) ",
@@ -1828,7 +1919,8 @@ var data = {
           "name": "Niharika Modi",
           "phone": "9173874660"
         }
-      ]
+      ],
+      "tagline": "Create your own Mona Lisa!!"
     },
     {
       "name": "Envisage",
@@ -1853,7 +1945,8 @@ var data = {
           "name": "Enosh Vishwanathan",
           "phone": "9157730975"
         }
-      ]
+      ],
+      "tagline": "Be bold!! Be heard!! …. Be the change"
     }
   ]
 };
