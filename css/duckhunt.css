@@ -1,3 +1,7 @@
+.head-title {
+  display: none !important;
+}
+
 @keyframes dogMove {
   from {
     left: 0px;
