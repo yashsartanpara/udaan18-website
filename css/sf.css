@@ -1,8 +1,12 @@
 body {
   /*position: absolute;*/
-  overflow-y: visible;
+  overflow-y: scroll !important;
   background-size: cover;
   background-position: center;
+}
+
+html {
+  overflow-y: scroll !important;
 }
 
 .hadouken {
