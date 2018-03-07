@@ -9,7 +9,7 @@ Handlebars.registerHelper('urlencode', function (str) {
 $(function () {
   $('#exit_page').on('click', function () {
     // window.location('udaan18.com/#udaan-departments');
-    history.go(-1);
+    window.history.go(-1);
   });
   // //col-sm-4 col-xs-12 center-xs
   $('#nontechEvents').html(events.map(function (event, index) {
@@ -66,7 +66,7 @@ function populateModal(index) {
     .css('display', 'block')
     .addClass('modal-open-animation');
   $('.close').on('click', function () {
-    history.back();
+    history.back(-1);
   });
 }
 

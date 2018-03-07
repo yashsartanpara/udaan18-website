@@ -13,6 +13,10 @@ body {
   z-index: -1;
 }
 
+.head-title {
+  display: none !important;
+}
+
 .ai {
   position: absolute;
   bottom: 1%;
