@@ -924,6 +924,9 @@ section {
     width: calc(var(--block-md-unit) * 2);
     height: var(--block-md-unit);
   }
+  .block-container {
+    padding-top: 8vh;
+  }
 }
 
 @media only screen and (max-width: 64em) {
