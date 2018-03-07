@@ -16,6 +16,10 @@ body {
   z-index: 5;
 }
 
+.head-title {
+  display: none !important;
+}
+
 @keyframes play {
   100% {
     background-position: -714px;

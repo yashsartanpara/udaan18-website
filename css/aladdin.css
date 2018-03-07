@@ -45,6 +45,10 @@
   z-index: 7;
 }
 
+.head-title {
+  display: none !important;
+}
+
 @keyframes walkAladdin {
   100% {
     background-position: -1244px;

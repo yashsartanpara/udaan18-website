@@ -130,8 +130,15 @@ a {
 }
 
 .close {
+  font-family: 'start2p', sans-serif;
+  font-size: large;
+  line-height: 3rem;
+  margin: 1px !important;
+  border: 2px solid black;
+  border-radius: 50%;
   width: 35px;
-  padding: 1vw 0.5vw 2vw;
+  padding: 10px;
+  /*padding: 1vw 0.5vw 2vw;*/
   cursor: pointer;
 }
 
