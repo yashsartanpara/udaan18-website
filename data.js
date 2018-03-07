@@ -1031,7 +1031,7 @@ var data = {
       ]
     }
   ],
-  "treasure_hunt": [
+  "treasureHunt": [
     {
       "name": "Treasure Hunt",
       "participants": 2,
@@ -1055,7 +1055,7 @@ var data = {
       "tagline": "Not all Treasure's sliver and gold, Mate"
     }
   ],
-  "non-technical": [
+  "nonTechnical": [
     {
       "name": "Cricket Fantasy",
       "participants": 2,
