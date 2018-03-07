@@ -15,11 +15,12 @@
   <script src="js/templates/heads.min.js"></script>
   <script src="data.js"></script>
   <script>
-    var keycoders = data.tech.find(function (department) {
-      return department.alias == 'KeyCoders';
+    var coderssquad = data.technical.find(function (department) {
+      return department.name == 'computer/it';
     });
-    var events = keycoders.events;
-    var heads = {'heads': keycoders.heads, 'coHeads': keycoders.coHeads};
+    var events = coderssquad.events;
+    var notes = coderssquad.notes;
+    var heads = {'heads': coderssquad.heads, 'coHeads': coderssquad.coHeads};
   </script>
   <style>
 

@@ -48,9 +48,16 @@
       <div class="row managers-row">
         {{#each managers}}
           <div class="col-xs-12 event-managers">
-            <span class="manager-name">{{name}}:</span> <a href="tel:{{mobile}}">{{mobile}}</a>
+            <span class="manager-name">{{name}}:</span> <a href="tel:{{phone}}">{{phone}}</a>
           </div>
         {{/each}}
+      </div>
+      <div class="row notes-row">
+        {{#if notes}}
+          <div class="col-xs-12">
+            <span>{{notes}}</span>
+          </div>
+        {{/if}}
       </div>
     </div>
   </div>

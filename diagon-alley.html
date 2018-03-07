@@ -16,11 +16,11 @@
   <script src="js/templates/heads.min.js"></script>
   <script src="data.js"></script>
   <script>
-    var diagonalley = data.tech.find(function (department) {
+    var diagonalley = data..find(function (department) {
       return department.name == 'Rezonizers';
     });
-    var events = rezonizers.events;
-    var heads = {'heads': rezonizers.heads, 'coHeads': rezonizers.coHeads};
+    var events = diagonalley.events;
+    var heads = {'heads': diagonalley.heads, 'coHeads': diagonalley.coHeads};
 
     function force() {
       window.scrollTo(0, 1);
