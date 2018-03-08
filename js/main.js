@@ -239,6 +239,16 @@ function setupInteractionEvents() {
   });
 
   setupSocialMedia();
+  setupDateAnimation();
+}
+
+function setupDateAnimation() {
+  var dateAnimTimeline = new TimelineMax({repeat: -1, yoyo: true});
+  var dateElement = document.querySelector('#udaan-logo-container .udaan-date');
+  var COLOR_TRANSITION_TIME = 0.3;
+  dateAnimTimeline.add(TweenMax.to(dateElement, COLOR_TRANSITION_TIME, {css: {color: '#F6EF15'}}));
+  dateAnimTimeline.add(TweenMax.to(dateElement, COLOR_TRANSITION_TIME, {css: {color: '#2FB64C'}}), COLOR_TRANSITION_TIME);
+  dateAnimTimeline.add(TweenMax.to(dateElement, COLOR_TRANSITION_TIME, {css: {color: '#0F7DAE'}}), COLOR_TRANSITION_TIME * 2);
 }
 
 function setupCartridgeEvents() {
