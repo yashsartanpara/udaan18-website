@@ -240,7 +240,6 @@
         this._setupControls(true);
         this._setupTouchControls(false);
       }
-
     },
 
     _checkCollisions: function (x, y, blocks, checkDownOnly) {

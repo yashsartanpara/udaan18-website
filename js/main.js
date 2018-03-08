@@ -15,6 +15,10 @@ window.onload = function () {
     introStart();
     detectFirstStart();
   }
+
+  window.addEventListener('orientationchange', function () {
+    window.location.reload(false);
+  });
 };
 
 window.onpageshow = function (event) {
@@ -483,7 +487,6 @@ function setupTetrisAnimation() {
     autoBlockWidth: true,
     theme: 'candy'
   });
-  // console.log($cover2);
 
   var $demo = $('#tetris-demo').blockrain({
     speed: 200,
