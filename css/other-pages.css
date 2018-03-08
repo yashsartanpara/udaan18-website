@@ -1,0 +1,356 @@
+/*========================================================================================
+*   General CSS
+*=========================================================================================
+*/
+
+@font-face {
+  font-family: 'PressStart2P';
+  src: url('../fonts/PressStart2P1.ttf') format('truetype');
+}
+
+.font-family--press-start-2p {
+  font-family: 'PressStart2P', sans-serif;
+}
+
+html, body {
+  background-color: #111;
+  margin: 0;
+  font-size: 2vh;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  color: white;
+  overflow: hidden;
+  width: calc(100% + 33px);
+  height: 100%;
+}
+
+/*========================================================================================
+*   Udaan Nights Page CSS
+*=========================================================================================
+*/
+
+#udaan-nights, section {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: scroll;
+  height: 100%;
+  overflow-x: hidden;
+  width: calc(100% + 33px);
+  right: -16.5px;
+  position: absolute;
+  top: 0;
+}
+
+@font-face {
+  font-family: 'Yellowtail';
+  src: url('../fonts/Yellowtail.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Orbitron';
+  src: url('../fonts/orbitron-bold-webfont.woff') format('woff');
+}
+
+#logo-text-udaan {
+  position: absolute;
+  top: 10%
+}
+
+#logo-text-nights {
+
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(ellipse at center, rgba(127, 0, 173, 0.6) 0%, rgba(0, 0, 0, 0.8) 60%, #000000 90%);
+  background-size: cover;
+  width: 100%;
+  overflow: hidden;
+  position: absolute;
+  height: 40vh;
+  top: 0;
+  left: 0;
+}
+
+.logo-triangle-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  position: absolute;
+  height: 80%;
+  top: 20%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.logo-triangle-wrapper svg {
+  max-height: 100%;
+}
+
+.logo-triangle {
+  -webkit-animation: dash 3s linear forwards infinite;
+  animation: dash 3s linear forwards infinite;
+  stroke-dasharray: 1200;
+  stroke-dashoffset: 1200;
+  z-index: 8;
+  top: 20%;
+}
+
+.logo-triangle-wrapper {
+  top: 9vh;
+  height: 30vh;
+}
+
+@media only screen and (max-width: 75em) {
+  .wrapper {
+
+  }
+  .logo-triangle-wrapper {
+    top: 9vh;
+    margin-left: 15%;
+    margin-right: 15%;
+  }
+  #logo-text-udaan {
+
+  }
+
+  #logo-text-nights {
+
+  }
+}
+
+@media only screen and (max-width: 64em) {
+
+}
+
+@media only screen and (max-width: 48em) {
+
+}
+
+@media (orientation: landscape) {
+
+}
+
+.font--orbitron {
+  color: #C6CBF5;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 9vh;
+  font-weight: 1000;
+  line-height: 1.2;
+  margin: 0;
+  text-align: center;
+  text-transform: uppercase;
+  z-index: 11;
+  background: -webkit-linear-gradient(top, #151C60, #C6CBF5 40%, black 40%, #E1A0CE 65%, white);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: white;
+}
+
+.font--yellowtail {
+  color: #d100b1;
+  display: block;
+  font-family: 'Yellowtail', cursive;
+  font-size: 14vh;
+  text-shadow: 0 0 1px #d100b1, 0 -3px 3px rgba(255, 255, 255, 0.8), 0 3px 3px rgba(0, 0, 0, 0.5), 0 0 15px #d100b1, 0 0 45px rgba(209, 0, 177, 0.8);
+  text-align: center;
+  text-decoration: underline;
+  text-transform: none;
+  -webkit-transform: skew(-10deg) rotate(-10deg);
+  transform: skew(-10deg) rotate(-10deg);
+  width: 100%;
+  z-index: 11;
+}
+
+
+@-webkit-keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#udaan-nights .content {
+  display: block;
+  background-color: #000;
+  color: black;
+  position: absolute;
+  top: 40vh;
+  width: 100%;
+  min-height: 60%;
+}
+
+/*==========================================
+*   ---- Block CSS
+*===========================================
+*/
+:root {
+  --block-lg-unit: 30vh;
+  --block-md-unit: 30vh;
+  --block-sm-unit: 30vh;
+  --block-xs-unit: 18vh;
+  --block--z-index: 1; /* when-selected: 4 */
+}
+
+.block-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  user-select: none;
+}
+
+.block {
+
+  cursor: pointer;
+  z-index: var(--block--z-index);
+  overflow: hidden;
+
+  /* Because stupid flexbox grid adds 7rem padding in col-lg */
+  padding: 0 !important;
+
+  width: calc(var(--block-lg-unit) * 2);
+  height: var(--block-lg-unit);
+
+}
+
+.block-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  /*background-color: red;*/
+}
+
+.block-content .fill {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 80%;
+  width: 80%;
+  opacity: 1;
+  background-color: #1F0528;
+  color: #36E2F8;
+  box-shadow: rgba(133, 133, 133, 0.5) 1vh 1vh 0;
+  font-size: 2.0vh;
+  border: 0.4vh solid #36E2F8;
+}
+
+.block-content .block-sub-text {
+  font-size: 1.5vh;
+  margin-top: 1.5vh;
+  padding: 1vh;
+  color: #E3FCFF;
+}
+
+@media only screen and (max-width: 75em) {
+  .block {
+    width: calc(var(--block-md-unit) * 2);
+    height: var(--block-md-unit);
+  }
+}
+
+@media only screen and (max-width: 64em) {
+  .block {
+    width: calc(var(--block-sm-unit) * 2);
+    height: var(--block-sm-unit);
+  }
+}
+
+@media only screen and (max-width: 48em) {
+  .block {
+    width: calc(var(--block-xs-unit) * 2);
+    height: var(--block-xs-unit);
+  }
+}
+
+@media (orientation: landscape) {
+  .block {
+    flex-basis: 33.33333333%;
+    max-width: 33.33333333%;
+    height: var(--block-lg-unit);
+  }
+}
+
+
+/*========================================================================================
+*   Developers Page CSS
+*=========================================================================================
+*/
+
+#developers {
+  background-color: #9CB99C;
+  color: #111
+}
+
+#developers .header {
+  top:0;
+  height: 40vh;
+  width: 100%;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  font-size: 3vh;
+  background-color: #9CB99C;
+  z-index: 1;
+}
+
+#developers .header .keyword {
+  position: absolute;
+  font-size: 1vh;
+  color: #111;
+}
+
+#developers .content {
+  position: absolute;
+  top: 40vh;
+  z-index: 0;
+}
+
+#developers .block-content .fill {
+  background-color: transparent;
+  color: #111;
+  box-shadow: rgba(55, 55, 55, 0.2) 1vh 1vh 0;
+  font-size: 2.0vh;
+  border: 0.4vh solid #111;
+}
+
+#developers .block-content .fill:hover {
+  transition: 0.5s all;
+  background-color: #111;
+  color: #9CB99C;
+}
+
+#developers .block-sub-text {
+  color: #222;
+  font-size: 1.8vh;
+}
+
+#developers .block-seperator {
+  display: flex;
+  justify-content: center;
+  flex-basis: 100%;
+  width: 100%;
+  padding: 5vh;
+  border-top: 0.5vh dashed rgba(0,0,0,0.1);
+  margin-top: 2.5vh;
+  font-size: 2.4vh;
+}

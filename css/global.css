@@ -99,7 +99,7 @@ a {
 
 /*Hide Scrollbar*/
 ::-webkit-scrollbar {
-  width: 0px !important; /* remove scrollbar space */
+  width: 0 !important; /* remove scrollbar space */
   background: transparent !important; /* optional: just make scrollbar invisible */
 }
 

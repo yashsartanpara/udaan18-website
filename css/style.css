@@ -1101,37 +1101,3 @@ section {
   font-size: 2vh;
 }
 
-/*==========================================
-*   ---- Media Query
-*===========================================
-*/
-
-.media-query {
-  display: none;
-  content: "lg";
-}
-
-@media only screen and (max-width: 75em) {
-  .media-query {
-    content: "md";
-  }
-}
-
-@media only screen and (max-width: 64em) {
-  .media-query {
-    content: "sm";
-  }
-}
-
-@media only screen and (max-width: 48em) and (orientation: portrait) {
-  .media-query {
-    content: "xs portrait";
-  }
-}
-
-@media only screen and (max-width: 48em) and (orientation: landscape) {
-  .media-query {
-    content: "xs landscape";
-  }
-}
-

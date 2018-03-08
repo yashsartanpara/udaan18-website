@@ -240,6 +240,21 @@ function setupInteractionEvents() {
 
   setupSocialMedia();
   setupDateAnimation();
+  setupOtherPageLinks();
+}
+
+function setupOtherPageLinks() {
+  var blocks = document.querySelectorAll('#udaan-other .block');
+  [].forEach.call(blocks, function (block) {
+    block.addEventListener('click', function () {
+      var href = block.getAttribute('data-href');
+      if(href.length > 0) {
+        location.href = href;
+      } else {
+        displayMessage('COMING SOON!');
+      }
+    });
+  })
 }
 
 function setupDateAnimation() {
