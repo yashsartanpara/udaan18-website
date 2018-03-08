@@ -3,7 +3,7 @@ html, body {
 }
 
 .ground {
-  position: absolute;
+  position: fixed;
   z-index: -15;
   bottom: 0;
   width: 100%;
@@ -128,5 +128,9 @@ html, body {
 
   .bush:nth-child(3) {
     left: 100%;
+  }
+
+  .cloud {
+    display: none;
   }
 }
