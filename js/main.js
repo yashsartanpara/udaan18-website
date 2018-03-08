@@ -103,7 +103,7 @@ function introStart() {
 
   // yoyo coin to left and zoom in
   function animationStep1() {
-    //coinBounceTimeline.kill();
+    coinBounceTimeline.kill();
     var animCoin_SlideLeft = {left: '-=20%', yoyo: true, repeat: 1};
     var animCoin_ZoomAndFlip = {scale: 7, rotationY: '360deg', ease: Back.easeOut.config(1.7)};
 
@@ -203,6 +203,7 @@ function setupInteractionEvents() {
     startPage: '#udaan-title-page',
     beforeMove: function () {
       clearCartridgeSelection(getActiveSection());
+      hideSocialIcons();
     },
     animationFunction: function (intent) {
       TweenMax.to(intent.target, 0.5,
@@ -246,17 +247,32 @@ function setupCartridgeEvents() {
 
 function setupSocialMedia() {
   var shareIcon = document.querySelector('#share-icon');
+  var shareIconImg = document.querySelector('#share-icon img');
   var socialMediaIconsBar = document.querySelector('#social-icons');
+  var titlePage = document.querySelector('#udaan-title-page');
   shareIcon.addEventListener('click', function () {
     if (shareIcon.getAttribute('data-status') !== 'active') {
       shareIcon.setAttribute('data-status', 'active');
       socialMediaIconsBar.classList.add('social-icons--active');
+      titlePage.addEventListener('click', function ff(mouseEvent) {
+        if(mouseEvent.target !== shareIcon && mouseEvent.target !== shareIconImg) {
+          hideSocialIcons();
+          titlePage.removeEventListener('click', ff);
+        }
+      });
     } else {
-      shareIcon.setAttribute('data-status', 'hidden');
-      socialMediaIconsBar.classList.remove('social-icons--active');
+      hideSocialIcons();
     }
   });
+}
 
+function hideSocialIcons() {
+  var shareIcon = document.querySelector('#share-icon');
+  var socialMediaIconsBar = document.querySelector('#social-icons');
+  var titlePage = document.querySelector('#udaan-title-page');
+  shareIcon.setAttribute('data-status', 'hidden');
+  socialMediaIconsBar.classList.remove('social-icons--active');
+  titlePage.removeEventListener('click', hideSocialIcons);
 }
 
 /*========================================================================================

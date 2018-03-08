@@ -406,6 +406,8 @@ section {
   top: -8vh;
   z-index: 10;
   transition: 0.2s all;
+  padding: 0.5vh;
+  margin: 1vh;
 }
 
 .social-icons--active {
@@ -434,6 +436,7 @@ section {
   right: 0;
   padding: 2vh;
   margin: 0.5vh;
+  cursor: pointer;
 }
 
 #icon--facebook {
