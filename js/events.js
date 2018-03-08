@@ -24,7 +24,6 @@ $(function () {
   );
 
   $('.event-name').click(function () {
-    document.getElementById("eventClick").play();
     openEventModal(this);
     $('#event-modal').css("overflow-y", "scroll");
     $('#event-modal').css("overflow-x", "hidden");
