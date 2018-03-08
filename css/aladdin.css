@@ -4,7 +4,7 @@
   height: 100%;
   width: 100%;
   display: flex;
-  position: absolute;
+  position: fixed;
   background-size: cover;
   z-index: -1;
 }
@@ -22,7 +22,7 @@
 /*}*/
 
 .abbu {
-  position: absolute;
+  position: fixed;
   bottom: 1%;
   height: 81px;
   width: 99px;
@@ -34,7 +34,7 @@
 }
 
 .jasmine {
-  position: absolute;
+  position: fixed;
   bottom: 10%;
   height: 121px;
   width: 158px;

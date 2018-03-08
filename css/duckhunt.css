@@ -678,7 +678,7 @@
 }
 
 #stage {
-  position: absolute;
+  position: fixed;
   z-index: -15;
   background: url('../img/duckhunt.png') no-repeat bottom;
   height: 100%;
