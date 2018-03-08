@@ -1,6 +1,6 @@
 .stage-2 {
   z-index: -15;
-  position: absolute;
+  position: fixed;
   bottom: 0;
   width: 100%;
   height: 100%;
@@ -10,7 +10,7 @@
 
 .stage-floor {
   z-index: -1;
-  position: absolute;
+  position: fixed;
   bottom: 0px !important;
   width: 100%;
   height: 241px;
@@ -29,9 +29,9 @@
 
 .megaman {
   z-index: 5;
-  position: absolute;
+  position: fixed;
   bottom: 1%;
-  left: 25%;
+  left: 20%;
   width: 90px;
   height: 88px;
   background: url('../img/megaman.gif') 0 0;

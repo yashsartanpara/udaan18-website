@@ -1,5 +1,5 @@
 .background-wrapper {
-  position: absolute;
+  position: fixed;
   height: 100%;
   width: 100%;
   display: flex;
@@ -19,7 +19,7 @@
 }
 
 .sonic-wrapper {
-  position: absolute;
+  position: fixed;
   bottom: 25%;
   left: 20%;
   margin-left: -45px;
