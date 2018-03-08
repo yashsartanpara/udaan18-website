@@ -57,6 +57,7 @@
   </style>
 </head>
 <body>
+<audio id="bomberStart" src="assets/sound/bomberstart.mp3"></audio>
 <script src="js/loading.js"></script>
 <div class="logo">
   <img class="logoImg" src="img/cassettee/dynamo-bomber-logo.svg">
@@ -81,5 +82,10 @@
   Reset
 </div>
 <script src="js/events.js"></script>
+<script>
+  window.onload = function () {
+    document.getElementById("bomberStart").play();
+  }
+</script>
 </body>
 </html>

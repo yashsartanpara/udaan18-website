@@ -53,6 +53,8 @@
   </style>
 </head>
 <body>
+<audio preload="auto" id="eventClick" src="assets/sound/aladdinstart.mp3"></audio>
+<audio preload="auto" id="aladdinStart" src="assets/sound/aladdinclick.mp3"></audio>
 <script src="js/loading.js"></script>
 <div class="logo">
   <img class="logoImg" src="img/cassettee/mad-house-logo.svg">
@@ -72,5 +74,10 @@
   Reset
 </div>
 <script src="js/events.js"></script>
+<script>
+  window.onload = function () {
+    document.getElementById("aladdinStart").play();
+  }
+</script>
 </body>
 </html>
