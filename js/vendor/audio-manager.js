@@ -1,4 +1,5 @@
 var audioRepository = [];
+window.audioManager = {onload: false};
 
 function registerInteraction() {
   audioRepository.forEach(function (audio) {
@@ -6,7 +7,6 @@ function registerInteraction() {
       audio.element.pause();
       unmuteElement(audio.element);
     });
-
   });
 }
 
@@ -125,8 +125,14 @@ if (document) {
     }
   });
   window.addEventListener('load', function () {
+    console.log('audio manager ');
     if (getCookieAudioConfig()) {
       registerAllAudioElements();
+      unmuteAllAudio();
+      if(typeof window.audioManager.onload === 'function') {
+        console.log('calling window.onload replacement');
+        window.audioManager.onload();
+      }
       window.addEventListener('click', function firstInteraction() {
         window.removeEventListener('click', firstInteraction);
         registerInteraction();
