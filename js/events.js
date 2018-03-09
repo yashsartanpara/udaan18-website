@@ -44,6 +44,7 @@ window.onhashchange = function () {
 function openEventModal(elem) {
   var index = $(elem).data('index');
   window.location.hash = 'event-' + index;
+  document.getElementById("eventClick").play();
 }
 
 function closeEventModal() {

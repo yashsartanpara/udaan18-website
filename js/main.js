@@ -30,6 +30,7 @@ window.onpageshow = function (event) {
       return;
     }
   }
+  document.querySelector('#sound-beep').play();
 };
 
 window.unload = window.beforeunload = function () {
@@ -107,6 +108,7 @@ function introStart() {
 
   // yoyo coin to left and zoom in
   function animationStep1() {
+    document.querySelector('#sound-beep').play();
     coinBounceTimeline.kill();
     var animCoin_SlideLeft = {left: '-=20%', yoyo: true, repeat: 1};
     var animCoin_ZoomAndFlip = {scale: 7, rotationY: '360deg', ease: Back.easeOut.config(1.7)};
@@ -115,10 +117,18 @@ function introStart() {
     var animCoin_InsertIntoSlot = {
       scale: 1,
       top: coinSlotBounds.top + 'px',
-      left: coinSlotBounds.left - coinSlot.width / 2 + 'px'
+      left: coinSlotBounds.left - coinSlot.width / 2 + 'px',
     };
     var animCoin_HalfFlip = {rotationY: '+=80deg'};
-    var animCoin_Fade = {opacity: 0, onComplete: animationStep2};
+    var animCoin_Fade = {
+      opacity: 0,
+      onStart: function () {
+        setTimeout(function () {
+          document.querySelector('#sound-coin-insert').play();
+        }, 200);
+      },
+      onComplete: animationStep2
+    };
 
     coinTimeline.add(TweenMax.to(coin, time_step1 / 2, animCoin_SlideLeft), 0);
     coinTimeline.add(TweenMax.to(coin, time_step1, animCoin_ZoomAndFlip), 0);
@@ -157,7 +167,10 @@ function introStart() {
     tl.add(TweenMax.to(arcadeSVG, 2, {
       scale: 4.5,
       transformOrigin: '50% ' + h,
-      opacity: 0
+      opacity: 0,
+      onStart: function () {
+        document.querySelector('#sound-whoosh').play();
+      }
     }), 0.5);
     tl.add(TweenMax.to(arcadeScreen, 2, {
       scale: 4.5
@@ -325,12 +338,16 @@ function selectCartridge(mouseEvent) {
 
   selectedCartridge.style.zIndex = CARTRIDGE_SELECTED_Z_INDEX;
 
+  document.querySelector('#sound-cartridge-fade-in').play();
+
   TweenMax.to(selectedCartridge, CARTRIDGE_TRANSITION_IN_TIME, {
     x: centerPoint.x,
     y: centerPoint.y,
     scale: 1.2,
     ease: EASE_ELASTIC,
-    onStart: changeConsoleState.bind(null, 'visible', getActiveSection())
+    onStart: function () {
+      changeConsoleState('visible', getActiveSection());
+    }
   });
   TweenMax.to(selectedCartridge, CARTRIDGE_TRANSITION_IN_TIME / 2, {
     onComplete: function () {
@@ -365,6 +382,8 @@ function insertCartridge(mouseEvent) {
   var point = consoleTopView.offsetTop - cartridge.offsetTop - cartridgeClippingHeight;
 
   var url = cartridge.getAttribute('data-href');
+
+  document.querySelector('#sound-cartridge-insert').play();
 
   TweenMax.to(cartridge, 0.5, {
     y: point,
@@ -413,6 +432,7 @@ function blackout(section) {
 
   blackout.addEventListener('click', function onBlackout() {
     clearCartridgeSelection(section);
+    document.querySelector('#sound-cartridge-fade-out').play();
     blackout.removeEventListener('click', onBlackout);
   });
 }
@@ -579,6 +599,9 @@ function displayMessage(message) {
   TweenMax.to(userMessageBar, 1, {
     opacity: 1,
     ease: EASE_ELASTIC,
+    onStart: function () {
+      document.querySelector('#sound-warning').play();
+    },
     onComplete: function () {
       TweenMax.to(userMessageBar, 0.3, {opacity: 0});
     }
