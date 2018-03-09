@@ -11,6 +11,7 @@ window.onload = function () {
     introComplete();
     invalidateIntroScreen();
   } else {
+    setupAudioController();
     handleFallbacks();
     introStart();
     detectFirstStart();
@@ -73,10 +74,9 @@ function introStart() {
     .add(TweenMax.to(coin, 1,
       {backgroundColor: 'rgba(255, 249, 15, 0.1)'}));
 
-
-  if(isSafari() || isIOS()) {
+  if (isSafari() || isIOS()) {
     screenTextElement.innerHTML = 'PRESS<br/>START';
-    if(skipIntroButton) {
+    if (skipIntroButton) {
       skipIntroButton.style.display = 'none';
     }
     coin.style.display = 'none';
@@ -117,7 +117,7 @@ function introStart() {
     var animCoin_InsertIntoSlot = {
       scale: 1,
       top: coinSlotBounds.top + 'px',
-      left: coinSlotBounds.left - coinSlot.width / 2 + 'px',
+      left: coinSlotBounds.left - coinSlot.width / 2 + 'px'
     };
     var animCoin_HalfFlip = {rotationY: '+=80deg'};
     var animCoin_Fade = {
@@ -184,7 +184,7 @@ function introStart() {
 }
 
 function detectFirstStart() {
-  if (Cookies.get('udaan18-existing-user') === 'yes') {
+  if (Cookies.get('udaan18-existing-user') === 'true') {
     var skipIntroButton = document.querySelector('#skip-intro');
     skipIntroButton.style.display = 'block';
     skipIntroButton.style.opacity = '0';
@@ -195,14 +195,14 @@ function detectFirstStart() {
       location.hash = 'udaan-title-page';
     });
   } else {
-    Cookies.set('udaan18-existing-user', 'yes', 7);
+    Cookies.set('udaan18-existing-user', 'true', 7);
   }
 }
 
 function invalidateIntroScreen() {
   document.querySelector('#intro').style.display = 'none';
   setupTetrisAnimation();
-  if(location.hash.length === 0) {
+  if (location.hash.length === 0) {
     location.hash = 'udaan-title-page';
   }
 }
@@ -255,13 +255,48 @@ function setupInteractionEvents() {
   setupDateAnimation();
 }
 
+function setupAudioController() {
+  var audioControllerButton = document.querySelector('#audio-controller');
+  var audioControllerButtonImg = document.querySelector('#audio-controller img');
+  if (audioControllerButton) {
+    if (getCookieAudioConfig()) {
+      turnOnAudio();
+    } else {
+      turnOffAudio();
+    }
+    audioControllerButton.addEventListener('click', function () {
+      var currentStatus = audioControllerButton.getAttribute('data-status');
+      if (currentStatus === 'on') {
+        turnOffAudio();
+      } else {
+        turnOnAudio();
+      }
+    });
+  }
+
+  function turnOffAudio() {
+    setCookieAudioDisabled();
+    audioControllerButtonImg.setAttribute('src', 'img/audio-off.svg');
+    audioControllerButton.setAttribute('data-status', 'off');
+  }
+
+  function turnOnAudio() {
+    setCookieAudioEnabled();
+    audioControllerButtonImg.setAttribute('src', 'img/audio-on.svg');
+    audioControllerButton.setAttribute('data-status', 'on');
+    document.querySelector('#sound-beep').play();
+  }
+}
+
 function setupDateAnimation() {
   var dateAnimTimeline = new TimelineMax({repeat: -1, yoyo: true});
   var dateElement = document.querySelector('#udaan-logo-container .udaan-date');
   var COLOR_TRANSITION_TIME = 0.3;
   dateAnimTimeline.add(TweenMax.to(dateElement, COLOR_TRANSITION_TIME, {css: {color: '#F6EF15'}}));
-  dateAnimTimeline.add(TweenMax.to(dateElement, COLOR_TRANSITION_TIME, {css: {color: '#2FB64C'}}), COLOR_TRANSITION_TIME);
-  dateAnimTimeline.add(TweenMax.to(dateElement, COLOR_TRANSITION_TIME, {css: {color: '#0F7DAE'}}), COLOR_TRANSITION_TIME * 2);
+  dateAnimTimeline.add(TweenMax.to(dateElement, COLOR_TRANSITION_TIME, {css: {color: '#2FB64C'}}),
+    COLOR_TRANSITION_TIME);
+  dateAnimTimeline.add(TweenMax.to(dateElement, COLOR_TRANSITION_TIME,
+    {css: {color: '#0F7DAE'}}), COLOR_TRANSITION_TIME * 2);
 }
 
 function setupCartridgeEvents() {
@@ -282,7 +317,7 @@ function setupSocialMedia() {
       shareIcon.setAttribute('data-status', 'active');
       socialMediaIconsBar.classList.add('social-icons--active');
       titlePage.addEventListener('click', function ff(mouseEvent) {
-        if(mouseEvent.target !== shareIcon && mouseEvent.target !== shareIconImg) {
+        if (mouseEvent.target !== shareIcon && mouseEvent.target !== shareIconImg) {
           hideSocialIcons();
           titlePage.removeEventListener('click', ff);
         }
@@ -394,7 +429,7 @@ function insertCartridge(mouseEvent) {
 }
 
 function resetAllCartridges(section, excluded) {
-  if(!section)
+  if (!section)
     return;
 
   var cartridges = section.querySelectorAll('.cartridge');
@@ -673,25 +708,24 @@ function handleFallbacks() {
   }
 }
 
-
 function showCompatibilityStatus() {
   // Only for testing
-  if(isSafari()) {
+  if (isSafari()) {
     console.info('[TEST] Browser is Safari.');
   }
-  if(isChrome()) {
+  if (isChrome()) {
     console.info('[TEST] Browser is Google Chrome.');
   }
-  if(isFirefox()) {
+  if (isFirefox()) {
     console.info('[TEST] Browser is Mozilla Firefox.');
   }
-  if(isMobile()) {
+  if (isMobile()) {
     console.info('[TEST] Browser is on mobile device.');
   }
-  if(isEdge()) {
+  if (isEdge()) {
     console.info('[TEST] Browser is Microsoft Edge');
   }
-  if(isIOS()) {
+  if (isIOS()) {
     console.info('[TEST] Platform is iOS.');
   }
   var isGoodBrowser = (isFirefox() || isChrome());

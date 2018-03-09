@@ -39,9 +39,6 @@
   <script src="js/vendor/swipe-listener.min.js"></script>
 
   <!-- Greensock Library -->
-  <script src="js/vendor/greensock/TweenLite.min.js"></script>
-  <script src="js/vendor/greensock/CSSPlugin.min.js"></script>
-  <script src="js/vendor/greensock/EasePack.min.js"></script>
   <script src="js/vendor/greensock/TweenMax.min.js"></script>
 
   <!-- jQuery -->
@@ -57,18 +54,28 @@
 </head>
 
 <body class="font-family--press-start-2p">
+
+<!-- Loading -->
 <script src="js/loading.js"></script>
+
+<!-- Audio Manager -->
+<script src="js/vendor/audio-manager.js"></script>
+
+<!-- Audio -->
+<audio preload="auto" id="sound-screen" src="assets/sound/screen.ogg" muted></audio>
+<audio preload="auto" id="sound-coin-insert" src="assets/sound/coin3.ogg" muted></audio>
+<audio preload="auto" id="sound-whoosh" src="assets/sound/whoosh.ogg" muted></audio>
+<audio preload="auto" id="sound-beep" src="assets/sound/beep.ogg" muted></audio>
+<audio preload="auto" id="sound-tetris-line-remove" src="assets/sound/line-remove.ogg" muted></audio>
+<audio preload="auto" id="sound-cartridge-insert" src="assets/sound/cartridge-insert-sound-1.ogg" muted></audio>
+<audio preload="auto" id="sound-cartridge-fade-in" src="assets/sound/fade-in.ogg" muted></audio>
+<audio preload="auto" id="sound-cartridge-fade-out" src="assets/sound/fade-out.ogg" muted></audio>
+<audio preload="auto" id="sound-warning" src="assets/sound/warn.ogg" muted></audio>
+
 <div id="intro">
-  <!-- Audio -->
-  <audio preload="auto" id="sound-screen" src="assets/sound/screen.ogg"></audio>
-  <audio preload="auto" id="sound-coin-insert" src="assets/sound/coin3.ogg"></audio>
-  <audio preload="auto" id="sound-whoosh" src="assets/sound/whoosh.ogg"></audio>
-  <audio preload="auto" id="sound-beep" src="assets/sound/beep.ogg"></audio>
-  <audio preload="auto" id="sound-tetris-line-remove" src="assets/sound/line-remove.ogg"></audio>
-  <audio preload="auto" id="sound-cartridge-insert" src="assets/sound/cartridge-insert-sound-1.ogg"></audio>
-  <audio preload="auto" id="sound-cartridge-fade-in" src="assets/sound/fade-in.ogg"></audio>
-  <audio preload="auto" id="sound-cartridge-fade-out" src="assets/sound/fade-out.ogg"></audio>
-  <audio preload="auto" id="sound-warning" src="assets/sound/warn.ogg"></audio>
+  <div id="audio-controller" data-status="off">
+    <img src="img/audio-off.svg"/>
+  </div>
 
   <object id="arcadeSVG" data="img/arcade.svg"></object>
   <div id="arcadeScreen">

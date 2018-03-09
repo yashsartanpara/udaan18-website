@@ -161,6 +161,26 @@ section {
 }
 
 /*==========================================
+*   ---- Audio Controller
+*===========================================
+*/
+
+#audio-controller {
+  position: fixed;
+  width: 5vh;
+  height: 5vh;
+  padding: 2vh;
+  top: 0;
+  left: 0;
+  z-index: 15;
+}
+
+#audio-controller img {
+  width: 5vh;
+  height: 5vh;
+}
+
+/*==========================================
 *   ---- TV Static Background
 *===========================================
 */
