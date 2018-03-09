@@ -42,7 +42,9 @@
   </style>
 </head>
 <body>
-<audio preload="auto" id="streetStart" src="assets/sound/street.ogg"></audio>
+<script src="js/vendor/js.cookie.js"></script>
+<script src="js/vendor/audio-manager.js"></script>
+<audio preload="auto" id="streetStart" src="assets/sound/street.ogg" muted></audio>
 <script src="js/loading.js"></script>
 <div class="logo">
   <img class="logoImg" src="img/cassettee/pandoras-box-logo.svg">
@@ -67,7 +69,7 @@
 <script src="js/sf.js"></script>
 <script src="js/events.js"></script>
 <script>
-  window.onload = function () {
+  window.audioManager.onload = function () {
     document.getElementById("streetStart").play();
   }
 </script>

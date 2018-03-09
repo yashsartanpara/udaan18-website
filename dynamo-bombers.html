@@ -57,7 +57,9 @@
   </style>
 </head>
 <body>
-<audio id="bomberStart" src="assets/sound/bomberstart.ogg"></audio>
+<script src="js/vendor/js.cookie.js"></script>
+<script src="js/vendor/audio-manager.js"></script>
+<audio id="bomberStart" src="assets/sound/bomberstart.ogg" muted></audio>
 <script src="js/loading.js"></script>
 <div class="logo">
   <img class="logoImg" src="img/cassettee/dynamo-bomber-logo.svg">
@@ -83,7 +85,7 @@
 </div>
 <script src="js/events.js"></script>
 <script>
-  window.onload = function () {
+  window.audioManager.onload = function () {
     document.getElementById("bomberStart").play();
   }
 </script>
