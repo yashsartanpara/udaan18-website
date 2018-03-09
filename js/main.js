@@ -11,7 +11,7 @@ window.onload = function () {
     introComplete();
     invalidateIntroScreen();
   } else {
-    setupAudioController();
+    setupAudioController(document.querySelector('#audio-controller'));
     handleFallbacks();
     introStart();
     detectFirstStart();
@@ -205,6 +205,7 @@ function invalidateIntroScreen() {
   if (location.hash.length === 0) {
     location.hash = 'udaan-title-page';
   }
+  setupAudioController(document.querySelector('#audio-controller-2'));
 }
 
 function introComplete() {
@@ -255,23 +256,24 @@ function setupInteractionEvents() {
   setupDateAnimation();
 }
 
-function setupAudioController() {
-  var audioControllerButton = document.querySelector('#audio-controller');
-  var audioControllerButtonImg = document.querySelector('#audio-controller img');
+function setupAudioController(audioControllerButton) {
+  var audioControllerButtonImg = audioControllerButton.querySelector('img');
   if (audioControllerButton) {
     if (getCookieAudioConfig()) {
       turnOnAudio();
     } else {
       turnOffAudio();
     }
-    audioControllerButton.addEventListener('click', function () {
+    audioControllerButton.addEventListener('click', onClick);
+    function onClick() {
       var currentStatus = audioControllerButton.getAttribute('data-status');
       if (currentStatus === 'on') {
         turnOffAudio();
       } else {
         turnOnAudio();
+        document.querySelector('#sound-beep').play();
       }
-    });
+    }
   }
 
   function turnOffAudio() {
@@ -284,7 +286,6 @@ function setupAudioController() {
     setCookieAudioEnabled();
     audioControllerButtonImg.setAttribute('src', 'img/audio-on.svg');
     audioControllerButton.setAttribute('data-status', 'on');
-    document.querySelector('#sound-beep').play();
   }
 }
 

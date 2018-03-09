@@ -165,17 +165,17 @@ section {
 *===========================================
 */
 
-#audio-controller {
-  position: fixed;
+.audio-controller {
+  position: absolute;
   width: 5vh;
   height: 5vh;
   padding: 2vh;
   top: 0;
   left: 0;
-  z-index: 15;
+  z-index: 1;
 }
 
-#audio-controller img {
+.audio-controller img {
   width: 5vh;
   height: 5vh;
 }
