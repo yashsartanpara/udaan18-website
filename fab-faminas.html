@@ -39,8 +39,10 @@
   </style>
 </head>
 <body>
-<!--<audio id="zeldaStart" src="assets/sound/zeldastart.mp3"></audio>-->
-<!--<audio id="eventClick" src="assets/sound/zeldaclick.mp3"></audio>-->
+<script src="js/vendor/js.cookie.js"></script>
+<script src="js/vendor/audio-manager.js"></script>
+<audio id="zeldaStart" src="assets/sound/zeldastart.ogg" muted></audio>
+<audio id="eventClick" src="assets/sound/zeldaclick.ogg" muted></audio>
 <script src="js/loading.js"></script>
 <div class="logo">
   <img class="logoImg" src="img/cassettee/fab-faminas-logo.svg">
@@ -83,11 +85,10 @@
   Reset
 </div>
 <script src="js/events.js"></script>
-<!--<script>-->
-<!--window.onload = function () {-->
-<!--document.getElementById("zeldaStart").play();-->
-<!--document.getElementById("eventClick").play();-->
-<!--}-->
-<!--</script>-->
+<script>
+  window.onload = function () {
+    document.getElementById("zeldaStart").play();
+  }
+</script>
 </body>
 </html>

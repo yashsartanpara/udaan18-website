@@ -39,9 +39,6 @@
   <script src="js/vendor/swipe-listener.min.js"></script>
 
   <!-- Greensock Library -->
-  <script src="js/vendor/greensock/TweenLite.min.js"></script>
-  <script src="js/vendor/greensock/CSSPlugin.min.js"></script>
-  <script src="js/vendor/greensock/EasePack.min.js"></script>
   <script src="js/vendor/greensock/TweenMax.min.js"></script>
 
   <!-- jQuery -->
@@ -57,8 +54,29 @@
 </head>
 
 <body class="font-family--press-start-2p">
+
+<!-- Loading -->
 <script src="js/loading.js"></script>
+
+<!-- Audio Manager -->
+<script src="js/vendor/audio-manager.js"></script>
+
+<!-- Audio -->
+<audio preload="auto" id="sound-screen" src="assets/sound/screen.ogg" muted></audio>
+<audio preload="auto" id="sound-coin-insert" src="assets/sound/coin3.ogg" muted></audio>
+<audio preload="auto" id="sound-whoosh" src="assets/sound/whoosh.ogg" muted></audio>
+<audio preload="auto" id="sound-beep" src="assets/sound/beep.ogg" muted></audio>
+<audio preload="auto" id="sound-tetris-line-remove" src="assets/sound/line-remove.ogg" muted></audio>
+<audio preload="auto" id="sound-cartridge-insert" src="assets/sound/cartridge-insert-sound-1.ogg" muted></audio>
+<audio preload="auto" id="sound-cartridge-fade-in" src="assets/sound/fade-in.ogg" muted></audio>
+<audio preload="auto" id="sound-cartridge-fade-out" src="assets/sound/fade-out.ogg" muted></audio>
+<audio preload="auto" id="sound-warning" src="assets/sound/warn.ogg" muted></audio>
+
 <div id="intro">
+  <div id="audio-controller" class="audio-controller" data-status="off">
+    <img src="img/audio-off.svg"/>
+  </div>
+
   <object id="arcadeSVG" data="img/arcade.svg"></object>
   <div id="arcadeScreen">
     <span class="screenText">INSERT<br/>COIN</span>
@@ -79,6 +97,9 @@
 <div class="pager">
   <div class="main pages-container">
     <section id="udaan-title-page" class="page" data-order="1-2">
+      <div id="audio-controller-2" class="audio-controller" data-status="off">
+        <img src="img/audio-off.svg"/>
+      </div>
       <div id="share-icon">
         <img src="img/social/share.svg">
       </div>

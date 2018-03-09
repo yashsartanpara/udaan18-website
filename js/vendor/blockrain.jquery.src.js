@@ -610,6 +610,10 @@
           for (var i = game._BLOCK_WIDTH * (row_to_pop + 1) - 1; i >= 0; i--) {
             this.data[i] = (i >= game._BLOCK_WIDTH ? this.data[i - game._BLOCK_WIDTH] : undefined);
           }
+          var lineRemoveSound = document.querySelector('#sound-tetris-line-remove');
+          if (lineRemoveSound) {
+            lineRemoveSound.play();
+          }
         },
         checkForClears: function () {
           var startLines = game._board.lines;

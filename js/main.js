@@ -11,6 +11,7 @@ window.onload = function () {
     introComplete();
     invalidateIntroScreen();
   } else {
+    setupAudioController(document.querySelector('#audio-controller'));
     handleFallbacks();
     introStart();
     detectFirstStart();
@@ -30,6 +31,7 @@ window.onpageshow = function (event) {
       return;
     }
   }
+  document.querySelector('#sound-beep').play();
 };
 
 window.unload = window.beforeunload = function () {
@@ -72,10 +74,9 @@ function introStart() {
     .add(TweenMax.to(coin, 1,
       {backgroundColor: 'rgba(255, 249, 15, 0.1)'}));
 
-
-  if(isSafari() || isIOS()) {
+  if (isSafari() || isIOS()) {
     screenTextElement.innerHTML = 'PRESS<br/>START';
-    if(skipIntroButton) {
+    if (skipIntroButton) {
       skipIntroButton.style.display = 'none';
     }
     coin.style.display = 'none';
@@ -107,6 +108,7 @@ function introStart() {
 
   // yoyo coin to left and zoom in
   function animationStep1() {
+    document.querySelector('#sound-beep').play();
     coinBounceTimeline.kill();
     var animCoin_SlideLeft = {left: '-=20%', yoyo: true, repeat: 1};
     var animCoin_ZoomAndFlip = {scale: 7, rotationY: '360deg', ease: Back.easeOut.config(1.7)};
@@ -118,7 +120,15 @@ function introStart() {
       left: coinSlotBounds.left - coinSlot.width / 2 + 'px'
     };
     var animCoin_HalfFlip = {rotationY: '+=80deg'};
-    var animCoin_Fade = {opacity: 0, onComplete: animationStep2};
+    var animCoin_Fade = {
+      opacity: 0,
+      onStart: function () {
+        setTimeout(function () {
+          document.querySelector('#sound-coin-insert').play();
+        }, 200);
+      },
+      onComplete: animationStep2
+    };
 
     coinTimeline.add(TweenMax.to(coin, time_step1 / 2, animCoin_SlideLeft), 0);
     coinTimeline.add(TweenMax.to(coin, time_step1, animCoin_ZoomAndFlip), 0);
@@ -157,7 +167,10 @@ function introStart() {
     tl.add(TweenMax.to(arcadeSVG, 2, {
       scale: 4.5,
       transformOrigin: '50% ' + h,
-      opacity: 0
+      opacity: 0,
+      onStart: function () {
+        document.querySelector('#sound-whoosh').play();
+      }
     }), 0.5);
     tl.add(TweenMax.to(arcadeScreen, 2, {
       scale: 4.5
@@ -171,7 +184,7 @@ function introStart() {
 }
 
 function detectFirstStart() {
-  if (Cookies.get('udaan18-existing-user') === 'yes') {
+  if (Cookies.get('udaan18-existing-user') === 'true') {
     var skipIntroButton = document.querySelector('#skip-intro');
     skipIntroButton.style.display = 'block';
     skipIntroButton.style.opacity = '0';
@@ -182,16 +195,17 @@ function detectFirstStart() {
       location.hash = 'udaan-title-page';
     });
   } else {
-    Cookies.set('udaan18-existing-user', 'yes', 7);
+    Cookies.set('udaan18-existing-user', 'true', 7);
   }
 }
 
 function invalidateIntroScreen() {
   document.querySelector('#intro').style.display = 'none';
   setupTetrisAnimation();
-  if(location.hash.length === 0) {
+  if (location.hash.length === 0) {
     location.hash = 'udaan-title-page';
   }
+  setupAudioController(document.querySelector('#audio-controller-2'));
 }
 
 function introComplete() {
@@ -242,13 +256,48 @@ function setupInteractionEvents() {
   setupDateAnimation();
 }
 
+function setupAudioController(audioControllerButton) {
+  var audioControllerButtonImg = audioControllerButton.querySelector('img');
+  if (audioControllerButton) {
+    if (getCookieAudioConfig()) {
+      turnOnAudio();
+    } else {
+      turnOffAudio();
+    }
+    audioControllerButton.addEventListener('click', onClick);
+    function onClick() {
+      var currentStatus = audioControllerButton.getAttribute('data-status');
+      if (currentStatus === 'on') {
+        turnOffAudio();
+      } else {
+        turnOnAudio();
+        document.querySelector('#sound-beep').play();
+      }
+    }
+  }
+
+  function turnOffAudio() {
+    setCookieAudioDisabled();
+    audioControllerButtonImg.setAttribute('src', 'img/audio-off.svg');
+    audioControllerButton.setAttribute('data-status', 'off');
+  }
+
+  function turnOnAudio() {
+    setCookieAudioEnabled();
+    audioControllerButtonImg.setAttribute('src', 'img/audio-on.svg');
+    audioControllerButton.setAttribute('data-status', 'on');
+  }
+}
+
 function setupDateAnimation() {
   var dateAnimTimeline = new TimelineMax({repeat: -1, yoyo: true});
   var dateElement = document.querySelector('#udaan-logo-container .udaan-date');
   var COLOR_TRANSITION_TIME = 0.3;
   dateAnimTimeline.add(TweenMax.to(dateElement, COLOR_TRANSITION_TIME, {css: {color: '#F6EF15'}}));
-  dateAnimTimeline.add(TweenMax.to(dateElement, COLOR_TRANSITION_TIME, {css: {color: '#2FB64C'}}), COLOR_TRANSITION_TIME);
-  dateAnimTimeline.add(TweenMax.to(dateElement, COLOR_TRANSITION_TIME, {css: {color: '#0F7DAE'}}), COLOR_TRANSITION_TIME * 2);
+  dateAnimTimeline.add(TweenMax.to(dateElement, COLOR_TRANSITION_TIME, {css: {color: '#2FB64C'}}),
+    COLOR_TRANSITION_TIME);
+  dateAnimTimeline.add(TweenMax.to(dateElement, COLOR_TRANSITION_TIME,
+    {css: {color: '#0F7DAE'}}), COLOR_TRANSITION_TIME * 2);
 }
 
 function setupCartridgeEvents() {
@@ -269,7 +318,7 @@ function setupSocialMedia() {
       shareIcon.setAttribute('data-status', 'active');
       socialMediaIconsBar.classList.add('social-icons--active');
       titlePage.addEventListener('click', function ff(mouseEvent) {
-        if(mouseEvent.target !== shareIcon && mouseEvent.target !== shareIconImg) {
+        if (mouseEvent.target !== shareIcon && mouseEvent.target !== shareIconImg) {
           hideSocialIcons();
           titlePage.removeEventListener('click', ff);
         }
@@ -325,12 +374,16 @@ function selectCartridge(mouseEvent) {
 
   selectedCartridge.style.zIndex = CARTRIDGE_SELECTED_Z_INDEX;
 
+  document.querySelector('#sound-cartridge-fade-in').play();
+
   TweenMax.to(selectedCartridge, CARTRIDGE_TRANSITION_IN_TIME, {
     x: centerPoint.x,
     y: centerPoint.y,
     scale: 1.2,
     ease: EASE_ELASTIC,
-    onStart: changeConsoleState.bind(null, 'visible', getActiveSection())
+    onStart: function () {
+      changeConsoleState('visible', getActiveSection());
+    }
   });
   TweenMax.to(selectedCartridge, CARTRIDGE_TRANSITION_IN_TIME / 2, {
     onComplete: function () {
@@ -366,6 +419,8 @@ function insertCartridge(mouseEvent) {
 
   var url = cartridge.getAttribute('data-href');
 
+  document.querySelector('#sound-cartridge-insert').play();
+
   TweenMax.to(cartridge, 0.5, {
     y: point,
     onComplete: navigateTo.bind(null, url)
@@ -375,7 +430,7 @@ function insertCartridge(mouseEvent) {
 }
 
 function resetAllCartridges(section, excluded) {
-  if(!section)
+  if (!section)
     return;
 
   var cartridges = section.querySelectorAll('.cartridge');
@@ -413,6 +468,7 @@ function blackout(section) {
 
   blackout.addEventListener('click', function onBlackout() {
     clearCartridgeSelection(section);
+    document.querySelector('#sound-cartridge-fade-out').play();
     blackout.removeEventListener('click', onBlackout);
   });
 }
@@ -579,6 +635,9 @@ function displayMessage(message) {
   TweenMax.to(userMessageBar, 1, {
     opacity: 1,
     ease: EASE_ELASTIC,
+    onStart: function () {
+      document.querySelector('#sound-warning').play();
+    },
     onComplete: function () {
       TweenMax.to(userMessageBar, 0.3, {opacity: 0});
     }
@@ -650,25 +709,24 @@ function handleFallbacks() {
   }
 }
 
-
 function showCompatibilityStatus() {
   // Only for testing
-  if(isSafari()) {
+  if (isSafari()) {
     console.info('[TEST] Browser is Safari.');
   }
-  if(isChrome()) {
+  if (isChrome()) {
     console.info('[TEST] Browser is Google Chrome.');
   }
-  if(isFirefox()) {
+  if (isFirefox()) {
     console.info('[TEST] Browser is Mozilla Firefox.');
   }
-  if(isMobile()) {
+  if (isMobile()) {
     console.info('[TEST] Browser is on mobile device.');
   }
-  if(isEdge()) {
+  if (isEdge()) {
     console.info('[TEST] Browser is Microsoft Edge');
   }
-  if(isIOS()) {
+  if (isIOS()) {
     console.info('[TEST] Platform is iOS.');
   }
   var isGoodBrowser = (isFirefox() || isChrome());
