@@ -280,7 +280,11 @@ body {
 }
 
 @media screen and (min-width: 320px) and (max-width: 720px) {
-
+  body {
+    position: fixed;
+    background-size: cover;
+    background-position: top;
+  }
   .fairy1 {
     display: none;
   }
@@ -312,11 +316,12 @@ body {
   }
 
   .zelda {
-    position: absolute;
+    position: fixed;
     bottom: 0;
     width: 75px;
     height: 147px;
-    background: url('../img/princess.gif') no-repeat left;
+    background: url('../img/princess.gif') no-repeat center;
+    background-size: cover;
     background-position: -5px;
     animation: play 1.2s steps(10) infinite,
     run1 10s linear forwards infinite;
