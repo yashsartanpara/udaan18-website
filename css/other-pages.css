@@ -315,8 +315,8 @@ html, body {
 
 #developers .header .keyword {
   position: absolute;
-  font-size: 1vh;
-  color: #111;
+  font-size: 2vh;
+  color: rgba(17,17,17,0.8);
 }
 
 #developers .content {
