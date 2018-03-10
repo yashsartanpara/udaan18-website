@@ -1052,7 +1052,7 @@ var data = {
           "phone": "9426810901"
         }
       ],
-      "tagline": "Not all Treasure's sliver and gold, Mate"
+      "tagline": "Not all Treasure's silver and gold, Mate"
     }
   ],
   "nonTechnical": [
