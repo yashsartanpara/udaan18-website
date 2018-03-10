@@ -1050,6 +1050,10 @@ var data = {
         {
           "name": "Avinash Somjani",
           "phone": "9426810901"
+        },
+        {
+          "name": "Tejas Chaudhary",
+          "phone": "9979516570"
         }
       ],
       "tagline": "Not all Treasure's silver and gold, Mate"
@@ -1329,8 +1333,8 @@ var data = {
       ],
       "managers": [
         {
-          "name": "Mayuri Detharia",
-          "phone": "7046702908"
+          "name": "Hardi Ghoghari",
+          "phone": "9033508866"
         },
         {
           "name": "Jaimin Puj",
