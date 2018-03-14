@@ -142,7 +142,7 @@ html, body {
   color: #C6CBF5;
   font-family: 'Orbitron', sans-serif;
   font-size: 9vh;
-  font-weight: 1000;
+  font-weight: 900;
   line-height: 1.2;
   margin: 0;
   text-align: center;
@@ -350,6 +350,174 @@ html, body {
   flex-basis: 100%;
   width: 100%;
   padding: 5vh;
+  border-top: 0.5vh dashed rgba(0,0,0,0.1);
+  margin-top: 2.5vh;
+  font-size: 2.4vh;
+}
+
+
+/*========================================================================================
+*   Team Udaan Page CSS
+*=========================================================================================
+*/
+
+#team {
+  background-color: #111;
+  color: #FFF
+}
+
+#team .header {
+  top:0;
+  height: 30vh;
+  width: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  font-size: 3vh;
+  z-index: 1;
+  overflow: hidden;
+}
+
+#team .header .header-image {
+  display: flex;
+  justify-content: center;
+  height: 20vh;
+  width: 100%;
+  margin-bottom: 3vh;
+}
+
+#team .header .header-image img {
+  height: 100%;
+  width: auto;
+}
+
+#team .header .keyword {
+  position: absolute;
+  font-size: 2vh;
+  color: rgba(17,17,17,0.8);
+}
+
+#team .content {
+  position: absolute;
+  top: 30vh;
+  z-index: 0;
+}
+
+.team-block-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  user-select: none;
+}
+
+#team .team-block-content {
+
+}
+
+#team .team-block-content .team-block-image {
+
+}
+
+#team .team-block-content .team-block-image img {
+  width: 100%;
+  height: 100%;
+}
+
+#team .team-block-text {
+  display: flex;
+  flex-direction: column;
+  height: 10vh;
+}
+
+#team .team-block {
+  text-align: center;
+}
+
+#team .team-block-content .team-block-image {
+}
+
+@media only screen and (max-width: 75em) {
+  #team .team-block {
+    padding: 0;
+  }
+  #team .team-block-content .team-block-image {
+  }
+}
+
+@media only screen and (max-width: 64em) {
+  #team .team-block {
+  }
+  #team .team-block-content .team-block-image {
+  }
+}
+
+@media only screen and (max-width: 48em) {
+  #team .team-block {
+
+  }
+  #team .team-block-content .team-block-image {
+
+  }
+  #team .team-block .fill {
+  }
+}
+
+@media (orientation: landscape) {
+  #team .team-block {
+  }
+}
+
+#team .team-block-content .fill {
+  display: flex;
+  flex-direction: column;
+  background-color: transparent;
+  color: #fffd96;
+  box-shadow: rgba(55, 55, 55, 0.2) 0.5vh 0.5vh 0;
+  font-size: 1.6vh;
+  border: 0.2vh solid #111;
+}
+
+#team .team-block-content .fill-large {
+  box-shadow: rgba(55, 55, 55, 0.2) 1vh 1vh 0;
+  font-size: 2.0vh;
+  border: 0.4vh solid #111;
+}
+
+#team .team-block-sub-text {
+  font-size: 1.8vh;
+}
+
+#team .team-block-content .fill:hover {
+  transition: 0.5s all;
+  background-color: #111;
+  color: #ffeb78;
+}
+
+#team .team-block-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#team .team-block-text .team-block-sub-text {
+  display: flex;
+  justify-content: center;
+  color: #ddd;
+  font-size: 1.4vh;
+  margin-top: 1vh;
+}
+
+#team .team-block-seperator {
+  display: flex;
+  justify-content: center;
+  flex-basis: 100%;
+  width: 100%;
+  padding: 1vh;
   border-top: 0.5vh dashed rgba(0,0,0,0.1);
   margin-top: 2.5vh;
   font-size: 2.4vh;

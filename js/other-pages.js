@@ -11,9 +11,13 @@ window.onload = function () {
       console.info('[INFO] Udaan Nights Page');
       setupUdaanNightsPage();
       break;
-    case 'developers':
+    case 'udaan-developers':
       console.info('[INFO] Developers Page');
-      setupDevelopersPage();
+      setupUdaanDevelopersPage();
+      break;
+    case 'udaan-team':
+      console.info('[INFO] Developers Page');
+      setupUdaanTeamPage();
       break;
   }
 };
@@ -22,7 +26,7 @@ function setupUdaanNightsPage() {
 
 }
 
-function setupDevelopersPage() {
+function setupUdaanDevelopersPage() {
   var keywords = {
     windows: ['XAML', 'C#', 'FLUENT DESIGN', 'MVVM'],
     android: ['MATERIAL DESIGN', 'KOTLIN', 'FIREBASE'],
@@ -109,5 +113,249 @@ function setupDevelopersPage() {
     min = min || 0;
     max = max || 100;
     return min + Math.round(Math.random() * max);
+  }
+}
+
+function setupUdaanTeamPage() {
+  var teamBlockContainer = document.querySelector('.team-block-container');
+
+  var data = teamData();
+  for(var i = 0; i < data.length; i++) {
+    var category = data[i].category;
+    var members = data[i].members;
+    console.log(category);
+    for(var j = 0; j < members.length; j++) {
+      var member = members[j];
+      var memberElement = newMember({
+        name: member.name.toUpperCase(),
+        title: category + " " + member.title,
+        large: i < 2,
+        image: ''
+      });
+      teamBlockContainer.appendChild(memberElement);
+      if(i === 1) {
+        var separatorElement = newSeparator();
+        teamBlockContainer.appendChild(separatorElement);
+      }
+    }
+  }
+
+  function newMember(options) {
+    var block = document.createElement('div');
+    if(options.large) {
+      block.classList.add('team-block', 'col-lg-3', 'col-md-4', 'col-sm-4', 'col-xs-12');
+    } else {
+      block.classList.add('team-block', 'col-lg-3', 'col-md-3', 'col-sm-3', 'col-xs-6');
+    }
+    var blockContent = document.createElement('div');
+    blockContent.classList.add('team-block-content');
+
+    var fill = document.createElement('div');
+    fill.classList.add('fill');
+
+    if(options.large) {
+      fill.classList.add('fill-large');
+    }
+
+    if(options.image) {
+      var imgContainer = document.createElement('div');
+      imgContainer.classList.add('team-block-image');
+      var img = document.createElement('img');
+      img.setAttribute('src', options.image);
+
+      imgContainer.appendChild(img);
+      fill.appendChild(imgContainer);
+    }
+
+    var teamBlockText = document.createElement('div');
+    teamBlockText.classList.add('team-block-text');
+    teamBlockText.innerText = options.name;
+
+    var teamBlockSubText = document.createElement('div');
+    teamBlockSubText.classList.add('team-block-sub-text');
+    teamBlockSubText.innerText = options.title;
+    teamBlockText.appendChild(teamBlockSubText);
+
+    fill.appendChild(teamBlockText);
+    blockContent.appendChild(fill);
+    block.appendChild(blockContent);
+    return block;
+  }
+
+
+  function newSeparator() {
+    var separatorElement = document.createElement('div');
+    separatorElement.classList.add('team-block-seperator');
+    return separatorElement;
+  }
+
+  function teamData() {
+    return [
+      {
+        "category": "General Secretary",
+        "members": [
+          {
+            "name": "Jatan Patel",
+            "title": ""
+          }
+        ]
+      },
+      {
+        "category": "Ladies Representative",
+        "members": [
+          {
+            "name": "Megha Patel",
+            "title": ""
+          }
+        ]
+      },
+      {
+        "category": "Tech",
+        "members": [
+          {
+            "name": "Harshil Jani",
+            "title": "Head"
+          },
+          {
+            "name": "Umang Patel",
+            "title": "Head"
+          },
+          {
+            "name": "Pradeep Dodiya",
+            "title": "Head"
+          },
+          {
+            "name": "Megh Shah",
+            "title": "Head"
+          }
+        ]
+      },
+      {
+        "category": "Publicity",
+        "members": [
+          {
+            "name": "Anshul Thacker",
+            "title": "Head"
+          },
+          {
+            "name": "Rejoice Paracal",
+            "title": "Head"
+          }
+        ]
+      },
+      {
+        "category": "Documentation",
+        "members": [
+          {
+            "name": "Shreyansh Aghera",
+            "title": "Head"
+          },
+          {
+            "name": "Udit Patel",
+            "title": "Head"
+          }
+        ]
+      },
+      {
+        "category": "Logistics",
+        "members": [
+          {
+            "name": "Harsh Vora",
+            "title": "Head"
+          },
+          {
+            "name": "Hiren Thakkar",
+            "title": "Head"
+          }
+        ]
+      },
+      {
+        "category": "Decoration",
+        "members": [
+          {
+            "name": "Hardik Shilu",
+            "title": "Head"
+          }
+        ]
+      },
+      {
+        "category": "Developers",
+        "members": [
+          {
+            "name": "Vatsal Trivedi",
+            "title": "Head"
+          },
+          {
+            "name": "Chintan Acharya",
+            "title": "Head"
+          }
+        ]
+      },
+      {
+        "category": "Graphics",
+        "members": [
+          {
+            "name": "Tushar Gonavala",
+            "title": "Head"
+          }
+        ]
+      },
+      {
+        "category": "Discipline",
+        "members": [
+          {
+            "name": "King Tandel",
+            "title": "Head"
+          },
+          {
+            "name": "Manan Shah",
+            "title": "Head"
+          },
+          {
+            "name": "Dharam Patel",
+            "title": "Head"
+          }
+        ]
+      },
+      {
+        "category": "Photography",
+        "members": [
+          {
+            "name": "Punit Suthar",
+            "title": "Head"
+          },
+          {
+            "name": "Vivek Bariya",
+            "title": "Head"
+          }
+        ]
+      },
+      {
+        "category": "Cultural",
+        "members": [
+          {
+            "name": "Kishan Patel",
+            "title": "Head"
+          },
+          {
+            "name": "Meet Pachchigar",
+            "title": "Head"
+          }
+        ]
+      },
+      {
+        "category": "Hospitality",
+        "members": [
+          {
+            "name": "Deep Lakkad",
+            "title": "Head"
+          },
+          {
+            "name": "Vatsal Rami",
+            "title": "Head"
+          }
+        ]
+      }
+    ];
   }
 }
