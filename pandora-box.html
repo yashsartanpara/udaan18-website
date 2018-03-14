@@ -42,6 +42,11 @@
   </style>
 </head>
 <body>
+<script src="js/vendor/js.cookie.js"></script>
+<script src="js/vendor/audio-manager.js"></script>
+<audio preload="auto" id="closeSound" src="assets/sound/close.ogg" muted></audio>
+<audio preload="auto" id="streetStart" src="assets/sound/street.ogg"></audio>
+<audio preload="auto" id="eventClick" src="#" muted></audio>
 <script src="js/loading.js"></script>
 <div class="logo">
   <img class="logoImg" src="img/cassettee/pandoras-box-logo.svg">
@@ -65,5 +70,10 @@
 </div>
 <script src="js/sf.js"></script>
 <script src="js/events.js"></script>
+<script>
+  window.audioManager.onload = function () {
+    document.getElementById("streetStart").play();
+  }
+</script>
 </body>
 </html>

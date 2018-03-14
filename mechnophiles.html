@@ -23,6 +23,7 @@
     var events = mechnophiles.events;
     var heads = {'heads': mechnophiles.heads, 'coHeads': mechnophiles.coHeads};
     var notes = data.notes
+
   </script>
   <style>
     :root {
@@ -44,6 +45,11 @@
   </style>
 </head>
 <body>
+<script src="js/vendor/js.cookie.js"></script>
+<script src="js/vendor/audio-manager.js"></script>
+<audio preload="auto" id="closeSound" src="assets/sound/close.ogg" muted></audio>
+<audio preload="auto" id="marioSound" src="assets/sound/mario.ogg"></audio>
+<audio preload="auto" id="eventClick" src="assets/sound/marioclick.ogg" muted></audio>
 <script src="js/loading.js"></script>
 <div class="logo">
   <img class="logoImg" src="img/cassettee/mechnophiles-logo.svg">
@@ -66,5 +72,10 @@
   Reset
 </div>
 <script src="js/events.js"></script>
+<script>
+  window.audioManager.onload = function () {
+    document.getElementById("marioSound").play();
+  }
+</script>
 </body>
 </html>

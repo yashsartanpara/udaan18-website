@@ -17,11 +17,7 @@
   <script src="js/templates/heads.min.js"></script>
   <script src="data.js"></script>
   <script>
-    //    var  = data.tech.find(function (department) {
-    //      return department.alias == 'KeyCoders';
-    //    });
     var events = data.treasureHunt;
-    //    var heads = {'heads': keycoders.heads, 'coHeads': keycoders.coHeads};
   </script>
   <style>
     :root {
@@ -39,6 +35,10 @@
   </style>
 </head>
 <body>
+<script src="js/vendor/js.cookie.js"></script>
+<script src="js/vendor/audio-manager.js"></script>
+<audio preload="auto" id="closeSound" src="assets/sound/close.ogg" muted></audio>
+<audio preload="auto" id="eventClick" src="assets/sound/ai.ogg" muted></audio>
 <script src="js/loading.js"></script>
 <div class="logo">
   <img class="logoImg" src="img/cassettee/treasure-hunt-logo.svg">
@@ -55,5 +55,8 @@
   Reset
 </div>
 <script src="js/events.js"></script>
+<!--<script>-->
+<!--//</script>-->
 </body>
+
 </html>

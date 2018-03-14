@@ -44,6 +44,7 @@ window.onhashchange = function () {
 function openEventModal(elem) {
   var index = $(elem).data('index');
   window.location.hash = 'event-' + index;
+  document.getElementById("eventClick").play();
 }
 
 function closeEventModal() {
@@ -57,6 +58,7 @@ function closeEventModal() {
   $('body').css("overflow", "hidden");
   $('.events').css("display", "flex");
   $('.nontech-events').css("display", "flex");
+  document.getElementById("closeSound").play();
 }
 
 function populateModal(index) {
@@ -76,6 +78,8 @@ function openHeadsModal() {
     .removeClass('modal-close-animation')
     .css('display', 'block')
     .addClass('modal-open-animation');
+  document.getElementById("eventClick").play();
+
   $('.close').on('click', function () {
     closeHeadsModal()
   });
@@ -87,7 +91,9 @@ function closeHeadsModal() {
     .addClass('modal-close-animation');
   setTimeout(function () {
     modal.css('display', 'none');
-  }, 500)
+  }, 500);
+  document.getElementById("closeSound").play();
+
 }
 
 

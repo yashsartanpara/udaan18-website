@@ -1,6 +1,5 @@
 body {
   width: 100%;
-  overflow: hidden;
   background-color: green;
 }
 
@@ -122,6 +121,7 @@ body {
 }
 
 @media screen and (min-width: 320px) and (max-width: 720px) {
+
   .bomber {
     position: absolute;
     bottom: 1%;

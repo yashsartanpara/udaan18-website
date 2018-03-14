@@ -16,6 +16,7 @@
   <script src="js/templates/event.min.js"></script>
   <script src="js/templates/heads.min.js"></script>
   <script src="data.js"></script>
+  <script src="js/events.js"></script>
   <script>
     var dynamobombers = data.technical.find(function (department) {
       return department.name == 'electrical';
@@ -57,6 +58,11 @@
   </style>
 </head>
 <body>
+<script src="js/vendor/js.cookie.js"></script>
+<script src="js/vendor/audio-manager.js"></script>
+<audio preload="auto" id="closeSound" src="assets/sound/close.ogg" muted></audio>
+<audio preload="auto" id="bomberStart" src="assets/sound/bomberstart.ogg"></audio>
+<audio preload="auto" id="eventClick" src="#" muted></audio>
 <script src="js/loading.js"></script>
 <div class="logo">
   <img class="logoImg" src="img/cassettee/dynamo-bomber-logo.svg">
@@ -80,6 +86,10 @@
 <div id="exit_page">
   Reset
 </div>
-<script src="js/events.js"></script>
+<script>
+  window.audioManager.onload = function () {
+    document.getElementById("bomberStart").play();
+  }
+</script>
 </body>
 </html>

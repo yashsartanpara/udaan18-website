@@ -1,4 +1,4 @@
-var data = {
+{
   "adventure": [
     {
       "name": "Paint ball",
@@ -1333,7 +1333,7 @@ var data = {
       ],
       "managers": [
         {
-          "name": "Hardi Ghoghari",
+          "name": "Hardi ghoghari",
           "phone": "9033508866"
         },
         {
@@ -1953,4 +1953,4 @@ var data = {
       "tagline": "Be bold!! Be heard!! …. Be the change"
     }
   ]
-};
+}

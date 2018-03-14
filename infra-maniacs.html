@@ -41,6 +41,11 @@
   </style>
 </head>
 <body>
+<script src="js/vendor/js.cookie.js"></script>
+<script src="js/vendor/audio-manager.js"></script>
+<audio preload="auto" id="closeSound" src="assets/sound/close.ogg" muted></audio>
+<audio preload="auto" id="pacmanStart" src="assets/sound/pacman.ogg"></audio>
+<audio preload="auto" id="eventClick" src="#" muted></audio>
 <script src="js/loading.js"></script>
 <div class="logo">
   <img class="logoImg" src="img/cassettee/infra-maniacs-logo.svg">
@@ -104,5 +109,10 @@
 </div>
 <script src="js/events.js"></script>
 <script src="js/pacman.js"></script>
+<script>
+  window.audioManager.onload = function () {
+    document.getElementById("pacmanStart").play();
+  }
+</script>
 </body>
 </html>

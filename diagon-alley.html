@@ -44,6 +44,11 @@
   </style>
 </head>
 <body>
+<script src="js/vendor/js.cookie.js"></script>
+<script src="js/vendor/audio-manager.js"></script>
+<audio preload="auto" id="closeSound" src="assets/sound/close.ogg" muted></audio>
+<audio preload="auto" id="duckStart" src="assets/sound/duckhuntstart.ogg"></audio>
+<audio preload="auto" id="eventClick" src="assets/sound/duckhuntclick.ogg" muted></audio>
 <script src="js/loading.js"></script>
 <div class="logo">
   <img class="logoImg" src="img/cassettee/diagon-alley-logo.svg">
@@ -251,5 +256,10 @@
   Reset
 </div>
 <script src="js/events.js"></script>
+<script>
+  window.audioManager.onload = function () {
+    document.getElementById("duckStart").play();
+  }
+</script>
 </body>
 </html>
