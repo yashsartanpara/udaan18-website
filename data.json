@@ -38,7 +38,6 @@
           "name": "Geo  Genius",
           "participants": 3,
           "fees": 50,
-          "notes": "-",
           "prizes": [
             500,
             250
@@ -68,7 +67,6 @@
           "name": "Green Canvas",
           "participants": 2,
           "fees": 30,
-          "notes": "-",
           "prizes": [
             0,
             0
@@ -126,7 +124,6 @@
           "name": "Shake It Up!!!",
           "participants": 3,
           "fees": 60,
-          "notes": "-",
           "prizes": [
             0,
             0
@@ -155,7 +152,6 @@
           "name": "Total Surveyor",
           "participants": 2,
           "fees": 40,
-          "notes": "-",
           "prizes": [
             0,
             0
@@ -210,7 +206,6 @@
           "name": "AutoFrenzy",
           "participants": 2,
           "fees": 30,
-          "notes": "-",
           "prizes": [
             0,
             0
@@ -328,7 +323,6 @@
           "name": "Bid the best!",
           "participants": 2,
           "fees": 40,
-          "notes": "-",
           "prizes": [
             500,
             250
@@ -378,9 +372,32 @@
             {
               "name": "Harsh Sukhadiya",
               "phone": "9428648050"
+            },
+            {
+              "name": "Vikram Shiyal",
+              "phone": "9898521197"
             }
           ],
           "tagline": "It`s not Falcon 9 but it will make you feel like one."
+        },
+        {
+          "name": "The Cage",
+          "participants": 2,
+          "fees": 50,
+          "rounds": [
+            "The event is based on modelling an all terrain vehicle according to the rules of an international competition SAE BAJA. Participant teams have to make model of roll cage with provided material within the given time (1 hour).  Judging criteria will be based on the strength of it and that will be decided by different tests like, impact test, load test, drop test. And another criterion will be how team will use the material efficiently."
+          ],
+          "managers": [
+            {
+              "name": "Krupali Manvar",
+              "phone": "8511633996"
+            },
+            {
+              "name": "Nikunj Lad",
+              "phone": "8124804717"
+            }
+          ],
+          "tagline": "Think it, Build it, Test it"
         }
       ],
       "name": "mechanical/production",
@@ -480,7 +497,6 @@
           "name": "Source d’energie",
           "participants": 2,
           "fees": 30,
-          "notes": "-",
           "prizes": [
             500,
             250
@@ -510,7 +526,6 @@
           "name": "Circuit Mania",
           "participants": 2,
           "fees": 40,
-          "notes": "-",
           "prizes": [
             500,
             250
@@ -565,7 +580,6 @@
           "name": "HardWizard",
           "participants": 2,
           "fees": 30,
-          "notes": "-",
           "prizes": [
             500,
             250
@@ -625,7 +639,6 @@
           "name": "CodePanther",
           "participants": 2,
           "fees": 40,
-          "notes": "-",
           "prizes": [
             0,
             0
@@ -655,7 +668,6 @@
           "name": "GeekWebber",
           "participants": 1,
           "fees": 20,
-          "notes": "-",
           "prizes": [
             0,
             0
@@ -685,7 +697,6 @@
           "name": "Auct-O-Pus",
           "participants": 1,
           "fees": 20,
-          "notes": "-",
           "prizes": [
             0,
             0
@@ -784,7 +795,6 @@
           "name": "Voltorb",
           "participants": 2,
           "fees": 30,
-          "notes": "-",
           "prizes": [
             0,
             0
@@ -815,10 +825,9 @@
           "tagline": "Clipping Negatives,Clamping positives"
         },
         {
-          "name": "Dots & Dash ",
+          "name": "Dots & Dash",
           "participants": 2,
           "fees": 30,
-          "notes": "-",
           "prizes": [
             0,
             0
@@ -848,7 +857,6 @@
           "name": "Electro-Picaso",
           "participants": 1,
           "fees": 20,
-          "notes": "-",
           "prizes": [
             250,
             0
@@ -868,7 +876,6 @@
           "name": "Techno Manager",
           "participants": 2,
           "fees": 40,
-          "notes": "-",
           "prizes": [
             0,
             0
@@ -898,7 +905,6 @@
           "name": "Codestorm",
           "participants": 2,
           "fees": 30,
-          "notes": "-",
           "prizes": [
             0,
             0
@@ -928,7 +934,6 @@
           "name": "Roborash",
           "participants": 3,
           "fees": 90,
-          "notes": "-",
           "prizes": [
             1500,
             1000
@@ -1036,7 +1041,6 @@
       "name": "Treasure Hunt",
       "participants": 2,
       "fees": 40,
-      "notes": "-",
       "prizes": [
         1000,
         750
@@ -1064,7 +1068,6 @@
       "name": "Cricket Fantasy",
       "participants": 2,
       "fees": 30,
-      "notes": "-",
       "prizes": [
         0,
         0
@@ -1090,7 +1093,6 @@
       "name": "Socioholic",
       "participants": 1,
       "fees": 20,
-      "notes": "-",
       "prizes": [
         0,
         0
@@ -1116,7 +1118,6 @@
       "name": "Idiot Box",
       "participants": 1,
       "fees": 20,
-      "notes": "-",
       "prizes": [
         0,
         0
@@ -1146,7 +1147,6 @@
       "name": "Maphorlfe",
       "participants": 2,
       "fees": 30,
-      "notes": "-",
       "prizes": [
         0,
         0
@@ -1175,7 +1175,6 @@
       "name": "F-R-I-E-N-D-S",
       "participants": 2,
       "fees": 30,
-      "notes": "-",
       "prizes": [
         0,
         0
@@ -1201,7 +1200,6 @@
       "name": "Takeshi’s Castle",
       "participants": 1,
       "fees": 30,
-      "notes": "-",
       "prizes": [
         0,
         0
@@ -1231,7 +1229,6 @@
       "name": "Guru",
       "participants": 2,
       "fees": 40,
-      "notes": "-",
       "prizes": [
         0,
         0
@@ -1261,7 +1258,6 @@
       "name": "MockStock",
       "participants": 1,
       "fees": 30,
-      "notes": "-",
       "prizes": [
         500,
         250
@@ -1289,7 +1285,6 @@
       "name": "NFS MW",
       "participants": 1,
       "fees": 30,
-      "notes": "-",
       "prizes": [
         0,
         0
@@ -1321,7 +1316,6 @@
       "name": "Sherlock in the city",
       "participants": 2,
       "fees": 30,
-      "notes": "-",
       "prizes": [
         0,
         0
@@ -1333,7 +1327,7 @@
       ],
       "managers": [
         {
-          "name": "Hardi ghoghari",
+          "name": "Hardi Ghoghari",
           "phone": "9033508866"
         },
         {
@@ -1351,7 +1345,6 @@
       "name": "Valar Morghulis",
       "participants": 2,
       "fees": 30,
-      "notes": "-",
       "prizes": [
         0,
         0
@@ -1406,7 +1399,6 @@
       "name": "Are you a Binge-Watcher?",
       "participants": 2,
       "fees": 30,
-      "notes": "-",
       "prizes": [
         0,
         0
@@ -1436,7 +1428,6 @@
       "name": "Mysterious Island",
       "participants": 3,
       "fees": 30,
-      "notes": "-",
       "prizes": [
         0,
         0
@@ -1465,7 +1456,6 @@
       "name": "kSetrin",
       "participants": 1,
       "fees": 20,
-      "notes": "-",
       "prizes": [
         0,
         0
@@ -1491,7 +1481,6 @@
       "name": "BVM MUN",
       "participants": 1,
       "fees": 20,
-      "notes": "-",
       "prizes": [
         500,
         250
@@ -1516,7 +1505,6 @@
       "name": "Roadies",
       "participants": 2,
       "fees": 40,
-      "notes": "-",
       "prizes": [
         0,
         0
@@ -1551,7 +1539,6 @@
       "name": "Nonstop Nonsense",
       "participants": 1,
       "fees": 20,
-      "notes": "-",
       "prizes": [
         0,
         0
@@ -1581,7 +1568,6 @@
       "name": "Never Settle",
       "participants": 1,
       "fees": 20,
-      "notes": "-",
       "prizes": [
         0,
         0
@@ -1608,10 +1594,9 @@
       "tagline": "Think out of the box"
     },
     {
-      "name": "Student of the year ",
+      "name": "Student of the year",
       "participants": 3,
       "fees": 30,
-      "notes": "-",
       "prizes": [
         0,
         0
@@ -1645,7 +1630,6 @@
       "name": "Service Before Self (SSB)",
       "participants": 1,
       "fees": 20,
-      "notes": "-",
       "prizes": [
         0,
         0
@@ -1676,7 +1660,6 @@
       "name": "Mind Play",
       "participants": 2,
       "fees": 30,
-      "notes": "-",
       "prizes": [
         0,
         0
@@ -1706,7 +1689,6 @@
       "name": "The Final Detection",
       "participants": 2,
       "fees": 40,
-      "notes": "-",
       "prizes": [
         0,
         0
@@ -1736,7 +1718,6 @@
       "name": "CS : GO",
       "participants": 1,
       "fees": 30,
-      "notes": "-",
       "prizes": [
         0,
         0
@@ -1802,7 +1783,6 @@
       "name": "Fema Palooza",
       "participants": 1,
       "fees": 20,
-      "notes": "-",
       "prizes": [
         0,
         0
@@ -1830,7 +1810,6 @@
       "name": "Bolly Mix Bolly",
       "participants": 2,
       "fees": 40,
-      "notes": "-",
       "prizes": [
         0,
         0
@@ -1855,7 +1834,6 @@
       "name": "Antakshari",
       "participants": 2,
       "fees": 40,
-      "notes": "-",
       "prizes": [
         0,
         0
@@ -1880,7 +1858,6 @@
       "name": "Q-riosity",
       "participants": 2,
       "fees": 30,
-      "notes": "-",
       "prizes": [
         0,
         0
@@ -1905,7 +1882,6 @@
       "name": "Da Vinci",
       "participants": 2,
       "fees": 40,
-      "notes": "-",
       "prizes": [
         500,
         250
@@ -1930,7 +1906,6 @@
       "name": "Envisage",
       "participants": 1,
       "fees": 20,
-      "notes": "-",
       "prizes": [
         500,
         250
@@ -1951,6 +1926,23 @@
         }
       ],
       "tagline": "Be bold!! Be heard!! …. Be the change"
+    },
+    {
+      "name": "Viewfinder 2018",
+      "participants": 1,
+      "fees": 20,
+      "notes": "Topics: 1. LeadingLines, 2. Because of Her, 3. Silhoutte, 4. Our World in Motion, 5. Monochrome",
+      "prizes": [
+        500,
+        250
+      ],
+      "managers": [
+        {
+          "name": "Harshit Prajapati",
+          "phone": "7990340522"
+        }
+      ],
+      "tagline": "GET SET AND CLICK"
     }
   ]
 }
