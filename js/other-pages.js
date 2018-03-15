@@ -81,8 +81,6 @@ function setupUdaanDevelopersPage() {
     var usedIndices = [];
     elements.map(function (element) {
       canvas.appendChild(element);
-      var elementWidth = element.clientWidth;
-      var elementHeight = element.clientHeight;
       var randomIndex = getRandomInt(0, constants.POSITIONS.length - 1);
       while (usedIndices.indexOf(randomIndex) !== -1) {
         randomIndex = getRandomInt(0, constants.POSITIONS.length - 1);
