@@ -6,19 +6,15 @@ var currentPath = location.pathname.slice(1, location.pathname.lastIndexOf('.'))
 
 window.onload = function () {
   console.log(currentPath);
-  switch (currentPath) {
-    case 'udaan-nights':
-      console.info('[INFO] Udaan Nights Page');
-      setupUdaanNightsPage();
-      break;
-    case 'udaan-developers':
-      console.info('[INFO] Developers Page');
-      setupUdaanDevelopersPage();
-      break;
-    case 'udaan-team':
-      console.info('[INFO] Developers Page');
-      setupUdaanTeamPage();
-      break;
+  if(currentPath.indexOf('udaan-nights') > -1) {
+    console.info('[INFO] Udaan Nights Page');
+    setupUdaanNightsPage();
+  } else if (currentPath.indexOf('udaan-developers') > -1) {
+    console.info('[INFO] Developers Page');
+    setupUdaanDevelopersPage();
+  } else if (currentPath.indexOf('udaan-team') > -1) {
+    console.info('[INFO] Team Page');
+    setupUdaanTeamPage();
   }
 };
 
@@ -123,7 +119,6 @@ function setupUdaanTeamPage() {
   for(var i = 0; i < data.length; i++) {
     var category = data[i].category;
     var members = data[i].members;
-    console.log(category);
     for(var j = 0; j < members.length; j++) {
       var member = members[j];
       var memberElement = newMember({
