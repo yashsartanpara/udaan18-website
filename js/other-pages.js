@@ -132,6 +132,7 @@ function setupUdaanTeamPage() {
         var separatorElement = newSeparator();
         teamBlockContainer.appendChild(separatorElement);
       }
+      requestAnimationFrame();
     }
   }
 
