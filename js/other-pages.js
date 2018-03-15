@@ -6,7 +6,7 @@ var currentPath = location.pathname.slice(1, location.pathname.lastIndexOf('.'))
 
 window.onload = function () {
   console.log(currentPath);
-  if(currentPath.indexOf('udaan-nights') > -1) {
+  if (currentPath.indexOf('udaan-nights') > -1) {
     console.info('[INFO] Udaan Nights Page');
     setupUdaanNightsPage();
   } else if (currentPath.indexOf('udaan-developers') > -1) {
@@ -33,46 +33,28 @@ function setupUdaanDevelopersPage() {
     web: ['GSAP', 'JS', 'FLEX', 'CONSOLE', 'EVENT LISTENER', 'VUE', 'REACT', 'DOM', 'WEBPACK']
   };
 
-  var constants = {
-    MAX_WORDS_PER_UNIT_TIME: 5,
-    POSITIONS: [{"x": 0.0234375, "y": 0.11458333333333333}, {"x": 0.075, "y": 0.14583333333333334}, {
-      "x": 0.04296875,
-      "y": 0.4270833333333333
-    }, {"x": 0.1421875, "y": 0.6458333333333334}, {"x": 0.24140625, "y": 0.16319444444444445}, {
-      "x": 0.32421875,
-      "y": 0.78125
-    }, {"x": 0.39765625, "y": 0.25}, {"x": 0.50234375, "y": 0.11458333333333333}, {
-      "x": 0.56328125,
-      "y": 0.6979166666666666
-    }, {"x": 0.63828125, "y": 0.25}, {"x": 0.68359375, "y": 0.5520833333333334}, {
-      "x": 0.76328125,
-      "y": 0.20833333333333334
-    }, {"x": 0.8265625, "y": 0.6180555555555556}, {"x": 0.8578125, "y": 0.2743055555555556}, {
-      "x": 0.88828125,
-      "y": 0.4166666666666667
-    }, {"x": 0.79765625, "y": 0.4722222222222222}, {"x": 0.7171875, "y": 0.2638888888888889}, {
-      "x": 0.678125,
-      "y": 0.4097222222222222
-    }]
-  };
-
   var activeSectionKeywords = keywords.web;
-  var elements = generateElements(activeSectionKeywords);
-  setPositions(elements);
-
-  var header = document.querySelector('#developers .header');
-  var headerWidth = header.clientWidth;
-  var headerHeight = header.clientHeight;
-  var seed = getRandomInt(0, constants.POSITIONS.length - 1);
-  var tl = new TimelineMax({repeat: -1});
-  tl.add(TweenMax.staggerFromTo(elements, 0.5, {
-    opacity: 0, top: "+=16px"
-  }, {
-    opacity: 1, top: "-=16px"
-  }, 0));
-  tl.add(TweenMax.staggerTo(elements, 0.5, {
-    opacity: 0, top: "-=16px"
-  }, 0.5), 0);
+  var developersBlockContainer = document.querySelector('#developers-block-container');
+  var data = transform(developersData());
+  console.log(data);
+  for (var i = 0; i < data.length; i++) {
+    var category = data[i].category;
+    var members = data[i].members;
+    developersBlockContainer.appendChild(newSeparator(category.toUpperCase()));
+    for (var j = 0; j < members.length; j++) {
+      var member = members[j];
+      var memberElement = newMember({
+        name: member.name.toUpperCase(),
+        title: member.title.toUpperCase()
+      });
+      memberElement.setAttribute('data-href', member.github);
+      memberElement.addEventListener('click', function (mouseEvent) {
+        var target = mouseEvent.currentTarget;
+        window.open(target.getAttribute('data-href'));
+      });
+      developersBlockContainer.appendChild(memberElement);
+    }
+  }
 
   function setPositions(elements) {
     var canvas = document.querySelector('#developers .header');
@@ -81,8 +63,6 @@ function setupUdaanDevelopersPage() {
     var usedIndices = [];
     elements.map(function (element) {
       canvas.appendChild(element);
-      var elementWidth = element.clientWidth;
-      var elementHeight = element.clientHeight;
       var randomIndex = getRandomInt(0, constants.POSITIONS.length - 1);
       while (usedIndices.indexOf(randomIndex) !== -1) {
         randomIndex = getRandomInt(0, constants.POSITIONS.length - 1);
@@ -110,25 +90,206 @@ function setupUdaanDevelopersPage() {
     max = max || 100;
     return min + Math.round(Math.random() * max);
   }
+
+  function newMember(options) {
+    var block = document.createElement('div');
+    block.classList.add('block', 'col-lg-4', 'col-md-6', 'col-sm-6', 'col-xs-12');
+
+    var blockContent = document.createElement('div');
+    blockContent.classList.add('block-content');
+
+    var fill = document.createElement('div');
+    fill.classList.add('fill');
+
+    fill.innerText = options.name;
+
+    var blockSubText = document.createElement('div');
+    blockSubText.classList.add('block-sub-text');
+    blockSubText.innerText = options.title;
+
+    fill.appendChild(blockSubText);
+    blockContent.appendChild(fill);
+    block.appendChild(blockContent);
+
+    return block;
+  }
+
+  function newSeparator(name) {
+    var separatorElement = document.createElement('div');
+    separatorElement.classList.add('block-seperator');
+    separatorElement.innerText = name;
+    return separatorElement;
+  }
+
+  function transform(data) {
+    var categoryList = {};
+    data.map(function (member) {
+      if (!categoryList[member.category]) {
+        categoryList[member.category] = {category: member.category, members: []};
+      }
+      categoryList[member.category].members.push(member);
+    });
+    return Object.values(categoryList);
+  }
+
+  function developersData() {
+    return [
+      {
+        "title": "Web Developer",
+        "color": "",
+        "category": "web",
+        "name": "Vatsal Trivedi",
+        "mobile": "+917600635053",
+        "email": "trivedivatsal005@gmail.com",
+        "github": "https://github.com/vattytrivedi"
+      },
+      {
+        "title": "Web Developer",
+        "color": "",
+        "category": "web",
+        "name": "Yash Sartanpara",
+        "mobile": "+919724052113",
+        "email": "yash@captaintorch.tech",
+        "github": "https://github.com/yashsartanpara"
+      },
+      {
+        "title": "Web Developer",
+        "color": "",
+        "category": "web",
+        "name": "Siddharth Goswami",
+        "mobile": "+919723461024",
+        "email": "_@siddharth.xyz",
+        "github": "https://github.com/sidx1024"
+      },
+      {
+        "title": "Back-End Developer",
+        "color": "",
+        "category": "backend",
+        "name": "Chintan Acharya",
+        "mobile": "+918140474055",
+        "email": "acharya.chintan96@gmail.com",
+        "github": "https://github.com/chintanacharya"
+      },
+      {
+        "title": "UWP Developer",
+        "color": "",
+        "category": "windows",
+        "name": "Darshan Dalal",
+        "mobile": "+918460157727",
+        "email": "darshandalal3@outlook.com",
+        "github": "https://github.com/darshan010"
+      },
+      {
+        "title": "Android Developer",
+        "color": "",
+        "category": "unity",
+        "name": "Jay Patel",
+        "mobile": "+919374883988",
+        "email": "jp9573@gmail.com",
+        "github": "https://github.com/jp9573"
+      },
+      {
+        "title": "Web Developer",
+        "color": "",
+        "category": "web",
+        "name": "Megharth Lakhataria",
+        "mobile": "+919429000091",
+        "email": "m.c.lakhataria@gmail.com",
+        "github": "https://github.com/megharth"
+      },
+      {
+        "title": "Python Developer",
+        "color": "",
+        "category": "ai",
+        "name": "Pranshu Dave",
+        "mobile": "+918238330100",
+        "email": "pranshudave@gmail.com",
+        "github": "https://github.com/pranshu0210"
+      },
+      {
+        "title": "Back-End Developer",
+        "color": "",
+        "category": "backend",
+        "name": "Rushi Rami",
+        "mobile": "+917069307537",
+        "email": "",
+        "github": "https://github.com/rushi7997"
+      },
+      {
+        "title": "Back-End Developer",
+        "color": "",
+        "category": "backend",
+        "name": "Jay Movaliya",
+        "mobile": "+918160762644",
+        "email": "jaymovaliya786@gmail.com",
+        "github": "https://github.com/jaymovaliya"
+      },
+      {
+        "title": "Android Developer",
+        "color": "",
+        "category": "android",
+        "name": "Bhagyesh Radiya",
+        "mobile": "+918141435149",
+        "email": "",
+        "github": "https://github.com/BhagyeshRadiya2796"
+      },
+      {
+        "title": "Android Developer",
+        "color": "",
+        "category": "android",
+        "name": "Abhi Akbari",
+        "mobile": "+919909214688",
+        "email": "abhiakbari023@gmail.com",
+        "github": "https://github.com/abhi055"
+      },
+      {
+        "title": "Back-End Developer",
+        "color": "",
+        "category": "backend",
+        "name": "Yogen Prajapati",
+        "mobile": "+917202060693",
+        "email": "",
+        "github": "https://github.com/yogen9"
+      },
+      {
+        "title": "iOS Developer",
+        "color": "",
+        "category": "ios",
+        "name": "Jay Vaghani",
+        "mobile": "+919909834387",
+        "email": "jvaghani971@gmail.com",
+        "github": "https://github.com/jayvaghani"
+      },
+      {
+        "title": "Android Developer",
+        "color": "",
+        "category": "android",
+        "name": "Pranav Gajera",
+        "mobile": "+91",
+        "email": "",
+        "github": "https://github.com/prnv28"
+      }
+    ]
+  }
 }
 
 function setupUdaanTeamPage() {
   var teamBlockContainer = document.querySelector('.team-block-container');
 
   var data = teamData();
-  for(var i = 0; i < data.length; i++) {
+  for (var i = 0; i < data.length; i++) {
     var category = data[i].category;
     var members = data[i].members;
-    for(var j = 0; j < members.length; j++) {
+    for (var j = 0; j < members.length; j++) {
       var member = members[j];
       var memberElement = newMember({
         name: member.name.toUpperCase(),
-        title: category + " " + member.title,
+        title: category + ' ' + member.title,
         large: i < 2,
         image: ''
       });
       teamBlockContainer.appendChild(memberElement);
-      if(i === 1) {
+      if (i === 1) {
         var separatorElement = newSeparator();
         teamBlockContainer.appendChild(separatorElement);
       }
@@ -137,7 +298,7 @@ function setupUdaanTeamPage() {
 
   function newMember(options) {
     var block = document.createElement('div');
-    if(options.large) {
+    if (options.large) {
       block.classList.add('team-block', 'col-lg-3', 'col-md-4', 'col-sm-4', 'col-xs-12');
     } else {
       block.classList.add('team-block', 'col-lg-3', 'col-md-3', 'col-sm-3', 'col-xs-6');
@@ -148,11 +309,11 @@ function setupUdaanTeamPage() {
     var fill = document.createElement('div');
     fill.classList.add('fill');
 
-    if(options.large) {
+    if (options.large) {
       fill.classList.add('fill-large');
     }
 
-    if(options.image) {
+    if (options.image) {
       var imgContainer = document.createElement('div');
       imgContainer.classList.add('team-block-image');
       var img = document.createElement('img');
@@ -177,7 +338,6 @@ function setupUdaanTeamPage() {
     return block;
   }
 
-
   function newSeparator() {
     var separatorElement = document.createElement('div');
     separatorElement.classList.add('team-block-seperator');
@@ -187,167 +347,167 @@ function setupUdaanTeamPage() {
   function teamData() {
     return [
       {
-        "category": "General Secretary",
-        "members": [
+        'category': 'General Secretary',
+        'members': [
           {
-            "name": "Jatan Patel",
-            "title": ""
+            'name': 'Jatan Patel',
+            'title': ''
           }
         ]
       },
       {
-        "category": "Ladies Representative",
-        "members": [
+        'category': 'Ladies Representative',
+        'members': [
           {
-            "name": "Megha Patel",
-            "title": ""
+            'name': 'Megha Patel',
+            'title': ''
           }
         ]
       },
       {
-        "category": "Tech",
-        "members": [
+        'category': 'Tech',
+        'members': [
           {
-            "name": "Harshil Jani",
-            "title": "Head"
+            'name': 'Harshil Jani',
+            'title': 'Head'
           },
           {
-            "name": "Umang Patel",
-            "title": "Head"
+            'name': 'Umang Patel',
+            'title': 'Head'
           },
           {
-            "name": "Pradeep Dodiya",
-            "title": "Head"
+            'name': 'Pradeep Dodiya',
+            'title': 'Head'
           },
           {
-            "name": "Megh Shah",
-            "title": "Head"
+            'name': 'Megh Shah',
+            'title': 'Head'
           }
         ]
       },
       {
-        "category": "Publicity",
-        "members": [
+        'category': 'Publicity',
+        'members': [
           {
-            "name": "Anshul Thacker",
-            "title": "Head"
+            'name': 'Anshul Thacker',
+            'title': 'Head'
           },
           {
-            "name": "Rejoice Paracal",
-            "title": "Head"
+            'name': 'Rejoice Paracal',
+            'title': 'Head'
           }
         ]
       },
       {
-        "category": "Documentation",
-        "members": [
+        'category': 'Documentation',
+        'members': [
           {
-            "name": "Shreyansh Aghera",
-            "title": "Head"
+            'name': 'Shreyansh Aghera',
+            'title': 'Head'
           },
           {
-            "name": "Udit Patel",
-            "title": "Head"
+            'name': 'Udit Patel',
+            'title': 'Head'
           }
         ]
       },
       {
-        "category": "Logistics",
-        "members": [
+        'category': 'Logistics',
+        'members': [
           {
-            "name": "Harsh Vora",
-            "title": "Head"
+            'name': 'Harsh Vora',
+            'title': 'Head'
           },
           {
-            "name": "Hiren Thakkar",
-            "title": "Head"
+            'name': 'Hiren Thakkar',
+            'title': 'Head'
           }
         ]
       },
       {
-        "category": "Decoration",
-        "members": [
+        'category': 'Decoration',
+        'members': [
           {
-            "name": "Hardik Shilu",
-            "title": "Head"
+            'name': 'Hardik Shilu',
+            'title': 'Head'
           }
         ]
       },
       {
-        "category": "Developers",
-        "members": [
+        'category': 'Developers',
+        'members': [
           {
-            "name": "Vatsal Trivedi",
-            "title": "Head"
+            'name': 'Vatsal Trivedi',
+            'title': 'Head'
           },
           {
-            "name": "Chintan Acharya",
-            "title": "Head"
+            'name': 'Chintan Acharya',
+            'title': 'Head'
           }
         ]
       },
       {
-        "category": "Graphics",
-        "members": [
+        'category': 'Graphics',
+        'members': [
           {
-            "name": "Tushar Gonavala",
-            "title": "Head"
+            'name': 'Tushar Gonavala',
+            'title': 'Head'
           }
         ]
       },
       {
-        "category": "Discipline",
-        "members": [
+        'category': 'Discipline',
+        'members': [
           {
-            "name": "King Tandel",
-            "title": "Head"
+            'name': 'King Tandel',
+            'title': 'Head'
           },
           {
-            "name": "Manan Shah",
-            "title": "Head"
+            'name': 'Manan Shah',
+            'title': 'Head'
           },
           {
-            "name": "Dharam Patel",
-            "title": "Head"
+            'name': 'Dharam Patel',
+            'title': 'Head'
           }
         ]
       },
       {
-        "category": "Photography",
-        "members": [
+        'category': 'Photography',
+        'members': [
           {
-            "name": "Punit Suthar",
-            "title": "Head"
+            'name': 'Punit Suthar',
+            'title': 'Head'
           },
           {
-            "name": "Vivek Bariya",
-            "title": "Head"
+            'name': 'Vivek Bariya',
+            'title': 'Head'
           }
         ]
       },
       {
-        "category": "Cultural",
-        "members": [
+        'category': 'Cultural',
+        'members': [
           {
-            "name": "Kishan Patel",
-            "title": "Head"
+            'name': 'Kishan Patel',
+            'title': 'Head'
           },
           {
-            "name": "Meet Pachchigar",
-            "title": "Head"
+            'name': 'Meet Pachchigar',
+            'title': 'Head'
           }
         ]
       },
       {
-        "category": "Hospitality",
-        "members": [
+        'category': 'Hospitality',
+        'members': [
           {
-            "name": "Deep Lakkad",
-            "title": "Head"
+            'name': 'Deep Lakkad',
+            'title': 'Head'
           },
           {
-            "name": "Vatsal Rami",
-            "title": "Head"
+            'name': 'Vatsal Rami',
+            'title': 'Head'
           }
         ]
       }
