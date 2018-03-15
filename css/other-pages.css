@@ -295,13 +295,13 @@ html, body {
 */
 
 #developers {
-  background-color: #9CB99C;
+  background: #9cb99c;
   color: #111
 }
 
 #developers .header {
   top:0;
-  height: 40vh;
+  height: 30vh;
   width: 100%;
   position: fixed;
   display: flex;
@@ -309,7 +309,8 @@ html, body {
   align-items: center;
   align-content: center;
   font-size: 3vh;
-  background-color: #9CB99C;
+  background: #9cb99c;
+  background: linear-gradient(to bottom, #9cb99c 1%, #9cb99c 60%, rgba(156, 185, 156, 0) 100%);
   z-index: 1;
 }
 
@@ -321,7 +322,7 @@ html, body {
 
 #developers .content {
   position: absolute;
-  top: 40vh;
+  top: 30vh;
   z-index: 0;
 }
 
@@ -337,6 +338,11 @@ html, body {
   transition: 0.5s all;
   background-color: #111;
   color: #9CB99C;
+}
+
+#developers .block-content .fill:hover .block-sub-text{
+  transition: 0.5s all;
+  color: #4B574B;
 }
 
 #developers .block-sub-text {
