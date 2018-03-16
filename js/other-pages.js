@@ -113,7 +113,6 @@ function setupUdaanDevelopersPage() {
 
     return block;
   }
-
   function newSeparator(name) {
     var separatorElement = document.createElement('div');
     separatorElement.classList.add('block-seperator');
