@@ -498,7 +498,7 @@ function setupUdaanTeamPage() {
         ]
       },
       {
-        'category': 'Hospitality',
+        'category': 'Sponsorship',
         'members': [
           {
             'name': 'Deep Lakkad',
