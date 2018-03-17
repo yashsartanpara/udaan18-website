@@ -1944,7 +1944,7 @@ var data = {
       ],
       "tagline": "GET SET AND CLICK",
       "rounds": [
-        "Submit your photos on viewfinder2k17@gmail.com before 30 April 2018"
+        "Submit your photos on viewfinder2k17@gmail.com before 30 March 2018"
       ]
     }
   ]
