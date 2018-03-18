@@ -113,7 +113,6 @@ function setupUdaanDevelopersPage() {
 
     return block;
   }
-
   function newSeparator(name) {
     var separatorElement = document.createElement('div');
     separatorElement.classList.add('block-seperator');
@@ -150,7 +149,7 @@ function setupUdaanDevelopersPage() {
         "name": "Yash Sartanpara",
         "mobile": "+919724052113",
         "email": "yash@captaintorch.tech",
-        "github": "https://github.com/yashsartanpara"
+        "github": "captaintorch.tech"
       },
       {
         "title": "Web Developer",
@@ -499,7 +498,7 @@ function setupUdaanTeamPage() {
         ]
       },
       {
-        'category': 'Hospitality',
+        'category': 'Sponsorship',
         'members': [
           {
             'name': 'Deep Lakkad',

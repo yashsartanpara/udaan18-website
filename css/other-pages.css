@@ -324,6 +324,7 @@ html, body {
   position: absolute;
   top: 30vh;
   z-index: 0;
+  left: 0;
 }
 
 #developers .block-content .fill {

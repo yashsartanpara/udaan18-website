@@ -7,6 +7,14 @@ Handlebars.registerHelper('urlencode', function (str) {
 });
 
 $(function () {
+  window.onload = function () {
+    if (window.location.hash.length > 0) {
+      window.location = window.location.href.substr(0, window.location.href.indexOf('#'))
+    }
+    // window.location.hash = '';
+    // window.location.hash.substring(1);
+  }
+
   $('#exit_page').on('click', function () {
     // window.location('udaan18.com/#udaan-departments');
     window.history.go(-1);
@@ -37,8 +45,10 @@ $(function () {
 });
 
 window.onhashchange = function () {
-  if (location.hash == '') closeEventModal();
-  else populateModal(location.hash.substr(7))
+  if (location.hash == '')
+    closeEventModal();
+  else
+    populateModal(location.hash.substr(7))
 };
 
 function openEventModal(elem) {
