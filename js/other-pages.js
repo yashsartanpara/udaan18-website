@@ -149,7 +149,7 @@ function setupUdaanDevelopersPage() {
         "name": "Yash Sartanpara",
         "mobile": "+919724052113",
         "email": "yash@captaintorch.tech",
-        "github": "https://github.com/yashsartanpara"
+        "github": "captaintorch.tech"
       },
       {
         "title": "Web Developer",
