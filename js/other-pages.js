@@ -36,7 +36,6 @@ function setupUdaanDevelopersPage() {
   var activeSectionKeywords = keywords.web;
   var developersBlockContainer = document.querySelector('#developers-block-container');
   var data = transform(developersData());
-  console.log(data);
   for (var i = 0; i < data.length; i++) {
     var category = data[i].category;
     var members = data[i].members;
