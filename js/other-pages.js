@@ -2,7 +2,7 @@
 *   Other-Pages Initialization
 *=========================================================================================
 */
-var currentPath = location.pathname.slice(1, location.pathname.lastIndexOf('.'));
+var currentPath = location.pathname;
 
 window.onload = function () {
   console.log(currentPath);
