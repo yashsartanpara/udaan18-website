@@ -2,7 +2,7 @@
 *   Other-Pages Initialization
 *=========================================================================================
 */
-var currentPath = location.pathname.slice(1, location.pathname.lastIndexOf('.'));
+var currentPath = location.pathname;
 
 window.onload = function () {
   console.log(currentPath);
@@ -36,7 +36,6 @@ function setupUdaanDevelopersPage() {
   var activeSectionKeywords = keywords.web;
   var developersBlockContainer = document.querySelector('#developers-block-container');
   var data = transform(developersData());
-  console.log(data);
   for (var i = 0; i < data.length; i++) {
     var category = data[i].category;
     var members = data[i].members;
@@ -240,15 +239,6 @@ function setupUdaanDevelopersPage() {
         "mobile": "+919909214688",
         "email": "abhiakbari023@gmail.com",
         "github": "https://github.com/abhi055"
-      },
-      {
-        "title": "Back-End Developer",
-        "color": "",
-        "category": "backend",
-        "name": "Yogen Prajapati",
-        "mobile": "+917202060693",
-        "email": "",
-        "github": "https://github.com/yogen9"
       },
       {
         "title": "iOS Developer",

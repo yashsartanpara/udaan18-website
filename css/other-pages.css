@@ -314,6 +314,18 @@ html, body {
   z-index: 1;
 }
 
+#developers .support-link {
+  display: block;
+  position: fixed;
+  text-decoration: none;
+  color: #111;
+  font-size: 2vh;
+  right: 0;
+  top: 0;
+  z-index: 5;
+  padding: 1vh;
+}
+
 #developers .header .keyword {
   position: absolute;
   font-size: 2vh;
