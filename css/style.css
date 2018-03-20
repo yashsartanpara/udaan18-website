@@ -460,15 +460,19 @@ section {
   flex-direction: row;
   align-items: center;
   position: absolute;
-  top: -8vh;
-  z-index: 10;
+  top: -8.1vh;
+  z-index: 3;
   transition: 0.2s all;
   padding: 0.5vh;
   margin: 1vh;
+  opacity: 1;
 }
 
 .social-icons--active {
+  opacity: 0;
   top: 0 !important;
+  padding: 0;
+  margin: 0;
 }
 
 #social-icons .icon {
