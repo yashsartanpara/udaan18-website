@@ -610,6 +610,42 @@ section {
   }
 }
 
+
+/*==========================================
+*   ---- Udaan Other Page 2
+*===========================================
+*/
+
+#udaan-other-2 .navigation-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 1vmin;
+  bottom: 0;
+  position: absolute;
+  z-index: 1;
+}
+
+#udaan-other-2 .navigation-container .arrow-key {
+  width: var(--navigation-button-size--lg);
+  height: var(--navigation-button-size--lg);
+  padding: 2vmin;
+  cursor: pointer;
+}
+
+#udaan-other-2 .navigation-container {
+  display: flex;
+  flex-direction: column;
+}
+
+@media only screen and (max-width: 64em) {
+  #udaan-other-2 .navigation-container .arrow-key {
+    width: var(--navigation-button-size--sm);
+    height: var(--navigation-button-size--sm);
+    padding: 0;
+  }
+}
+
 /*==========================================
 *   ---- Tetris - Blockrain
 *===========================================
@@ -1049,8 +1085,11 @@ section {
     width: calc(var(--block-md-unit) * 2);
     height: var(--block-md-unit);
   }
-  .block-container {
+  #udaan-other .block-container {
     padding-top: 8vh;
+  }
+  #udaan-other-2 .block-container {
+    padding-bottom: 8vh;
   }
 }
 
