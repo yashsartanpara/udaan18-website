@@ -255,8 +255,8 @@ var data = {
               "phone": "8866936955"
             },
             {
-              "name": "Yash Sankhala",
-              "phone": "8160210363"
+              "name": "Sunil Mukeshbhai Gondaliya",
+              "phone": "9723854533"
             }
           ],
           "tagline": "Imagination Creates Reality."
@@ -728,8 +728,8 @@ var data = {
           "fees": 40,
           "notes": "Note: Winners and Runner-ups will get featured on HackerEarth!",
           "prizes": [
-            0,
-            0
+            2000,
+            1500
           ],
           "rounds": [
             "Participants have to compete on HackerEarth for 60 hours and the best one wins! (HackerEarth is online coding platform)"
