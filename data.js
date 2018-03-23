@@ -433,7 +433,7 @@ var data = {
           "phone": "7043484940"
         },
         {
-          "name": "Hussian Signalwala",
+          "name": "Husain Signalwala",
           "phone": "9408503852"
         }
       ]
@@ -784,7 +784,7 @@ var data = {
           "phone": "9426382216"
         },
         {
-          "name": "Ishaan Bhatt",
+          "name": "Ishan Bhatt",
           "phone": "9408402938"
         }
       ]
@@ -1023,7 +1023,7 @@ var data = {
         },
         {
           "name": "Dishant Shah",
-          "phone": "9737628987"
+          "phone": "9737628997"
         },
         {
           "name": "Arth Shah",
@@ -1381,7 +1381,7 @@ var data = {
       "rounds": [
         "Create dialogues for the given memes.",
         "Participants have to make memes.",
-        "Participants have to make musical.ly or Dubsmash."
+        "Participants have to make musically or Dubsmash."
       ],
       "managers": [
         {
@@ -1815,7 +1815,7 @@ var data = {
         0
       ],
       "rounds": [
-        "Written test (short questions and crossword; 6 teams to be selected for the next round)",
+        "Written test (short questions and crossword)",
         "Stage round (audio visual rounds, dumb charades and some exciting rounds)"
       ],
       "managers": [
@@ -1839,7 +1839,7 @@ var data = {
         0
       ],
       "rounds": [
-        "General antakshari along with dhun round (top 6 teams will be qualified for the next round)",
+        "General antakshari along with dhun round",
         "Surprise round (stage round)"
       ],
       "managers": [
@@ -1863,7 +1863,7 @@ var data = {
         0
       ],
       "rounds": [
-        "Written test (short questions; 6 teams to be selected for the next round)",
+        "Written test (short questions)",
         "Stage round (rounds such as connect the clues, double trouble, etc)"
       ],
       "managers": [
@@ -1887,7 +1887,7 @@ var data = {
         250
       ],
       "rounds": [
-        "Doodling art (participants to bring their own basic stationary requirements; 5 teams will be qualified for next round) ",
+        "Doodling art (participants to bring their own basic stationary requirements) ",
         "Surprise round "
       ],
       "managers": [
@@ -1912,7 +1912,7 @@ var data = {
       ],
       "rounds": [
         "Three global issue will be given to the participants three days before the event, participants have to provide solution for the issues (any one of the three; conductor’s choice). 20 participants will be selected for next round. Example of global topic (syria crisis)",
-        "5 groups will be formed, each acting as a media house will have to cover a story in the college itself. Two teams will go into the last round.",
+        "5 groups will be formed, each acting as a media house will have to cover a story in the college itself.",
         "Surprise"
       ],
       "managers": [
