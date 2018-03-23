@@ -36,11 +36,12 @@ function setupUdaanDevelopersPage() {
   var activeSectionKeywords = keywords.web;
   var developersBlockContainer = document.querySelector('#developers-block-container');
 
-  fetch('./developers.json')
-    .then(function(response) { return response.json() })
-    .then(transform)
-    .then(onDataReceived)
-    .catch(console.error);
+  if(typeof window['developers'] === 'undefined') {
+    console.error('Developers data is not loaded');
+    return;
+  }
+
+  onDataReceived(transform(window['data-developers']));
 
   function onDataReceived(data) {
     for (var i = 0; i < data.length; i++) {
@@ -80,7 +81,6 @@ function setupUdaanDevelopersPage() {
       element.style.top = (position.y * height) + 'px';
     });
   }
-
   function generateElements(keywords) {
     var elements = [];
     keywords.map(function (keyword) {
@@ -91,13 +91,11 @@ function setupUdaanDevelopersPage() {
     });
     return elements;
   }
-
   function getRandomInt(min, max) {
     min = min || 0;
     max = max || 100;
     return min + Math.round(Math.random() * max);
   }
-
   function newMember(options) {
     var block = document.createElement('div');
     block.classList.add('block', 'col-lg-4', 'col-md-6', 'col-sm-6', 'col-xs-12');
@@ -142,10 +140,12 @@ function setupUdaanDevelopersPage() {
 function setupUdaanTeamPage() {
   var teamBlockContainer = document.querySelector('.team-block-container');
 
-  fetch('./teamudaan.json')
-    .then(function(response) { return response.json() })
-    .then(onDataReceived)
-    .catch(console.error);
+  if(typeof window['data-team-udaan'] === 'undefined') {
+    console.error('Team Udaan data is not loaded');
+    return;
+  }
+
+  onDataReceived(window['data-team-udaan']);
 
   function onDataReceived(data) {
     for (var i = 0; i < data.length; i++) {
@@ -209,7 +209,6 @@ function setupUdaanTeamPage() {
     block.appendChild(blockContent);
     return block;
   }
-
   function newSeparator() {
     var separatorElement = document.createElement('div');
     separatorElement.classList.add('team-block-seperator');

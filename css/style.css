@@ -41,6 +41,20 @@ section {
   min-height: 100%;
 }
 
+@media only screen and (max-width: 64em) {
+  .row {
+    margin-left: 1rem !important;
+    margin-right: 1rem !important;
+  }
+}
+
+@media only screen and (max-width: 48em) {
+  .row {
+    margin-left: 1rem !important;
+    margin-right: 1rem !important;
+  }
+}
+
 /*========================================================================================
 *   Object specific CSS
 *=========================================================================================
