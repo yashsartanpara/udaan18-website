@@ -258,7 +258,7 @@ function setupInteractionEvents() {
 }
 
 function setupOtherPageLinks() {
-  var blocks = document.querySelectorAll('#udaan-other .block');
+  var blocks = document.querySelectorAll('#udaan-other .block,#udaan-other-2 .block');
   [].forEach.call(blocks, function (block) {
     block.addEventListener('click', function () {
       var href = block.getAttribute('data-href');
