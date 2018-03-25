@@ -112,11 +112,13 @@ html, body {
   .wrapper {
 
   }
+
   .logo-triangle-wrapper {
     top: 9vh;
     margin-left: 15%;
     margin-right: 15%;
   }
+
   #logo-text-udaan {
 
   }
@@ -169,7 +171,6 @@ html, body {
   width: 100%;
   z-index: 11;
 }
-
 
 @-webkit-keyframes dash {
   to {
@@ -288,7 +289,6 @@ html, body {
   }
 }
 
-
 /*========================================================================================
 *   Developers Page CSS
 *=========================================================================================
@@ -300,7 +300,7 @@ html, body {
 }
 
 #developers .header {
-  top:0;
+  top: 0;
   height: 30vh;
   width: 100%;
   position: fixed;
@@ -329,7 +329,7 @@ html, body {
 #developers .header .keyword {
   position: absolute;
   font-size: 2vh;
-  color: rgba(17,17,17,0.8);
+  color: rgba(17, 17, 17, 0.8);
 }
 
 #developers .content {
@@ -353,7 +353,7 @@ html, body {
   color: #9CB99C;
 }
 
-#developers .block-content .fill:hover .block-sub-text{
+#developers .block-content .fill:hover .block-sub-text {
   transition: 0.5s all;
   color: #4B574B;
 }
@@ -369,7 +369,7 @@ html, body {
   flex-basis: 100%;
   width: 100%;
   padding: 5vh;
-  border-top: 0.5vh dashed rgba(0,0,0,0.1);
+  border-top: 0.5vh dashed rgba(0, 0, 0, 0.1);
   margin-top: 2.5vh;
   font-size: 2.4vh;
 }
@@ -382,6 +382,7 @@ html, body {
   #developers .block-content .fill {
     font-size: 1.6vh;
   }
+
   #developers .block-sub-text {
     color: #222;
     font-size: 1.4vh;
@@ -392,6 +393,7 @@ html, body {
   #developers .block-content .fill {
     font-size: 1.6vh;
   }
+
   #developers .block-sub-text {
     color: #222;
     font-size: 1.4vh;
@@ -402,6 +404,7 @@ html, body {
   #developers .block-content .fill {
     font-size: 1.8vh;
   }
+
   #developers .block-sub-text {
     color: #222;
     font-size: 1.6vh;
@@ -425,7 +428,7 @@ html, body {
 }
 
 #team .header {
-  top:0;
+  top: 0;
   height: 30vh;
   width: 100%;
   position: absolute;
@@ -455,7 +458,7 @@ html, body {
 #team .header .keyword {
   position: absolute;
   font-size: 2vh;
-  color: rgba(17,17,17,0.8);
+  color: rgba(17, 17, 17, 0.8);
 }
 
 #team .content {
@@ -465,7 +468,7 @@ html, body {
   left: 0;
 }
 
-.team-block-container {
+.team-block-container, .coreTeam-block-container {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -504,6 +507,7 @@ html, body {
   #team .team-block {
     padding: 0;
   }
+
   #team .team-block-content .team-block-image {
   }
 }
@@ -511,6 +515,7 @@ html, body {
 @media only screen and (max-width: 64em) {
   #team .team-block {
   }
+
   #team .team-block-content .team-block-image {
   }
 }
@@ -519,9 +524,11 @@ html, body {
   #team .team-block {
 
   }
+
   #team .team-block-content .team-block-image {
 
   }
+
   #team .team-block .fill {
   }
 }
@@ -577,7 +584,7 @@ html, body {
   flex-basis: 100%;
   width: 100%;
   padding: 1vh;
-  border-top: 0.5vh dashed rgba(0,0,0,0.1);
+  border-top: 0.5vh dashed rgba(0, 0, 0, 0.1);
   margin-top: 2.5vh;
   font-size: 2.4vh;
 }
