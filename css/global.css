@@ -4,6 +4,11 @@
 }
 
 @font-face {
+  font-family: 'levelsfont';
+  src: url('../fonts/PressStart2P1.ttf');
+}
+
+@font-face {
   font-family: 'description';
   src: url('../fonts/PressStart2P.ttf');
 }
@@ -19,92 +24,128 @@ body {
   user-select: none;
   margin: 0;
   width: 100%;
+  overflow: hidden;
 }
 
+a {
+  text-decoration: none;
+  color: black;
+}
 
-.cultural-nights {
+/*Department logo*/
+.logoImg {
+  max-width: 40%;
+  display: flex;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  z-index: 5;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  margin: 2vh;
+}
+
+/*.cultural-nights {*/
+/*font-family: 'start2p', 'sans-serif';*/
+/*color: white;*/
+/*font-size: 1.25rem;*/
+/*padding-top: 30px;*/
+/*}*/
+
+/*.nights-content {*/
+/*font-family: 'description', 'Roboto', sans-serif;*/
+/*font-size: 1.25rem;*/
+/*color: white;*/
+/*}*/
+
+/*.nights-content span:nth-child(2) {*/
+/*!*font-weight: bolder;*!*/
+/*font-size: 1.5rem;*/
+/*color: Red;*/
+/*}*/
+
+/*.nights-content span:nth-child(3) {*/
+/*!*font-weight: bolder;*!*/
+/*font-size: 1.5rem;*/
+/*color: yellow;*/
+/*}*/
+
+/*.garba {*/
+/*display: block;*/
+/*margin: 0 auto;*/
+/*}*/
+
+/*.kalrav {*/
+/*color: cornflowerblue !important;*/
+/*}*/
+
+/*Exit button*/
+#exit_page {
   font-family: 'start2p', 'sans-serif';
-  color: white;
-  font-size: 1.25rem;
-  padding-top: 30px;
-}
-
-.nights-content {
-  font-family: 'description', 'Roboto', sans-serif;
-  font-size: 1.25rem;
-  color: white;
-}
-
-.nights-content span:nth-child(2) {
-  /*font-weight: bolder;*/
-  font-size: 1.5rem;
-  color: Red;
-}
-
-.nights-content span:nth-child(3) {
-  /*font-weight: bolder;*/
-  font-size: 1.5rem;
-  color: yellow;
-}
-
-.garba {
-  display: block;
-  margin: 0 auto;
-}
-
-.kalrav {
-  color: cornflowerblue !important;
-}
-
-.city {
-  filter: grayscale(50%);
-  position: absolute;
-  z-index: -3;
-  max-height: 90vh;
-  bottom: 0;
+  color: black;
+  display: flex;
+  position: fixed;
+  bottom: 3vh;
+  right: 5vw;
+  cursor: pointer;
+  border-radius: 10% 10%;
+  border: #000 solid 3px;
+  padding: 16px;
+  z-index: 500;
 }
 
 /*Hide Scrollbar*/
 ::-webkit-scrollbar {
-  width: 0px;  /* remove scrollbar space */
-  background: transparent;  /* optional: just make scrollbar invisible */
+  width: 0 !important; /* remove scrollbar space */
+  background: transparent !important; /* optional: just make scrollbar invisible */
 }
 
 /* Modal CSS */
 #event-modal {
   top: 0;
   left: 0;
-  /*opacity: 0.9;*/
+  /*opacity: 0.5;*/
   display: none;
   position: absolute;
-  z-index: 1000;
+  z-index: 800;
   font-family: 'start2p', 'Roboto', sans-serif;
-
+  width: 110%;
 }
 
 .event-row {
   height: 100vh;
   width: 100vw;
   margin: 0;
-  font-size: 15px;
-  line-height: 1.5rem;
-  background: black; !important;
+  font-size: .775rem;
+  line-height: 1.75rem;
+  /*font-weight: bold;*/
+  /*background: black;*/
   /*color: #263238;*/
-  color: olivedrab;
-  font-weight: lighter !important;
+  /*color: black;*/
+  /*font-weight: lighter !important;*/
 
 }
 
 .close {
-  background: white !important;
+  font-family: 'start2p', sans-serif;
+  font-size: large;
+  line-height: 3rem;
+  margin: 2px !important;
+  border: 2px solid black;
+  border-radius: 50%;
   width: 35px;
-  padding: 1vw 0.5vw 2vw;
+  padding: 10px;
+  /*padding: 1vw 0.5vw 2vw;*/
   cursor: pointer;
 }
 
 .levels {
-  background: black;
+  /*background: black;*/
   padding-top: 30px;
+  font-family: 'levelsfont', 'start2p', sans-serif;
 }
 
 .event-description {
@@ -113,56 +154,48 @@ body {
 
 .title {
   font-family: "start2p", sans-serif;
-  font-size: 20px;
-  line-height: 3rem;
+  font-size: 1.25rem;
+  line-height: 2.5rem;
 }
 
 .dark-col {
-
   padding-bottom: 10px !important;
   /*background-color: rgba(255, 255, 255, 0.95);*/
 }
 
 .light-col {
+  padding-left: 2rem;
   /*background-color: rgba(255, 255, 255, 0.95);*/
 }
 
 .participant-data {
-  margin-bottom: 10px;
+  margin: 5px;
 }
 
 .chip {
-  /*    font-weight: bold;
-      padding: 10px 0;
-      flex: 1;
-      border: 1px solid rgb(236, 239, 241);
-      background-color: white;*/
   display: inline-block; /* this has been added */
   border-radius: 5px;
-  background-color: lightblue;
-  color: black;
+  /*background-color: lightblue;*/
+  /*color: black;*/
   border: 3px solid black;
-
 }
 
 .managers-row {
-  background-color: black;
+  /*background-color: black;*/
   padding: 10px 0;
 }
 
 .event-managers {
-  background: black;
-  /*font-weight: bold;*/
+  /*background: black;*/
   text-align: center;
 }
 
-.manager-name {
-  /*color: #222;*/
-  color: olivedrab;
-}
+/*.manager-name {*/
+/*color: black;*/
+/*}*/
 
 .white-text {
-  color: olivedrab;
+  color: black;
 }
 
 .no-margin {
@@ -172,5 +205,28 @@ body {
 @media (max-width: 780px) {
   .garba {
     width: 90%;
+  }
+
+  .light-col {
+    padding: 0;
+  }
+
+  .logoImg {
+    max-width: 80%;
+  }
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  /* IE10+ CSS styles go here */
+  html, body::before {
+    display: block;
+    justify-content: center;
+    font-size: xx-large;
+    content: "Please Upgrade, Dont use IE.";
+    align-content: center;
+  }
+
+  body > * {
+    visibility: hidden;
   }
 }

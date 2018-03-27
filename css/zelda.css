@@ -1,38 +1,52 @@
+body {
+  background: #D6DFED url("../img/zelda.jpg") no-repeat fixed center;
+  overflow: hidden;
+  background-size: contain;
+}
 
-.zelda{
-  /*display:block;*/
-  position:absolute;
-  left:50%;
-  bottom:0;
-  width: 75px; /*293*/
-  height: 147px; /*1358*/
-  background: url('../img/princess.gif') no-repeat;
-  background-position: -8px center !important;
-  animation: play 1.5s steps(10) infinite,
-  run1 40s linear forwards infinite;
+.zelda {
+  position: absolute;
+  bottom: 0;
+  width: 75px;
+  height: 147px;
+  background: url('../img/princess.gif') no-repeat left;
+  background-position: -5px;
+  animation: play 1.2s steps(10) infinite,
+  run1 30s linear forwards infinite;
   z-index: 5;
 }
 
+.head-title {
+  display: none !important;
+}
+
 @keyframes play {
-  100% { background-position: -714px; }
+  100% {
+    background-position: -714px;
+  }
 }
 
 @keyframes run1 {
-  from {left:0px;}
-  to {left:100%;}
+  from {
+    left: 0px;
+  }
+  to {
+    left: 100%;
+  }
 }
 
-.fairy1{
+.fairy1 {
   position: absolute;
   top: 30%;
   left: 20%;
 }
 
-.fairy2{
+.fairy2 {
   position: absolute;
   top: 40%;
   right: 10%;
 }
+
 .fairy {
   width: 300px;
   height: 300px;
@@ -54,6 +68,7 @@
   height: 114px;
   margin: -87px 0 0 -72px;
 }
+
 .wings:before, .wings:after {
   content: "";
   width: 64px;
@@ -68,6 +83,7 @@
   animation: flapping-left 0.2s ease-in-out infinite;
   background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/85486/wing-left.svg") no-repeat;
 }
+
 .wings:after {
   left: auto;
   right: 50%;
@@ -90,6 +106,7 @@
     transform: rotateX(-10deg) rotateY(-20deg);
   }
 }
+
 @keyframes flapping-left {
   0%,
   100% {
@@ -101,6 +118,7 @@
     transform: rotateX(-10deg) rotateY(-20deg);
   }
 }
+
 @-webkit-keyframes flapping-right {
   0%,
   100% {
@@ -112,6 +130,7 @@
     transform: rotateX(-10deg) rotateY(20deg);
   }
 }
+
 @keyframes flapping-right {
   0%,
   100% {
@@ -123,6 +142,7 @@
     transform: rotateX(-10deg) rotateY(20deg);
   }
 }
+
 @-webkit-keyframes flying {
   0% {
     -webkit-transform: rotate(50deg) translateX(0px) rotate(-50deg) scale(0.85);
@@ -137,6 +157,7 @@
     transform: rotate(360deg) translateX(0px) rotate(-360deg) scale(0.85);
   }
 }
+
 @keyframes flying {
   0% {
     -webkit-transform: rotate(50deg) translateX(0px) rotate(-50deg) scale(0.85);
@@ -150,9 +171,6 @@
     -webkit-transform: rotate(360deg) translateX(0px) rotate(-360deg) scale(0.85);
     transform: rotate(360deg) translateX(0px) rotate(-360deg) scale(0.85);
   }
-}
-body {
-  background: #1E2328;
 }
 
 .fairy {
@@ -189,6 +207,7 @@ body {
   height: 114px;
   margin: -87px 0 0 -72px;
 }
+
 .wings:before, .wings:after {
   content: "";
   width: 64px;
@@ -203,6 +222,7 @@ body {
   animation: flapping-left 0.2s ease-in-out infinite;
   background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/85486/wing-left.svg") no-repeat;
 }
+
 .wings:after {
   left: auto;
   right: 50%;
@@ -253,27 +273,79 @@ body {
   }
 }
 
-@media screen and (min-width: 720px) and (max-width: 1120px){
-  .fairy1{
+@media screen and (min-width: 720px) and (max-width: 1120px) {
+  body {
+    position: fixed;
+    background-size: cover;
+    background-position: top;
+  }
+
+  .fairy1 {
     left: 30%;
   }
 }
 
-@media screen and (min-width: 320px) and (max-width: 720px){
+@media screen and (min-width: 320px) and (max-width: 720px) {
+  #event-modal {
+    position: fixed !important;
+  }
+
+  body {
+    position: fixed;
+    background-size: cover;
+    background-position: top;
+  }
 
   .fairy1 {
     display: none;
   }
+
   .fairy2 {
     display: none;
   }
+
+  .zelda {
+    position: absolute;
+    bottom: 0;
+    width: 75px;
+    height: 147px;
+    background: url('../img/princess.gif') no-repeat left;
+    background-position: -5px;
+    animation: play 1.2s steps(10) infinite,
+    run1 10s linear forwards infinite;
+    z-index: 5;
+  }
 }
 
-@media screen and (min-height: 320px) and (max-height: 720px){
-  .fairy1{
+@media screen and (min-height: 320px) and (max-height: 720px) {
+  body {
+    position: fixed;
+    background-size: cover;
+    background-position: top;
+  }
+
+  #event-modal {
+    position: fixed !important;
+  }
+
+  .fairy1 {
     display: none;
   }
-  .fairy2{
+
+  .fairy2 {
     display: none;
+  }
+
+  .zelda {
+    position: fixed;
+    bottom: 0;
+    width: 75px;
+    height: 147px;
+    background: url('../img/princess.gif') no-repeat center;
+    background-size: cover;
+    background-position: -5px;
+    animation: play 1.2s steps(10) infinite,
+    run1 10s linear forwards infinite;
+    z-index: 5;
   }
 }

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Fab Famina</title>
+  <meta itemprop="image" content="https://udaan18.com/favicon.png">
+  <link rel="shortcut icon" href="favicon.png" type="image/png">
+  <link rel="stylesheet" href="css/flexboxgrid.min.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/tech.css">
+  <link rel="stylesheet" href="css/zelda.css">
+  <script src="js/vendor/handlebars.runtime.min.js"></script>
+  <script src="js/vendor/jquery-3.1.1.min.js"></script>
+  <script src="js/templates/event.min.js"></script>
+  <script src="js/templates/heads.min.js"></script>
+  <script src="data.js"></script>
+  <script>
+    //    var fabfaminas= data.girls.find(function (department) {
+    //      return department.name == 'girls';
+    //    });
+    var events = data.girls;
+    //    var heads = {'heads': fabFacturers.heads, 'coHeads': fabFacturers.coHeads};
+  </script>
+  <style>
+    :root {
+      --background-color: rgba(51, 153, 101, 0.9);
+      --background-color1: rgba(51, 153, 101, 0.7);
+    }
+
+    #exit_page, #events {
+      background: var(--background-color1) !important;
+    }
+
+    #event-modal, #heads-modal {
+      background: var(--background-color) !important;
+    }
+  </style>
+</head>
+<body>
+<script src="js/vendor/js.cookie.js"></script>
+<script src="js/vendor/audio-manager.js"></script>
+<audio preload="auto" id="closeSound" src="assets/sound/close.ogg" muted></audio>
+<audio preload="auto" id="zeldaStart" src="assets/sound/zeldastart.ogg"></audio>
+<audio preload="auto" id="eventClick" src="assets/sound/zeldaclick.ogg" muted></audio>
+<script src="js/loading.js"></script>
+<div class="logo">
+  <img class="logoImg" src="img/cassettee/fab-faminas-logo.svg">
+</div>
+<div class="zelda"></div>
+
+
+<div class="events center-font">
+  <div id="events"></div>
+</div>
+<div id="event-modal"></div>
+<div id="heads-modal"></div>
+<div class="zelda-bg">
+  <div class="fairy1">
+    <div class="fairy">
+      <div class="wings"></div>
+      <div class="glow">
+      </div>
+    </div>
+    <div class="fairy">
+      <div class="wings"></div>
+      <div class="glow">
+      </div>
+    </div>
+  </div>
+  <div class="fairy2">
+    <div class="fairy">
+      <div class="wings"></div>
+      <div class="glow">
+      </div>
+    </div>
+    <div class="fairy">
+      <div class="wings"></div>
+      <div class="glow">
+      </div>
+    </div>
+  </div>
+</div>
+<div id="exit_page">
+  Reset
+</div>
+<script src="js/events.js"></script>
+<script>
+  window.audioManager.onload = function () {
+    document.getElementById("zeldaStart").play();
+  }
+</script>
+</body>
+</html>

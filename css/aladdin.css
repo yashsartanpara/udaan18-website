@@ -1,0 +1,171 @@
+.aladdinBg {
+  background: url("../img/aladdin.jpg") no-repeat bottom;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  position: fixed;
+  background-size: cover;
+  z-index: -1;
+}
+
+/*.aladdin {*/
+/*position: absolute;*/
+/*bottom: 1%;*/
+/*height: 125px;*/
+/*width: 103px;*/
+/*background: url("../img/AladdinSprite.gif") no-repeat left;*/
+/*background-position: -25px;*/
+/*animation: walkAladdin 3.5s steps(12) infinite,*/
+/*moveAladdin 20s linear forwards infinite;*/
+/*z-index: 5;*/
+/*}*/
+
+.abbu {
+  position: fixed;
+  bottom: 1%;
+  height: 81px;
+  width: 99px;
+  background: url("../img/AbbuSprite.gif") no-repeat left;
+  background-position: 1px;
+  animation: walkAbbu 1.5s steps(6) infinite,
+  moveAbbu 20s linear forwards infinite;
+  z-index: 6;
+}
+
+.jasmine {
+  position: fixed;
+  bottom: 10%;
+  height: 121px;
+  width: 158px;
+  background: url("../img/jasmineSprite.gif") no-repeat left;
+  background-position: 1px;
+  animation: walkJasmine 1.5s steps(3) infinite,
+  moveJasmine 20s linear forwards infinite;
+  z-index: 7;
+}
+
+.head-title {
+  display: none !important;
+}
+
+@keyframes walkAladdin {
+  100% {
+    background-position: -1244px;
+  }
+}
+
+@keyframes walkAbbu {
+  100% {
+    background-position: -597px;
+  }
+}
+
+@keyframes walkJasmine {
+  100% {
+    background-position: -473px;
+  }
+}
+
+@keyframes moveAladdin {
+  from {
+    left: 100%;
+  }
+  to {
+    left: -10%;
+  }
+}
+
+@keyframes moveAbbu {
+  from {
+    left: 110%;
+  }
+  to {
+    left: 0%;
+  }
+}
+
+@keyframes moveJasmine {
+  from {
+    left: 110%;
+  }
+  to {
+    left: 0%;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 720px) {
+
+  /*.aladdin {*/
+  /*position: absolute;*/
+  /*bottom: 1%;*/
+  /*height: 125px;*/
+  /*width: 103px;*/
+  /*background: url("../img/AladdinSprite.gif") no-repeat left;*/
+  /*background-position: -25px;*/
+  /*animation: walkAladdin 1.2s steps(12) infinite,*/
+  /*moveAladdin 5s linear forwards infinite;*/
+  /*z-index: 5;*/
+  /*}*/
+  .abbu {
+    position: absolute;
+    bottom: 1%;
+    height: 81px;
+    width: 99px;
+    background: url("../img/AbbuSprite.gif") no-repeat left;
+    background-position: 1px;
+    animation: walkAbbu 1.2s steps(6) infinite,
+    moveAbbu 5s linear forwards infinite;
+    z-index: 6;
+  }
+
+  .jasmine {
+    position: absolute;
+    bottom: 10%;
+    height: 121px;
+    width: 158px;
+    background: url("../img/jasmineSprite.gif") no-repeat left;
+    background-position: 1px;
+    animation: walkJasmine 1.2s steps(3) infinite,
+    moveJasmine 5s linear forwards infinite;
+    z-index: 7;
+  }
+}
+
+@media screen and (min-height: 320px) and (max-height: 720px) {
+
+  /*.aladdin {*/
+  /*position: absolute;*/
+  /*bottom: 1%;*/
+  /*height: 125px;*/
+  /*width: 103px;*/
+  /*background: url("../img/AladdinSprite.gif") no-repeat left;*/
+  /*background-position: -25px;*/
+  /*animation: walkAladdin 1.2s steps(12) infinite,*/
+  /*moveAladdin 10s linear forwards infinite;*/
+  /*z-index: 5;*/
+  /*}*/
+  .abbu {
+    position: absolute;
+    bottom: 1%;
+    height: 81px;
+    width: 99px;
+    background: url("../img/AbbuSprite.gif") no-repeat left;
+    background-position: 1px;
+    animation: walkAbbu 1.2s steps(6) infinite,
+    moveAbbu 10s linear forwards infinite;
+    z-index: 6;
+  }
+
+  .jasmine {
+    position: absolute;
+    bottom: 10%;
+    height: 121px;
+    width: 158px;
+    background: url("../img/jasmineSprite.gif") no-repeat left;
+    background-position: 1px;
+    animation: walkJasmine 1.2s steps(3) infinite,
+    moveJasmine 10s linear forwards infinite;
+    z-index: 7;
+  }
+}

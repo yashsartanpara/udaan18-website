@@ -5,7 +5,7 @@
 
 @font-face {
   font-family: 'PressStart2P';
-  src: url('../fonts/PressStart2P.ttf') format('truetype');
+  src: url('../fonts/PressStart2P1.ttf') format('truetype');
 }
 
 html, body {
@@ -13,18 +13,20 @@ html, body {
   height: 100%;
   background-color: #111;
   margin: 0;
-  font-size: 0.875rem; /* 14px */
+  font-size: 2vh;
   overflow: hidden;
   user-select: none;
   -webkit-tap-highlight-color: transparent;
+  color: white;
 }
 
 section {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 100%;
-  width: 100%;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
 }
 
 * {
@@ -39,10 +41,828 @@ section {
   min-height: 100%;
 }
 
+@media only screen and (max-width: 64em) {
+  .row {
+    margin-left: 1rem !important;
+    margin-right: 1rem !important;
+  }
+}
+
+@media only screen and (max-width: 48em) {
+  .row {
+    margin-left: 1rem !important;
+    margin-right: 1rem !important;
+  }
+}
+
 /*========================================================================================
 *   Object specific CSS
 *=========================================================================================
 */
+
+/*==========================================
+*   ---- Intro
+*===========================================
+*/
+
+#intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: #111;
+  position: fixed;
+  z-index: 10;
+}
+
+#arcadeSVG {
+  position: absolute;
+  height: 95%;
+  width: auto;
+  z-index: 2;
+  bottom: 0;
+  margin-bottom: 0%;
+}
+
+@media only screen and (max-width: 75em) {
+  #arcadeSVG {
+    height: 85%;
+    width: auto;
+    bottom: 0;
+    margin-bottom: 10%;
+  }
+}
+
+@media only screen and (max-width: 64em) {
+  #arcadeSVG {
+    height: 85%;
+    width: auto;
+    bottom: 0;
+    margin-bottom: 10%;
+  }
+}
+
+@media only screen and (max-width: 48em) {
+  #arcadeSVG {
+    height: 80%;
+    width: auto;
+    bottom: 0;
+    margin-bottom: 15%;
+  }
+}
+
+@media only screen and (max-width: 48em) and (orientation: landscape) {
+  #arcadeSVG {
+    margin-bottom: 5%;
+  }
+}
+
+#arcadeScreen {
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 4;
+  background-color: rgb(17, 17, 17);
+}
+
+#coin {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 58%;
+  width: 6vh;
+  height: 6vh;
+  cursor: pointer;
+  border-radius: 50%;
+  background-color: rgba(255, 249, 15, 0.5);
+  z-index: 4;
+}
+
+#coin img {
+  height: 60%;
+  width: 60%;
+}
+
+#arcadeScreen .screenText {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 100%;
+  width: 100%;
+  height: 50%;
+  text-align: center;
+  line-height: 150%;
+}
+
+#skip-intro {
+  display: none;
+  position: fixed;
+  bottom: 3vh;
+  right: 5vw;
+  cursor: pointer;
+  border-radius: 10% 10%;
+  border: #FFF solid 3px;
+  padding: 16px;
+  background-color: rgba(17, 17, 17, 0.5);
+  z-index: 5;
+}
+
+/*==========================================
+*   ---- Audio Controller
+*===========================================
+*/
+
+.audio-controller {
+  position: absolute;
+  width: 5vh;
+  height: 5vh;
+  padding: 2vh;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.audio-controller img {
+  width: 5vh;
+  height: 5vh;
+}
+
+/*==========================================
+*   ---- TV Static Background
+*===========================================
+*/
+
+#tv-static-bg {
+  background: url('../img/tv-static.gif');
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  opacity: 0.1;
+  background-size: 50%;
+  display: none;
+}
+
+@media only screen and (max-width: 75em) {
+  #tv-static-bg {
+    background-size: 150%;
+  }
+}
+
+@media only screen and (max-width: 64em) {
+  #tv-static-bg {
+    background-size: 150%;
+  }
+}
+
+@media only screen and (max-width: 48em) {
+  #tv-static-bg {
+    background-size: 150%;
+  }
+}
+
+/*==========================================
+*   ---- Udaan Title Page
+*===========================================
+*/
+
+:root {
+  --navigation-button-size--lg: 8vmin;
+  --navigation-button-size--sm: 14vmin;
+}
+
+.page {
+  background: url("data:image/png;base64,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");
+  background-size: 4vh;
+}
+
+#udaan-logo-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  height: 65%;
+  z-index: 1;
+  position: relative;
+}
+
+#udaan-logo-container .logo {
+  width: 50%;
+  height: 90%;
+  background: url("../img/udaan_logo_2018.png") no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+#udaan-logo-container .udaan-date {
+  position: absolute;
+  font-size: 2.5vh;
+  bottom: -4vh;
+  z-index: 0;
+  -webkit-background-clip: text;
+}
+
+@media only screen and (max-width: 75em) and (orientation: portrait) {
+  #udaan-logo-container .udaan-date {
+    bottom: 3vh;
+  }
+}
+
+@media only screen and (max-width: 75em) and (orientation: landscape) {
+  #udaan-logo-container .udaan-date {
+    bottom: 3vh;
+  }
+}
+
+@media only screen and (max-width: 64em) and (orientation: landscape) {
+  #udaan-logo-container .udaan-date {
+    font-size: 3vh;
+    bottom: -3.1vh;
+  }
+}
+
+#udaan-title-page .navigation-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-top: 4vmin;
+  height: 20%;
+  width: 100%;
+  z-index: 1;
+}
+
+#udaan-title-page .navigation-container .arrow-key {
+  width: var(--navigation-button-size--lg);
+  height: var(--navigation-button-size--lg);
+  padding: 2vmin;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 64em) {
+  #udaan-logo-container .logo {
+    width: 90%;
+    height: 100%;
+  }
+
+  #udaan-title-page .navigation-container .arrow-key {
+    width: var(--navigation-button-size--sm);
+    height: var(--navigation-button-size--sm);
+    padding: 0;
+  }
+}
+
+/*==========================================
+*   ---- Title page background
+*===========================================
+*/
+
+#intro .wrapper-safari {
+  background: radial-gradient(ellipse at center, rgba(127, 0, 173, 0.6) 0%, rgba(0, 0, 0, 0.8) 60%, #000000 90%), url('../img/stars.jpg');
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  z-index: -1;
+}
+
+#intro .wrapper-safari img {
+  width: 100%;
+  height: 100%;
+}
+
+#intro .wrapper {
+  background: radial-gradient(ellipse at center, rgba(127, 0, 173, 0.6) 0%, rgba(0, 0, 0, 0.8) 60%, #000000 90%), url('../img/stars.jpg');
+  background-size: cover;
+  height: 100%;
+  overflow: hidden;
+  -webkit-perspective: 1200px;
+  perspective: 1200px;
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+}
+
+#intro .grid {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0px, rgba(54, 226, 248, 0.5) 0%, rgba(54, 226, 248, 0.5) 3px, rgba(0, 0, 0, 0) 0px), linear-gradient(90deg, rgba(0, 0, 0, 0) 0px, rgba(54, 226, 248, 0.5) 0%, rgba(54, 226, 248, 0.5) 3px, rgba(0, 0, 0, 0) 0px);
+  background-size: 4em 4em, 4em 4em;
+  background-color: black;
+  border-top: 5px solid #d100b1;
+  -webkit-box-shadow: 0 -25px 45px #d100b1;
+  box-shadow: 0 -25px 45px #d100b1;
+  height: 135vh;
+  -webkit-transform: scale(1.26) rotateX(80deg);
+  transform: scale(1.26) rotateX(80deg);
+  position: absolute;
+  width: 200%;
+}
+
+#intro .grid:after {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, rgba(0, 0, 0, 0)), color-stop(95%, #000000));
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, #000000 95%);
+  content: '';
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+
+#intro .grid:before {
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0) 30%, rgba(209, 0, 177, 0.5) 90%);
+  content: '';
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+
+/*==========================================
+*   ---- Title Page Navigation Buttons
+*===========================================
+*/
+
+#udaan-title-page .navigation-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding-top: 12vmin;
+  height: 20%;
+  width: 100%;
+}
+
+#udaan-title-page .vertical-navigation {
+  display: flex;
+  flex-direction: column;
+}
+
+#udaan-title-page .navigation-container .arrow-key {
+  width: var(--navigation-button-size--lg);
+  height: var(--navigation-button-size--lg);
+  padding: 2vmin;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 64em) {
+  #udaan-title-page .navigation-container .arrow-key {
+    width: var(--navigation-button-size--sm);
+    height: var(--navigation-button-size--sm);
+    padding: 0;
+  }
+}
+
+.arrow-key {
+  align-items: center;
+  background: #aaa;
+  border-radius: 6px;
+  box-shadow: -1px 1px 0 #999, -2px 2px 0 #999, -3px 3px 0 #999, -4px 4px 0 #999;
+  color: #fff;
+  display: inline-flex;
+  font-size: 4vh;
+  font-weight: bold;
+  justify-content: center;
+  margin: 5px;
+  transform: translate3d(0, 0, 0);
+  transition: box-shadow .1s linear, transform .1s linear;
+  width: var(--navigation-button-size--lg);
+  height: var(--navigation-button-size--lg);
+}
+
+.arrow-key:active, .arrow-key.press {
+  box-shadow: 0px 0px 0 #999, 0px 0px 0 #999, 0px 0px 0 #999, -1px 1px 0 #999;
+  transform: translate3d(-3px, 3px, 0);
+}
+
+.arrow-key.left:before {
+  content: "\2190";
+}
+
+.arrow-key.up:before {
+  content: "\2191";
+}
+
+.arrow-key.down:before {
+  content: "\2193";
+}
+
+.arrow-key.right:before {
+  content: "\2192";
+}
+
+@media only screen and (max-width: 64em) {
+  .arrow-key {
+    width: var(--navigation-button-size--sm);
+    height: var(--navigation-button-size--sm);
+    padding: 0;
+  }
+}
+
+/*==========================================
+*   ---- Title Page Social Icons
+*===========================================
+*/
+
+#social-icons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: absolute;
+  top: -8.1vh;
+  z-index: 3;
+  transition: 0.2s all;
+  padding: 0.5vh;
+  margin: 1vh;
+  opacity: 1;
+}
+
+.social-icons--active {
+  opacity: 0;
+  top: 0 !important;
+  padding: 0;
+  margin: 0;
+}
+
+#social-icons .icon {
+  width: 6vh;
+  height: 6vh;
+  padding: 0.5vh;
+  margin: 0.5vh 1vh;
+  border-radius: 0.5vh;
+}
+
+#social-icons .icon img, #share-icon img {
+  width: 100%;
+  height: 100%;
+}
+
+#share-icon {
+  position: absolute;
+  width: 8vh;
+  height: 8vh;
+  z-index: 8;
+  top: 0;
+  right: 0;
+  padding: 2vh;
+  margin: 0.5vh;
+  cursor: pointer;
+}
+
+#icon--facebook {
+  background-color: #6682BF;
+}
+#icon--github {
+  background-color: #548CFF;
+}
+#icon--youtube {
+  background-color: #FCF1AD;
+}
+#icon--instagram {
+  background-color: #E56969;
+}
+#icon--twitter {
+  background-color: #00CAFB;
+}
+
+
+/*==========================================
+*   ---- Udaan Departments Page
+*===========================================
+*/
+
+#udaan-departments .navigation-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-right: 1vmin;
+  right: 0;
+  bottom: 2vh;
+  position: absolute;
+  z-index: 1;
+}
+
+#udaan-departments .navigation-container .arrow-key {
+  width: var(--navigation-button-size--lg);
+  height: var(--navigation-button-size--lg);
+  padding: 2vmin;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 64em) {
+  #udaan-departments .navigation-container .arrow-key {
+    width: var(--navigation-button-size--sm);
+    height: var(--navigation-button-size--sm);
+    padding: 0;
+  }
+}
+
+/*==========================================
+*   ---- Udaan Non-tech Page
+*===========================================
+*/
+
+#udaan-nontech .navigation-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 1vmin;
+  left: 0;
+  bottom: 2vh;
+  position: absolute;
+  z-index: 1;
+}
+
+#udaan-nontech .navigation-container .arrow-key {
+  width: var(--navigation-button-size--lg);
+  height: var(--navigation-button-size--lg);
+  padding: 2vmin;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 64em) {
+  #udaan-nontech .navigation-container .arrow-key {
+    width: var(--navigation-button-size--sm);
+    height: var(--navigation-button-size--sm);
+    padding: 0;
+  }
+}
+
+/*==========================================
+*   ---- Udaan Other Page
+*===========================================
+*/
+
+#udaan-other .navigation-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 1vmin;
+  top: 0;
+  position: absolute;
+  z-index: 1;
+}
+
+#udaan-other .navigation-container .arrow-key {
+  width: var(--navigation-button-size--lg);
+  height: var(--navigation-button-size--lg);
+  padding: 2vmin;
+  cursor: pointer;
+}
+
+#udaan-other .navigation-container {
+  display: flex;
+  flex-direction: column;
+}
+
+@media only screen and (max-width: 64em) {
+  #udaan-other .navigation-container .arrow-key {
+    width: var(--navigation-button-size--sm);
+    height: var(--navigation-button-size--sm);
+    padding: 0;
+  }
+}
+
+
+/*==========================================
+*   ---- Udaan Other Page 2
+*===========================================
+*/
+
+#udaan-other-2 .navigation-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 1vmin;
+  bottom: 0;
+  position: absolute;
+  z-index: 1;
+}
+
+#udaan-other-2 .navigation-container .arrow-key {
+  width: var(--navigation-button-size--lg);
+  height: var(--navigation-button-size--lg);
+  padding: 2vmin;
+  cursor: pointer;
+}
+
+#udaan-other-2 .navigation-container {
+  display: flex;
+  flex-direction: column;
+}
+
+@media only screen and (max-width: 64em) {
+  #udaan-other-2 .navigation-container .arrow-key {
+    width: var(--navigation-button-size--sm);
+    height: var(--navigation-button-size--sm);
+    padding: 0;
+  }
+}
+
+/*==========================================
+*   ---- Tetris - Blockrain
+*===========================================
+*/
+
+#cover-tetris {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+}
+
+#cover-tetris-2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.blockrain-game-holder {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  color: #ffffff;
+  font-size: 18px;
+  line-height: 140%;
+}
+
+/* Touch Controls */
+.blockrain-touch {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  display: block;
+  border-radius: 100%;
+  border: 1px solid white;
+  background: rgba(255, 255, 255, 0.2);
+  z-index: 10;
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  line-height: 50px;
+  text-align: center;
+}
+
+.blockrain-touch:active {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.blockrain-touch-left {
+  left: -60px;
+  bottom: 10px;
+}
+
+.blockrain-touch-left::after {
+  content: "<";
+}
+
+.blockrain-touch-right {
+  right: -60px;
+  bottom: 10px;
+}
+
+.blockrain-touch-right::after {
+  content: ">";
+}
+
+.blockrain-touch-rotate-left {
+  left: -60px;
+  bottom: 80px;
+}
+
+.blockrain-touch-rotate-left::after {
+  content: "<o";
+}
+
+.blockrain-touch-rotate-right {
+  right: -60px;
+  bottom: 80px;
+}
+
+.blockrain-touch-rotate-right::after {
+  content: "o>";
+}
+
+.blockrain-touch-drop {
+  left: 50%;
+  margin-left: -25px;
+  bottom: -60px;
+}
+
+.blockrain-touch-drop::after {
+  content: ".";
+}
+
+/* Buttons */
+.blockrain-btn {
+  position: relative;
+  display: inline-block;
+  background: none;
+  color: #ffffff;
+  text-decoration: none;
+  border: 2px solid #ffffff;
+  padding: 15px 30px;
+  font-size: 18px;
+  text-align: center;
+  cursor: default;
+}
+
+.blockrain-btn::before {
+  position: absolute;
+  content: "";
+  top: 100%;
+  left: 0px;
+  bottom: 0px;
+  right: 0px;
+  border: 2px solid #ffffff;
+  border-top: none;
+  border-right: none;
+  transition: all 0.2s ease;
+}
+
+.blockrain-btn::after {
+  position: absolute;
+  content: "";
+  top: 0px;
+  left: 100%;
+  bottom: 0px;
+  right: 0px;
+  border: 2px solid #ffffff;
+  border-left: none;
+  border-bottom: none;
+  transition: all 0.2s ease;
+}
+
+.blockrain-btn:hover::before {
+  left: 5px;
+  bottom: -8px;
+  right: -8px;
+}
+
+.blockrain-btn:hover::after {
+  top: 5px;
+  bottom: -8px;
+  right: -8px;
+}
+
+/* Score */
+.blockrain-score-holder {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  text-align: right;
+}
+
+.blockrain-score-msg {
+  font-size: 14px;
+  line-height: 100%;
+  margin-bottom: 0.2em;
+}
+
+.blockrain-score-num {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Menu */
+.blockrain-start-holder, .blockrain-game-over-holder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  background: rgba(0, 0, 0, 0.8);
+  text-align: center;
+}
+
+.blockrain-start, .blockrain-game-over {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  transform: translateY(-50%);
+}
+
+.blockrain-start-msg, .blockrain-game-over-msg {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
 
 /*==========================================
 *   ---- Z-Indexes
@@ -169,7 +989,7 @@ section {
 
 .console-top-view--top-half {
   z-index: var(--console-top-view-top-half--z-index);
-  height: calc(var(--console-lg-height)*0.5);
+  height: calc(var(--console-lg-height) * 0.5);
   bottom: calc(var(--console-lg-height) * -1);
 }
 
@@ -212,6 +1032,142 @@ section {
   }
 }
 
+
+/*==========================================
+*   ---- Block CSS
+*===========================================
+*/
+:root {
+  --block-lg-unit: 30vh;
+  --block-md-unit: 30vh;
+  --block-sm-unit: 30vh;
+  --block-xs-unit: 18vh;
+  --block--z-index: 1; /* when-selected: 4 */
+}
+
+.block-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  user-select: none;
+}
+
+.block {
+
+  cursor: pointer;
+  z-index: var(--block--z-index);
+  overflow: hidden;
+
+  /* Because stupid flexbox grid adds 7rem padding in col-lg */
+  padding: 0 !important;
+
+  width: calc(var(--block-lg-unit) * 2);
+  height: var(--block-lg-unit);
+
+}
+
+.block-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  /*background-color: red;*/
+}
+
+.block-content .fill {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 80%;
+  width: 80%;
+  opacity: 1;
+  background-color: #2F3C3D;
+  color: #74D8E1;
+  box-shadow: rgba(133, 133, 133, 0.5) 1vh 1vh 0;
+  font-size: 2.5vh;
+}
+
+.block-content .block-sub-text {
+  font-size: 1.5vh;
+  margin-top: 1.5vh;
+  padding: 1vh;
+  color: #E3FCFF;
+}
+
+@media only screen and (max-width: 75em) {
+  .block {
+    width: calc(var(--block-md-unit) * 2);
+    height: var(--block-md-unit);
+  }
+  #udaan-other .block-container {
+    padding-top: 8vh;
+  }
+  #udaan-other-2 .block-container {
+    padding-bottom: 8vh;
+  }
+}
+
+@media only screen and (max-width: 64em) {
+  .block {
+    width: calc(var(--block-sm-unit) * 2);
+    height: var(--block-sm-unit);
+  }
+}
+
+@media only screen and (max-width: 48em) {
+  .block {
+    width: calc(var(--block-xs-unit) * 2);
+    height: var(--block-xs-unit);
+  }
+}
+
+@media (orientation: landscape) {
+  .block {
+    flex-basis: 33.33333333%;
+    max-width: 33.33333333%;
+    height: var(--block-lg-unit);
+  }
+}
+
+/*==========================================
+*   ---- Information bar
+*===========================================
+*/
+
+#information-bar {
+  display: table-row;
+  position: fixed;
+  left: 0;
+  width: 100%;
+  top: 14vh;
+  color: white;
+  z-index: 100;
+  text-align: center;
+  pointer-events: none;
+  opacity: 0;
+  text-transform: uppercase;
+  font-size: 3vh;
+}
+
+#information-bar-2 {
+  display: table-row;
+  position: fixed;
+  left: 0;
+  width: 100%;
+  top: 80vh;
+  color: white;
+  z-index: 100;
+  text-align: center;
+  pointer-events: none;
+  opacity: 0;
+  text-transform: uppercase;
+  font-size: 3vh;
+}
+
 /*==========================================
 *   ---- User message bar
 *===========================================
@@ -229,40 +1185,6 @@ section {
   pointer-events: none;
   opacity: 0;
   text-transform: uppercase;
-  font-size: 3vh;
-}
-
-/*==========================================
-*   ---- Media Query
-*===========================================
-*/
-
-.media-query {
-  display: none;
-  content: "lg";
-}
-
-@media only screen and (max-width: 75em) {
-  .media-query {
-    content: "md";
-  }
-}
-
-@media only screen and (max-width: 64em) {
-  .media-query {
-    content: "sm";
-  }
-}
-
-@media only screen and (max-width: 48em) and (orientation: portrait) {
-  .media-query {
-    content: "xs portrait";
-  }
-}
-
-@media only screen and (max-width: 48em) and (orientation: landscape) {
-  .media-query {
-    content: "xs landscape";
-  }
+  font-size: 2vh;
 }
 

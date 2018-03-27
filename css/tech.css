@@ -1,5 +1,5 @@
 body {
-  /*overflow: hidden;*/
+  overflow: hidden;
 }
 
 @font-face {
@@ -12,67 +12,40 @@ body {
   src: url('../fonts/PressStart2P.ttf');
 }
 
-.dept-name {
-  width: 100vw;
-  text-align: center;
-  position: absolute;
-  bottom: 10px;
-  z-index: 5;
-  height: 10vh;
-  transform-origin: 0 0;
-  color: white;
-  font-family: 'start2p', 'sans-serif';
-  font-size: 2rem;
-  /*transform: rotate(90deg);*/
-}
-
-/*.right-dept-name {*/
-/*right: 20px;*/
-/*}*/
-
-/*.left-dept-name {*/
-/*left: 20px;*/
-/*}*/
-
 .events {
-  position: absolute;
-  width: 60vw;
+  font-size: 1rem;
+  padding: 1em;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+/*Events list*/
+#events {
+  border: 3px solid black;
+  display: flex;
+  flex-direction: column;
+  min-width: 30%;
+  border-radius: 2%;
+  background-color: rgba(17, 17, 17, 0.5);
   z-index: 99;
-}
-
-.right-facing {
-  left: 0;
-}
-
-.left-facing {
-  right: 0;
 }
 
 .center-font {
   text-align: center;
-  padding-top: 10vh;
-  right: 0;
-  left: 0;
-  width: 100vw;
+  padding-top: 1vh;
+  /*right: 0;*/
+  /*width: 100vw;*/
   font-family: 'start2p', sans-serif;
 }
-
-/*.right-facing-font {*/
-/*padding-top: 10vh;*/
-/*!*left: 0;*!*/
-/*text-align: center;*/
-/*width: 100vw;*/
-/*font-family: 'start2p', sans-serif;*/
-/*}*/
 
 .event-name {
   line-height: 2.5rem;
   list-style: none;
-  color: white;
-  font-family: "start2p", sans-serif;
-  font-size: 1.25rem;
+  color: black;
+  font-family: "levelsfont", sans-serif;
+  font-size: 1rem;
   cursor: pointer;
-
 }
 
 .modal-open-animation {
@@ -83,7 +56,6 @@ body {
   animation: zoomOut 0.5s
 }
 
-
 /*begin : heads modal*/
 
 .custom-row {
@@ -91,22 +63,21 @@ body {
 }
 
 .head-title {
-  color: white;
   line-height: 2.5rem;
+  list-style: none;
+  color: black;
   font-family: "start2p", sans-serif;
-  font-size: 1.25rem;
   cursor: pointer;
-  padding: 0 10px;
 }
 
 .head-name {
   font-family: 'description', 'Roboto', sans-serif;
-  font-size: 1.25rem;
-  line-height: 2rem;
+  font-size: 0.775em;
+  line-height: 2.5rem;
 }
 
 #heads-modal {
-  background: black !important;
+
   z-index: 900;
   top: 0;
   display: none;
@@ -134,7 +105,6 @@ body {
   #event {
     height: 85vh;
   }
-
 
   .right-facing {
     left: -40vh;

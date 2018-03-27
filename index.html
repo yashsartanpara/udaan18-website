@@ -3,113 +3,343 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
-  <title>Udaan2018</title>
-  <link rel="shortcut icon" href="favicon.ico">
+  <title>Udaan 2018</title>
+  <link rel="shortcut icon" href="favicon.png" type="image/png">
+
+  <meta name="keywords" content="bvm, udaan, udaan18, udaan2018, udaan2k18, bvm-techfest, techfest">
+  <meta name="author" content="bvmites">
+  <meta name="description"
+        content="Udaan, the annual techfest of Birla Vishvakarma Mahavidyalaya Engineering College, Vallabh Vidyanagar">
+
+  <meta itemprop="name" content="Udaan 2018">
+  <meta itemprop="description"
+        content="Udaan, the annual techfest of Birla Vishvakarma Mahavidyalaya Engineering College, Vallabh Vidyanagar">
+  <meta itemprop="image" content="https://udaan18.com/favicon.png">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Udaan 2018">
+  <meta property="og:image" content="https://udaan18.com/favicon.png">
+  <meta property="og:description"
+        content="Udaan, the annual techfest of Birla Vishvakarma Mahavidyalaya Engineering College, Vallabh Vidyanagar">
+  <meta property="og:site_name" content="Udaan 2018">
+  <meta property="og:url" content="https://udaan18.com"/>
+
+  <meta name="google-site-verification" content="InhEpNW3Ir2NlR3MyFrKzg2p8dSLAEsvzvyJyZQKQhY"/>
+
   <link rel="stylesheet" href="css/flexboxgrid.min.css">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/media-query.css">
   <script src="js/vendor/jquery-3.1.1.min.js"></script>
-  <script src="js/vendor/jquery.onepage-scroll.min.js"></script>
-  <script src="js/vendor/hammer.min.js"></script>
+  <script src="js/vendor/js.cookie.js"></script>
+
+  <!-- Custom stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- yafps -->
+  <link rel="stylesheet" href="css/yafps.css">
+  <script src="js/vendor/yafps.js"></script>
+
+  <!-- Swipe Listener -->
+  <script src="js/vendor/swipe-listener.min.js"></script>
 
   <!-- Greensock Library -->
-  <script src="js/vendor/greensock/TweenLite.min.js"></script>
-  <script src="js/vendor/greensock/CSSPlugin.min.js"></script>
-  <script src="js/vendor/greensock/EasePack.min.js"></script>
+  <script src="js/vendor/greensock/TweenMax.min.js"></script>
+
+  <!-- jQuery -->
+  <script src="js/vendor/jquery-3.1.1.min.js"></script>
+
+  <!-- Tetris JS -->
+  <script src="js/vendor/blockrain.jquery.libs.js"></script>
+  <script src="js/vendor/blockrain.jquery.src.js"></script>
+  <script src="js/vendor/blockrain.jquery.themes.js"></script>
 
   <!-- Main -->
   <script src="js/main.js"></script>
 </head>
 
 <body class="font-family--press-start-2p">
-<div class="main" id="swipe-window">
-  <section id="udaan-title-page"></section>
-  <section id="udaan-departments">
-    <div class="cartridge-container row">
-      <div class="cartridge col-lg-4 col-md-6 col-sm-6 col-xs-12" data-href="cp-it.html">
-        <div class="cartridge-content">
-          <img src="img/snes_cartridge.png"/>
-        </div>
-      </div>
-      <div class="cartridge col-lg-4 col-md-6 col-sm-6 col-xs-12" data-href="sonic-a-tronic.html">
-        <div class="cartridge-content">
-          <img src="img/snes_cartridge.png"/>
-        </div>
-      </div>
-      <div class="cartridge col-lg-4 col-md-6 col-sm-6 col-xs-12" data-href="dynamo-bombers.html">
-        <div class="cartridge-content">
-          <img src="img/snes_cartridge.png"/>
-        </div>
-      </div>
-      <div class="cartridge col-lg-4 col-md-6 col-sm-6 col-xs-12" data-href="mech-prod.html">
-        <div class="cartridge-content">
-          <img src="img/snes_cartridge.png"/>
-        </div>
-      </div>
-      <div class="cartridge col-lg-4 col-md-6 col-sm-6 col-xs-12" data-href="Infra-maniacs.html">
-        <div class="cartridge-content">
-          <img src="img/snes_cartridge.png"/>
-        </div>
-      </div>
-    </div>
-    <div class="blackout">
-      <!-- Overlay element that dims other cartridges when one of them is selected -->
-    </div>
-    <div class="console-top-view console-top-view--top-half">
-      <div class="console-top-view-content">
-        <img src="img/console-top-view_top-half.png">
-      </div>
-    </div>
-    <div class="console-top-view console-top-view--bottom-half">
-      <div class="console-top-view-content">
-        <img src="img/console-top-view_bottom-half.png">
-      </div>
-    </div>
-  </section>
-  <section id="udaan-nontech">
-    <div class="cartridge-container row">
-      <div class="cartridge col-lg-4 col-md-6 col-sm-6 col-xs-12" data-href="diagon_alley.html">
-        <div class="cartridge-content">
-          <img src="img/snes_cartridge.png"/>
-        </div>
-      </div>
-      <div class="cartridge col-lg-4 col-md-6 col-sm-6 col-xs-12" data-href="treasure_hunt.html">
-        <div class="cartridge-content">
-          <img src="img/snes_cartridge.png"/>
-        </div>
-      </div>
-      <div class="cartridge col-lg-4 col-md-6 col-sm-6 col-xs-12" data-href="fab_faminas.html">
-        <div class="cartridge-content">
-          <img src="img/snes_cartridge.png"/>
-        </div>
-      </div>
-      <div class="cartridge col-lg-4 col-md-6 col-sm-6 col-xs-12" data-href="pandora_box.html">
-        <div class="cartridge-content">
-          <img src="img/snes_cartridge.png"/>
-        </div>
-      </div>
-      <div class="cartridge col-lg-4 col-md-6 col-sm-6 col-xs-12" data-href="mad_house.html">
-        <div class="cartridge-content">
-          <img src="img/snes_cartridge.png"/>
-        </div>
-      </div>
-    </div>
-    <div class="blackout">
-      <!-- Overlay element that dims other cartridges when one of them is selected -->
-    </div>
-    <div class="console-top-view console-top-view--top-half">
-      <div class="console-top-view-content">
-        <img src="img/console-top-view_top-half.png">
-      </div>
-    </div>
-    <div class="console-top-view console-top-view--bottom-half">
-      <div class="console-top-view-content">
-        <img src="img/console-top-view_bottom-half.png">
-      </div>
-    </div>
-  </section>
 
-  <div id="user-message-bar">
+<!-- Loading -->
+<script src="js/loading.js"></script>
 
+<!-- Audio Manager -->
+<script src="js/vendor/audio-manager.js"></script>
+
+<!-- Audio -->
+<audio preload="auto" id="sound-screen" src="assets/sound/screen.ogg" muted></audio>
+<audio preload="auto" id="sound-coin-insert" src="assets/sound/coin3.ogg" muted></audio>
+<audio preload="auto" id="sound-whoosh" src="assets/sound/whoosh.ogg" muted></audio>
+<audio preload="auto" id="sound-beep" src="assets/sound/beep.ogg" muted></audio>
+<audio preload="auto" id="sound-tetris-line-remove" src="assets/sound/line-remove.ogg" muted></audio>
+<audio preload="auto" id="sound-cartridge-insert" src="assets/sound/cartridge-insert-sound-1.ogg" muted></audio>
+<audio preload="auto" id="sound-cartridge-fade-in" src="assets/sound/fade-in.ogg" muted></audio>
+<audio preload="auto" id="sound-cartridge-fade-out" src="assets/sound/fade-out.ogg" muted></audio>
+<audio preload="auto" id="sound-warning" src="assets/sound/warn.ogg" muted></audio>
+
+<div id="intro">
+  <div id="audio-controller" class="audio-controller" data-status="off">
+    <img src="img/audio-off.svg"/>
+  </div>
+
+  <object id="arcadeSVG" data="img/arcade.svg"></object>
+  <div id="arcadeScreen">
+    <span class="screenText">INSERT<br/>COIN</span>
+  </div>
+  <div id="coin">
+    <img src="img/coin.svg">
+  </div>
+  <div id="skip-intro">
+    SKIP INTRO >>
+  </div>
+  <div class="wrapper" style="display:none;">
+    <div class="grid"></div>
+  </div>
+  <div class="wrapper-safari">
+    <img src="img/grid.png"/>
+  </div>
+</div>
+<div class="pager">
+  <div class="main pages-container">
+    <section id="udaan-title-page" class="page" data-order="2-2">
+      <div id="audio-controller-2" class="audio-controller" data-status="off">
+        <img src="img/audio-off.svg"/>
+      </div>
+      <div id="share-icon">
+        <img src="img/social/share.svg">
+      </div>
+      <div id="social-icons">
+        <a id="icon--facebook" class="icon" href="https://facebook.com/teamudaan18" target="_blank">
+          <img src="img/social/facebook.svg"/>
+        </a>
+        <a id="icon--twitter" class="icon icon--twitter" href="https://twitter.com/teamudaan" target="_blank">
+          <img src="img/social/twitter.svg"/>
+        </a>
+        <a id="icon--instagram" class="icon" href="https://instagram.com/teamudaan" target="_blank">
+          <img src="img/social/instagram.svg"/>
+        </a>
+        <a id="icon--youtube" class="icon" href="https://www.youtube.com/channel/UCnqRgS6O0MGF8sTYb_fHjWA/videos" target="_blank">
+          <img src="img/social/mail.svg"/>
+        </a>
+        <a id="icon--github" class="icon" href="https://github.com/bvmites" target="_blank">
+          <img src="img/social/github.svg"/>
+        </a>
+      </div>
+      <div class="game" id="cover-tetris-2"></div>
+      <div id="udaan-logo-container">
+        <div class="logo">
+        </div>
+        <div class="udaan-date">
+          2,3,4 April, 2018
+        </div>
+      </div>
+      <div class="navigation-container">
+        <div class="arrow-key left" data-action="left">
+
+        </div>
+        <div class="vertical-navigation">
+          <div class="arrow-key up" data-action="up">
+
+          </div>
+          <div class="arrow-key down" data-action="down">
+
+          </div>
+        </div>
+        <div class="arrow-key right" data-action="right">
+
+        </div>
+      </div>
+    </section>
+    <section id="udaan-departments" class="page" data-order="2-1">
+      <div class="cartridge-container row">
+        <div class="cartridge col-lg-4 col-md-6 col-sm-6 col-xs-12" data-href="coders-squad.html"
+             data-info="CODER'S SQUAD">
+          <div class="cartridge-content">
+            <img src="img/cassettee/coders-squad.gif"/>
+          </div>
+        </div>
+        <div class="cartridge col-lg-4 col-md-6 col-sm-6 col-xs-12" data-href="sonic-a-tronic.html"
+             data-info="SONIC-A-TRONICS">
+          <div class="cartridge-content">
+            <img src="img/cassettee/sonic-a-tronics.gif"/>
+          </div>
+        </div>
+        <div class="cartridge col-lg-4 col-md-6 col-sm-6 col-xs-12" data-href="dynamo-bombers.html"
+             data-info="DYNAMO BOMBERS">
+          <div class="cartridge-content">
+            <img src="img/cassettee/dynamo-bomber.gif"/>
+          </div>
+        </div>
+        <div class="cartridge col-lg-4 col-md-6 col-sm-6 col-xs-12" data-href="mechnophiles.html"
+             data-info="MECHNOPHILES">
+          <div class="cartridge-content">
+            <img src="img/cassettee/mechnophiles.gif"/>
+          </div>
+        </div>
+        <div class="cartridge col-lg-4 col-md-6 col-sm-6 col-xs-12" data-href="infra-maniacs.html"
+             data-info="INFRA-MANIACS">
+          <div class="cartridge-content">
+            <img src="img/cassettee/infra-maniacs.gif"/>
+          </div>
+        </div>
+      </div>
+      <div class="blackout">
+        <!-- Overlay element that dims other cartridges when one of them is selected -->
+      </div>
+      <div class="navigation-container">
+        <div class="arrow-key right" data-action="right">
+        </div>
+      </div>
+      <div class="console-top-view console-top-view--top-half">
+        <div class="console-top-view-content">
+          <img src="img/console-top-view_top-half.png">
+        </div>
+      </div>
+      <div class="console-top-view console-top-view--bottom-half">
+        <div class="console-top-view-content">
+          <img src="img/console-top-view_bottom-half.png">
+        </div>
+      </div>
+    </section>
+    <section id="udaan-nontech" class="page" data-order="2-3">
+      <div class="cartridge-container row">
+        <div class="cartridge col-lg-4 col-md-6 col-sm-6 col-xs-12" data-href="diagon-alley.html"
+             data-info="DIAGON ALLEY">
+          <div class="cartridge-content">
+            <img src="img/cassettee/diagon-alley.gif"/>
+          </div>
+        </div>
+        <div class="cartridge col-lg-4 col-md-6 col-sm-6 col-xs-12" data-href="treasure-hunt.html"
+             data-info="TREASURE HUNT">
+          <div class="cartridge-content">
+            <img src="img/cassettee/treasure-hunt.gif"/>
+          </div>
+        </div>
+        <div class="cartridge col-lg-4 col-md-6 col-sm-6 col-xs-12" data-href="fab-faminas.html"
+             data-info="FAB FAMINA">
+          <div class="cartridge-content">
+            <img src="img/cassettee/fab-faminas.gif"/>
+          </div>
+        </div>
+        <div class="cartridge col-lg-4 col-md-6 col-sm-6 col-xs-12" data-href="pandora-box.html"
+             data-info="PANDORA BOX">
+          <div class="cartridge-content">
+            <img src="img/cassettee/pandoras-box.gif"/>
+          </div>
+        </div>
+        <div class="cartridge col-lg-4 col-md-6 col-sm-6 col-xs-12" data-href="mad-house.html" data-info="MAD HOUSE">
+          <div class="cartridge-content">
+            <img src="img/cassettee/mad-house.gif"/>
+          </div>
+        </div>
+      </div>
+      <div class="blackout">
+        <!-- Overlay element that dims other cartridges when one of them is selected -->
+      </div>
+      <div class="navigation-container">
+        <div class="arrow-key left" data-action="left">
+        </div>
+      </div>
+      <div class="console-top-view console-top-view--top-half">
+        <div class="console-top-view-content">
+          <img src="img/console-top-view_top-half.png">
+        </div>
+      </div>
+      <div class="console-top-view console-top-view--bottom-half">
+        <div class="console-top-view-content">
+          <img src="img/console-top-view_bottom-half.png">
+        </div>
+      </div>
+    </section>
+    <section id="udaan-other" class="page" data-order="3-2">
+      <div class="block-container row">
+        <div class="block col-lg-4 col-md-6 col-sm-6 col-xs-12" data-href="udaan-team.html">
+          <div class="block-content">
+            <div class="fill">
+              TEAM UDAAN
+              <div class="scanlines"></div>
+            </div>
+          </div>
+        </div>
+        <div class="block col-lg-4 col-md-6 col-sm-6 col-xs-12" data-href="udaan-nights.html">
+          <div class="block-content">
+            <div class="fill">
+              UDAAN NIGHTS
+              <div class="scanlines"></div>
+            </div>
+          </div>
+        </div>
+        <div class="block col-lg-4 col-md-6 col-sm-6 col-xs-12" data-href="">
+          <div class="block-content">
+            <div class="fill">
+              SPONSORS
+              <span class="block-sub-text">
+                COMING SOON
+              </span>
+              <div class="scanlines"></div>
+            </div>
+          </div>
+        </div>
+        <div class="block col-lg-4 col-md-6 col-sm-6 col-xs-12" data-href="udaan-developers.html">
+          <div class="block-content">
+            <div class="fill">
+              DEVELOPERS
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="navigation-container">
+        <div class="arrow-key up" data-action="up">
+        </div>
+      </div>
+    </section>
+    <section id="udaan-other-2" class="page" data-order="1-2">
+      <div class="block-container row">
+        <div class="block col-lg-4 col-md-6 col-sm-6 col-xs-12" data-href="https://bvmtalks.udaan18.com">
+          <div class="block-content">
+            <div class="fill">
+              BVM TALKS
+              <div class="scanlines"></div>
+            </div>
+          </div>
+        </div>
+        <div class="block col-lg-4 col-md-6 col-sm-6 col-xs-12" data-href="">
+          <div class="block-content">
+            <div class="fill">
+              SCHEDULE
+              <span class="block-sub-text">
+                COMING SOON
+              </span>
+              <div class="scanlines"></div>
+            </div>
+          </div>
+        </div>
+        <div class="block col-lg-4 col-md-6 col-sm-6 col-xs-12" data-href="">
+          <div class="block-content">
+            <div class="fill">
+              GALLERY
+              <span class="block-sub-text">
+                COMING SOON
+              </span>
+              <div class="scanlines"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="navigation-container">
+        <div class="arrow-key down" data-action="down">
+        </div>
+      </div>
+    </section>
+    <div id="information-bar">
+      INFORMATION
+    </div>
+    <div id="information-bar-2">
+      INFORMATION
+    </div>
+    <div id="user-message-bar">
+      MESSAGE
+    </div>
   </div>
 </div>
 <div class="media-query"></div>

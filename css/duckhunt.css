@@ -1,494 +1,751 @@
-@keyframes dogMove {
-  from {left:0px;}
-  to {left:99%;}
+.head-title {
+  display: none !important;
 }
 
-@-moz-keyframes dogMove {
-  from {left:0px;}
-  to {left:99%;}
+@keyframes dogMove {
+  from {
+    left: 0px;
+  }
+  to {
+    left: 105%;
+  }
 }
 
 @-webkit-keyframes dogMove {
-  from {left:0px;}
-  to {left:99%;}
+  from {
+    left: 0px;
+  }
+  to {
+    left: 100%;
+  }
 }
 
 @-o-keyframes dogMove {
-  from {left:0px;}
-  to {left:99%;}
+  from {
+    left: 0px;
+  }
+  to {
+    left: 105%;
+  }
 }
 
 @keyframes dogWalk {
-  0% { background-position:0px 0px; }
-  3% { background-position:-120px 0px; }
-  6% { background-position:-240px 0px; }
-  9% { background-position:-360px 0px; }
-  12% { background-position:0px 0px; }
-  15% { background-position:-120px 0px; }
-  18% { background-position:-240px 0px; }
-  21% { background-position:-360px 0px; }
-  24% { background-position:0px 0px; }
-  27% { background-position:-120px 0px; }
-  30% { background-position:-240px 0px; }
-  33% { background-position:-360px 0px; }
-  36% { background-position:0px 0px; }
-  39% { background-position:-120px 0px; }
-  42% { background-position:-240px 0px; }
-  45% { background-position:-360px 0px; }
-  48% { background-position:0px 0px; }
-  51% { background-position:-120px 0px; }
-  54% { background-position:-240px 0px; }
-  57% { background-position:-360px 0px; }
-  60% { background-position:0px 0px; }
-  63% { background-position:-120px 0px; }
-  66% { background-position:-240px 0px; }
-  69% { background-position:-360px 0px;  } /* Walk */
-  72% { background-position:0px 0px; }
-  75% { background-position:-120px 0px; }
-  78% { background-position:-240px 0px; }
-  81% { background-position:-360px 0px;  } /* Walk */
-  84% { background-position:0px 0px; }
-  87% { background-position:-120px 0px; }
-  90% { background-position:-240px 0px; }
-  93% { background-position:-360px 0px; }
-  96% { background-position:0px 0px; }
-  99% { background-position:-120px 0px; }
+  0% {
+    background-position: 0px 0px;
+  }
+  3% {
+    background-position: -120px 0px;
+  }
+  6% {
+    background-position: -240px 0px;
+  }
+  9% {
+    background-position: -360px 0px;
+  }
+  12% {
+    background-position: 0px 0px;
+  }
+  15% {
+    background-position: -120px 0px;
+  }
+  18% {
+    background-position: -240px 0px;
+  }
+  21% {
+    background-position: -360px 0px;
+  }
+  24% {
+    background-position: 0px 0px;
+  }
+  27% {
+    background-position: -120px 0px;
+  }
+  30% {
+    background-position: -240px 0px;
+  }
+  33% {
+    background-position: -360px 0px;
+  }
+  36% {
+    background-position: 0px 0px;
+  }
+  39% {
+    background-position: -120px 0px;
+  }
+  42% {
+    background-position: -240px 0px;
+  }
+  45% {
+    background-position: -360px 0px;
+  }
+  48% {
+    background-position: 0px 0px;
+  }
+  51% {
+    background-position: -120px 0px;
+  }
+  54% {
+    background-position: -240px 0px;
+  }
+  57% {
+    background-position: -360px 0px;
+  }
+  60% {
+    background-position: 0px 0px;
+  }
+  63% {
+    background-position: -120px 0px;
+  }
+  66% {
+    background-position: -240px 0px;
+  }
+  69% {
+    background-position: -360px 0px;
+  }
+  /* Walk */
+  72% {
+    background-position: 0px 0px;
+  }
+  75% {
+    background-position: -120px 0px;
+  }
+  78% {
+    background-position: -240px 0px;
+  }
+  81% {
+    background-position: -360px 0px;
+  }
+  /* Walk */
+  84% {
+    background-position: 0px 0px;
+  }
+  87% {
+    background-position: -120px 0px;
+  }
+  90% {
+    background-position: -240px 0px;
+  }
+  93% {
+    background-position: -360px 0px;
+  }
+  96% {
+    background-position: 0px 0px;
+  }
+  99% {
+    background-position: -120px 0px;
+  }
+  102% {
+    background-position: -240px 0px;
+  }
+  105% {
+    background-position: -360px 0px;
+  }
 }
-
-@-moz-keyframes dogWalk {
-  0% { background-position:0px 0px; }
-  3% { background-position:-120px 0px; }
-  6% { background-position:-240px 0px; }
-  9% { background-position:-360px 0px; }
-  12% { background-position:0px 0px; }
-  15% { background-position:-120px 0px; }
-  18% { background-position:-240px 0px; }
-  21% { background-position:-360px 0px; }
-  24% { background-position:0px 0px; }
-  27% { background-position:-120px 0px; }
-  30% { background-position:-240px 0px; }
-  33% { background-position:-360px 0px; }
-  36% { background-position:0px 0px; }
-  39% { background-position:-120px 0px; }
-  42% { background-position:-240px 0px; }
-  45% { background-position:-360px 0px; }
-  48% { background-position:0px 0px; }
-  51% { background-position:-120px 0px; }
-  54% { background-position:-240px 0px; }
-  57% { background-position:-360px 0px; }
-  60% { background-position:0px 0px; }
-  63% { background-position:-120px 0px; }
-  66% { background-position:-240px 0px; }
-  69% { background-position:-360px 0px;  } /* Walk */
-  72% { background-position:0px 0px; }
-  75% { background-position:-120px 0px; }
-  78% { background-position:-240px 0px; }
-  81% { background-position:-360px 0px;  } /* Walk */
-  84% { background-position:0px 0px; }
-  87% { background-position:-120px 0px; }
-  90% { background-position:-240px 0px; }
-  93% { background-position:-360px 0px; }
-  96% { background-position:0px 0px; }
-  99% { background-position:-120px 0px; }
-}
-
 
 @-webkit-keyframes dogWalk {
-  0% { background-position:0px 0px; }
-  3% { background-position:-120px 0px; }
-  6% { background-position:-240px 0px; }
-  9% { background-position:-360px 0px; }
-  12% { background-position:0px 0px; }
-  15% { background-position:-120px 0px; }
-  18% { background-position:-240px 0px; }
-  21% { background-position:-360px 0px; }
-  24% { background-position:0px 0px; }
-  27% { background-position:-120px 0px; }
-  30% { background-position:-240px 0px; }
-  33% { background-position:-360px 0px; }
-  36% { background-position:0px 0px; }
-  39% { background-position:-120px 0px; }
-  42% { background-position:-240px 0px; }
-  45% { background-position:-360px 0px; }
-  48% { background-position:0px 0px; }
-  51% { background-position:-120px 0px; }
-  54% { background-position:-240px 0px; }
-  57% { background-position:-360px 0px; }
-  60% { background-position:0px 0px; }
-  63% { background-position:-120px 0px; }
-  66% { background-position:-240px 0px; }
-  69% { background-position:-360px 0px;  } /* Walk */
-  72% { background-position:0px 0px; }
-  75% { background-position:-120px 0px; }
-  78% { background-position:-240px 0px; }
-  81% { background-position:-360px 0px;  } /* Walk */
-  84% { background-position:0px 0px; }
-  87% { background-position:-120px 0px; }
-  90% { background-position:-240px 0px; }
-  93% { background-position:-360px 0px; }
-  96% { background-position:0px 0px; }
-  99% { background-position:-120px 0px; }
+  0% {
+    background-position: 0px 0px;
+  }
+  3% {
+    background-position: -120px 0px;
+  }
+  6% {
+    background-position: -240px 0px;
+  }
+  9% {
+    background-position: -360px 0px;
+  }
+  12% {
+    background-position: 0px 0px;
+  }
+  15% {
+    background-position: -120px 0px;
+  }
+  18% {
+    background-position: -240px 0px;
+  }
+  21% {
+    background-position: -360px 0px;
+  }
+  24% {
+    background-position: 0px 0px;
+  }
+  27% {
+    background-position: -120px 0px;
+  }
+  30% {
+    background-position: -240px 0px;
+  }
+  33% {
+    background-position: -360px 0px;
+  }
+  36% {
+    background-position: 0px 0px;
+  }
+  39% {
+    background-position: -120px 0px;
+  }
+  42% {
+    background-position: -240px 0px;
+  }
+  45% {
+    background-position: -360px 0px;
+  }
+  48% {
+    background-position: 0px 0px;
+  }
+  51% {
+    background-position: -120px 0px;
+  }
+  54% {
+    background-position: -240px 0px;
+  }
+  57% {
+    background-position: -360px 0px;
+  }
+  60% {
+    background-position: 0px 0px;
+  }
+  63% {
+    background-position: -120px 0px;
+  }
+  66% {
+    background-position: -240px 0px;
+  }
+  69% {
+    background-position: -360px 0px;
+  }
+  /* Walk */
+  72% {
+    background-position: 0px 0px;
+  }
+  75% {
+    background-position: -120px 0px;
+  }
+  78% {
+    background-position: -240px 0px;
+  }
+  81% {
+    background-position: -360px 0px;
+  }
+  /* Walk */
+  84% {
+    background-position: 0px 0px;
+  }
+  87% {
+    background-position: -120px 0px;
+  }
+  90% {
+    background-position: -240px 0px;
+  }
+  93% {
+    background-position: -360px 0px;
+  }
+  96% {
+    background-position: 0px 0px;
+  }
+  99% {
+    background-position: -120px 0px;
+  }
 }
 
 @-o-keyframes dogWalk {
-  0% { background-position:0px 0px; }
-  3% { background-position:-120px 0px; }
-  6% { background-position:-240px 0px; }
-  9% { background-position:-360px 0px; }
-  12% { background-position:0px 0px; }
-  15% { background-position:-120px 0px; }
-  18% { background-position:-240px 0px; }
-  21% { background-position:-360px 0px; }
-  24% { background-position:0px 0px; }
-  27% { background-position:-120px 0px; }
-  30% { background-position:-240px 0px; }
-  33% { background-position:-360px 0px; }
-  36% { background-position:0px 0px; }
-  39% { background-position:-120px 0px; }
-  42% { background-position:-240px 0px; }
-  45% { background-position:-360px 0px; }
-  48% { background-position:0px 0px; }
-  51% { background-position:-120px 0px; }
-  54% { background-position:-240px 0px; }
-  57% { background-position:-360px 0px; }
-  60% { background-position:0px 0px; }
-  63% { background-position:-120px 0px; }
-  66% { background-position:-240px 0px; }
-  69% { background-position:-360px 0px;  } /* Walk */
-  72% { background-position:0px 0px; }
-  75% { background-position:-120px 0px; }
-  78% { background-position:-240px 0px; }
-  81% { background-position:-360px 0px;  } /* Walk */
-  84% { background-position:0px 0px; }
-  87% { background-position:-120px 0px; }
-  90% { background-position:-240px 0px; }
-  93% { background-position:-360px 0px; }
-  96% { background-position:0px 0px; }
-  99% { background-position:-120px 0px; }
+  0% {
+    background-position: 0px 0px;
+  }
+  3% {
+    background-position: -120px 0px;
+  }
+  6% {
+    background-position: -240px 0px;
+  }
+  9% {
+    background-position: -360px 0px;
+  }
+  12% {
+    background-position: 0px 0px;
+  }
+  15% {
+    background-position: -120px 0px;
+  }
+  18% {
+    background-position: -240px 0px;
+  }
+  21% {
+    background-position: -360px 0px;
+  }
+  24% {
+    background-position: 0px 0px;
+  }
+  27% {
+    background-position: -120px 0px;
+  }
+  30% {
+    background-position: -240px 0px;
+  }
+  33% {
+    background-position: -360px 0px;
+  }
+  36% {
+    background-position: 0px 0px;
+  }
+  39% {
+    background-position: -120px 0px;
+  }
+  42% {
+    background-position: -240px 0px;
+  }
+  45% {
+    background-position: -360px 0px;
+  }
+  48% {
+    background-position: 0px 0px;
+  }
+  51% {
+    background-position: -120px 0px;
+  }
+  54% {
+    background-position: -240px 0px;
+  }
+  57% {
+    background-position: -360px 0px;
+  }
+  60% {
+    background-position: 0px 0px;
+  }
+  63% {
+    background-position: -120px 0px;
+  }
+  66% {
+    background-position: -240px 0px;
+  }
+  69% {
+    background-position: -360px 0px;
+  }
+  /* Walk */
+  72% {
+    background-position: 0px 0px;
+  }
+  75% {
+    background-position: -120px 0px;
+  }
+  78% {
+    background-position: -240px 0px;
+  }
+  81% {
+    background-position: -360px 0px;
+  }
+  /* Walk */
+  84% {
+    background-position: 0px 0px;
+  }
+  87% {
+    background-position: -120px 0px;
+  }
+  90% {
+    background-position: -240px 0px;
+  }
+  93% {
+    background-position: -360px 0px;
+  }
+  96% {
+    background-position: 0px 0px;
+  }
+  99% {
+    background-position: -120px 0px;
+  }
 }
 
 @keyframes dogWalk {
-  0% { background-position:0px 0px; }
-  3% { background-position:-120px 0px; }
-  6% { background-position:-240px 0px; }
-  9% { background-position:-360px 0px; }
-  12% { background-position:0px 0px; }
-  15% { background-position:-120px 0px; }
-  18% { background-position:-240px 0px; }
-  21% { background-position:-360px 0px; }
-  24% { background-position:0px 0px; }
-  27% { background-position:-120px 0px; }
-  30% { background-position:-240px 0px; }
-  33% { background-position:-360px 0px; }
-  36% { background-position:0px 0px; }
-  39% { background-position:-120px 0px; }
-  42% { background-position:-240px 0px; }
-  45% { background-position:-360px 0px; }
-  48% { background-position:0px 0px; }
-  51% { background-position:-120px 0px; }
-  54% { background-position:-240px 0px; }
-  57% { background-position:-360px 0px; }
-  60% { background-position:0px 0px; }
-  63% { background-position:-120px 0px; }
-  66% { background-position:-240px 0px; }
-  69% { background-position:-360px 0px;  } /* Walk */
-  72% { background-position:0px 0px; }
-  75% { background-position:-120px 0px; }
-  78% { background-position:-240px 0px; }
-  81% { background-position:-360px 0px;  } /* Walk */
-  84% { background-position:0px 0px; }
-  87% { background-position:-120px 0px; }
-  90% { background-position:-240px 0px; }
-  93% { background-position:-360px 0px; }
-  96% { background-position:0px 0px; }
-  99% { background-position:-120px 0px; }
-}
-
-@-moz-keyframes dogWalk {
-  0% { background-position:0px 0px; }
-  3% { background-position:-120px 0px; }
-  6% { background-position:-240px 0px; }
-  9% { background-position:-360px 0px; }
-  12% { background-position:0px 0px; }
-  15% { background-position:-120px 0px; }
-  18% { background-position:-240px 0px; }
-  21% { background-position:-360px 0px; }
-  24% { background-position:0px 0px; }
-  27% { background-position:-120px 0px; }
-  30% { background-position:-240px 0px; }
-  33% { background-position:-360px 0px; }
-  36% { background-position:0px 0px; }
-  39% { background-position:-120px 0px; }
-  42% { background-position:-240px 0px; }
-  45% { background-position:-360px 0px; }
-  48% { background-position:0px 0px; }
-  51% { background-position:-120px 0px; }
-  54% { background-position:-240px 0px; }
-  57% { background-position:-360px 0px; }
-  60% { background-position:0px 0px; }
-  63% { background-position:-120px 0px; }
-  66% { background-position:-240px 0px; }
-  69% { background-position:-360px 0px;  } /* Walk */
-  72% { background-position:0px 0px; }
-  75% { background-position:-120px 0px; }
-  78% { background-position:-240px 0px; }
-  81% { background-position:-360px 0px;  } /* Walk */
-  84% { background-position:0px 0px; }
-  87% { background-position:-120px 0px; }
-  90% { background-position:-240px 0px; }
-  93% { background-position:-360px 0px; }
-  96% { background-position:0px 0px; }
-  99% { background-position:-120px 0px; }
+  0% {
+    background-position: 0px 0px;
+  }
+  3% {
+    background-position: -120px 0px;
+  }
+  6% {
+    background-position: -240px 0px;
+  }
+  9% {
+    background-position: -360px 0px;
+  }
+  12% {
+    background-position: 0px 0px;
+  }
+  15% {
+    background-position: -120px 0px;
+  }
+  18% {
+    background-position: -240px 0px;
+  }
+  21% {
+    background-position: -360px 0px;
+  }
+  24% {
+    background-position: 0px 0px;
+  }
+  27% {
+    background-position: -120px 0px;
+  }
+  30% {
+    background-position: -240px 0px;
+  }
+  33% {
+    background-position: -360px 0px;
+  }
+  36% {
+    background-position: 0px 0px;
+  }
+  39% {
+    background-position: -120px 0px;
+  }
+  42% {
+    background-position: -240px 0px;
+  }
+  45% {
+    background-position: -360px 0px;
+  }
+  48% {
+    background-position: 0px 0px;
+  }
+  51% {
+    background-position: -120px 0px;
+  }
+  54% {
+    background-position: -240px 0px;
+  }
+  57% {
+    background-position: -360px 0px;
+  }
+  60% {
+    background-position: 0px 0px;
+  }
+  63% {
+    background-position: -120px 0px;
+  }
+  66% {
+    background-position: -240px 0px;
+  }
+  69% {
+    background-position: -360px 0px;
+  }
+  /* Walk */
+  72% {
+    background-position: 0px 0px;
+  }
+  75% {
+    background-position: -120px 0px;
+  }
+  78% {
+    background-position: -240px 0px;
+  }
+  81% {
+    background-position: -360px 0px;
+  }
+  /* Walk */
+  84% {
+    background-position: 0px 0px;
+  }
+  87% {
+    background-position: -120px 0px;
+  }
+  90% {
+    background-position: -240px 0px;
+  }
+  93% {
+    background-position: -360px 0px;
+  }
+  96% {
+    background-position: 0px 0px;
+  }
+  99% {
+    background-position: -120px 0px;
+  }
 }
 
 @-webkit-keyframes dogWalk {
-  0% { background-position:0px 0px; }
-  3% { background-position:-120px 0px; }
-  6% { background-position:-240px 0px; }
-  9% { background-position:-360px 0px; }
-  12% { background-position:0px 0px; }
-  15% { background-position:-120px 0px; }
-  18% { background-position:-240px 0px; }
-  21% { background-position:-360px 0px; }
-  24% { background-position:0px 0px; }
-  27% { background-position:-120px 0px; }
-  30% { background-position:-240px 0px; }
-  33% { background-position:-360px 0px; }
-  36% { background-position:0px 0px; }
-  39% { background-position:-120px 0px; }
-  42% { background-position:-240px 0px; }
-  45% { background-position:-360px 0px; }
-  48% { background-position:0px 0px; }
-  51% { background-position:-120px 0px; }
-  54% { background-position:-240px 0px; }
-  57% { background-position:-360px 0px; }
-  60% { background-position:0px 0px; }
-  63% { background-position:-120px 0px; }
-  66% { background-position:-240px 0px; }
-  69% { background-position:-360px 0px;  } /* Walk */
-  72% { background-position:0px 0px; }
-  75% { background-position:-120px 0px; }
-  78% { background-position:-240px 0px; }
-  81% { background-position:-360px 0px;  } /* Walk */
-  84% { background-position:0px 0px; }
-  87% { background-position:-120px 0px; }
-  90% { background-position:-240px 0px; }
-  93% { background-position:-360px 0px; }
-  96% { background-position:0px 0px; }
-  99% { background-position:-120px 0px; }
+  0% {
+    background-position: 0px 0px;
+  }
+  3% {
+    background-position: -120px 0px;
+  }
+  6% {
+    background-position: -240px 0px;
+  }
+  9% {
+    background-position: -360px 0px;
+  }
+  12% {
+    background-position: 0px 0px;
+  }
+  15% {
+    background-position: -120px 0px;
+  }
+  18% {
+    background-position: -240px 0px;
+  }
+  21% {
+    background-position: -360px 0px;
+  }
+  24% {
+    background-position: 0px 0px;
+  }
+  27% {
+    background-position: -120px 0px;
+  }
+  30% {
+    background-position: -240px 0px;
+  }
+  33% {
+    background-position: -360px 0px;
+  }
+  36% {
+    background-position: 0px 0px;
+  }
+  39% {
+    background-position: -120px 0px;
+  }
+  42% {
+    background-position: -240px 0px;
+  }
+  45% {
+    background-position: -360px 0px;
+  }
+  48% {
+    background-position: 0px 0px;
+  }
+  51% {
+    background-position: -120px 0px;
+  }
+  54% {
+    background-position: -240px 0px;
+  }
+  57% {
+    background-position: -360px 0px;
+  }
+  60% {
+    background-position: 0px 0px;
+  }
+  63% {
+    background-position: -120px 0px;
+  }
+  66% {
+    background-position: -240px 0px;
+  }
+  69% {
+    background-position: -360px 0px;
+  }
+  /* Walk */
+  72% {
+    background-position: 0px 0px;
+  }
+  75% {
+    background-position: -120px 0px;
+  }
+  78% {
+    background-position: -240px 0px;
+  }
+  81% {
+    background-position: -360px 0px;
+  }
+  /* Walk */
+  84% {
+    background-position: 0px 0px;
+  }
+  87% {
+    background-position: -120px 0px;
+  }
+  90% {
+    background-position: -240px 0px;
+  }
+  93% {
+    background-position: -360px 0px;
+  }
+  96% {
+    background-position: 0px 0px;
+  }
+  99% {
+    background-position: -120px 0px;
+  }
 }
 
 @-o-keyframes dogWalk {
-  0% { background-position:0px 0px; }
-  3% { background-position:-120px 0px; }
-  6% { background-position:-240px 0px; }
-  9% { background-position:-360px 0px; }
-  12% { background-position:0px 0px; }
-  15% { background-position:-120px 0px; }
-  18% { background-position:-240px 0px; }
-  21% { background-position:-360px 0px; }
-  24% { background-position:0px 0px; }
-  27% { background-position:-120px 0px; }
-  30% { background-position:-240px 0px; }
-  33% { background-position:-360px 0px; }
-  36% { background-position:0px 0px; }
-  39% { background-position:-120px 0px; }
-  42% { background-position:-240px 0px; }
-  45% { background-position:-360px 0px; }
-  48% { background-position:0px 0px; }
-  51% { background-position:-120px 0px; }
-  54% { background-position:-240px 0px; }
-  57% { background-position:-360px 0px; }
-  60% { background-position:0px 0px; }
-  63% { background-position:-120px 0px; }
-  66% { background-position:-240px 0px; }
-  69% { background-position:-360px 0px;  } /* Walk */
-  72% { background-position:0px 0px; }
-  75% { background-position:-120px 0px; }
-  78% { background-position:-240px 0px; }
-  81% { background-position:-360px 0px;  } /* Walk */
-  84% { background-position:0px 0px; }
-  87% { background-position:-120px 0px; }
-  90% { background-position:-240px 0px; }
-  93% { background-position:-360px 0px; }
-  96% { background-position:0px 0px; }
-  99% { background-position:-12px 0px; }
+  0% {
+    background-position: 0px 0px;
+  }
+  3% {
+    background-position: -120px 0px;
+  }
+  6% {
+    background-position: -240px 0px;
+  }
+  9% {
+    background-position: -360px 0px;
+  }
+  12% {
+    background-position: 0px 0px;
+  }
+  15% {
+    background-position: -120px 0px;
+  }
+  18% {
+    background-position: -240px 0px;
+  }
+  21% {
+    background-position: -360px 0px;
+  }
+  24% {
+    background-position: 0px 0px;
+  }
+  27% {
+    background-position: -120px 0px;
+  }
+  30% {
+    background-position: -240px 0px;
+  }
+  33% {
+    background-position: -360px 0px;
+  }
+  36% {
+    background-position: 0px 0px;
+  }
+  39% {
+    background-position: -120px 0px;
+  }
+  42% {
+    background-position: -240px 0px;
+  }
+  45% {
+    background-position: -360px 0px;
+  }
+  48% {
+    background-position: 0px 0px;
+  }
+  51% {
+    background-position: -120px 0px;
+  }
+  54% {
+    background-position: -240px 0px;
+  }
+  57% {
+    background-position: -360px 0px;
+  }
+  60% {
+    background-position: 0px 0px;
+  }
+  63% {
+    background-position: -120px 0px;
+  }
+  66% {
+    background-position: -240px 0px;
+  }
+  69% {
+    background-position: -360px 0px;
+  }
+  /* Walk */
+  72% {
+    background-position: 0px 0px;
+  }
+  75% {
+    background-position: -120px 0px;
+  }
+  78% {
+    background-position: -240px 0px;
+  }
+  81% {
+    background-position: -360px 0px;
+  }
+  /* Walk */
+  84% {
+    background-position: 0px 0px;
+  }
+  87% {
+    background-position: -120px 0px;
+  }
+  90% {
+    background-position: -240px 0px;
+  }
+  93% {
+    background-position: -360px 0px;
+  }
+  96% {
+    background-position: 0px 0px;
+  }
+  99% {
+    background-position: -12px 0px;
+  }
 }
-
-/*To Do-(To- Megharth) Responsive Dogshow*/
-
-@keyframes dogLaugh {
-  0% { background-position:-360px -110px; }
-  50% { background-position:-480px -110px; }
-  100% { background-position:-360px -110px; }
-}
-
-@-moz-keyframes dogLaugh {
-  0% { background-position:-360px -110px; }
-  50% { background-position:-480px -110px; }
-  100% { background-position:-360px -110px; }
-}
-
-
-@-webkit-keyframes dogLaugh {
-  0% { background-position:-360px -110px; }
-  50% { background-position:-480px -110px; }
-  100% { background-position:-360px -110px; }
-}
-
-
-@-o-keyframes dogLaugh {
-  0% { background-position:-360px -110px; }
-  50% { background-position:-480px -110px; }
-  100% { background-position:-360px -110px; }
-}
-@keyframes dogShow {
-  0% { top:560px; }
-  25% { top: 480px; }
-  75% { top: 480px; }
-  100% { top:560px; }
-}
-
-@-moz-keyframes dogShow {
-  0% { top:560px; }
-  25% { top: 480px; }
-  75% { top: 480px; }
-  100% { top:560px; }
-}
-
-@-webkit-keyframes dogShow {
-  0% { top:560px; }
-  25% { top: 480px; }
-  75% { top: 480px; }
-  100% { top:560px; }
-}
-
-@-o-keyframes dogShow {
-  0% { top:560px; }
-  25% { top: 480px; }
-  75% { top: 480px; }
-  100% { top:560px; }
-}
-
 
 #stage {
-  display: block;
-  position: absolute;
-  z-index: -1;
-  background:url('../img/duckhunt.png') no-repeat bottom;
-  width:100%;
+  position: fixed;
+  z-index: -15;
+  background: url('../img/duckhunt.png') no-repeat bottom;
   height: 100%;
-  overflow:hidden;
+  width: 100%;
+  bottom: 0;
   background-size: cover;
 }
 
 #stage > input {
-  display:none;
+  display: none;
 }
 
 #shootingArea {
-  width:100%;
-  height:100%;
-  overflow:hidden;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 
 #shootingArea > div {
-  position:absolute;
-  width:100%;
-  height:550px;
-  left:5000px;
-  overflow:hidden;
+  position: absolute;
+  width: 100%;
+  height: 550px;
+  left: 5000px;
+  overflow: hidden;
 }
 
 #shootingArea > div > div {
-  position:absolute;
-  width:100%;
-  height:100%;
+  position: absolute;
+  width: 100%;
+  height: 100%;
 
 }
 
 #shootingArea > div > div > label {
-  position:absolute;
-  top:0;
-  left:0;
-  height:550px;
-  width:100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 550px;
+  width: 100%;
 }
 
 #shootingArea > div > div > div > label, #shootingArea > div > div > div > span {
-  background: url('../img/sprite.png') no-repeat;
-  height:76px;
-  display:flex;
-  width:70px;
-  position:absolute;
-  background-position:0px -220px;
+  background: url('../img/duckhuntDog.png') no-repeat;
+  height: 76px;
+  display: flex;
+  width: 70px;
+  position: absolute;
+  background-position: 0px -220px;
 }
 
 #shootingArea > div > div > div > span {
-  display:none;
+  display: none;
 }
 
 #dogIntro {
-  position:absolute;
+  position: absolute;
   bottom: 10%;
-  z-index:10;
-  background: url('../img/sprite.png') no-repeat;
+  z-index: 10;
+  background: url('../img/duckhuntDog.png') no-repeat;
   width: 120px;
   height: 100px;
 }
 
-#dogLaugh {
-  width:100%;
-  height:570px;
-  overflow:hidden;
-  position:absolute;
-  top:0;
-  left:0;
-}
-
-#dogLaugh > div {
-  position:absolute;
-  top:560px;
-  left:45%;
-}
-
-#dogLaugh > div > span {
-  width: 150px;
-  height: 100px;
-}
-
-#dogLaugh > div > span:nth-child(1) {
-  display:block;
-  background: url('../img/sprite.png') no-repeat;
-
-  animation: dogLaugh 200ms infinite steps(1) alternate;
-  -moz-animation: dogLaugh 200ms infinite steps(1) alternate;
-  -webkit-animation: dogLaugh 200ms infinite steps(1) alternate;
-  -o-animation: dogLaugh 200ms infinite steps(1) alternate;
-}
-
-#dogLaugh > div > span:nth-child(2) {
-  display:none;
-  background: url('../img/sprite.png') no-repeat;
-  background-position:-600px -0px;
-}
-
 /*The timers*/
-
 /*Intro dog*/
 #dogIntro {
-  animation: dogMove 7s linear forwards, dogWalk 6s step-start 1 forwards ;
-  -moz-animation: dogMove 7s linear forwards, dogWalk 6s step-start 1 forwards;
-  -webkit-animation: dogMove 7s linear forwards, dogWalk 6s step-start 1 forwards;
-  -o-animation: dogMove 7s linear forwards, dogWalk 6s step-start 1 forwards;
+  animation: dogMove 7s linear forwards infinite, dogWalk 6s step-start infinite;
+  -webkit-animation: dogMove 7s linear forwards infinite, dogWalk 6s step-start infinite;
+  -o-animation: dogMove 7s linear forwards infinite, dogWalk 6s step-start infinite;
 }
-
-#dogLaugh > div:nth-child(1) {
-  /*The lvlEnd - 4 seconds*/
-
-  animation: dogShow 8s 8s;
-  -moz-animation: dogShow 8s 8s;
-  -webkit-animation: dogShow 8s 8s;
-  -o-animation: dogShow 8s 8s;
-}
-

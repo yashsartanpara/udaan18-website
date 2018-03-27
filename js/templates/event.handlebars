@@ -1,58 +1,65 @@
 <div class="container no-margin white-text">
-    <div class="event-row row center-xs">
-        <div class="col-sm-4 col-xs-12 dark-col">
-            <div class="row end-xs">
-                <div class="col-xs-12"><img src="img/cancel.svg" alt="Close" class="close"></div>
-            </div>
-            <div class="row">
-                <div class="col-xs-11 col-xs-offset-1 title">{{name}}</div>
-            </div>
-            <div class="row">
-                <div class="col-xs-12">
-                    <div class="event-description">{{description}}</div>
-                </div>
-            </div>
-            <div class="participant-data">
-                <div class="row">
-                    <div class="col-xs-6 chip">
-                        <div>Participants x{{participants}}</div>
-                    </div>
-                    <div class="col-xs-6 chip">
-                        <div>Fees: {{fees}}</div>
-                    </div>
-                </div>
-                {{#if prizes}}
-                    <div class="row">
-                        {{#if prizes.[0]}}
-                            <div class="col-xs-6 chip">Winners: {{prizes.[0]}}</div>
-                        {{/if}}
-                        {{#if prizes.[1]}}
-                            <div class="col-xs-6 chip">Runners up: {{prizes.[1]}}</div>
-                        {{/if}}
-                    </div>
-                {{/if}}
-            </div>
+  <div class="event-row row center-xs">
+    <div class="col-sm-4 col-xs-12 dark-col">
+      <div class="row end-xs">
+        <div class="col-xs-12"><span class="close">X</span></div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 title">{{name}}</div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="event-description">{{tagline}}</div>
         </div>
-
-        <div class="col-sm-8 col-xs-12 light-col" style="overflow-y:auto;overflow-x: hidden ">
-            <div class="row start-xs levels">
-                {{#each rounds}}
-                    <div class="col-xs-12">
-                        <div class="title">Level {{succ @index}}</div>
-                        <div>
-                            <blockquote>{{this}}</blockquote>
-                        </div>
-                    </div>
-                {{/each}}
-            </div>
-            <div class="row managers-row">
-                {{#each managers}}
-                    <div class="col-xs-12 event-managers">
-                        <span class="manager-name">{{name}}:</span> {{mobile}}
-                    </div>
-                {{/each}}
-            </div>
+      </div>
+      <div class="participant-data">
+        <div class="row">
+          <div class="col-xs-12 col-lg-6 col-md-6 chip">
+            <div>Participants x{{participants}}</div>
+          </div>
+          <div class="col-xs-12 col-lg-6 col-md-6 chip">
+            <div>Fees: {{fees}}</div>
+          </div>
         </div>
+        {{#if prizes}}
+          <div class="row">
+            {{#if prizes.[0]}}
+              <div class="col-xs-12 col-lg-6 col-md-6 chip">Winners: {{prizes.[0]}}</div>
+            {{/if}}
+            {{#if prizes.[1]}}
+              <div class="col-xs-12 col-lg-6 col-md-6 chip">Runners up: {{prizes.[1]}}</div>
+            {{/if}}
+          </div>
+        {{/if}}
+      </div>
     </div>
+
+    <div class="col-sm-8 col-xs-12 light-col" style="overflow-y:auto;overflow-x: hidden ">
+      <div class="row start-xs levels">
+        {{#each rounds}}
+          <div class="col-xs-12">
+            <div class="title">Level {{succ @index}}</div>
+            <div>
+              <blockquote>{{this}}</blockquote>
+            </div>
+          </div>
+        {{/each}}
+      </div>
+      <div class="row managers-row">
+        {{#each managers}}
+          <div class="col-xs-12 event-managers">
+            <span class="manager-name">{{name}}:</span> <a href="tel:{{phone}}">{{phone}}</a>
+          </div>
+        {{/each}}
+      </div>
+      <div class="row notes-row">
+        {{#if notes}}
+          <div class="col-xs-12">
+            <span>{{notes}}</span>
+          </div>
+        {{/if}}
+      </div>
+    </div>
+  </div>
 </div>
 

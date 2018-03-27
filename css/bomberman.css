@@ -1,41 +1,190 @@
-.bomber{
-  position:absolute;
-  bottom:1%;
-  width: 42px; /*293*/
-  height: 61px; /*1358*/
-  background: url('../img/bomberman.png') ;
-  background-position: 0px center !important;
+body {
+  width: 100%;
+  background-color: green;
+}
+
+.bombermanBg {
+  display: flex;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  z-index: -15;
+  bottom: 0;
+}
+
+.bomberBg {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  height: 85%;
+  width: 100%;
+  bottom: 15%;
+}
+
+.bombertop {
+  background: url("../img/bombermanblock.svg");
+  background-repeat: repeat-x;
+  /*background-size: contain;*/
+  background-position-y: top;
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: inherit;
+  z-index: -1;
+
+}
+
+.bomberside1 {
+  background: url("../img/bombermanblock.svg");
+  display: block;
+  background-repeat: repeat-y;
+  background-position-x: right;
+  height: 100%;
+  width: inherit;
+  position: absolute;
+  z-index: -1;
+}
+
+.bomberside2 {
+  background: url("../img/bombermanblock.svg");
+  display: block;
+  background-repeat: repeat-y;
+  background-position-x: left;
+  /*top: 80%;*/
+  height: 100%;
+  width: inherit;
+  position: absolute;
+  /*background-size: contain;*/
+  z-index: -1;
+}
+
+.bomberman {
+  width: 100%;
+  bottom: 0 !important;
+  position: absolute;
+  height: 10%;
+}
+
+.bomber {
+  position: absolute;
+  bottom: 1%;
+  width: 42px;
+  height: 61px;
+  background: url('../img/bomberman.gif');
+  background-position: 0px;
   animation: play 1s steps(3) infinite,
   run1 10s linear forwards infinite;
   z-index: 3;
 }
 
-.bulb{
-  position:absolute;
-  bottom:1%;
+.bulb {
+  position: absolute;
+  bottom: 1%;
   left: -50px;
-  width: 52px; /*293*/
-  height: 60px; /*1358*/
-  background: url('../img/bulbs.png') ;
-  background-position: 7px center !important;
+  width: 52px;
+  height: 60px;
+  background: url('../img/bulbs.gif');
+  background-position: 7px center;
   animation: bulbplay 1s steps(6) infinite,
   bulbrun 10s 0.5s linear forwards infinite;
   z-index: 2;
 }
 
 @keyframes play {
-  100% { background-position: -126px; }
+  100% {
+    background-position: -126px;
+  }
 }
 
 @keyframes run1 {
-  from {left:0px;}
-  to {left:100%;}
+  from {
+    left: 0px;
+  }
+  to {
+    left: 100%;
+  }
 }
+
 @keyframes bulbplay {
-  100% { background-position: -313px; }
+  100% {
+    background-position: -313px;
+  }
 }
 
 @keyframes bulbrun {
-  from {left:0px;}
-  to {left:100%;}
+  from {
+    left: 0px;
+  }
+  to {
+    left: 100%;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 720px) {
+
+  .bomber {
+    position: absolute;
+    bottom: 1%;
+    width: 42px;
+    height: 61px;
+    background: url('../img/bomberman.gif');
+    background-position: 0px;
+    animation: play 1s steps(3) infinite,
+    run1 8s linear forwards infinite;
+    z-index: 3;
+  }
+
+  .bulb {
+    position: absolute;
+    bottom: 1%;
+    left: -50px;
+    width: 52px;
+    height: 60px;
+    background: url('../img/bulbs.gif');
+    background-position: 7px center;
+    animation: bulbplay 1s steps(6) infinite,
+    bulbrun 8s 2s linear forwards infinite;
+    z-index: 2;
+  }
+
+  @keyframes run1 {
+    from {
+      left: -10px;
+    }
+    to {
+      left: 100%;
+    }
+  }
+
+  @keyframes bulbrun {
+    from {
+      left: 0px;
+    }
+    to {
+      left: 110%;
+    }
+  }
+
+}
+
+@media screen and (min-height: 320px) and (max-height: 720px) {
+
+  @keyframes run1 {
+    from {
+      left: -10px;
+    }
+    to {
+      left: 100%;
+    }
+  }
+
+  @keyframes bulbrun {
+    from {
+      left: 0px;
+    }
+    to {
+      left: 110%;
+    }
+  }
+
 }

@@ -1,29 +1,31 @@
 <div class="container white-text">
-    <div class="row custom-row">
-        <img src="img/cancel.svg" alt="Cancel" class="close">
+  <div class="row end-xs">
+    <div class="col-xs-12">
+      <span class="close">X</span>
     </div>
-    <div class="row middle-xs custom-row">
-        <div class="col-xs-12 col-sm-6 center-xs title">Heads:</div>
-        <div class="col-xs-12 col-sm-6 center-xs start-md">
-            <div class="row head-name">
-                {{#each heads}}
-                    <div class="col-xs-12">
-                        {{name}} - {{mobile}}
-                    </div>
-                {{/each}}</div>
-        </div>
+  </div>
+  <div class="row middle-xs custom-row">
+    <div class="col-xs-12 col-sm-6 center-xs title">Heads:</div>
+    <div class="col-xs-12 col-sm-6 center-xs start-md">
+      <div class="row head-name">
+        {{#each heads}}
+          <div class="col-xs-12">
+            {{name}} - <a href="tel:{{phone}}">{{phone}}</a>
+          </div>
+        {{/each}}</div>
     </div>
-    <br>
-    <div class="row middle-xs custom-row">
-        <div class="col-xs-12 col-sm-6 center-xs title">CoHeads:</div>
-        <div class="col-xs-12 col-sm-6">
-            <div class="row custom-row head-name center-xs start-md">
-                {{#each coHeads}}
-                    <div class="col-xs-12">
-                        {{name}} - {{mobile}}
-                    </div>
-                {{/each}}
-            </div>
-        </div>
+  </div>
+  <br>
+  <div class="row middle-xs custom-row">
+    <div class="col-xs-12 col-sm-6 center-xs title">CoHeads:</div>
+    <div class="col-xs-12 col-sm-6">
+      <div class="row custom-row head-name center-xs start-md">
+        {{#each coHeads}}
+          <div class="col-xs-12">
+            {{name}} - <a href="tel:{{phone}}">{{phone}}</a>
+          </div>
+        {{/each}}
+      </div>
     </div>
+  </div>
 </div>

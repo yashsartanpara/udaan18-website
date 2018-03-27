@@ -1,43 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <title>Dynamo Bombers</title>
-    <link rel="stylesheet" href="css/flexboxgrid.min.css">
-    <link rel="stylesheet" href="css/global.css">
-    <link rel="stylesheet" href="css/tech.css">
-    <link rel="stylesheet" href="css/bomberman.css">
-    <script src="js/vendor/handlebars.runtime.min.js"></script>
-    <script src="js/vendor/jquery-3.1.1.min.js"></script>
-    <script src="js/templates/event.min.js"></script>
-    <script src="js/templates/heads.min.js"></script>
-    <script src="data.js"></script>
-    <script>
-        var machinists = data.tech.find(function (department) {
-            return department.alias == 'Machinists';
-        });
-        var events = machinists.events;
-        var heads = {'heads': machinists.heads, 'coHeads': machinists.coHeads};
-    </script>
-    <style>
-        body {
-            overflow: hidden;
-            background-color: green;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Dynamo Bombers</title>
+  <meta itemprop="image" content="https://udaan18.com/favicon.png">
+  <link rel="shortcut icon" href="favicon.png" type="image/png">
+  <link rel="stylesheet" href="css/flexboxgrid.min.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/tech.css">
+  <link rel="stylesheet" href="css/bomberman.css">
+  <script src="js/vendor/handlebars.runtime.min.js"></script>
+  <script src="js/vendor/jquery-3.1.1.min.js"></script>
+  <script src="js/templates/event.min.js"></script>
+  <script src="js/templates/heads.min.js"></script>
+  <script src="data.js"></script>
+  <script src="js/events.js"></script>
+  <script>
+    var dynamobombers = data.technical.find(function (department) {
+      return department.name == 'electrical';
+    });
+    var events = dynamobombers.events;
+    var heads = {'heads': dynamobombers.heads, 'coHeads': dynamobombers.coHeads};
+    var notes = dynamobombers.notes
+  </script>
+  <style>
+    :root {
+      --background-color: rgba(51, 51, 0, 0.9);
+      --background-color1: rgba(51, 51, 0, 0.7);
+    }
+
+    .logoImg {
+      margin-top: 4vh;
+    }
+
+    #exit_page, #events {
+      color: white !important;
+      background: var(--background-color1) !important;
+    }
+
+    #event-modal, #heads-modal {
+      background: var(--background-color) !important;
+    }
+
+    a, .event-name, .head-title {
+      color: white !important;
+    }
+
+    .white-text {
+      color: white !important;
+    }
+
+    .chip, .close {
+      border: 3px solid white !important;
+    }
+  </style>
 </head>
 <body>
-<div class="bomber"></div>
-<div class="bulb"></div>
-<div class="events center-font">
-    <div id="events"></div>
-    <div class="head-title">Heads</div>
+<script src="js/vendor/js.cookie.js"></script>
+<script src="js/vendor/audio-manager.js"></script>
+<audio preload="auto" id="closeSound" src="assets/sound/close.ogg" muted></audio>
+<audio preload="auto" id="bomberStart" src="assets/sound/bomberstart.ogg"></audio>
+<audio preload="auto" id="eventClick" src="assets/sound/blank.ogg" muted></audio>
+<script src="js/loading.js"></script>
+<div class="logo">
+  <img class="logoImg" src="img/cassettee/dynamo-bomber-logo.svg">
 </div>
-<div class="dept-name">Dynamo Bombers</div>
+<div class="bombermanBg">
+  <div class="bomberBg">
+    <div class="bombertop"></div>
+    <div class="bomberside1"></div>
+    <div class="bomberside2"></div>
+  </div>
+  <div class="bomberman">
+    <div class="bomber"></div>
+    <div class="bulb"></div>
+  </div>
+</div>
+<div class="events center-font">
+  <div id="events"></div>
+</div>
 <div id="event-modal"></div>
 <div id="heads-modal"></div>
-<script src="js/events.js"></script>
+<div id="exit_page">
+  Reset
+</div>
+<script>
+  window.audioManager.onload = function () {
+    document.getElementById("bomberStart").play();
+  }
+</script>
 </body>
 </html>

@@ -1,31 +1,47 @@
-.ai-bg{
-  position:absolute;
-  bottom:0;
+body {
+  -moz-user-select: none;
+}
+
+.ai-bg {
+  display: flex;
+  position: absolute;
+  bottom: 0;
   height: 100%;
   width: 100%;
   background: url('../img/ai.jpg') no-repeat bottom;
   background-size: cover;
-  z-index: 5;
+  z-index: -1;
 }
-.ai{
-  position:absolute;
-  bottom:1%;
-  width: 62px; /*293*/
-  height: 72px; /*1358*/
-  background: url('../img/aisprite.gif') ;
-  background-position: 0px center !important;
+
+.head-title {
+  display: none !important;
+}
+
+.ai {
+  position: absolute;
+  bottom: 1%;
+  width: 62px;
+  height: 72px;
+  background: url('../img/aisprite.gif');
+  background-position: 0px center;
   animation: play 1.5s steps(5) infinite,
   run1 10s linear forwards infinite;
   z-index: 5;
 }
 
 @keyframes play {
-  100% { background-position: -308px; }
+  100% {
+    background-position: -308px;
+  }
 }
 
 @keyframes run1 {
-  from {left:0px;}
-  to {left:100%;}
+  from {
+    left: 0px;
+  }
+  to {
+    left: 100%;
+  }
 }
 
 

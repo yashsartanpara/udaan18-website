@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Pandora Box</title>
+  <meta itemprop="image" content="https://udaan18.com/favicon.png">
+  <link rel="shortcut icon" href="favicon.png" type="image/png">
+  <link rel="stylesheet" href="css/flexboxgrid.min.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/non-tech.css">
+  <link rel="stylesheet" href="css/sf.css">
+  <script src="js/vendor/jquery-3.1.1.min.js"></script>
+  <script src="js/vendor/handlebars.runtime.min.js"></script>
+  <script src="js/templates/event.min.js"></script>
+  <script src="data.js"></script>
+  <script>
+    var events = data.nonTechnical;
+  </script>
+  <style>
+    :root {
+      --background-color: rgba(0, 51, 0, 0.9);
+      --background-color1: rgba(0, 51, 0, 0.9);
+    }
+
+    #exit_page, #events {
+      background: var(--background-color1) !important;
+    }
+
+    #event-modal, #heads-modal {
+      background: var(--background-color) !important;
+    }
+
+    .white-text, a, #exit_page {
+      color: white;
+    }
+
+    .chip, .close {
+      border: 3px solid white;
+    }
+  </style>
+</head>
+<body>
+<script src="js/vendor/js.cookie.js"></script>
+<script src="js/vendor/audio-manager.js"></script>
+<audio preload="auto" id="closeSound" src="assets/sound/close.ogg" muted></audio>
+<audio preload="auto" id="streetStart" src="assets/sound/street.ogg"></audio>
+<audio preload="auto" id="eventClick" src="#" muted></audio>
+<script src="js/loading.js"></script>
+<div class="logo">
+  <img class="logoImg" src="img/cassettee/pandoras-box-logo.svg">
+</div>
+<div class="ryu">
+</div>
+<div class="guile">
+</div>
+<div class="hudo">
+</div>
+<div class="kosign">
+</div>
+<div class="street">
+</div>
+<div class="nontech-events">
+  <div id="nontechEvents" class="row"></div>
+</div>
+<div id="event-modal"></div>
+<div id="exit_page">
+  Reset
+</div>
+<script src="js/sf.js"></script>
+<script src="js/events.js"></script>
+<script>
+  window.audioManager.onload = function () {
+    document.getElementById("streetStart").play();
+  }
+</script>
+</body>
+</html>
