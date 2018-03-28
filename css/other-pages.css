@@ -193,6 +193,44 @@ html, body {
   min-height: 60%;
 }
 
+#udaan-nights .block {
+  width: calc(var(--block-lg-unit) * 2);
+  height: calc(var(--block-lg-unit) * 2);
+}
+
+@media only screen and (max-width: 75em) {
+  #udaan-nights .block {
+    width: calc(var(--block-md-unit) * 2);
+    height: calc(var(--block-md-unit) * 2);
+  }
+}
+
+@media only screen and (max-width: 64em) {
+  #udaan-nights .block {
+    width: calc(var(--block-sm-unit) * 2);
+    height: calc(var(--block-sm-unit) * 2);
+  }
+}
+
+@media only screen and (max-width: 48em) {
+  #udaan-nights .block {
+    width: calc(var(--block-xs-unit) * 2);
+  }
+}
+
+@media (orientation: landscape) {
+  #udaan-nights .block {
+    flex-basis: 33.33333333%;
+    max-width: 33.33333333%;
+    height: calc(var(--block-lg-unit) * 2);
+  }
+}
+
+#udaan-nights .block img {
+  width: 100%;
+  height: auto;
+}
+
 /*==========================================
 *   ---- Block CSS
 *===========================================
