@@ -253,7 +253,6 @@ html, body {
 }
 
 .block {
-
   cursor: pointer;
   z-index: var(--block--z-index);
   overflow: hidden;
@@ -618,4 +617,114 @@ html, body {
   border-top: 0.5vh dashed rgba(0,0,0,0.1);
   margin-top: 2.5vh;
   font-size: 2.4vh;
+}
+
+/*========================================================================================
+*   Udaan Event Partners Page CSS
+*=========================================================================================
+*/
+
+#udaan-event-partners {
+  background-color: #FFF;
+  color: #111
+}
+
+#udaan-event-partners .header {
+  top:0;
+  height: 30vh;
+  width: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  font-size: 3vh;
+  z-index: 1;
+  overflow: hidden;
+}
+
+#udaan-event-partners .header .header-image {
+  display: flex;
+  justify-content: center;
+  height: 20vh;
+  width: 100%;
+  margin-bottom: 3vh;
+}
+
+#udaan-event-partners .header .header-image img {
+  height: 100%;
+  width: auto;
+}
+
+#udaan-event-partners .header .keyword {
+  position: absolute;
+  font-size: 2vh;
+  color: rgba(17,17,17,0.8);
+}
+
+#udaan-event-partners .content {
+  position: absolute;
+  top: 30vh;
+  z-index: 0;
+  left: 0;
+}
+
+.udaan-event-partners-block-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  user-select: none;
+}
+
+#udaan-event-partners .partners-block-content .partners-block-image img {
+  width: 100%;
+  height: 100%;
+}
+
+#udaan-event-partners .partners-block-text {
+  display: flex;
+  flex-direction: column;
+  height: 10vh;
+}
+
+#udaan-event-partners .partners-block {
+  text-align: center;
+}
+
+#udaan-event-partners .partners-block-container {
+  justify-content: center;
+}
+
+@media only screen and (max-width: 75em) {
+  #udaan-event-partners .partners-block {
+    padding: 0;
+  }
+}
+
+#udaan-event-partners .partners-block-content .fill {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  color: #fffd96;
+  box-shadow: rgba(55, 55, 55, 0.2) 0.5vh 0.5vh 0;
+  font-size: 1.6vh;
+  border: 0.2vh solid #111;
+}
+
+#udaan-event-partners .partners-block-content .fill-large {
+  box-shadow: rgba(55, 55, 55, 0.2) 1vh 1vh 0;
+  font-size: 2.0vh;
+  border: 0.4vh solid #111;
+}
+
+#udaan-event-partners .partners-block-sub-text {
+  font-size: 1.8vh;
+}
+
+.partners-block-content img {
+  width: 100%;
+  height: auto;
 }
