@@ -48,6 +48,14 @@ window['data-team-udaan'] =  [
       {
         "name": "Rejoice Paracal",
         "title": "Head"
+      },
+      {
+        "name": "Nijansshi Thakkar",
+        "title": "Co-Head"
+      },
+      {
+        "name": "Ashesh Sheth",
+        "title": "Co-Head"
       }
     ]
   },
@@ -61,6 +69,10 @@ window['data-team-udaan'] =  [
       {
         "name": "Udit Patel",
         "title": "Head"
+      },
+      {
+        "name": "Raj Kadhi",
+        "title": "Co-Head"
       }
     ]
   },
@@ -74,6 +86,14 @@ window['data-team-udaan'] =  [
       {
         "name": "Hiren Thakkar",
         "title": "Head"
+      },
+      {
+        "name": "Parthesh Mehta",
+        "title": "Co-Head"
+      },
+      {
+        "name": "Ravi Patel",
+        "title": "Co-Head"
       }
     ]
   },
@@ -83,6 +103,14 @@ window['data-team-udaan'] =  [
       {
         "name": "Hardik Shilu",
         "title": "Head"
+      },
+      {
+        "name": "Abhishek Pankhaniya",
+        "title": "Co-Head"
+      },
+      {
+        "name": "Jenish Vaghasia",
+        "title": "Co-Head"
       }
     ]
   },
@@ -96,6 +124,10 @@ window['data-team-udaan'] =  [
       {
         "name": "Chintan Acharya",
         "title": "Head"
+      },
+      {
+        "name": "Megharth Lakhataria",
+        "title": "Co-Head"
       }
     ]
   },
@@ -105,6 +137,10 @@ window['data-team-udaan'] =  [
       {
         "name": "Tushar Gonavala",
         "title": "Head"
+      },
+      {
+        "name": "Heet Patel",
+        "title": "Co-Head"
       }
     ]
   },
@@ -122,6 +158,18 @@ window['data-team-udaan'] =  [
       {
         "name": "Dharam Patel",
         "title": "Head"
+      },
+      {
+        "name": "Aakash Patel",
+        "title": "Co-Head"
+      },
+      {
+        "name": "Vishal Virani",
+        "title": "Co-Head"
+      },
+      {
+        "name": "Preet Desai",
+        "title": "Co-Head"
       }
     ]
   },
@@ -135,6 +183,14 @@ window['data-team-udaan'] =  [
       {
         "name": "Vivek Bariya",
         "title": "Head"
+      },
+      {
+        "name": "Soham Acharya",
+        "title": "Co-Head"
+      },
+      {
+        "name": "Tanmay Chaudhary",
+        "title": "Co-Head"
       }
     ]
   },
@@ -148,6 +204,14 @@ window['data-team-udaan'] =  [
       {
         "name": "Meet Pachchigar",
         "title": "Head"
+      },
+      {
+        "name": "Gautam Vivekanandan",
+        "title": "Co-Head"
+      },
+      {
+        "name": "Kalyani Bhatt",
+        "title": "Co-Head"
       }
     ]
   },
@@ -161,7 +225,16 @@ window['data-team-udaan'] =  [
       {
         "name": "Vatsal Rami",
         "title": "Head"
+      },
+      {
+        "name": "Aakash Mistry",
+        "title": "Co-Head"
+      },
+      {
+        "name": "Harshang Patel",
+        "title": "Co-Head"
       }
     ]
   }
-];
+]
+
