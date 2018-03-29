@@ -627,17 +627,17 @@ html, body {
 }
 
 /*========================================================================================
-*   Udaan Event Partners Page CSS
+*   Team Udaan Event Partners
 *=========================================================================================
 */
 
 #udaan-event-partners {
-  background-color: #FFF;
-  color: #111
+  background-color: #111;
+  color: #FFF
 }
 
 #udaan-event-partners .header {
-  top:0;
+  top: 0;
   height: 30vh;
   width: 100%;
   position: absolute;
@@ -667,7 +667,7 @@ html, body {
 #udaan-event-partners .header .keyword {
   position: absolute;
   font-size: 2vh;
-  color: rgba(17,17,17,0.8);
+  color: rgba(17, 17, 17, 0.8);
 }
 
 #udaan-event-partners .content {
@@ -677,7 +677,7 @@ html, body {
   left: 0;
 }
 
-.udaan-event-partners-block-container {
+.team-block-container, .coreTeam-block-container {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -686,52 +686,117 @@ html, body {
   user-select: none;
 }
 
-#udaan-event-partners .partners-block-content .partners-block-image img {
+#udaan-event-partners .block-content .block-image img {
   width: 100%;
   height: 100%;
 }
 
-#udaan-event-partners .partners-block-text {
+#udaan-event-partners .block-text {
   display: flex;
   flex-direction: column;
   height: 10vh;
 }
 
-#udaan-event-partners .partners-block {
+#udaan-event-partners .block {
   text-align: center;
 }
 
-#udaan-event-partners .partners-block-container {
-  justify-content: center;
-}
-
 @media only screen and (max-width: 75em) {
-  #udaan-event-partners .partners-block {
+  #udaan-event-partners .block {
     padding: 0;
   }
 }
 
-#udaan-event-partners .partners-block-content .fill {
+#udaan-event-partners .block-content .fill {
   display: flex;
   flex-direction: column;
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   color: #fffd96;
   box-shadow: rgba(55, 55, 55, 0.2) 0.5vh 0.5vh 0;
   font-size: 1.6vh;
   border: 0.2vh solid #111;
 }
 
-#udaan-event-partners .partners-block-content .fill-large {
+#udaan-event-partners .block-content .fill img {
+  width: 100%;
+  height: auto;
+}
+
+#udaan-event-partners .block-content .fill-large {
   box-shadow: rgba(55, 55, 55, 0.2) 1vh 1vh 0;
   font-size: 2.0vh;
   border: 0.4vh solid #111;
 }
 
-#udaan-event-partners .partners-block-sub-text {
+#udaan-event-partners .block-sub-text {
   font-size: 1.8vh;
 }
 
-.partners-block-content img {
+#udaan-event-partners .block-content .fill:hover {
+  transition: 0.5s all;
+  background-color: #111;
+  color: #ffeb78;
+}
+
+#udaan-event-partners .block-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#udaan-event-partners .block-text .block-sub-text {
+  display: flex;
+  justify-content: center;
+  color: #ddd;
+  font-size: 1.4vh;
+  margin-top: 1vh;
+}
+
+#udaan-event-partners .block-seperator {
+  display: flex;
+  justify-content: center;
+  flex-basis: 100%;
+  width: 100%;
+  padding: 1vh;
+  border-top: 0.5vh dashed rgba(0, 0, 0, 0.1);
+  margin-top: 2.5vh;
+  font-size: 2.4vh;
+}
+
+#udaan-event-partners .block {
+  width: calc(var(--block-lg-unit) * 2);
+  height: calc(var(--block-lg-unit) * 2);
+}
+
+@media only screen and (max-width: 75em) {
+  #udaan-event-partners .block {
+    width: calc(var(--block-md-unit) * 2);
+    height: calc(var(--block-md-unit) * 2);
+  }
+}
+
+@media only screen and (max-width: 64em) {
+  #udaan-event-partners .block {
+    width: calc(var(--block-sm-unit) * 2);
+    height: calc(var(--block-sm-unit) * 2);
+  }
+}
+
+@media only screen and (max-width: 48em) {
+  #udaan-event-partners .block {
+    width: calc(var(--block-xs-unit) * 2);
+  }
+}
+
+@media (orientation: landscape) {
+  #udaan-event-partners .block {
+    flex-basis: 33.33333333%;
+    max-width: 33.33333333%;
+    height: calc(var(--block-lg-unit) * 2);
+  }
+}
+
+#udaan-event-partners .block img {
   width: 100%;
   height: auto;
 }
