@@ -4,8 +4,7 @@ window['data-team-udaan'] =  [
     "members": [
       {
         "name": "Jatan Patel",
-        "title": "",
-        "image": 'jatan-patel.jpg'
+        "title": ""
       }
     ]
   },
