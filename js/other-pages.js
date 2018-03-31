@@ -153,6 +153,7 @@ function setupUdaanTeamPage() {
   onDataReceived(window['data-team-udaan']);
 
   function onDataReceived(data) {
+    var teamImagesDir = '/img/team/';
     for (var i = 0; i < data.length; i++) {
       var category = data[i].category;
       var members = data[i].members;
@@ -162,7 +163,7 @@ function setupUdaanTeamPage() {
           name: member.name.toUpperCase(),
           title: category + ' ' + member.title,
           large: i < 2,
-          image: ''
+          image: member.image ? teamImagesDir + member.image : ''
         });
         if (member.title === 'Head' || member.title === "") {
           teamBlockContainer.appendChild(memberElement);

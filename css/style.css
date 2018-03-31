@@ -1098,6 +1098,18 @@ section {
   color: #E3FCFF;
 }
 
+.block-sub-text .block-button {
+  display: inline-block;
+  color: #FFF;
+  text-decoration: none;
+  padding: 1em;
+  border: 2px #74D8E1 solid;
+}
+
+.block-sub-text .block-button:hover {
+  background-color: rgba(116, 216, 225, 0.5);
+}
+
 @media only screen and (max-width: 75em) {
   .block {
     width: calc(var(--block-md-unit) * 2);
