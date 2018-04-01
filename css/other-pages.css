@@ -523,7 +523,7 @@ html, body {
 }
 
 #team .team-block-content .team-block-image img {
-  width: 100%;
+  width: 80%;
   height: 100%;
 }
 
@@ -580,13 +580,17 @@ html, body {
   flex-direction: column;
   background-color: transparent;
   color: #fffd96;
-  box-shadow: rgba(55, 55, 55, 0.2) 0.5vh 0.5vh 0;
   font-size: 1.6vh;
-  border: 0.2vh solid #111;
+  border: 0.4vh solid rgba(55, 55, 55, 0.2);
+}
+
+@media (max-width: 48em) {
+  #team .team-block-content .fill {
+    font-size: 1.4vh;
+  }
 }
 
 #team .team-block-content .fill-large {
-  box-shadow: rgba(55, 55, 55, 0.2) 1vh 1vh 0;
   font-size: 2.0vh;
   border: 0.4vh solid #111;
 }

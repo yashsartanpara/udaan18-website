@@ -4,7 +4,8 @@ window['data-team-udaan'] =  [
     "members": [
       {
         "name": "Jatan Patel",
-        "title": ""
+        "title": "",
+        "image": "jatan-patel.png"
       }
     ]
   },
@@ -13,7 +14,8 @@ window['data-team-udaan'] =  [
     "members": [
       {
         "name": "Megha Patel",
-        "title": ""
+        "title": "",
+        "image": "megha-patel.png"
       }
     ]
   },
@@ -46,7 +48,7 @@ window['data-team-udaan'] =  [
         "title": "Head"
       },
       {
-        "name": "Rejoice Paracal",
+        "name": "Rejoice Parackal",
         "title": "Head"
       },
       {
