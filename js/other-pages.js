@@ -163,7 +163,7 @@ function setupUdaanTeamPage() {
       var members = data[i].members;
       for (var j = 0; j < members.length; j++) {
         var member = members[j];
-        member.image = member.image || ((member.title.toUpperCase() === "HEAD" || category.indexOf('ore') > -1) ? jsonFriendlyName(member.name) + '.png' : undefined);
+        member.image = member.image || ((member.title.toUpperCase() === "HEAD" || category.indexOf('ore') > -1) ? jsonFriendlyName(member.name) + '.jpg' : undefined);
         var memberElement = newMember({
           name: member.name.toUpperCase(),
           title: category + ' ' + member.title,
