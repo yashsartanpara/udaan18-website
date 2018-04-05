@@ -4,7 +4,8 @@ window['data-team-udaan'] =  [
     "members": [
       {
         "name": "Jatan Patel",
-        "title": ""
+        "title": "",
+        "image": "jatan-patel.png"
       }
     ]
   },
@@ -13,7 +14,8 @@ window['data-team-udaan'] =  [
     "members": [
       {
         "name": "Megha Patel",
-        "title": ""
+        "title": "",
+        "image": "megha-patel.png"
       }
     ]
   },
@@ -46,7 +48,7 @@ window['data-team-udaan'] =  [
         "title": "Head"
       },
       {
-        "name": "Rejoice Paracal",
+        "name": "Rejoice Parackal",
         "title": "Head"
       },
       {
@@ -135,7 +137,7 @@ window['data-team-udaan'] =  [
     "category": "Graphics",
     "members": [
       {
-        "name": "Tushar Gonavala",
+        "name": "Tushar Gonawala",
         "title": "Head"
       },
       {
@@ -233,6 +235,27 @@ window['data-team-udaan'] =  [
       {
         "name": "Harshang Patel",
         "title": "Co-Head"
+      }
+    ]
+  },
+  {
+    "category": "Core Committee",
+    "members": [
+      {
+        "name": "Ruchi Patel",
+        "title": ""
+      },
+      {
+        "name": "Rishabh Shah",
+        "title": ""
+      },
+      {
+        "name": "Sushmi Chaudhari",
+        "title": ""
+      },
+      {
+        "name": "Pragnesh Kasundra",
+        "title": ""
       }
     ]
   }

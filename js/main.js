@@ -262,8 +262,13 @@ function setupOtherPageLinks() {
   [].forEach.call(blocks, function (block) {
     block.addEventListener('click', function () {
       var href = block.getAttribute('data-href');
+      var target = block.getAttribute('data-target');
       if(href.length > 0) {
-        location.href = href;
+        if(target) {
+          window.open(href, target);
+        } else {
+          location.href = href;
+        }
       } else {
         displayMessage('COMING SOON!');
       }

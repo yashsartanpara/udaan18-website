@@ -152,17 +152,23 @@ function setupUdaanTeamPage() {
 
   onDataReceived(window['data-team-udaan']);
 
+  function jsonFriendlyName(name) {
+    return name.toLowerCase().trim().split(' ').join('-');
+  }
+
   function onDataReceived(data) {
+    var teamImagesDir = '/img/team/';
     for (var i = 0; i < data.length; i++) {
       var category = data[i].category;
       var members = data[i].members;
       for (var j = 0; j < members.length; j++) {
         var member = members[j];
+        member.image = member.image || ((member.title.toUpperCase() === "HEAD" || category.indexOf('ore') > -1) ? jsonFriendlyName(member.name) + '.jpg' : undefined);
         var memberElement = newMember({
           name: member.name.toUpperCase(),
           title: category + ' ' + member.title,
           large: i < 2,
-          image: ''
+          image: member.image ? teamImagesDir + member.image : ''
         });
         if (member.title === 'Head' || member.title === "") {
           teamBlockContainer.appendChild(memberElement);
